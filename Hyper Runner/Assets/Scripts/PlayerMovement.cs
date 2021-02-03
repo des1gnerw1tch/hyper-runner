@@ -48,7 +48,6 @@ public class PlayerMovement : MonoBehaviour
     rb.velocity =  new Vector2(rb.velocity.x, 0);;
     rb.AddForce(transform.up * jumpPower, ForceMode2D.Impulse);
     jumpsLeft-= 1;
-    Debug.Log("Jumped");
 
     //this will double jump, happens when jumping and not touching ground
     if (!touchingGround)  {
@@ -64,7 +63,6 @@ public class PlayerMovement : MonoBehaviour
     if (other.gameObject.CompareTag("Ground")) {
       touchingGround = true;
       jumpsLeft = 2;
-      Debug.Log("Touched the ground");
       animator.SetBool("jumping", false);
       audio.Play("landing");
     }
