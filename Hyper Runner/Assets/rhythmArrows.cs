@@ -4,17 +4,11 @@ using UnityEngine;
 
 public class rhythmArrows : MonoBehaviour
 {
-    [SerializeField] private PlayerMovement playerMovement;
-    [SerializeField] private RhythmMovement rhythmMovement;
-    // Start is called before the first frame update
-    void Start()
-    {
+    [SerializeField] private sunsetManager levelManager;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+    void OnTriggerEnter2D(Collider2D other) {
+      if (other.CompareTag("Player")) {
+        levelManager.SetPlayerMode("Rhythm");
+      }
     }
 }

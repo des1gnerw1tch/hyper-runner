@@ -4,15 +4,38 @@ using UnityEngine;
 
 public class RhythmMovement : MonoBehaviour
 {
+    public float speed;
+    private bool teleporting;
+    private float teleportSpeed;
+    [SerializeField] public const float MIDDLE_OF_SCREEN_Y = 8.8f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("Switched!");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+      transform.position = new Vector3 (transform.position.x + speed*Time.deltaTime, transform.position.y, transform.position.z);
+
+      if (teleporting)  {
+        float step = teleportSpeed * Time.deltaTime;
+        Vector2 target = new Vector2(transform.position.x, MIDDLE_OF_SCREEN_Y);
+        transform.position = Vector2.MoveTowards(transform.position, target, step);
+        if (transform.position.y == MIDDLE_OF_SCREEN_Y) {
+          teleporting = false;
+          Debug.Log("Stopped Teleporting");
+        }
+      }
+    }
+
+    // startRhythm : Float -> will move -layer
+    // when called will over time kick the player into the middle of the
+    // screen. it will turn off gravity too.
+    public void startRhythm(float teleSpeed)  {
+      Debug.Log("Started teleporting");
+      teleporting = true;
+      teleportSpeed = teleSpeed;
     }
 }
