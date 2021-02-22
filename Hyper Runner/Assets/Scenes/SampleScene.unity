@@ -324,6 +324,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!4 &310351912 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 752551082774792010, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
+  m_PrefabInstance: {fileID: 752551081460692077}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &315441895
 GameObject:
   m_ObjectHideFlags: 0
@@ -8325,6 +8330,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 310351912}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 633569203}
@@ -8332,6 +8341,182 @@ PrefabInstance:
       propertyPath: playerFloatingSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.size
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceSequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceSequence.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[0].timeDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[1].timeDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[2].timeDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[3].timeDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[4].timeDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[5].timeDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[6].timeDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[7].timeDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[8].timeDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[9].timeDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[0].dancePopup
+      value: 
+      objectReference: {fileID: 2102979661}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[10].timeDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[11].timeDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[12].timeDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[13].timeDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[14].timeDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[15].timeDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[16].timeDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[17].timeDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[18].timeDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[19].timeDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[1].dancePopup
+      value: 
+      objectReference: {fileID: 2102979661}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[2].dancePopup
+      value: 
+      objectReference: {fileID: 2102979661}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[3].dancePopup
+      value: 
+      objectReference: {fileID: 2102979661}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[4].dancePopup
+      value: 
+      objectReference: {fileID: 2102979661}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[5].dancePopup
+      value: 
+      objectReference: {fileID: 2102979661}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[6].dancePopup
+      value: 
+      objectReference: {fileID: 2102979661}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[7].dancePopup
+      value: 
+      objectReference: {fileID: 2102979661}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[8].dancePopup
+      value: 
+      objectReference: {fileID: 2102979661}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[9].dancePopup
+      value: 
+      objectReference: {fileID: 2102979661}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[10].dancePopup
+      value: 
+      objectReference: {fileID: 2102979661}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[11].dancePopup
+      value: 
+      objectReference: {fileID: 2102979661}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[12].dancePopup
+      value: 
+      objectReference: {fileID: 2102979661}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[13].dancePopup
+      value: 
+      objectReference: {fileID: 2102979661}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[14].dancePopup
+      value: 
+      objectReference: {fileID: 2102979661}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[15].dancePopup
+      value: 
+      objectReference: {fileID: 2102979661}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[16].dancePopup
+      value: 
+      objectReference: {fileID: 2102979661}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[17].dancePopup
+      value: 
+      objectReference: {fileID: 2102979661}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[18].dancePopup
+      value: 
+      objectReference: {fileID: 2102979661}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceMoves.Array.data[19].dancePopup
+      value: 
+      objectReference: {fileID: 2102979661}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: danceSequence.Array.data[0].dancePopup
+      value: 
+      objectReference: {fileID: 2514900873659259168, guid: 4d2b44d0c742b4067ab608871d2cd346, type: 3}
     - target: {fileID: 4496124525633985544, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
       propertyPath: m_Name
       value: Rhythym Arrows
