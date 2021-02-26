@@ -9,6 +9,7 @@ public class sunsetManager : MonoBehaviour
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private RhythmMovement rhythmMovement;
     [SerializeField] private Rigidbody2D player_rb;
+    [SerializeField] private GameObject flyingParticles;
 
     void Start()
     {
@@ -37,11 +38,13 @@ public class sunsetManager : MonoBehaviour
         case "Platformer":
           playerMovement.enabled = true;
           rhythmMovement.enabled = false;
+          flyingParticles.SetActive(false);
           break;
         case "Rhythm":
           playerMovement.enabled = false;
           rhythmMovement.enabled = true;
           player_rb.gravityScale = 0;
+          flyingParticles.SetActive(true);
           // this is how fast the player will jump into rhythym mode, will
           // fix this bad system later
           rhythmMovement.startRhythm(5f);
