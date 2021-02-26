@@ -7,7 +7,12 @@ public class CharacterHealth : MonoBehaviour
 {
   void OnCollisionEnter2D (Collision2D other)  {
     if (other.gameObject.CompareTag("Sharp"))  { // A "Sharp" object means that player will die on it.
-      SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+      Die();
     }
   }
+
+  public void Die() {
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+  }
+  
 }
