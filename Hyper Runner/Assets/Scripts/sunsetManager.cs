@@ -19,7 +19,7 @@ public class sunsetManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if (Input.GetKeyDown("up"))  {
+      if (Input.GetKeyDown("t"))  {
         Debug.Log(Time.time);
       }
     }
