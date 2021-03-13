@@ -14,6 +14,8 @@ public class sunsetManager : MonoBehaviour
     void Start()
     {
       UpdateSpeeds();
+      //Play welcome message
+      StartCoroutine(PlayWelcome());
     }
 
     // Update is called once per frame
@@ -50,6 +52,12 @@ public class sunsetManager : MonoBehaviour
           rhythmMovement.startRhythm(5f);
           break;
       }
+    }
+
+    IEnumerator PlayWelcome() {
+      float delay = 3f;
+      yield return new WaitForSeconds(delay);
+      FindObjectOfType<AudioManager>().Play("welcomeMessage");
     }
 
 }
