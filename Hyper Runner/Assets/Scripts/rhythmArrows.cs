@@ -35,7 +35,7 @@ public class rhythmArrows : MonoBehaviour
     }
 
     void Update() {
-      if (Input.GetKeyDown("up")) {
+      if (Input.GetKeyDown("up") || Input.GetKey("down")) {
         UpdateValidDanceKeys();
       }
     }

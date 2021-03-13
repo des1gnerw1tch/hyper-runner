@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2219637414331819522}
   - component: {fileID: 2219637414331819521}
   m_Layer: 0
-  m_Name: up_danceTile
+  m_Name: down_danceTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3198963310353451126, guid: 920ec4380a570437fa15bc44fb8a8c06, type: 3}
+  m_Sprite: {fileID: 4743608295088636416, guid: 920ec4380a570437fa15bc44fb8a8c06, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,6 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176426e0191a04f2e90c61244800b702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyToPress: up
+  keyToPress: down
   distanceUntilDestroy: 3
   active: 0
