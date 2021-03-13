@@ -33,7 +33,10 @@ public class danceObject : MonoBehaviour
       score = 10 - difference;
       if (score < 0)
         score = 0;
-      Debug.Log(score);
+      Debug.Log("Score: " + score);
+      if (score < 9) {
+        characterHealth.Die();
+      }
       Destroy(gameObject);
     }
 
