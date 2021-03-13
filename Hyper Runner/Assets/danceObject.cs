@@ -5,18 +5,26 @@ using UnityEngine;
 public class danceObject : MonoBehaviour
 {
     private Transform player;
+    private CharacterHealth characterHealth;
     [SerializeField]
     private string keyToPress;
+    [SerializeField] private float distanceUntilDestroy;
     private float score;
     public bool active = false; // active : can be interacted with?
 
     void Start()  {
       player = GameObject.FindWithTag("Player").GetComponent<Transform>();
+      characterHealth = FindObjectOfType<CharacterHealth>();
     }
     void Update()
     {
       if (Input.GetKeyDown(keyToPress) && active) {
         Pressed();
+      }
+
+      // kill player if goes to far
+      if ((player.position.x - transform.position.x) >= distanceUntilDestroy)  {
+        characterHealth.Die();
       }
     }
 
