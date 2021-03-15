@@ -17,13 +17,6 @@ public class Interpolate : MonoBehaviour
     private float horizonSpeed;
     private float horizonCounter;
 
-    void Start()
-    {
-      //mainCamera.backgroundColor = sky2;
-      //LerpSky(-8);
-      //LerpHorizon(-3);
-    }
-
     void Update()
     {
       //sky interpolation
@@ -73,5 +66,21 @@ public class Interpolate : MonoBehaviour
 
     public void LerpHorizon(float speed)  {
       horizonSpeed = speed/10;
+      horizon = FindNearestHorizon();
+    }
+
+    SpriteRenderer FindNearestHorizon() {
+      Transform player = GameObject.FindWithTag("Player").transform;
+      GameObject[] horizons = GameObject.FindGameObjectsWithTag("Horizon");
+      GameObject nearest = horizons[0];
+      foreach(GameObject h in horizons) {
+        float dif = h.transform.position.x - player.position.x;
+        // replaces nearest with horizon that has the least positive difference between the horizon and the player
+        // if the current horizon is behind the player, nearest will be the next horizon.
+        if ((dif > 0 && dif < nearest.transform.position.x - player.position.x) || nearest.transform.position.x - player.position.x < 0) {
+          nearest = h;
+        }
+      }
+      return nearest.GetComponent<SpriteRenderer>();
     }
 }

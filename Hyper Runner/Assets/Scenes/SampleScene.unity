@@ -168,10 +168,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 519420031}
   sky1: {r: 0.3529412, g: 0.09411765, b: 0.6313726, a: 0}
-  sky2: {r: 0, g: 0, b: 0, a: 0}
-  horizon: {fileID: 979380564}
+  sky2: {r: 0.509434, g: 0.012014951, b: 0.13490674, a: 0}
+  horizon: {fileID: 0}
   horizon1: {r: 1, g: 1, b: 1, a: 1}
-  horizon2: {r: 1, g: 0, b: 0.067070484, a: 1}
+  horizon2: {r: 1, g: 0.7521363, b: 0, a: 1}
 --- !u!1 &202124147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2924,7 +2924,7 @@ GameObject:
   - component: {fileID: 979380567}
   m_Layer: 0
   m_Name: Horizon
-  m_TagString: Untagged
+  m_TagString: Horizon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3007,7 +3007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  parallaxEffect: 1.1
+  parallaxEffect: 1.2
 --- !u!114 &979380567
 MonoBehaviour:
   m_ObjectHideFlags: 0
