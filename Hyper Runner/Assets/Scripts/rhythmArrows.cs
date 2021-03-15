@@ -16,7 +16,6 @@ public class rhythmArrows : MonoBehaviour
         levelManager.SetPlayerMode("Rhythm");
         levelManager.playerCamMoveSpeed = playerFloatingSpeed;
         levelManager.UpdateSpeeds();
-        Debug.Log(Time.time);
 
         //starts recursion of placing dance moves
         StartCoroutine(StartDanceMove(danceMoves[i].timeDelay));

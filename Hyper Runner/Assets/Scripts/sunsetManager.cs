@@ -10,6 +10,7 @@ public class sunsetManager : MonoBehaviour
     [SerializeField] private RhythmMovement rhythmMovement;
     [SerializeField] private Rigidbody2D player_rb;
     [SerializeField] private GameObject flyingParticles;
+    [SerializeField] private Interpolate InterpolManager;
 
     void Start()
     {
@@ -50,6 +51,9 @@ public class sunsetManager : MonoBehaviour
           // this is how fast the player will jump into rhythym mode, will
           // fix this bad system later
           rhythmMovement.startRhythm(5f);
+          //start sky and horizon color change, including speed
+          InterpolManager.LerpSky(16);
+          InterpolManager.LerpHorizon(4);
           break;
       }
     }
