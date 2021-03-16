@@ -3017,12 +3017,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 979380563}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 915e260be0c484703962303d436c7a97, type: 3}
+  m_Script: {fileID: 11500000, guid: 84f68a0e8292947f3b90320200e8ccbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToRepeat: 20
-  spaceBetweenRepeats: 10
-  spriteRenderer: {fileID: 979380564}
+  distFromPlayerToRespawn: 10
+  spawnDist: 10
+  parallax: {fileID: 979380566}
 --- !u!1 &1275966722
 GameObject:
   m_ObjectHideFlags: 0

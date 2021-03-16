@@ -25,4 +25,8 @@ public class Parallax : MonoBehaviour
       my mind around how this works for some reason but it does and i wrote it!*/
       transform.position = new Vector3(thisStartX + difference/parallaxEffect, transform.position.y, transform.position.z);
     }
+
+    public void SetXPosition(float x) {
+      thisStartX = x;
+    }
 }
