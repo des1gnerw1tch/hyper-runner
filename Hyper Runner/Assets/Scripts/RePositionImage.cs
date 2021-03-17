@@ -19,7 +19,7 @@ public class RePositionImage : MonoBehaviour
       float dif = player.position.x - transform.position.x;
       Debug.Log(dif);
       if (dif >= distFromPlayerToRespawn)  {
-        parallax.SetXPosition(player.position.x + spawnDist);
+        transform.position = new Vector3(player.position.x + spawnDist, transform.position.y, 0);
       }
     }
 }

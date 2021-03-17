@@ -4,29 +4,15 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
-
-    public GameObject cam;
+    [SerializeField] private Move cameraMovement;
     public float parallaxEffect;
-    private float camStartX;
-    private float thisStartX;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-      thisStartX = transform.position.x;
-      camStartX = cam.transform.position.x;
-    }
 
     // Update is called once per frame
     void Update()
     {
-      float difference = cam.transform.position.x - camStartX;
-      /*the bigger the parallaxEffect, the faster the background will move. i cannot wrap
-      my mind around how this works for some reason but it does and i wrote it!*/
-      transform.position = new Vector3(thisStartX + difference/parallaxEffect, transform.position.y, transform.position.z);
-    }
-
-    public void SetXPosition(float x) {
-      thisStartX = x;
+      float camSpeed = cameraMovement.speed;
+      /*the bigger the parallaxEffect, the faster the background will move in comparison to the camera*/
+      // parralaxEffect of 0 denotes an object moving at the same vel of camera, 0 velocity normally
+      transform.position = new Vector3(transform.position.x + Time.deltaTime * (camSpeed - parallaxEffect), transform.position.y, transform.position.z);
     }
 }
