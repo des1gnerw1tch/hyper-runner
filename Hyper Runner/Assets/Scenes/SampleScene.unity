@@ -168,10 +168,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 519420031}
   sky1: {r: 0.3529412, g: 0.09411765, b: 0.6313726, a: 0}
-  sky2: {r: 0.509434, g: 0.012014951, b: 0.13490674, a: 0}
+  sky2: {r: 1, g: 1, b: 1, a: 0}
   horizon: {fileID: 0}
   horizon1: {r: 1, g: 1, b: 1, a: 1}
-  horizon2: {r: 1, g: 0.7521363, b: 0, a: 1}
+  horizon2: {r: 0, g: 1, b: 0.9678595, a: 1}
 --- !u!1 &202124147
 GameObject:
   m_ObjectHideFlags: 0

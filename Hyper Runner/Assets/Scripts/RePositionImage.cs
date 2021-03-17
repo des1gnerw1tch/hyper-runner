@@ -17,7 +17,6 @@ public class RePositionImage : MonoBehaviour
     void Update()
     {
       float dif = player.position.x - transform.position.x;
-      Debug.Log(dif);
       if (dif >= distFromPlayerToRespawn)  {
         transform.position = new Vector3(player.position.x + spawnDist, transform.position.y, 0);
       }
