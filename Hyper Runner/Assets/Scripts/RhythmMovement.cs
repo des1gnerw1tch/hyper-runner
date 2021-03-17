@@ -32,6 +32,11 @@ public class RhythmMovement : MonoBehaviour
           animatorComponent.runtimeAnimatorController = rhythmAnimator;
         }
       }
+
+      // will print current X position of player, helps with rhythym
+      if (Input.GetKeyDown("o"))  {
+        Debug.Log(transform.position.x);
+      }
     }
 
     // startRhythm : Float -> will move player

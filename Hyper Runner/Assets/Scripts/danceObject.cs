@@ -29,6 +29,7 @@ public class danceObject : MonoBehaviour
     }
 
     void Pressed()  {
+      FindObjectOfType<AudioManager>().Play("metronome");
       float difference = Mathf.Abs(player.position.x - transform.position.x);
       score = 10 - difference;
       if (score < 0)

@@ -42,11 +42,6 @@ public class PlayerMovement : MonoBehaviour
       rb.gravityScale = initialGravity;
     }
 
-    // will print current X position of player, helps with rhythym
-    if (Input.GetKeyDown("o"))  {
-      Debug.Log(transform.position.x);
-    }
-
   }
 
   void Jump() {

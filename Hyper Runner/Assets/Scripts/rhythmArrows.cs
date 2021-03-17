@@ -20,7 +20,8 @@ public class rhythmArrows : MonoBehaviour
         levelManager.UpdateSpeeds();
 
         //starts recursion of placing dance moves
-        StartCoroutine(StartDanceMove(danceMoves[i].timeDelay));
+        //StartCoroutine(StartDanceMove(danceMoves[i].timeDelay));
+        UpdateValidDanceKeys();
       }
     }
 
@@ -36,7 +37,9 @@ public class rhythmArrows : MonoBehaviour
     }
 
     void Update() {
-      if (Input.GetKeyDown("up") || Input.GetKey("down")) {
+      // Will update active dance key, on KeyUp because want to make sure
+      // first object when clicked is deleted first (which is on KeyDown)
+      if (Input.GetKeyUp("up") || Input.GetKey("down")) {
         UpdateValidDanceKeys();
       }
     }
