@@ -6,6 +6,7 @@ public class rhythmArrows : MonoBehaviour
 {
     [SerializeField] private sunsetManager levelManager;
     [SerializeField] private float playerFloatingSpeed;
+    [SerializeField] private float surroundingSpeedMultiplier;
     [SerializeField] private DanceMove[] danceMoves;
 
     [SerializeField] private Transform player;
@@ -15,6 +16,7 @@ public class rhythmArrows : MonoBehaviour
       if (other.CompareTag("Player")) {
         levelManager.SetPlayerMode("Rhythm");
         levelManager.playerCamMoveSpeed = playerFloatingSpeed;
+        Parallax.multiplier = surroundingSpeedMultiplier;
         levelManager.UpdateSpeeds();
 
         //starts recursion of placing dance moves
