@@ -15,13 +15,23 @@ public class PlayerMovement : MonoBehaviour
   [SerializeField] private Animator animator;
   private AudioManager audio;
 
+  //sync player movement with music
+  [SerializeField] private AudioSource levelMusic;
+  private float lastSample;
+  private float thisSample;
+
   void Start()  {
     audio = FindObjectOfType<AudioManager>();
     initialGravity = rb.gravityScale;
   }
   void Update()
   {
-    transform.position = new Vector3 (transform.position.x + speed*Time.deltaTime, transform.position.y, transform.position.z);
+
+    //Debug.Log(levelMusic.timeSamples);
+
+    transform.position = new Vector3 (transform.position.x + speed * MusicSync.deltaSample,
+      transform.position.y, transform.position.z);
+
     if (Input.GetKeyDown("space") && jumpsLeft > 0)
         {
             Jump();
@@ -41,6 +51,11 @@ public class PlayerMovement : MonoBehaviour
     } else {
       rb.gravityScale = initialGravity;
     }
+
+    if (Input.GetKeyDown("o"))
+        {
+            Debug.Log(transform.position.x);
+        }
 
   }
 

@@ -20,10 +20,10 @@ public class RhythmMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      transform.position = new Vector3 (transform.position.x + speed*Time.deltaTime, transform.position.y, transform.position.z);
+      transform.position = new Vector3 (transform.position.x + speed*MusicSync.deltaSample, transform.position.y, transform.position.z);
 
       if (teleporting)  {
-        float step = teleportSpeed * Time.deltaTime;
+        float step = teleportSpeed * MusicSync.deltaSample;
         Vector2 target = new Vector2(transform.position.x, MIDDLE_OF_SCREEN_Y);
         transform.position = Vector2.MoveTowards(transform.position, target, step);
         if (transform.position.y == MIDDLE_OF_SCREEN_Y) {

@@ -18,6 +18,6 @@ public class Parallax : MonoBehaviour
       float camSpeed = cameraMovement.speed;
       /*the bigger the parallaxEffect, the faster the background will move in comparison to the camera*/
       // parralaxEffect of 0 denotes an object moving at the same vel of camera, 0 velocity normally
-      transform.position = new Vector3(transform.position.x + Time.deltaTime * (camSpeed - parallaxEffect * multiplier), transform.position.y, transform.position.z);
+      transform.position = new Vector3(transform.position.x + MusicSync.deltaSample * (camSpeed - parallaxEffect * multiplier), transform.position.y, transform.position.z);
     }
 }

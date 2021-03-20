@@ -21,7 +21,7 @@ public class Interpolate : MonoBehaviour
     {
       //sky interpolation
       if (skySpeed > 0) {
-        skyCounter += Time.deltaTime * skySpeed;
+        skyCounter += MusicSync.deltaSample * skySpeed;
         Color c = Color.Lerp(sky1, sky2, skyCounter);
         if (skyCounter >= 1)  {
           skySpeed = 0;
@@ -30,7 +30,7 @@ public class Interpolate : MonoBehaviour
         mainCamera.backgroundColor = c;
       }
       else if (skySpeed < 0)  {
-        skyCounter += Time.deltaTime * Mathf.Abs(skySpeed);
+        skyCounter += MusicSync.deltaSample * Mathf.Abs(skySpeed);
         Color c = Color.Lerp(sky2, sky1, skyCounter);
         if (skyCounter >= 1)  {
           skySpeed = 0;
@@ -42,7 +42,7 @@ public class Interpolate : MonoBehaviour
       //Horizon Interpolation
       //sky interpolation
       if (horizonSpeed > 0) {
-        horizonCounter += Time.deltaTime * horizonSpeed;
+        horizonCounter += MusicSync.deltaSample * horizonSpeed;
         Color c = Color.Lerp(horizon1, horizon2, horizonCounter);
         if (horizonCounter >= 1)  {
           horizonSpeed = 0;
@@ -50,7 +50,7 @@ public class Interpolate : MonoBehaviour
         horizon.color = c;
       }
       else if (horizonSpeed < 0)  {
-        horizonCounter += Time.deltaTime * Mathf.Abs(horizonSpeed);
+        horizonCounter += MusicSync.deltaSample * Mathf.Abs(horizonSpeed);
         Color c = Color.Lerp(horizon2, horizon1, horizonCounter);
         if (horizonCounter >= 1)  {
           horizonSpeed = 0;

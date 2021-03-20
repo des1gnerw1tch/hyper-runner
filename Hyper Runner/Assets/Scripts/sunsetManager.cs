@@ -19,14 +19,6 @@ public class sunsetManager : MonoBehaviour
       StartCoroutine(PlayWelcome());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-      if (Input.GetKeyDown("t"))  {
-        Debug.Log(Time.time);
-      }
-    }
-
     // UpdateSpeeds : Updates the values of speed for both the camera and the player
     public void UpdateSpeeds()  {
       playerMovement.speed = playerCamMoveSpeed;
