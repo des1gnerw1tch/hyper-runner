@@ -19,6 +19,6 @@ public class MusicSync : MonoBehaviour
       thisSample = levelMusic.timeSamples;
       deltaSample = (thisSample - lastSample) / 90000;
       lastSample = thisSample;
-      //Debug.Log(deltaSample);
+      Debug.Log(deltaSample);
     }
 }
