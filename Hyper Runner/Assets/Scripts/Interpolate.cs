@@ -40,7 +40,6 @@ public class Interpolate : MonoBehaviour
       }
 
       //Horizon Interpolation
-      //sky interpolation
       if (horizonSpeed > 0) {
         horizonCounter += MusicSync.deltaSample * horizonSpeed;
         Color c = Color.Lerp(horizon1, horizon2, horizonCounter);
@@ -66,21 +65,6 @@ public class Interpolate : MonoBehaviour
 
     public void LerpHorizon(float speed)  {
       horizonSpeed = speed/10;
-      horizon = FindNearestHorizon();
     }
 
-    SpriteRenderer FindNearestHorizon() {
-      Transform player = GameObject.FindWithTag("Player").transform;
-      GameObject[] horizons = GameObject.FindGameObjectsWithTag("Horizon");
-      GameObject nearest = horizons[0];
-      foreach(GameObject h in horizons) {
-        float dif = h.transform.position.x - player.position.x;
-        // replaces nearest with horizon that has the least positive difference between the horizon and the player
-        // if the current horizon is behind the player, nearest will be the next horizon.
-        if ((dif > 0 && dif < nearest.transform.position.x - player.position.x) || nearest.transform.position.x - player.position.x < 0) {
-          nearest = h;
-        }
-      }
-      return nearest.GetComponent<SpriteRenderer>();
-    }
 }

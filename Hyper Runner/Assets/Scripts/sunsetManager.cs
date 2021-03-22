@@ -44,7 +44,7 @@ public class sunsetManager : MonoBehaviour
           // fix this bad system later
           rhythmMovement.startRhythm(5f);
           //start sky and horizon color change, including speed
-          InterpolManager.LerpSky(16);
+          InterpolManager.LerpSky(16f);
           InterpolManager.LerpHorizon(16f);
           break;
       }

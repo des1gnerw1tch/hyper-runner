@@ -259,10 +259,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 519420031}
   sky1: {r: 0.3529412, g: 0.09411765, b: 0.6313726, a: 0}
-  sky2: {r: 1, g: 1, b: 1, a: 0}
-  horizon: {fileID: 0}
+  sky2: {r: 1, g: 0, b: 0.7951522, a: 0}
+  horizon: {fileID: 979380564}
   horizon1: {r: 1, g: 1, b: 1, a: 1}
-  horizon2: {r: 0, g: 1, b: 0.9678595, a: 1}
+  horizon2: {r: 1, g: 0.796214, b: 0, a: 1}
 --- !u!1 &202124147
 GameObject:
   m_ObjectHideFlags: 0
@@ -9620,7 +9620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
       propertyPath: surroundingSpeedMultiplier
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4496124525633985544, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
       propertyPath: m_Name
