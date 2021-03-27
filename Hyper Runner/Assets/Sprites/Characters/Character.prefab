@@ -34,6 +34,7 @@ Transform:
   m_LocalPosition: {x: 1.13, y: 8.8, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
+  - {fileID: 1434949886542117858}
   - {fileID: 893227966061472619}
   - {fileID: 8665001205896825107}
   m_Father: {fileID: 0}
@@ -122,7 +123,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.01904881, y: -0.038096532}
+  m_Offset: {x: -0.06393249, y: -0.038096547}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -133,7 +134,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5241151, y: 0.9492036}
+  m_Size: {x: 0.43434772, y: 0.9492036}
   m_EdgeRadius: 0
 --- !u!50 &752551082774792007
 Rigidbody2D:
@@ -172,6 +173,7 @@ MonoBehaviour:
   jumpPower: 12
   rb: {fileID: 752551082774792007}
   animator: {fileID: 752551082774792008}
+  jumpCollider: {fileID: 4290473769257929723}
 --- !u!114 &752551082774792000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,6 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00bdf9ae756e432581a5d8f634b38a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frontCollider: {fileID: 3875587539062391384}
 --- !u!1 &2841508527331617181
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +213,7 @@ GameObject:
   - component: {fileID: 893227966061472619}
   - component: {fileID: 4290473769257929723}
   m_Layer: 0
-  m_Name: Jump Collider
+  m_Name: Jump Collider (Trigger)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -228,7 +231,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 752551082774792010}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &4290473769257929723
 BoxCollider2D:
@@ -255,6 +258,63 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.37697783, y: 0.2002185}
+  m_EdgeRadius: 0
+--- !u!1 &3271090670930304232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1434949886542117858}
+  - component: {fileID: 3875587539062391384}
+  m_Layer: 0
+  m_Name: Front Collider (Trigger)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1434949886542117858
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3271090670930304232}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.187, y: 0.68, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 752551082774792010}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &3875587539062391384
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3271090670930304232}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.049267218, y: -0.7279141}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.032704383, y: 0.8427253}
   m_EdgeRadius: 0
 --- !u!1 &7858300630071390444
 GameObject:
@@ -286,7 +346,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 752551082774792010}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!199 &6054590898745554851
 ParticleSystemRenderer:

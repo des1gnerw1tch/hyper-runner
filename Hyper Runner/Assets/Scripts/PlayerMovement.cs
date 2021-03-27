@@ -13,10 +13,9 @@ public class PlayerMovement : MonoBehaviour
 
   [SerializeField] private Rigidbody2D rb;
   [SerializeField] private Animator animator;
+  [SerializeField] private Collider2D jumpCollider;
   private AudioManager audio;
 
-  //sync player movement with music
-  [SerializeField] private AudioSource levelMusic;
   private float lastSample;
   private float thisSample;
 
@@ -26,9 +25,6 @@ public class PlayerMovement : MonoBehaviour
   }
   void Update()
   {
-
-    //Debug.Log(levelMusic.timeSamples);
-
     transform.position = new Vector3 (transform.position.x + speed * MusicSync.deltaSample,
       transform.position.y, transform.position.z);
 
@@ -75,12 +71,16 @@ public class PlayerMovement : MonoBehaviour
   }
 
   void OnTriggerEnter2D(Collider2D other)  {
-    if (other.gameObject.CompareTag("Ground")) {
+    if (jumpCollider.IsTouching(other))  {
+      if (other.gameObject.CompareTag("Ground"))
+        TouchGround();
+    }
+  }
+  void TouchGround()  {
       touchingGround = true;
       jumpsLeft = 2;
       animator.SetBool("jumping", false);
       audio.Play("landing");
-    }
   }
 
   void OnCollisionExit2D(Collision2D other) {
