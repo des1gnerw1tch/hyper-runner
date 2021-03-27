@@ -259,10 +259,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 519420031}
   sky1: {r: 0.3529412, g: 0.09411765, b: 0.6313726, a: 0}
-  sky2: {r: 0, g: 0.0065393806, b: 0.6509434, a: 0}
+  sky2: {r: 1, g: 0, b: 0.68751574, a: 0}
   horizon: {fileID: 979380564}
   horizon1: {r: 1, g: 1, b: 1, a: 1}
-  horizon2: {r: 0.2783019, g: 0.5965262, b: 1, a: 1}
+  horizon2: {r: 1, g: 0.8355755, b: 0, a: 1}
 --- !u!1 &202124147
 GameObject:
   m_ObjectHideFlags: 0
@@ -7370,8 +7370,8 @@ Tilemap:
   - first: {x: 136, y: 9, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -8139,16 +8139,16 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 9
+  - m_RefCount: 10
     m_Data: {fileID: 11400000, guid: 054bb40fcd5bf4861ba31403dfa7dfbf, type: 2}
-  - m_RefCount: 365
+  - m_RefCount: 364
     m_Data: {fileID: 11400000, guid: e82a0d3e6ca4c440d8a2e8aef97224fa, type: 2}
   - m_RefCount: 10
     m_Data: {fileID: 11400000, guid: c007248e3ef1c429ebc00b6e81660fd0, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 9
+  - m_RefCount: 10
     m_Data: {fileID: -6614373457484812694, guid: 9236b0e3f98f94c9296806e657883211, type: 3}
-  - m_RefCount: 365
+  - m_RefCount: 364
     m_Data: {fileID: 349823833441268365, guid: 9236b0e3f98f94c9296806e657883211, type: 3}
   - m_RefCount: 10
     m_Data: {fileID: 1807125615787039003, guid: 9236b0e3f98f94c9296806e657883211, type: 3}
@@ -10561,7 +10561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5583174410575660349, guid: 3d0a81a36f0664b1fa81ae89e14a5488, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 84.16
+      value: 279.15
       objectReference: {fileID: 0}
     - target: {fileID: 5583174410575660349, guid: 3d0a81a36f0664b1fa81ae89e14a5488, type: 3}
       propertyPath: m_LocalPosition.y
