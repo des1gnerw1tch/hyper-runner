@@ -32,8 +32,13 @@ public class sunsetManager : MonoBehaviour
       switch (mode) {
         case "Platformer":
           playerMovement.enabled = true;
+          playerMovement.SetAnimatorControllerAsPlatformer();
           rhythmMovement.enabled = false;
+          player_rb.gravityScale = 1f;
           flyingParticles.SetActive(false);
+          //start sky and horizon color change back to normal, magnitude is speed
+          InterpolManager.LerpSky(-4f);
+          InterpolManager.LerpHorizon(-4f);
           break;
         case "Rhythm":
           playerMovement.enabled = false;

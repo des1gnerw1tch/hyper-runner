@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
   [SerializeField] private Rigidbody2D rb;
   [SerializeField] private Animator animator;
   [SerializeField] private Collider2D jumpCollider;
+  [SerializeField] private RuntimeAnimatorController platformAnimator;
   private AudioManager audio;
 
   private float lastSample;
@@ -89,7 +90,10 @@ public class PlayerMovement : MonoBehaviour
       animator.SetBool("jumping", true);
     }
   }
-
+  // this will set our players animator controller to the platformer animator controller
+  public void SetAnimatorControllerAsPlatformer() {
+    animator.runtimeAnimatorController = platformAnimator;
+  }
 
 
 }
