@@ -11,6 +11,7 @@ public class danceObject : MonoBehaviour
     [SerializeField] private float distanceUntilDestroy;
     private float score;
     public bool active = false; // active : can be interacted with?
+    [SerializeField] private GameObject destroyEffect;
 
     void Start()  {
       player = GameObject.FindWithTag("Player").GetComponent<Transform>();
@@ -38,6 +39,7 @@ public class danceObject : MonoBehaviour
       if (score < 9) {
         characterHealth.Die();
       }
+      Instantiate(destroyEffect, transform.position, Quaternion.identity);
       Destroy(gameObject);
     }
 
