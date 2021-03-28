@@ -25,7 +25,6 @@ public class Interpolate : MonoBehaviour
         Color c = Color.Lerp(sky1, sky2, skyCounter);
         if (skyCounter >= 1)  {
           skySpeed = 0;
-          skyCounter = 0;
         }
         mainCamera.backgroundColor = c;
       }
@@ -34,7 +33,6 @@ public class Interpolate : MonoBehaviour
         Color c = Color.Lerp(sky2, sky1, skyCounter);
         if (skyCounter >= 1)  {
           skySpeed = 0;
-          horizonCounter = 0;
         }
         mainCamera.backgroundColor = c;
       }
@@ -61,10 +59,12 @@ public class Interpolate : MonoBehaviour
 
     public void LerpSky(float speed)  {
       skySpeed = speed/10;
+      skyCounter = 0; // resets our counter variable
     }
 
     public void LerpHorizon(float speed)  {
       horizonSpeed = speed/10;
+      horizonCounter = 0; // resets our counter variable
     }
 
 }
