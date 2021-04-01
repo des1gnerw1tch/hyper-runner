@@ -58,6 +58,12 @@ public class danceObject : MonoBehaviour
     void SpawnScoreText(GameObject text) {
       var image = Instantiate(text) as GameObject;
       image.transform.SetParent(canvas.transform, false);
+
+      // set the placement of these pop ups a little random
+      float wobble = 15;
+      float difX = Random.Range(-wobble, wobble);
+      float difY = Random.Range(-wobble, wobble);
+      image.GetComponent<RectTransform>().Translate(new Vector3(difX, difY, 0), Space.World);
     }
 
 }
