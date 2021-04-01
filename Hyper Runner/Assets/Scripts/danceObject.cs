@@ -36,6 +36,7 @@ public class danceObject : MonoBehaviour
       if (score < 0)
         score = 0;
       Debug.Log("Score: " + score);
+
       if (score < 9) {
         characterHealth.Die();
       }
