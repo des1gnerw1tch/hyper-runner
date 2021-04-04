@@ -4237,7 +4237,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 752551082774792005, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
   m_PrefabInstance: {fileID: 752551081460692077}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1424509929}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73ff485bca0864758a6341b3b0f7ce33, type: 3}
@@ -4253,7 +4253,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 752551082774792000, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
   m_PrefabInstance: {fileID: 752551081460692077}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1424509929}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f1192205fe6845c38fea38f22ab8e74, type: 3}
@@ -8266,6 +8266,26 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: -0.11}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1 &1424509929 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 752551082774792009, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
+  m_PrefabInstance: {fileID: 752551081460692077}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1424509934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424509929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d2f7171d93e4c94bd4227a9f29ccd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  material: {fileID: 2100000, guid: f1159b2c342e44ef7b9bec6ef1c3475f, type: 2}
+  fadeSpeed: 0
 --- !u!1001 &1482405096
 PrefabInstance:
   m_ObjectHideFlags: 0
