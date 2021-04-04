@@ -16,6 +16,9 @@ public class danceObject : MonoBehaviour
     [SerializeField] private GameObject goodText;
     [SerializeField] private GameObject perfectText;
     [SerializeField] private GameObject canvas;
+    [SerializeField] private Flash objToFlash;
+    [SerializeField] private Color flashColor;
+    [SerializeField] private float flashSpeed;
 
     void Start()  {
       player = GameObject.FindWithTag("Player").GetComponent<Transform>();
@@ -34,6 +37,7 @@ public class danceObject : MonoBehaviour
     }
 
     void Pressed()  {
+      objToFlash.StartFlash(flashColor, flashSpeed);
       FindObjectOfType<AudioManager>().Play("metronome");
       float difference = Mathf.Abs(player.position.x - transform.position.x);
       score = 10 - difference;
