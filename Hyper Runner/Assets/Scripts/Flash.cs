@@ -24,7 +24,7 @@ public class Flash : MonoBehaviour
         material = this.gameObject.GetComponent<SpriteRenderer>().material;
       } else {
         Debug.LogError("Object with name: '" + gameObject.name + "' does not have a SpriteRenderer " +
-        "or a TilemapRenderer");;
+        "or a TilemapRenderer");
       }
     }
 
