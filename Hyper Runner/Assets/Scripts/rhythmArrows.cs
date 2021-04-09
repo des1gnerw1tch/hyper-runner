@@ -7,7 +7,6 @@ public class rhythmArrows : MonoBehaviour
     [SerializeField] private sunsetManager levelManager;
     [SerializeField] private float playerFloatingSpeed;
     [SerializeField] private float surroundingSpeedMultiplier;
-    [SerializeField] private DanceMove[] danceMoves;
 
     [SerializeField] private Transform player;
     int i = 0;
@@ -18,22 +17,8 @@ public class rhythmArrows : MonoBehaviour
         levelManager.playerCamMoveSpeed = playerFloatingSpeed;
         Parallax.multiplier = surroundingSpeedMultiplier;
         levelManager.UpdateSpeeds();
-
-        //starts recursion of placing dance moves
-        //StartCoroutine(StartDanceMove(danceMoves[i].timeDelay));
         UpdateValidDanceKeys();
       }
-    }
-
-    // instantiates the newest dance move,
-    IEnumerator StartDanceMove(float delay)  {
-        yield return new WaitForSeconds(delay);
-        Vector3 loc = new Vector3(player.position.x + 10, player.position.y, 0);
-        Instantiate(danceMoves[i].dancePopup, loc, Quaternion.identity);
-        i++;
-        if (i < danceMoves.Length)  {
-          StartCoroutine(StartDanceMove(danceMoves[i].timeDelay));
-        }
     }
 
     void Update() {
