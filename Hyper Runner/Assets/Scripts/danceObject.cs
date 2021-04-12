@@ -32,7 +32,7 @@ public class danceObject : MonoBehaviour
 
       // kill player if goes to far
       if ((player.position.x - transform.position.x) >= distanceUntilDestroy)  {
-        characterHealth.Die();
+        characterHealth.AddCharisma(-30f);
       }
     }
 
@@ -47,12 +47,12 @@ public class danceObject : MonoBehaviour
 
       if (score > 9.7)  {
         SpawnScoreText(perfectText); // spawn perfect text
-        characterHealth.AddCharisma(25f);
+        characterHealth.AddCharisma(15f);
       } else if (score > 9.5) {
         characterHealth.AddCharisma(10f);
         SpawnScoreText(goodText); // spawn good text
       } else if (score > 9) {
-        characterHealth.AddCharisma(-20f);
+        characterHealth.AddCharisma(-15f);
         SpawnScoreText(okText); // spawn ok text
       } else  {
         characterHealth.AddCharisma(-30f);
