@@ -10,6 +10,8 @@ public class RhythmMovement : MonoBehaviour
     [SerializeField] private const float MIDDLE_OF_SCREEN_Y = 8.8f;
     [SerializeField] private Animator animatorComponent;
     [SerializeField] private RuntimeAnimatorController rhythmAnimator;
+    [SerializeField] private GameObject rhythm_up_tile;
+    [SerializeField] private GameObject rhythm_down_tile;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,8 +35,14 @@ public class RhythmMovement : MonoBehaviour
         }
       }
 
-      // will print current X position of player, helps with rhythym
-      if (Input.GetKeyDown("o"))  {
+      // will print rhythm blocks at current X position of player, helps with rhythym
+      if (Input.GetKeyDown("w"))  {
+        Vector3 position = new Vector3(transform.position.x, transform.position.y, 0);
+        Instantiate(rhythm_up_tile, position, Quaternion.identity);
+      }
+      if (Input.GetKeyDown("s"))  {
+        Vector3 position = new Vector3(transform.position.x, transform.position.y, 0);
+        Instantiate(rhythm_down_tile, position, Quaternion.identity);
         Debug.Log(transform.position.x);
       }
     }
