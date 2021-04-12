@@ -47,12 +47,15 @@ public class danceObject : MonoBehaviour
 
       if (score > 9.7)  {
         SpawnScoreText(perfectText); // spawn perfect text
+        characterHealth.AddCharisma(25f);
       } else if (score > 9.5) {
+        characterHealth.AddCharisma(10f);
         SpawnScoreText(goodText); // spawn good text
       } else if (score > 9) {
+        characterHealth.AddCharisma(-20f);
         SpawnScoreText(okText); // spawn ok text
       } else  {
-        characterHealth.Die();
+        characterHealth.AddCharisma(-30f);
       }
 
       Instantiate(destroyEffect, transform.position, Quaternion.identity);
