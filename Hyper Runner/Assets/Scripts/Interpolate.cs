@@ -67,4 +67,12 @@ public class Interpolate : MonoBehaviour
       horizonCounter = 0; // resets our counter variable
     }
 
+    public void SetSkyAltColor(Color col)  {
+      sky2 = col;
+    }
+
+    public void SetHorizonAltColor(Color col)  {
+      horizon2 = col;
+    }
+
 }

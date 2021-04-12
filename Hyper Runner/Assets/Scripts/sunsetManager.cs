@@ -11,6 +11,9 @@ public class sunsetManager : MonoBehaviour
     [SerializeField] private Rigidbody2D player_rb;
     [SerializeField] private GameObject flyingParticles;
     [SerializeField] private Interpolate InterpolManager;
+    [SerializeField] private Color sky_launch2_color;
+    [SerializeField] private Color horizon_launch2_color;
+    private float launches = 0;
 
     void Start()
     {
@@ -41,6 +44,7 @@ public class sunsetManager : MonoBehaviour
           InterpolManager.LerpHorizon(-4f);
           break;
         case "Rhythm":
+          launches++;
           playerMovement.enabled = false;
           rhythmMovement.enabled = true;
           player_rb.gravityScale = 0;
@@ -49,6 +53,10 @@ public class sunsetManager : MonoBehaviour
           // fix this bad system later
           rhythmMovement.startRhythm(5f);
           //start sky and horizon color change, including speed
+          if (launches == 2)  {
+            InterpolManager.SetSkyAltColor(sky_launch2_color);
+            InterpolManager.SetHorizonAltColor(horizon_launch2_color);
+          }
           InterpolManager.LerpSky(16f);
           InterpolManager.LerpHorizon(16f);
           break;
