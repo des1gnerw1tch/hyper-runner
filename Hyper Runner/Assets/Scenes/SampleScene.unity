@@ -14538,6 +14538,7 @@ GameObject:
   - component: {fileID: 1442886026}
   - component: {fileID: 1442886028}
   - component: {fileID: 1442886029}
+  - component: {fileID: 1442886030}
   m_Layer: 0
   m_Name: Train
   m_TagString: Untagged
@@ -14886,6 +14887,22 @@ MonoBehaviour:
   distFromPlayerToRespawn: 30
   spawnDist: 40
   spawnDistWiggle: 50
+--- !u!114 &1442886030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442886024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbcba180dfac04dee9363eded524adbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difXFromPlayer: -30
+  player: {fileID: 310351912}
+  trainSound: toot
+  trainBeforePlayer: 0
 --- !u!1001 &1482405096
 PrefabInstance:
   m_ObjectHideFlags: 0
