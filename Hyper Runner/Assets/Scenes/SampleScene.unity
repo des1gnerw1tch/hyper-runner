@@ -164,6 +164,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &439945
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -270,6 +273,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &14120168
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -376,6 +382,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &14474112
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -575,6 +584,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &51642655
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -711,6 +723,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &65452245
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -817,6 +832,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &73227660
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -923,6 +941,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &75648102
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1030,6 +1051,14 @@ PrefabInstance:
     - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: flashColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleIntensity
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: m_RootOrder
@@ -1167,6 +1196,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &105825886
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1273,6 +1305,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &154395333
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1458,6 +1493,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &211589136
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1564,6 +1602,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &227105609
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1670,6 +1711,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &229593021
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1774,6 +1818,18 @@ PrefabInstance:
       propertyPath: flashColor.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: camRumbleSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: camRumbleDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: camRumbleIntensity
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -1861,6 +1917,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &254601953
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1964,6 +2023,14 @@ PrefabInstance:
     - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
       propertyPath: flashColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: camRumbleDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: camRumbleIntensity
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
       propertyPath: m_RootOrder
@@ -2108,6 +2175,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &342833460
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2214,6 +2284,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &343800622
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2320,6 +2393,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &348632700
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2426,6 +2502,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &365495172
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2532,6 +2611,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &457341955
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2640,6 +2722,14 @@ PrefabInstance:
       propertyPath: flashColor.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleIntensity
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: m_RootOrder
       value: 49
@@ -2728,6 +2818,14 @@ PrefabInstance:
     - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: flashColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleIntensity
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: m_RootOrder
@@ -2934,6 +3032,14 @@ PrefabInstance:
     - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: flashColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleIntensity
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: m_RootOrder
@@ -3703,6 +3809,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &507174933
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3939,6 +4048,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &520133822
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4213,6 +4325,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &583898357
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4890,6 +5005,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &586072270
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5261,6 +5379,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &648339248
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5368,6 +5489,14 @@ PrefabInstance:
     - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: flashColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleIntensity
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: m_RootOrder
@@ -5535,6 +5664,14 @@ PrefabInstance:
       propertyPath: flashColor.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleIntensity
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: m_RootOrder
       value: 39
@@ -5656,6 +5793,14 @@ PrefabInstance:
     - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: flashColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleIntensity
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: m_RootOrder
@@ -5810,6 +5955,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &840066831
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5916,6 +6064,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &853732829
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6052,6 +6203,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &890282777
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6158,6 +6312,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &899487560
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6265,6 +6422,14 @@ PrefabInstance:
     - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: flashColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleIntensity
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: m_RootOrder
@@ -6448,6 +6613,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &922749641
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6552,6 +6720,14 @@ PrefabInstance:
       propertyPath: flashColor.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: camRumbleDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: camRumbleIntensity
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
       propertyPath: m_RootOrder
       value: 44
@@ -6639,6 +6815,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &961883451
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7636,6 +7815,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &990668240
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7742,6 +7924,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &993229162
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7848,6 +8033,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1015021270
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7954,6 +8142,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1030654988
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8060,6 +8251,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1037205855
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8166,6 +8360,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1051478387
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8272,6 +8469,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1064867946
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8378,6 +8578,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1073862599
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8484,6 +8687,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1097385405
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8590,6 +8796,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1178766442
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8698,6 +8907,14 @@ PrefabInstance:
       propertyPath: flashColor.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleIntensity
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: m_RootOrder
       value: 36
@@ -8785,6 +9002,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1239034067
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8888,6 +9108,14 @@ PrefabInstance:
     - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
       propertyPath: flashColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: camRumbleDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: camRumbleIntensity
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
       propertyPath: m_RootOrder
@@ -9083,6 +9311,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1291634555
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9189,6 +9420,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1292003317
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9295,6 +9529,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1316864364
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9428,6 +9665,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1399622218
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14991,6 +15231,14 @@ PrefabInstance:
       propertyPath: flashColor.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleIntensity
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: m_RootOrder
       value: 41
@@ -15078,6 +15326,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1516052363
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15184,6 +15435,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1519694496
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15290,6 +15544,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1534278519
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15396,6 +15653,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1535861220
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15499,6 +15759,14 @@ PrefabInstance:
     - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
       propertyPath: flashColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: camRumbleDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: camRumbleIntensity
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
       propertyPath: m_RootOrder
@@ -15618,6 +15886,14 @@ PrefabInstance:
     - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: flashColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleIntensity
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: m_RootOrder
@@ -16187,6 +16463,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1723953686
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16293,6 +16572,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1726203326
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16397,6 +16679,14 @@ PrefabInstance:
       propertyPath: flashColor.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: camRumbleDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: camRumbleIntensity
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
       propertyPath: m_RootOrder
       value: 48
@@ -16484,6 +16774,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1805942749
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16590,6 +16883,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1832538379
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16697,6 +16993,14 @@ PrefabInstance:
     - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: flashColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleIntensity
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: m_RootOrder
@@ -16830,6 +17134,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1867786099
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16934,6 +17241,14 @@ PrefabInstance:
       propertyPath: flashColor.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: camRumbleDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: camRumbleIntensity
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
       propertyPath: m_RootOrder
       value: 37
@@ -17018,6 +17333,14 @@ PrefabInstance:
     - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
       propertyPath: flashColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: camRumbleDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: camRumbleIntensity
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
       propertyPath: m_RootOrder
@@ -17136,6 +17459,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1926211253
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17242,6 +17568,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1929088473
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17348,6 +17677,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &1970109448
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17454,6 +17786,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &2028224249
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17560,6 +17895,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &2041134302
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17668,6 +18006,14 @@ PrefabInstance:
       propertyPath: flashColor.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: camRumbleIntensity
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: m_RootOrder
       value: 38
@@ -17752,6 +18098,14 @@ PrefabInstance:
     - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
       propertyPath: flashColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: camRumbleDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: camRumbleIntensity
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
       propertyPath: m_RootOrder
@@ -17994,6 +18348,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &2128679004
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18100,6 +18457,9 @@ MonoBehaviour:
   objToFlash: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 3
+  camRumbleIntensity: 0.2
+  camRumbleSpeed: 10
+  camRumbleDuration: 0.1
 --- !u!212 &2136225980
 SpriteRenderer:
   m_ObjectHideFlags: 0
