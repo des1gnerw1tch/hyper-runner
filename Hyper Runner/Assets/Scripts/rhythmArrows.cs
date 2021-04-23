@@ -18,6 +18,7 @@ public class rhythmArrows : MonoBehaviour
         Parallax.multiplier = surroundingSpeedMultiplier;
         levelManager.UpdateSpeeds();
         UpdateValidDanceKeys();
+        FindObjectOfType<CameraShake>().Begin(.5f, 15f, 1f);
       }
     }
 
