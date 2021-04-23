@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class ShakeOnCollide : MonoBehaviour
 {
-  //test script, will delete later
+  [SerializeField] private float intensity;
+  [SerializeField] private float speed;
+  [SerializeField] private float duration;
+
   void OnTriggerEnter2D(Collider2D other) {
     if (other.CompareTag("Player")) {
-      FindObjectOfType<CameraShake>().Begin(.5f, 10f, 1f);
+      FindObjectOfType<CameraShake>().Begin(intensity, speed, duration);
     }
   }
 }

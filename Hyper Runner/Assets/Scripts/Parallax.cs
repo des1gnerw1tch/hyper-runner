@@ -11,6 +11,7 @@ public class Parallax : MonoBehaviour
     // Update is called once per frame
     void Start()  {
       // multiplier will increase parallax effect by a scalar. Set to 1 on start every time
+      cameraMovement = GameObject.FindWithTag("CameraHolder").GetComponent<Move>();
       multiplier = 1;
     }
     void Update()
