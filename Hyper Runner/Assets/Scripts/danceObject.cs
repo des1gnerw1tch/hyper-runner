@@ -19,6 +19,9 @@ public class danceObject : MonoBehaviour
     [SerializeField] private Flash objToFlash;
     [SerializeField] private Color flashColor;
     [SerializeField] private float flashSpeed;
+    [SerializeField] private float camRumbleIntensity;
+    [SerializeField] private float camRumbleSpeed;
+    [SerializeField] private float camRumbleDuration;
 
     void Start()  {
       player = GameObject.FindWithTag("Player").GetComponent<Transform>();
@@ -59,6 +62,7 @@ public class danceObject : MonoBehaviour
       }
 
       Instantiate(destroyEffect, transform.position, Quaternion.identity);
+      FindObjectOfType<CameraShake>().Begin(camRumbleIntensity, camRumbleSpeed, camRumbleDuration);
       Destroy(gameObject);
     }
 
