@@ -26,16 +26,13 @@ public class CameraShake : MonoBehaviour
     // will shake the camera, set amplitude and duration variables
 
     public void Begin(float _amplitude, float _speed, float _duration)  {
+      ResetVariables();
       amplitude = _amplitude;
       speed = _speed;
       duration = _duration;
       StartCoroutine("StopShake");
-      active = true;
       // set up first shake
       target = RandVector();
-      nextCycle = "shake";
-      xReached = false;
-      yReached = false;
     }
 
     void Update()
@@ -48,7 +45,7 @@ public class CameraShake : MonoBehaviour
           transform.localPosition = new Vector3(planeVector.x, planeVector.y, transform.localPosition.z);
         } else {
           if (shakeStopped && nextCycle == "shake") {
-            active = false;
+            active = false; // shaking ends here...
             shakeStopped = false;
           } else if (nextCycle == "shake")  {
             target = RandVector();
@@ -81,5 +78,13 @@ public class CameraShake : MonoBehaviour
      Vector2 ResetPosition()  {
        Vector2 vector = new Vector2(originalCamX, originalCamY);
        return vector;
+     }
+
+     void ResetVariables()  {
+       active = true;
+       yReached = false;
+       xReached = false;
+       nextCycle = "shake";
+       shakeStopped = false;
      }
 }
