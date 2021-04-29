@@ -6,12 +6,14 @@ public class arcadeMachine : MonoBehaviour
 {
     [SerializeField] private GameObject playerCam;
     [SerializeField] private GameObject animCam;
+    [SerializeField] private GameObject backlight;
     private bool animationPlaying;
 
     void Start()
     {
       playerCam.SetActive(true);
       animCam.SetActive(false);
+      backlight.SetActive(false);
       animationPlaying = false;
     }
 
@@ -21,6 +23,7 @@ public class arcadeMachine : MonoBehaviour
         animationPlaying = true;
         playerCam.SetActive(false);
         animCam.SetActive(true);
+        backlight.SetActive(true);
         Debug.Log("Worked");
       }
     }

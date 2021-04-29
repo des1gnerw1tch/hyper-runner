@@ -1125,6 +1125,7 @@ GameObject:
   - component: {fileID: 1434544837}
   - component: {fileID: 1434544839}
   - component: {fileID: 1434544838}
+  - component: {fileID: 1434544840}
   m_Layer: 5
   m_Name: Backlight
   m_TagString: Untagged
@@ -1164,14 +1165,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1189,6 +1190,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434544836}
   m_CullTransparentMesh: 1
+--- !u!95 &1434544840
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434544836}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ff7652b4314754d0a832281c07571631, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1684695080
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,6 +1400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCam: {fileID: 836202811}
   animCam: {fileID: 896394964}
+  backlight: {fileID: 1434544836}
 --- !u!4 &2010812674 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c05fcb68963bc44e7a7cb70126aa076e, type: 3}
