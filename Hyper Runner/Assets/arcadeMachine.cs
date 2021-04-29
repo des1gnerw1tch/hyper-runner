@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class arcadeMachine : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private GameObject playerCam;
+    [SerializeField] private GameObject animCam;
+    private bool animationPlaying;
+
     void Start()
     {
-        
+      playerCam.SetActive(true);
+      animCam.SetActive(false);
+      animationPlaying = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void OnTriggerStay(Collider other)  {
+      if (other.CompareTag("Player") && Input.GetKeyDown("e") && !animationPlaying)  {
+        // start animation
+        animationPlaying = true;
+        playerCam.SetActive(false);
+        animCam.SetActive(true);
+        Debug.Log("Worked");
+      }
     }
 }
