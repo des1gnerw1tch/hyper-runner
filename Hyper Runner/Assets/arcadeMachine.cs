@@ -7,6 +7,7 @@ public class arcadeMachine : MonoBehaviour
     [SerializeField] private GameObject playerCam;
     [SerializeField] private GameObject animCam;
     [SerializeField] private GameObject backlight;
+    [SerializeField] private GameObject popUpText;
     private bool animationPlaying;
 
     void Start()
@@ -14,6 +15,7 @@ public class arcadeMachine : MonoBehaviour
       playerCam.SetActive(true);
       animCam.SetActive(false);
       backlight.SetActive(false);
+      popUpText.SetActive(false);
       animationPlaying = false;
     }
 
@@ -24,7 +26,20 @@ public class arcadeMachine : MonoBehaviour
         playerCam.SetActive(false);
         animCam.SetActive(true);
         backlight.SetActive(true);
+        popUpText.SetActive(false);
         Debug.Log("Worked");
+      }
+    }
+
+    void OnTriggerEnter(Collider other) {
+      if (other.CompareTag("Player")) {
+        popUpText.SetActive(true);
+      }
+    }
+
+    void OnTriggerExit(Collider other) {
+      if (other.CompareTag("Player")) {
+        popUpText.SetActive(false);
       }
     }
 }
