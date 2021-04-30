@@ -36,7 +36,7 @@ public class danceObject : MonoBehaviour
 
       // despawn object if missed
       if ((player.position.x - transform.position.x) >= distanceUntilDestroy)  {
-        characterHealth.AddCharisma(-30f);
+        characterHealth.AddCharisma(-10f);
         FindObjectOfType<danceTileManager>().ActivateNextFowardKey();
         Destroy(this.gameObject);
       }
@@ -53,15 +53,15 @@ public class danceObject : MonoBehaviour
 
       if (score > 9.7)  {
         SpawnScoreText(perfectText); // spawn perfect text
-        characterHealth.AddCharisma(15f);
-      } else if (score > 9.5) {
         characterHealth.AddCharisma(10f);
+      } else if (score > 9.5) {
+        characterHealth.AddCharisma(3f);
         SpawnScoreText(goodText); // spawn good text
       } else if (score > 9) {
-        characterHealth.AddCharisma(-15f);
+        characterHealth.AddCharisma(0f);
         SpawnScoreText(okText); // spawn ok text
       } else  {
-        characterHealth.AddCharisma(-30f);
+        characterHealth.AddCharisma(-10f);
       }
 
       Instantiate(destroyEffect, transform.position, Quaternion.identity);
