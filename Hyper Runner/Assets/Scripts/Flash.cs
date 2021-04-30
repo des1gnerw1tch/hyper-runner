@@ -9,7 +9,7 @@ public class Flash : MonoBehaviour
 {
     [SerializeField] private Color flashColor;
     [SerializeField] private Material material;
-    [SerializeField] private float fadeSpeed;
+    private float fadeSpeed;
     private float alpha;
     private Color NO_COLOR = new Color(0, 0, 0, 0);
 
@@ -37,7 +37,6 @@ public class Flash : MonoBehaviour
       if (alpha > 0)  {
         alpha = Mathf.Clamp01(alpha - (fadeSpeed * Time.deltaTime));
         flashColor.a = alpha;
-        Debug.Log(alpha);
         material.SetColor("_TintColor", flashColor);
       }
     }

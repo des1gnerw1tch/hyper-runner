@@ -17,10 +17,6 @@ public class danceObject : MonoBehaviour
     [SerializeField] private GameObject goodText;
     [SerializeField] private GameObject perfectText;
     [SerializeField] private GameObject canvas;
-    [SerializeField] private Flash objToFlash;
-    [SerializeField] private Color flashColor;
-    [SerializeField] private Color negativeFlashColor;
-    [SerializeField] private float flashSpeed;
     [SerializeField] private float camRumbleIntensity;
     [SerializeField] private float camRumbleSpeed;
     [SerializeField] private float camRumbleDuration;
@@ -40,7 +36,6 @@ public class danceObject : MonoBehaviour
         characterHealth.AddCharisma(-10f);
         FindObjectOfType<danceTileManager>().ActivateNextFowardKey();
         FindObjectOfType<AudioManager>().Play("negative");
-        objToFlash.StartFlash(negativeFlashColor, flashSpeed);
         Destroy(this.gameObject);
       }
     }
@@ -57,23 +52,19 @@ public class danceObject : MonoBehaviour
         SpawnScoreText(perfectText); // spawn perfect text
         characterHealth.AddCharisma(10f);
         FindObjectOfType<AudioManager>().Play("metronome");
-        objToFlash.StartFlash(flashColor, flashSpeed);
       } else if (score > 9.5) {
         characterHealth.AddCharisma(3f);
         SpawnScoreText(goodText); // spawn good text
         FindObjectOfType<AudioManager>().Play("metronome");
-        objToFlash.StartFlash(flashColor, flashSpeed);
       } else if (score > 9) {
         if (characterHealth.charisma > 50f) {
           characterHealth.AddCharisma(-5f); // "okay" rating will only penalize if at high-charisma
         }
         FindObjectOfType<AudioManager>().Play("metronome");
         SpawnScoreText(okText); // spawn ok text
-        objToFlash.StartFlash(flashColor, flashSpeed);
       } else  {
         characterHealth.AddCharisma(-10f);
         FindObjectOfType<AudioManager>().Play("negative");
-        objToFlash.StartFlash(negativeFlashColor, flashSpeed);
       }
 
       Instantiate(destroyEffect, transform.position, Quaternion.identity);

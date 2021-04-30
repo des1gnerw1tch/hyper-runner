@@ -20635,6 +20635,46 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: f1159b2c342e44ef7b9bec6ef1c3475f, type: 2}
     - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
+      propertyPath: flashSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
+      propertyPath: objToFlash
+      value: 
+      objectReference: {fileID: 1424509934}
+    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
+      propertyPath: negFlashColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
+      propertyPath: negFlashColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
+      propertyPath: negFlashColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
+      propertyPath: negFlashColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
+      propertyPath: posFlashColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
+      propertyPath: posFlashColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
+      propertyPath: posFlashColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
+      propertyPath: posFlashColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
       propertyPath: portrait_animator
       value: 
       objectReference: {fileID: 915094033}

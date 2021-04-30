@@ -10,6 +10,10 @@ public class CharacterHealth : MonoBehaviour
   private const float MIN_CHARISMA = 0f;
   private const float MAX_CHARISMA = 100f;
   [SerializeField] private Animator portrait_animator;
+  [SerializeField] private Flash objToFlash;
+  [SerializeField] private Color posFlashColor;
+  [SerializeField] private Color negFlashColor;
+  [SerializeField] private float flashSpeed;
 
   void Start()  {
     charisma = 70f;
@@ -43,6 +47,7 @@ public class CharacterHealth : MonoBehaviour
     float raw = charisma + value;
     charisma = Mathf.Clamp(raw, MIN_CHARISMA, MAX_CHARISMA);
     UpdatePortrait();
+    TintPlayer(value);
     if (charisma == 0)  {
       Die();
     }
@@ -57,6 +62,14 @@ public class CharacterHealth : MonoBehaviour
       portrait_animator.SetTrigger("2");
     } else if (charisma >= 0)  {
       portrait_animator.SetTrigger("1");
+    }
+  }
+
+  private void TintPlayer(float num)  {
+    if (num > 0)  {
+      objToFlash.StartFlash(posFlashColor, flashSpeed);
+    } else {
+      objToFlash.StartFlash(negFlashColor, flashSpeed);
     }
   }
 
