@@ -82,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
       jumpsLeft = 2;
       animator.SetBool("jumping", false);
       audio.Play("landing");
+      FindObjectOfType<CameraShake>().Begin(.02f, 10, .1f);
   }
 
   void OnCollisionExit2D(Collision2D other) {
