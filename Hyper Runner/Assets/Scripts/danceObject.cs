@@ -58,7 +58,9 @@ public class danceObject : MonoBehaviour
         characterHealth.AddCharisma(3f);
         SpawnScoreText(goodText); // spawn good text
       } else if (score > 9) {
-        characterHealth.AddCharisma(0f);
+        if (characterHealth.charisma > 50f) {
+          characterHealth.AddCharisma(-5f); // "okay" rating will only penalize if at high-charisma 
+        }
         SpawnScoreText(okText); // spawn ok text
       } else  {
         characterHealth.AddCharisma(-10f);

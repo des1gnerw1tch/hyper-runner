@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class CharacterHealth : MonoBehaviour
 {
   [SerializeField] private Collider2D frontCollider;
-  [SerializeField] private float charisma = 70f;
+  public float charisma = 70f;
   private const float MIN_CHARISMA = 0f;
   private const float MAX_CHARISMA = 100f;
   [SerializeField] private Animator portrait_animator;
