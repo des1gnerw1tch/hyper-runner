@@ -7,6 +7,7 @@ public class PlatformArrows : MonoBehaviour
     [SerializeField] private sunsetManager levelManager;
     [SerializeField] private float playerRunningSpeed;
     [SerializeField] private float surroundingSpeedMultiplier;
+    [SerializeField] private danceTileManager danceManager;
 
     void OnTriggerEnter2D(Collider2D other)  {
       if (other.CompareTag("Player")) {
@@ -14,6 +15,7 @@ public class PlatformArrows : MonoBehaviour
         levelManager.playerCamMoveSpeed = playerRunningSpeed;
         Parallax.multiplier = surroundingSpeedMultiplier;
         levelManager.UpdateSpeeds();
+        danceManager.gameObject.SetActive(false);
       }
     }
 }

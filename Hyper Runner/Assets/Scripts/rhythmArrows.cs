@@ -9,6 +9,7 @@ public class rhythmArrows : MonoBehaviour
     [SerializeField] private float surroundingSpeedMultiplier;
 
     [SerializeField] private Transform player;
+    [SerializeField] private danceTileManager danceManager;
 
     void OnTriggerEnter2D(Collider2D other) {
       if (other.CompareTag("Player")) {
@@ -16,8 +17,8 @@ public class rhythmArrows : MonoBehaviour
         levelManager.playerCamMoveSpeed = playerFloatingSpeed;
         Parallax.multiplier = surroundingSpeedMultiplier;
         levelManager.UpdateSpeeds();
-        //UpdateValidDanceKeys();
-        //FindObjectOfType<CameraShake>().Begin(.5f, 15f, 1f);
+        danceManager.gameObject.SetActive(true);
+        danceManager.UpdateValidDanceKeys();
       }
     }
 }
