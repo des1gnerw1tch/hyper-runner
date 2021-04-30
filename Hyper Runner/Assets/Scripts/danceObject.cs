@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+    // Normal Dance Tile, press a key to interact
 public class danceObject : MonoBehaviour
 {
     private Transform player;
@@ -33,9 +34,11 @@ public class danceObject : MonoBehaviour
         Pressed();
       }
 
-      // kill player if goes to far
+      // despawn object if missed
       if ((player.position.x - transform.position.x) >= distanceUntilDestroy)  {
         characterHealth.AddCharisma(-30f);
+        FindObjectOfType<danceTileManager>().ActivateNextFowardKey();
+        Destroy(this.gameObject);
       }
     }
 
