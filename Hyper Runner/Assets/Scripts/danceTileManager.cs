@@ -15,15 +15,17 @@ public class danceTileManager : MonoBehaviour
 
   //Makes sure that only 1 dance key is okay to press at one time
   void UpdateValidDanceKeys() {
-    danceObject[] objs = FindObjectsOfType<danceObject>();
+    //finding closest active DanceTile object
+    GameObject[] objs = GameObject.FindGameObjectsWithTag("DanceTile");
     if (objs.Length != 0) {
-      danceObject closest = objs[0];
-      foreach (danceObject obj in objs) {
+      GameObject closest = objs[0];
+      foreach (GameObject obj in objs) {
         if (obj.gameObject.GetComponent<Transform>().position.x < closest.GetComponent<Transform>().position.x) {
           closest = obj;
         }
       }
-      closest.active = true;
+      // Makes closest DanceTile object active
+      closest.GetComponent<danceObject>().active = true;
     }
   }
 }
