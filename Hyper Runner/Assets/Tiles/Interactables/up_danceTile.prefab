@@ -104,7 +104,8 @@ MonoBehaviour:
   perfectText: {fileID: 3331136396928422065, guid: ed53a89ed2aa54e3ea90a4c2a9d0ec76, type: 3}
   canvas: {fileID: 0}
   objToFlash: {fileID: 0}
-  flashColor: {r: 0, g: 0, b: 0, a: 0}
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  negativeFlashColor: {r: 1, g: 0, b: 0, a: 1}
   flashSpeed: 0
   camRumbleIntensity: 0.2
   camRumbleSpeed: 10
