@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 // handles activating dance tiles, the once closest to the player
 public class danceTileManager : MonoBehaviour
@@ -9,7 +10,7 @@ public class danceTileManager : MonoBehaviour
   void Update() {
     // Will update active dance key, on KeyUp because want to make sure
     // first object when clicked is deleted first (which is on KeyDown)
-    if (Input.GetKeyUp("up") || Input.GetKey("down")) {
+    if (Input.GetKeyUp("up") || Input.GetKeyUp("down")) {
       UpdateValidDanceKeys();
     }
   }
@@ -27,7 +28,7 @@ public class danceTileManager : MonoBehaviour
         }
       }
       // Makes closest DanceTile object active
-      closest.GetComponent<danceObject>().active = true;
+      enableDanceKey(closest);
     }
   }
 
@@ -48,7 +49,22 @@ public class danceTileManager : MonoBehaviour
         }
       }
       // Makes closest DanceTile object active
-      closest.GetComponent<danceObject>().active = true;
+      enableDanceKey(closest);
+
+    }
+  }
+
+  void enableDanceKey(GameObject obj)  {
+    try {
+      obj.GetComponent<danceObject>().active = true;
+    } catch {
+      Debug.Log("Object was not single key");
+    }
+
+    try {
+      obj.GetComponent<holdDanceObject>().active = true;
+    } catch {
+      Debug.Log("Object was not hold key");
     }
   }
 
