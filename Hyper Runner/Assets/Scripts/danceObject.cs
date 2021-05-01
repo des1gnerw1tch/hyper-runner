@@ -17,6 +17,7 @@ public class danceObject : MonoBehaviour
     [SerializeField] private GameObject okText;
     [SerializeField] private GameObject goodText;
     [SerializeField] private GameObject perfectText;
+    [SerializeField] private GameObject missedText;
     [SerializeField] private GameObject canvas;
     [SerializeField] private float camRumbleIntensity;
     [SerializeField] private float camRumbleSpeed;
@@ -41,6 +42,7 @@ public class danceObject : MonoBehaviour
           Debug.Log("tried to access dance tile manager when it was deactivated");
         }
         FindObjectOfType<AudioManager>().Play("negative");
+        SpawnScoreText(missedText); // spawn missed text pop up
         Destroy(this.gameObject);
       }
     }
@@ -73,6 +75,7 @@ public class danceObject : MonoBehaviour
         SpawnScoreText(okText); // spawn ok text
       } else  {
         characterHealth.AddCharisma(-10f);
+        SpawnScoreText(missedText); // spawn missed text pop up
         FindObjectOfType<AudioManager>().Play("negative");
       }
 

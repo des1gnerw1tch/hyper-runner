@@ -19,6 +19,7 @@ public class holdDanceObject : MonoBehaviour
     [SerializeField] private GameObject okText;
     [SerializeField] private GameObject goodText;
     [SerializeField] private GameObject perfectText;
+    [SerializeField] private GameObject missedText;
     [SerializeField] private GameObject canvas;
     [SerializeField] private float camRumbleIntensity;
     [SerializeField] private float camRumbleSpeed;
@@ -50,6 +51,7 @@ public class holdDanceObject : MonoBehaviour
         } catch (Exception e) {
           Debug.Log("tried to access dance tile manager when it was deactivated");
         }
+        SpawnScoreText(missedText); // spawn missed text pop up
         FindObjectOfType<AudioManager>().Play("negative");
         Destroy(gameObject);
       }
@@ -71,6 +73,7 @@ public class holdDanceObject : MonoBehaviour
         } else { // if first press is faliure
           active = false;
           Instantiate(destroyEffect, transform.position, Quaternion.identity);
+          SpawnScoreText(missedText); // spawn missed text pop up
           Destroy(gameObject);
         }
 
@@ -117,6 +120,7 @@ public class holdDanceObject : MonoBehaviour
         SpawnScoreText(okText); // spawn ok text
       } else  {
         characterHealth.AddCharisma(-10f);
+        SpawnScoreText(missedText); // spawn missed text pop up
         FindObjectOfType<AudioManager>().Play("negative");
       }
     }
