@@ -44,7 +44,9 @@ public class holdDanceObject : MonoBehaviour
       }
 
       // despawn object if missed
-      if ((player.position.x - transform.position.x) >= distanceUntilDestroy && firstPress)  {
+      bool missedEntry = (player.position.x - transform.position.x) >= distanceUntilDestroy;
+      bool missedExit = (player.position.x - endNode.position.x) >= distanceUntilDestroy;
+      if ((missedEntry && firstPress) || missedExit)  {
         characterHealth.AddCharisma(-10f);
         try {
           FindObjectOfType<danceTileManager>().ActivateNextFowardKey();
