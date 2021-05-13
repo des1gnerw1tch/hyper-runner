@@ -69,8 +69,6 @@ public class CameraShake : MonoBehaviour
      Vector2 RandVector()  {
        float xPos = transform.localPosition.x + Random.Range(-amplitude, amplitude);
        float yPos = transform.localPosition.y + Random.Range(-amplitude, amplitude);
-       Debug.Log(xPos);
-       Debug.Log(yPos);
        Vector2 vector = new Vector2(xPos, yPos);
        return vector;
      }
