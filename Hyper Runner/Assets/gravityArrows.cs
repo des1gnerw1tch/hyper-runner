@@ -6,6 +6,7 @@ public class gravityArrows : MonoBehaviour
 {   // player fields
     [SerializeField] private Transform player;
     [SerializeField] private SpriteRenderer sprite;
+    [SerializeField] private PlayerMovement movement;
     [SerializeField] private Flash flashObject;
     [SerializeField] private Color flashColor;
     [SerializeField] private float flashSpeed;
@@ -32,6 +33,7 @@ public class gravityArrows : MonoBehaviour
       player.rotation = Quaternion.Euler(Vector3.forward * rotation);
       sprite.flipX = true;
       flashObject.StartFlash(flashColor, flashSpeed);
+      movement.jumpsLeft -= 1;
       active = false;
     }
 
@@ -40,6 +42,7 @@ public class gravityArrows : MonoBehaviour
       player.rotation = Quaternion.Euler(Vector3.forward * 0);
       sprite.flipX = false;
       flashObject.StartFlash(flashColor, flashSpeed);
+      movement.jumpsLeft -= 1;
       active = false;
     }
 }

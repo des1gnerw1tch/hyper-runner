@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
   public float jumpPower;
 
   private bool touchingGround;
-  private int jumpsLeft;
+  [HideInInspector] public int jumpsLeft;
   private float initialGravity;
 
   [SerializeField] private Rigidbody2D rb;
@@ -20,6 +20,10 @@ public class PlayerMovement : MonoBehaviour
   private float lastSample;
   private float thisSample;
 
+  [Header("When double jump")]
+  [SerializeField] private Flash flashObject;
+  [SerializeField] private Color flashColor;
+  [SerializeField] private float flashSpeed;
   void Start()  {
     audio = FindObjectOfType<AudioManager>();
     initialGravity = rb.gravityScale;
@@ -64,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
     //this will double jump, happens when jumping and not touching ground
     if (!touchingGround)  {
       animator.SetTrigger("doubleJump");
+      flashObject.StartFlash(flashColor, flashSpeed);
       audio.Play("jump2");
     } else {
       audio.Play("jump1");
@@ -79,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
   }
   void TouchGround()  {
       touchingGround = true;
-      jumpsLeft = 2;
+      jumpsLeft = 1;
       animator.SetBool("jumping", false);
       audio.Play("landing");
       FindObjectOfType<CameraShake>().Begin(.02f, 10, .1f);
