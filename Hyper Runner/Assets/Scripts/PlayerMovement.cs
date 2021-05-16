@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
       // double jump
       animator.SetTrigger("doubleJump");
       flashObject.StartFlash(flashColor, flashSpeed);
-      audio.Play("jump2");
+      audio.Play("clap");
       musicSync.changePitch(SLOMOPITCH, SLOMODURATION);
       cameraAnimator.SetTrigger("parry");
     } else {
