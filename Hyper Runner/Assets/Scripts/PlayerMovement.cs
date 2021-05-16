@@ -24,6 +24,12 @@ public class PlayerMovement : MonoBehaviour
   [SerializeField] private Flash flashObject;
   [SerializeField] private Color flashColor;
   [SerializeField] private float flashSpeed;
+
+  // parry slo mo effect information
+  [SerializeField] private MusicSync musicSync;
+  private const float SLOMOPITCH = .3f;
+  private const float SLOMODURATION = .3f;
+
   void Start()  {
     audio = FindObjectOfType<AudioManager>();
     initialGravity = rb.gravityScale;
@@ -65,12 +71,14 @@ public class PlayerMovement : MonoBehaviour
     rb.AddForce(transform.up * jumpPower, ForceMode2D.Impulse);
     jumpsLeft-= 1;
 
-    //this will double jump, happens when jumping and not touching ground
     if (!touchingGround)  {
+      // double jump
       animator.SetTrigger("doubleJump");
       flashObject.StartFlash(flashColor, flashSpeed);
       audio.Play("jump2");
+      musicSync.changePitch(SLOMOPITCH, SLOMODURATION);
     } else {
+      // normal jump
       audio.Play("jump1");
     }
 

@@ -8,6 +8,8 @@ public class MusicSync : MonoBehaviour
     private float thisSample;
     private float lastSample;
     public static float deltaSample;
+    private float pitch;
+    private float duration;
     void Start()
     {
       deltaSample = 0f;
@@ -20,5 +22,19 @@ public class MusicSync : MonoBehaviour
       deltaSample = (thisSample - lastSample) / 90000;
       lastSample = thisSample;
       //Debug.Log(deltaSample);
+    }
+
+    // changes pitch for # of seconds
+    public void changePitch(float pitch, float duration) {
+      this.pitch = pitch;
+      this.duration = duration;
+      StartCoroutine("pitchChange");
+    }
+
+    IEnumerator pitchChange() {
+      float originalPitch = levelMusic.pitch;
+      levelMusic.pitch = pitch;
+      yield return new WaitForSeconds(duration);
+      levelMusic.pitch = originalPitch;
     }
 }
