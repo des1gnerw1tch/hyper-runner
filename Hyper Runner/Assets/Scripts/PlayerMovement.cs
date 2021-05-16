@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
   public float jumpPower;
 
   private bool touchingGround;
-  [HideInInspector] public int jumpsLeft;
+  /*[HideInInspector]*/ public int jumpsLeft;
   private float initialGravity;
 
   [SerializeField] private Rigidbody2D rb;
@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
   // parry slo mo effect information
   [SerializeField] private MusicSync musicSync;
   [SerializeField] private Animator cameraAnimator;
-  private const float SLOMOPITCH = .3f;
+  private const float SLOMOPITCH = .5f;
   private const float SLOMODURATION = .3f;
 
   void Start()  {

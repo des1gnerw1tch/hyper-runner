@@ -19,7 +19,7 @@ public class parryObject : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)  {
       if (other.CompareTag("Player")) {
-        movement.jumpsLeft -= 1;
+        movement.jumpsLeft = 0;
       }
       Debug.Log("Exited Parry object");
     }
