@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
   // parry slo mo effect information
   [SerializeField] private MusicSync musicSync;
+  [SerializeField] private Animator cameraAnimator;
   private const float SLOMOPITCH = .3f;
   private const float SLOMODURATION = .3f;
 
@@ -77,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
       flashObject.StartFlash(flashColor, flashSpeed);
       audio.Play("jump2");
       musicSync.changePitch(SLOMOPITCH, SLOMODURATION);
+      cameraAnimator.SetTrigger("parry");
     } else {
       // normal jump
       audio.Play("jump1");
