@@ -105,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
     if (other.gameObject.CompareTag("Ground")) {
       touchingGround = false;
       animator.SetBool("jumping", true);
+      jumpsLeft = 0;
     }
   }
   // this will set our players animator controller to the platformer animator controller

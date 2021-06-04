@@ -5879,7 +5879,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: landing
     clip: {fileID: 8300000, guid: 2f029337a35014e45ad76c3b67d03d05, type: 3}
-    volume: 1
+    volume: 0
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -5915,13 +5915,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: clap
     clip: {fileID: 8300000, guid: 75f5bb4bc938447f0bb3e3afb85d2c97, type: 3}
-    volume: 1
+    volume: 0.805
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: lets do this
     clip: {fileID: 8300000, guid: 12971c644991e427bb7a66b85dc287e7, type: 3}
-    volume: 1
+    volume: 0.539
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -22622,11 +22622,11 @@ PrefabInstance:
       objectReference: {fileID: 915094033}
     - target: {fileID: 3875587539062391384, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
       propertyPath: m_Size.y
-      value: 0.7657651
+      value: 0.8082268
       objectReference: {fileID: 0}
     - target: {fileID: 3875587539062391384, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
       propertyPath: m_Offset.y
-      value: -0.7663942
+      value: -0.71066487
       objectReference: {fileID: 0}
     - target: {fileID: 7858300630071390444, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
       propertyPath: m_IsActive
