@@ -28,13 +28,14 @@ public class PlayerMovement : MonoBehaviour
   // parry slo mo effect information
   [SerializeField] private MusicSync musicSync;
   [SerializeField] private Animator cameraAnimator;
-  private const float SLOMOPITCH = .5f;
+  private const float SLOMOPITCH = 1f;
   private const float SLOMODURATION = .3f;
 
   void Start()  {
     audio = FindObjectOfType<AudioManager>();
     initialGravity = rb.gravityScale;
   }
+
   void Update()
   {
     transform.position = new Vector3 (transform.position.x + speed * MusicSync.deltaSample,
@@ -109,6 +110,18 @@ public class PlayerMovement : MonoBehaviour
   // this will set our players animator controller to the platformer animator controller
   public void SetAnimatorControllerAsPlatformer() {
     animator.runtimeAnimatorController = platformAnimator;
+  }
+
+  // when player enters parry object
+  public void enterParryObject()  {
+    jumpsLeft = 1;
+  }
+
+  // when player leaves parry obbject
+  public void exitParryObject() {
+    if (!touchingGround) {
+      jumpsLeft = 0;
+    }
   }
 
 

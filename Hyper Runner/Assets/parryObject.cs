@@ -10,17 +10,17 @@ public class parryObject : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
       if (isActive) {
         if (other.CompareTag("Player")) {
-          movement.jumpsLeft += 1;
+          movement.enterParryObject();
           isActive = false;
+          Debug.Log("Entered Parry object");
         }
       }
-      Debug.Log("Entered Parry object");
     }
 
     void OnTriggerExit2D(Collider2D other)  {
       if (other.CompareTag("Player")) {
-        movement.jumpsLeft = 0;
+        movement.exitParryObject();
+        Debug.Log("Exited Parry object");
       }
-      Debug.Log("Exited Parry object");
     }
 }
