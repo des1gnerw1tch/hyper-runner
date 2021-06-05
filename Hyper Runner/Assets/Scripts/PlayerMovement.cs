@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
   [SerializeField] private Animator cameraAnimator;
   private const float SLOMOPITCH = 1f;
   private const float SLOMODURATION = 1f;
+  private AParryObject parryObject;
 
   void Start()  {
     audio = FindObjectOfType<AudioManager>();
@@ -80,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
       audio.Play("clap");
       musicSync.changePitch(SLOMOPITCH, SLOMODURATION);
       cameraAnimator.SetTrigger("parry");
+      parryObject.onParry();
     } else {
       // normal jump
       audio.Play("jump1");
@@ -93,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
         TouchGround();
     }
   }
+
   void TouchGround()  {
       touchingGround = true;
       jumpsLeft = 1;
@@ -114,14 +117,16 @@ public class PlayerMovement : MonoBehaviour
   }
 
   // when player enters parry object
-  public void enterParryObject()  {
+  public void enterParryObject(AParryObject parryObject)  {
     jumpsLeft = 1;
+    this.parryObject = parryObject;
   }
 
   // when player leaves parry obbject
   public void exitParryObject() {
     if (!touchingGround) {
       jumpsLeft = 0;
+      this.parryObject = null;
     }
   }
 

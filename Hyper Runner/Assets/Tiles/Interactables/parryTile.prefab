@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4427974079410937512}
   - component: {fileID: 4427974079410937513}
   - component: {fileID: 4427974079410937494}
-  - component: {fileID: 4427974079410937515}
   - component: {fileID: 273681452156355112}
+  - component: {fileID: 3571381935125422890}
   m_Layer: 0
   m_Name: parryTile
   m_TagString: Untagged
@@ -104,19 +104,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4427974079410937515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4427974079410937495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eea44f0b304054890b711a43069088d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movement: {fileID: 0}
 --- !u!58 &273681452156355112
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -133,3 +120,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.03}
   serializedVersion: 2
   m_Radius: 0.4112418
+--- !u!114 &3571381935125422890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4427974079410937495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef6f57184e93843869c41d4a43c44fb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
