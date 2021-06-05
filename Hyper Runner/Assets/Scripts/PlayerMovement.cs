@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
   [SerializeField] private MusicSync musicSync;
   [SerializeField] private Animator cameraAnimator;
   private const float SLOMOPITCH = 1f;
-  private const float SLOMODURATION = .3f;
+  private const float SLOMODURATION = 1f;
 
   void Start()  {
     audio = FindObjectOfType<AudioManager>();
