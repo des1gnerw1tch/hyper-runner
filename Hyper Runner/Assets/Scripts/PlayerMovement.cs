@@ -40,9 +40,10 @@ public class PlayerMovement : MonoBehaviour
     transform.position = new Vector3 (transform.position.x + speed * MusicSync.deltaSample,
       transform.position.y, transform.position.z);
 
-    if (Input.GetKeyDown("space") && jumpsLeft > 0)
+    // keyboard control
+    if (Input.GetKeyDown("space"))
         {
-            Jump();
+            OnJump();
         }
 //for mobile players
 
@@ -54,34 +55,45 @@ public class PlayerMovement : MonoBehaviour
     }*/
 
     //this will ground the player when holding s
-    if (Input.GetKey("s"))  {
+    /*if (Input.GetKey("s"))  {
       rb.gravityScale = 20;
     } else {
       rb.gravityScale = initialGravity;
-    }
+    }*/
 
     if (Input.GetKeyDown("o"))
         {
             Debug.Log(transform.position.x);
         }
-
   }
 
-  void Jump() {
-    rb.velocity =  new Vector2(rb.velocity.x, 0);;
-    rb.AddForce(transform.up * jumpPower, ForceMode2D.Impulse);
-    jumpsLeft-= 1;
+  public void OnFloorDown()  {
+    Debug.Log("Stick pressed");
+    rb.gravityScale = 20;
+  }
 
-    if (!touchingGround)  {
-      // double jump
-      animator.SetTrigger("doubleJump");
-      flashObject.StartFlash(flashColor, flashSpeed);
-      audio.Play("clap");
-      cameraAnimator.SetTrigger("parry");
-      parryObject.onParry();
-    } else {
-      // normal jump
-      audio.Play("jump1");
+  public void OnFloorUp()  {
+    Debug.Log("Stick released");
+    rb.gravityScale = initialGravity;
+  }
+
+  public void OnJump() {
+    if (jumpsLeft > 0)  {
+      rb.velocity =  new Vector2(rb.velocity.x, 0);;
+      rb.AddForce(transform.up * jumpPower, ForceMode2D.Impulse);
+      jumpsLeft-= 1;
+
+      if (!touchingGround)  {
+        // double jump
+        animator.SetTrigger("doubleJump");
+        flashObject.StartFlash(flashColor, flashSpeed);
+        audio.Play("clap");
+        cameraAnimator.SetTrigger("parry");
+        parryObject.onParry();
+      } else {
+        // normal jump
+        audio.Play("jump1");
+      }
     }
 
   }

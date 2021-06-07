@@ -27,6 +27,7 @@ public class danceObject : MonoBehaviour
       player = GameObject.FindWithTag("Player").GetComponent<Transform>();
       characterHealth = FindObjectOfType<CharacterHealth>();
     }
+
     void Update()
     {
       if (Input.GetKeyDown(keyToPress) && active) {
@@ -44,6 +45,19 @@ public class danceObject : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("negative");
         SpawnScoreText(missedText); // spawn missed text pop up
         Destroy(this.gameObject);
+      }
+    }
+
+
+    void OnUpDanceKeyPress()  {
+      if (keyToPress == "up" && active)  {
+        Pressed();
+      }
+    }
+
+    void OnDownDanceKeyPress()  {
+      if (keyToPress == "down" && active) {
+        Pressed();
       }
     }
 

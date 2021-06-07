@@ -1,0 +1,167 @@
+{
+    "name": "InputMaster",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "22f5051d-fd71-4012-b249-920c105eb816",
+            "actions": [
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "8ddda6ed-cb3c-40c2-bd75-133ba3008deb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "FloorDown",
+                    "type": "Button",
+                    "id": "92636550-eaad-49fc-83ae-4d641b28e354",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "FloorUp",
+                    "type": "Button",
+                    "id": "64afec85-3f8a-44ea-92bc-3ba5b2e31749",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4168ad15-e0e3-41d8-bda5-dffd3837f3f5",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox Control Scheme",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7bdde47d-8887-474a-b116-6ee8ba4fd457",
+                    "path": "<XInputController>/leftStick/down",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Xbox Control Scheme",
+                    "action": "FloorDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "01c454f2-7e2d-49b6-9fb1-df64ada081ff",
+                    "path": "<XInputController>/leftStick/down",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "Xbox Control Scheme",
+                    "action": "FloorUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Dance Keys",
+            "id": "a4ed752d-8478-4fca-a144-1973bc585256",
+            "actions": [
+                {
+                    "name": "UpDanceKeyPress",
+                    "type": "Button",
+                    "id": "163e3bc8-38e7-4bc2-9960-cac3c857ccb3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "UpDanceKeyRelease",
+                    "type": "Button",
+                    "id": "aaf918d7-51b2-48ff-bf71-5a9fd6a8b0b9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "DownDanceKeyPress",
+                    "type": "Button",
+                    "id": "4596c6a7-b2cb-4e69-8414-6987309753c8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "DownDanceKeyRelease",
+                    "type": "Button",
+                    "id": "f889207c-b3f6-4fd8-b789-175820196179",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "23e7114e-7de7-464c-8a8b-c9cfd9df80e9",
+                    "path": "<XInputController>/buttonNorth",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Xbox Control Scheme",
+                    "action": "UpDanceKeyPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e47e8428-c532-42b4-b16e-e4b16a0b230e",
+                    "path": "<XInputController>/buttonNorth",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "Xbox Control Scheme",
+                    "action": "UpDanceKeyRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1bf3ed89-49ca-4bfe-975d-d943e72524a9",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "Xbox Control Scheme",
+                    "action": "DownDanceKeyRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d913bab6-6f2d-4941-9c40-885293d3a808",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Xbox Control Scheme",
+                    "action": "DownDanceKeyPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Xbox Control Scheme",
+            "bindingGroup": "Xbox Control Scheme",
+            "devices": [
+                {
+                    "devicePath": "<XInputController>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
