@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
     // Normal Dance Tile, press a key to interact
-public class danceObject : MonoBehaviour, IDanceObject
+public class danceObject : ADanceObject
 {
     private Transform player;
     private CharacterHealth characterHealth;
@@ -49,38 +49,13 @@ public class danceObject : MonoBehaviour, IDanceObject
       }
     }
 
-    // Will be called from player object, as player is the only one with input connected
-    public void OnUpDanceKeyPress()  {
-      if (keyToPress == "up" && active)  {
-        Pressed();
-      }
-    }
-
-    public void OnDownDanceKeyPress()  {
-      if (keyToPress == "down" && active) {
-        Pressed();
-      }
-    }
-
-    public void OnUpDanceKeyRelease() {
-
-    }
-
-    public void OnDownDanceKeyRelease() {
-
-    }
-
-    public void OnAnyDanceKeyPress()  {
-
-    }
-
     void Pressed()  {
 
       float difference = Mathf.Abs(player.position.x - transform.position.x);
       score = 10 - difference;
       if (score < 0)
         score = 0;
-      Debug.Log("Score: " + score);
+      //Debug.Log("Score: " + score);
 
       if (score > 9.7)  {
         SpawnScoreText(perfectText); // spawn perfect text
@@ -120,6 +95,19 @@ public class danceObject : MonoBehaviour, IDanceObject
       float difX = UnityEngine.Random.Range(-wobble, wobble);
       float difY = UnityEngine.Random.Range(-wobble, wobble);
       image.GetComponent<RectTransform>().Translate(new Vector3(difX, difY, 0), Space.World);
+    }
+
+    // INPUT: Will be called from player object, as player is the only one with input connected
+    public override void OnUpDanceKeyPress()  {
+      if (keyToPress == "up" && active)  {
+        Pressed();
+      }
+    }
+
+    public override void OnDownDanceKeyPress()  {
+      if (keyToPress == "down" && active) {
+        Pressed();
+      }
     }
 
 }

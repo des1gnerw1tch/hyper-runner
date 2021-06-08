@@ -17,7 +17,7 @@ public class rhythmArrows : MonoBehaviour
         levelManager.playerCamMoveSpeed = playerFloatingSpeed;
         Parallax.multiplier = surroundingSpeedMultiplier;
         levelManager.UpdateSpeeds();
-        danceManager.gameObject.SetActive(true);
+        danceManager.enabled = true;
         danceManager.UpdateValidDanceKeys();
       }
     }

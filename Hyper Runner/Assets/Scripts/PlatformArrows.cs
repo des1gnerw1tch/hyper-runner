@@ -15,7 +15,7 @@ public class PlatformArrows : MonoBehaviour
         levelManager.playerCamMoveSpeed = playerRunningSpeed;
         Parallax.multiplier = surroundingSpeedMultiplier;
         levelManager.UpdateSpeeds();
-        danceManager.gameObject.SetActive(false);
+        danceManager.enabled = false;
       }
     }
 }

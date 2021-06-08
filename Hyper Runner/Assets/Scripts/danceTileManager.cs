@@ -7,21 +7,17 @@ using System;
 public class danceTileManager : MonoBehaviour
 {
   [SerializeField] private Transform player;
-  [HideInInspector] public IDanceObject activeDanceObj; // is mutated on by dance key movement on player
+  [SerializeField] private IDanceObject activeDanceObj; // is mutated on by dance key movement on player
 
   // TODO: for keyboard input, will change to newer input system later
   void Update() {
     // Will update active dance key, on KeyUp because want to make sure
     // first object when clicked is deleted first (which is on KeyDown)
+    // TODO: update these keyboard controlls to new input system
     if (Input.GetKeyUp("up") || Input.GetKeyUp("down")) {
       UpdateValidDanceKeys();
     }
   }
-
-  public void OnAnyDanceKeyPress()  {
-    UpdateValidDanceKeys();
-  }
-
   //Makes sure that only 1 dance key is okay to press at one time
   // finds dance key with smallest X position and activates it...
   public void UpdateValidDanceKeys() {
@@ -61,19 +57,42 @@ public class danceTileManager : MonoBehaviour
     }
   }
 
+  // enables a dance key to receive input
   void enableDanceKey(GameObject obj)  {
     this.activeDanceObj = obj.GetComponent<IDanceObject>();
     try {
       obj.GetComponent<danceObject>().active = true;
     } catch {
-      Debug.Log("Object was not single key");
+      //Debug.Log("Object was not single key");
     }
 
     try {
       obj.GetComponent<holdDanceObject>().active = true;
     } catch {
-      Debug.Log("Object was not hold key");
+      //Debug.Log("Object was not hold key");
     }
+  }
+
+  // INPUTS
+  public void OnUpDanceKeyPress() {
+    activeDanceObj.OnUpDanceKeyPress();
+  }
+  public void OnUpDanceKeyRelease() {
+    UpdateValidDanceKeys();
+    activeDanceObj.OnUpDanceKeyRelease();
+
+  }
+  public void OnDownDanceKeyPress() {
+    activeDanceObj.OnDownDanceKeyPress();
+  }
+  public void OnDownDanceKeyRelease() {
+    UpdateValidDanceKeys();
+    activeDanceObj.OnDownDanceKeyRelease();
+
+  }
+  public void OnAnyDanceKeyPress()  {
+    //UpdateValidDanceKeys();
+    activeDanceObj.OnAnyDanceKeyPress();
   }
 
 }

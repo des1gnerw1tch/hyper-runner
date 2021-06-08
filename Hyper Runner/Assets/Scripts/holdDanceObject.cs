@@ -6,7 +6,7 @@ using System;
 /* this dance object will give you charisma when you start holding, down
 a the key. once key is let up, charisma will be awarded based on how far from
 the end your player is */
-public class holdDanceObject : MonoBehaviour
+public class holdDanceObject : ADanceObject
 {
     private Transform player;
     private CharacterHealth characterHealth;
@@ -25,6 +25,7 @@ public class holdDanceObject : MonoBehaviour
     [SerializeField] private float camRumbleSpeed;
     [SerializeField] private float camRumbleDuration;
     private bool firstPress = true;
+    private bool isPressing;
 
     void Start()  {
       player = GameObject.FindWithTag("Player").GetComponent<Transform>();
@@ -34,6 +35,7 @@ public class holdDanceObject : MonoBehaviour
 
     void Update()
     {
+      // input for old system TODO: update this keyboard input to new system
       if (Input.GetKey(keyToPress) && active) {
         Pressing();
       }
@@ -41,6 +43,11 @@ public class holdDanceObject : MonoBehaviour
       if (Input.GetKeyUp(keyToPress) && active) {
         EndAccuracy();
         active = false;
+      }
+
+      // for new input system
+      if (isPressing && active) {
+        Pressing();
       }
 
       // despawn object if missed
@@ -83,7 +90,6 @@ public class holdDanceObject : MonoBehaviour
         FindObjectOfType<CameraShake>().Begin(camRumbleIntensity, camRumbleSpeed, camRumbleDuration);
         Debug.Log("Score: " + score);
       } else { // not first press
-        Debug.Log(1f * MusicSync.deltaSample);
         characterHealth.AddCharisma(1f * MusicSync.deltaSample);
       }
     }
@@ -137,4 +143,37 @@ public class holdDanceObject : MonoBehaviour
       float difY = UnityEngine.Random.Range(-wobble, wobble);
       image.GetComponent<RectTransform>().Translate(new Vector3(difX, difY, 0), Space.World);
     }
+
+    // INPUT: Will be called from player -> danceTileManager, as player is the only one with input connected
+    // method stubs to override, all player input
+    public override void OnUpDanceKeyPress()  {
+      if (keyToPress == "up" && active) {
+        this.isPressing = true;
+      }
+    }
+
+    public override void OnUpDanceKeyRelease() {
+      if (keyToPress == "up" && active && isPressing) {
+        this.isPressing = false;
+        this.EndAccuracy();
+        this.active = false;
+      }
+    }
+
+    public override void OnDownDanceKeyPress()  {
+      if (keyToPress == "down" && active) {
+        this.isPressing = true;
+      }
+    }
+
+
+
+    public override void OnDownDanceKeyRelease() {
+      if (keyToPress == "down" && active && isPressing) {
+        this.isPressing = false;
+        this.EndAccuracy();
+        this.active = false;
+      }
+    }
+
 }
