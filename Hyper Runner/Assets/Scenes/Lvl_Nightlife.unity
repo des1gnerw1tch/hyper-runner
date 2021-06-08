@@ -5753,6 +5753,7 @@ MonoBehaviour:
   cameraMovement: {fileID: 976349192}
   playerMovement: {fileID: 1374450472}
   rhythmMovement: {fileID: 1374450477}
+  input: {fileID: 1424509935}
   player_rb: {fileID: 1374450474}
   flyingParticles: {fileID: 1285083220}
   InterpolManager: {fileID: 105801473}
@@ -6294,18 +6295,6 @@ PrefabInstance:
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 633569203}
-    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
-      propertyPath: playerFloatingSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
-      propertyPath: danceMoves.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
-      propertyPath: surroundingSpeedMultiplier
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4496124525633985544, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
       propertyPath: m_Name
       value: Rhythm Arrows 2

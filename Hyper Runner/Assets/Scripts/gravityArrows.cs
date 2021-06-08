@@ -17,7 +17,6 @@ public class gravityArrows : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
       if (active) {
         if (other.CompareTag("Player")) {
-          Debug.Log(Physics2D.gravity.y);
           if (Physics2D.gravity.y < 0)  {
             flippedGravity();
           } else {

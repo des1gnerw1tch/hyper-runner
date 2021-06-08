@@ -97,9 +97,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelManager: {fileID: 0}
-  playerFloatingSpeed: 7
-  surroundingSpeedMultiplier: 2
+  playerFloatingSpeed: 20
+  surroundingSpeedMultiplier: 8
   player: {fileID: 0}
+  danceManager: {fileID: 0}
 --- !u!61 &8291251719583020183
 BoxCollider2D:
   m_ObjectHideFlags: 0

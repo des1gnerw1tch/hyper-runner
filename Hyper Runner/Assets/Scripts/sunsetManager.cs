@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class sunsetManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class sunsetManager : MonoBehaviour
     [SerializeField] private Move cameraMovement;
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private RhythmMovement rhythmMovement;
+    [SerializeField] private PlayerInput input;
     [SerializeField] private Rigidbody2D player_rb;
     [SerializeField] private GameObject flyingParticles;
     [SerializeField] private Interpolate InterpolManager;
@@ -37,6 +39,7 @@ public class sunsetManager : MonoBehaviour
           playerMovement.enabled = true;
           playerMovement.SetAnimatorControllerAsPlatformer();
           rhythmMovement.enabled = false;
+          input.SwitchCurrentActionMap("Player"); // switches action map to rhythm
           player_rb.gravityScale = 1f;
           flyingParticles.SetActive(false);
           //start sky and horizon color change back to normal, magnitude is speed
@@ -47,6 +50,8 @@ public class sunsetManager : MonoBehaviour
           launches++;
           playerMovement.enabled = false;
           rhythmMovement.enabled = true;
+          input.SwitchCurrentActionMap("Dance Keys"); // switches action map to rhythm
+
           player_rb.gravityScale = 0;
           flyingParticles.SetActive(true);
           // this is how fast the player will jump into rhythym mode, will

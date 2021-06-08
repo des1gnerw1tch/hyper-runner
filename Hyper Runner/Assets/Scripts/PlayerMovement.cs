@@ -68,12 +68,10 @@ public class PlayerMovement : MonoBehaviour
   }
 
   public void OnFloorDown()  {
-    Debug.Log("Stick pressed");
     rb.gravityScale = 20;
   }
 
   public void OnFloorUp()  {
-    Debug.Log("Stick released");
     rb.gravityScale = initialGravity;
   }
 
