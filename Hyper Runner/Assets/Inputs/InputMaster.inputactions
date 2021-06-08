@@ -101,6 +101,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "AnyDanceKeyPress",
+                    "type": "Button",
+                    "id": "1e0c36ad-9a79-4dba-a304-08c537101030",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -145,6 +153,28 @@
                     "processors": "",
                     "groups": "Xbox Control Scheme",
                     "action": "DownDanceKeyPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7be2d889-4c08-48d3-906c-4e287251d1c3",
+                    "path": "<XInputController>/buttonNorth",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AnyDanceKeyPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e182aade-7697-47d7-a508-52d0ce61438a",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AnyDanceKeyPress",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

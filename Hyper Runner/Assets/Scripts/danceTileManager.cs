@@ -7,12 +7,19 @@ using System;
 public class danceTileManager : MonoBehaviour
 {
   [SerializeField] private Transform player;
+  [HideInInspector] public IDanceObject activeDanceObj; // is mutated on by dance key movement on player
+
+  // TODO: for keyboard input, will change to newer input system later
   void Update() {
     // Will update active dance key, on KeyUp because want to make sure
     // first object when clicked is deleted first (which is on KeyDown)
     if (Input.GetKeyUp("up") || Input.GetKeyUp("down")) {
       UpdateValidDanceKeys();
     }
+  }
+
+  public void OnAnyDanceKeyPress()  {
+    UpdateValidDanceKeys();
   }
 
   //Makes sure that only 1 dance key is okay to press at one time
@@ -55,6 +62,7 @@ public class danceTileManager : MonoBehaviour
   }
 
   void enableDanceKey(GameObject obj)  {
+    this.activeDanceObj = obj.GetComponent<IDanceObject>();
     try {
       obj.GetComponent<danceObject>().active = true;
     } catch {

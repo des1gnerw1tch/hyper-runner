@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
     // Normal Dance Tile, press a key to interact
-public class danceObject : MonoBehaviour
+public class danceObject : MonoBehaviour, IDanceObject
 {
     private Transform player;
     private CharacterHealth characterHealth;
@@ -30,6 +30,7 @@ public class danceObject : MonoBehaviour
 
     void Update()
     {
+      // TODO: get input for keyboard, will change to new input system later
       if (Input.GetKeyDown(keyToPress) && active) {
         Pressed();
       }
@@ -48,17 +49,29 @@ public class danceObject : MonoBehaviour
       }
     }
 
-
-    void OnUpDanceKeyPress()  {
+    // Will be called from player object, as player is the only one with input connected
+    public void OnUpDanceKeyPress()  {
       if (keyToPress == "up" && active)  {
         Pressed();
       }
     }
 
-    void OnDownDanceKeyPress()  {
+    public void OnDownDanceKeyPress()  {
       if (keyToPress == "down" && active) {
         Pressed();
       }
+    }
+
+    public void OnUpDanceKeyRelease() {
+
+    }
+
+    public void OnDownDanceKeyRelease() {
+
+    }
+
+    public void OnAnyDanceKeyPress()  {
+
     }
 
     void Pressed()  {

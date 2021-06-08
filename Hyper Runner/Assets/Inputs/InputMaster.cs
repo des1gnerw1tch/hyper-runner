@@ -114,6 +114,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""AnyDanceKeyPress"",
+                    ""type"": ""Button"",
+                    ""id"": ""1e0c36ad-9a79-4dba-a304-08c537101030"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -160,6 +168,28 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""DownDanceKeyPress"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7be2d889-4c08-48d3-906c-4e287251d1c3"",
+                    ""path"": ""<XInputController>/buttonNorth"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AnyDanceKeyPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e182aade-7697-47d7-a508-52d0ce61438a"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AnyDanceKeyPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -189,6 +219,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_DanceKeys_UpDanceKeyRelease = m_DanceKeys.FindAction("UpDanceKeyRelease", throwIfNotFound: true);
         m_DanceKeys_DownDanceKeyPress = m_DanceKeys.FindAction("DownDanceKeyPress", throwIfNotFound: true);
         m_DanceKeys_DownDanceKeyRelease = m_DanceKeys.FindAction("DownDanceKeyRelease", throwIfNotFound: true);
+        m_DanceKeys_AnyDanceKeyPress = m_DanceKeys.FindAction("AnyDanceKeyPress", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -291,6 +322,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_DanceKeys_UpDanceKeyRelease;
     private readonly InputAction m_DanceKeys_DownDanceKeyPress;
     private readonly InputAction m_DanceKeys_DownDanceKeyRelease;
+    private readonly InputAction m_DanceKeys_AnyDanceKeyPress;
     public struct DanceKeysActions
     {
         private @InputMaster m_Wrapper;
@@ -299,6 +331,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @UpDanceKeyRelease => m_Wrapper.m_DanceKeys_UpDanceKeyRelease;
         public InputAction @DownDanceKeyPress => m_Wrapper.m_DanceKeys_DownDanceKeyPress;
         public InputAction @DownDanceKeyRelease => m_Wrapper.m_DanceKeys_DownDanceKeyRelease;
+        public InputAction @AnyDanceKeyPress => m_Wrapper.m_DanceKeys_AnyDanceKeyPress;
         public InputActionMap Get() { return m_Wrapper.m_DanceKeys; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -320,6 +353,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @DownDanceKeyRelease.started -= m_Wrapper.m_DanceKeysActionsCallbackInterface.OnDownDanceKeyRelease;
                 @DownDanceKeyRelease.performed -= m_Wrapper.m_DanceKeysActionsCallbackInterface.OnDownDanceKeyRelease;
                 @DownDanceKeyRelease.canceled -= m_Wrapper.m_DanceKeysActionsCallbackInterface.OnDownDanceKeyRelease;
+                @AnyDanceKeyPress.started -= m_Wrapper.m_DanceKeysActionsCallbackInterface.OnAnyDanceKeyPress;
+                @AnyDanceKeyPress.performed -= m_Wrapper.m_DanceKeysActionsCallbackInterface.OnAnyDanceKeyPress;
+                @AnyDanceKeyPress.canceled -= m_Wrapper.m_DanceKeysActionsCallbackInterface.OnAnyDanceKeyPress;
             }
             m_Wrapper.m_DanceKeysActionsCallbackInterface = instance;
             if (instance != null)
@@ -336,6 +372,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @DownDanceKeyRelease.started += instance.OnDownDanceKeyRelease;
                 @DownDanceKeyRelease.performed += instance.OnDownDanceKeyRelease;
                 @DownDanceKeyRelease.canceled += instance.OnDownDanceKeyRelease;
+                @AnyDanceKeyPress.started += instance.OnAnyDanceKeyPress;
+                @AnyDanceKeyPress.performed += instance.OnAnyDanceKeyPress;
+                @AnyDanceKeyPress.canceled += instance.OnAnyDanceKeyPress;
             }
         }
     }
@@ -361,5 +400,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnUpDanceKeyRelease(InputAction.CallbackContext context);
         void OnDownDanceKeyPress(InputAction.CallbackContext context);
         void OnDownDanceKeyRelease(InputAction.CallbackContext context);
+        void OnAnyDanceKeyPress(InputAction.CallbackContext context);
     }
 }
