@@ -77,19 +77,21 @@ public class danceTileManager : MonoBehaviour
   public void OnUpDanceKeyPress() {
     activeDanceObj.OnUpDanceKeyPress();
   }
+
   public void OnUpDanceKeyRelease() {
     UpdateValidDanceKeys();
     activeDanceObj.OnUpDanceKeyRelease();
-
   }
+
   public void OnDownDanceKeyPress() {
     activeDanceObj.OnDownDanceKeyPress();
   }
+
   public void OnDownDanceKeyRelease() {
     UpdateValidDanceKeys();
     activeDanceObj.OnDownDanceKeyRelease();
-
   }
+  
   public void OnAnyDanceKeyPress()  {
     //UpdateValidDanceKeys();
     activeDanceObj.OnAnyDanceKeyPress();
