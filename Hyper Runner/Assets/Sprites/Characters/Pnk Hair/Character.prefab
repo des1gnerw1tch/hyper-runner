@@ -16,6 +16,9 @@ GameObject:
   - component: {fileID: 752551082774792005}
   - component: {fileID: 752551082774792000}
   - component: {fileID: 2745784147261088146}
+  - component: {fileID: 1424509934}
+  - component: {fileID: 1424509935}
+  - component: {fileID: 1424509936}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -59,7 +62,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: f1159b2c342e44ef7b9bec6ef1c3475f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -156,7 +159,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!114 &752551082774792005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,10 +173,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpPower: 12
+  jumpPower: 13
+  jumpsLeft: 0
   rb: {fileID: 752551082774792007}
   animator: {fileID: 752551082774792008}
   jumpCollider: {fileID: 4290473769257929723}
+  platformAnimator: {fileID: 9100000, guid: 58a94abd77db94b0a9a25549bcd74d4e, type: 2}
+  flashObject: {fileID: 1424509934}
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  flashSpeed: 5
+  musicSync: {fileID: 0}
+  cameraAnimator: {fileID: 0}
 --- !u!114 &752551082774792000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +199,8 @@ MonoBehaviour:
   speed: 0
   animatorComponent: {fileID: 752551082774792008}
   rhythmAnimator: {fileID: 9100000, guid: 5be0ac0425dbe4a18a0c006e63a6c25d, type: 2}
+  rhythm_up_tile: {fileID: 2219637414331819520, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+  rhythm_down_tile: {fileID: 2219637414331819520, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
 --- !u!114 &2745784147261088146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +214,97 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frontCollider: {fileID: 3875587539062391384}
+  charisma: 70
+  portrait_animator: {fileID: 0}
+  objToFlash: {fileID: 1424509934}
+  posFlashColor: {r: 1, g: 1, b: 1, a: 1}
+  negFlashColor: {r: 1, g: 0, b: 0, a: 1}
+  flashSpeed: 3
+--- !u!114 &1424509934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752551082774792009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d2f7171d93e4c94bd4227a9f29ccd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  material: {fileID: 2100000, guid: f1159b2c342e44ef7b9bec6ef1c3475f, type: 2}
+--- !u!114 &1424509935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752551082774792009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 2b97dca451a704ba799e31fd7e60134e, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8ddda6ed-cb3c-40c2-bd75-133ba3008deb
+    m_ActionName: Player/Jump[/XboxOneGampadMacOSWireless/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 09bca526-098e-4fb4-a04b-6617fa8906c1
+    m_ActionName: Player/Dance Up Key[/XboxOneGampadMacOSWireless/dpad/up]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e71fd049-d704-4fe0-8a26-fb03cf079f22
+    m_ActionName: Player/Dance Down Key[/XboxOneGampadMacOSWireless/dpad/down]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 92636550-eaad-49fc-83ae-4d641b28e354
+    m_ActionName: Player/Floor[/XboxOneGampadMacOSWireless/leftStick/down]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Xbox Control Scheme
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &1424509936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752551082774792009}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d7630800e1fe4e31b498284bcc0610b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 752551082774792010}
 --- !u!1 &2841508527331617181
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +406,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.049267218, y: -0.7279141}
+  m_Offset: {x: 0.049267218, y: -0.71066487}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -314,7 +417,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.032704383, y: 0.8427253}
+  m_Size: {x: 0.032704383, y: 0.8082268}
   m_EdgeRadius: 0
 --- !u!1 &7858300630071390444
 GameObject:
@@ -333,7 +436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8665001205896825107
 Transform:
   m_ObjectHideFlags: 0

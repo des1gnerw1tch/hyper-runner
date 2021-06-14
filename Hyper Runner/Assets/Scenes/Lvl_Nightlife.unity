@@ -10914,7 +10914,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 752551082774792005, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
   m_PrefabInstance: {fileID: 752551081460692077}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1424509929}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73ff485bca0864758a6341b3b0f7ce33, type: 3}
@@ -10930,7 +10930,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 752551082774792000, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
   m_PrefabInstance: {fileID: 752551081460692077}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1424509929}
+  m_GameObject: {fileID: 0}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f1192205fe6845c38fea38f22ab8e74, type: 3}
@@ -16534,101 +16534,44 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: -0.11}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
---- !u!1 &1424509929 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 752551082774792009, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-  m_PrefabInstance: {fileID: 752551081460692077}
-  m_PrefabAsset: {fileID: 0}
 --- !u!212 &1424509933 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 752551082774792011, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
   m_PrefabInstance: {fileID: 752551081460692077}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1424509934
+--- !u!114 &1424509934 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1424509934, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
+  m_PrefabInstance: {fileID: 752551081460692077}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1424509929}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54d2f7171d93e4c94bd4227a9f29ccd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashColor: {r: 1, g: 1, b: 1, a: 1}
-  material: {fileID: 2100000, guid: f1159b2c342e44ef7b9bec6ef1c3475f, type: 2}
---- !u!114 &1424509935
+--- !u!114 &1424509935 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1424509935, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
+  m_PrefabInstance: {fileID: 752551081460692077}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1424509929}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 2b97dca451a704ba799e31fd7e60134e, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 8ddda6ed-cb3c-40c2-bd75-133ba3008deb
-    m_ActionName: Player/Jump[/XboxOneGampadMacOSWireless/buttonSouth]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 09bca526-098e-4fb4-a04b-6617fa8906c1
-    m_ActionName: Player/Dance Up Key[/XboxOneGampadMacOSWireless/dpad/up]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e71fd049-d704-4fe0-8a26-fb03cf079f22
-    m_ActionName: Player/Dance Down Key[/XboxOneGampadMacOSWireless/dpad/down]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 92636550-eaad-49fc-83ae-4d641b28e354
-    m_ActionName: Player/Floor[/XboxOneGampadMacOSWireless/leftStick/down]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Xbox Control Scheme
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!114 &1424509936
+--- !u!114 &1424509936 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1424509936, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
+  m_PrefabInstance: {fileID: 752551081460692077}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1424509929}
+  m_GameObject: {fileID: 0}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d7630800e1fe4e31b498284bcc0610b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 310351912}
 --- !u!1 &1429060816
 GameObject:
   m_ObjectHideFlags: 0
@@ -22524,66 +22467,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 752551082774792000, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: rhythm_up_tile
-      value: 
-      objectReference: {fileID: 2219637414331819520, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
-    - target: {fileID: 752551082774792000, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: rhythm_down_tile
-      value: 
-      objectReference: {fileID: 2219637414331819520, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
-    - target: {fileID: 752551082774792005, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: jumpPower
-      value: 13
-      objectReference: {fileID: 0}
     - target: {fileID: 752551082774792005, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
       propertyPath: musicSync
       value: 
       objectReference: {fileID: 1615074041}
     - target: {fileID: 752551082774792005, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: flashSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 752551082774792005, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: levelMusic
-      value: 
-      objectReference: {fileID: 1615074040}
-    - target: {fileID: 752551082774792005, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: objToFlash
-      value: 
-      objectReference: {fileID: 976266535}
-    - target: {fileID: 752551082774792005, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: flashObject
-      value: 
-      objectReference: {fileID: 1424509934}
-    - target: {fileID: 752551082774792005, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: flashColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 752551082774792005, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: flashColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 752551082774792005, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: flashColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 752551082774792005, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: flashColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 752551082774792005, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
       propertyPath: cameraAnimator
       value: 
       objectReference: {fileID: 519420030}
-    - target: {fileID: 752551082774792005, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: platformAnimator
-      value: 
-      objectReference: {fileID: 9100000, guid: 58a94abd77db94b0a9a25549bcd74d4e, type: 2}
-    - target: {fileID: 752551082774792007, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: m_Constraints
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 752551082774792009, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
       propertyPath: m_Name
       value: Character
@@ -22591,10 +22482,6 @@ PrefabInstance:
     - target: {fileID: 752551082774792010, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
       propertyPath: m_RootOrder
       value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 752551082774792010, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 752551082774792010, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22636,70 +22523,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 752551082774792011, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 752551082774792011, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f1159b2c342e44ef7b9bec6ef1c3475f, type: 2}
-    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: flashSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: objToFlash
-      value: 
-      objectReference: {fileID: 1424509934}
-    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: negFlashColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: negFlashColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: negFlashColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: negFlashColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: posFlashColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: posFlashColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: posFlashColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: posFlashColor.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
       propertyPath: portrait_animator
       value: 
       objectReference: {fileID: 915094033}
-    - target: {fileID: 3875587539062391384, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: m_Size.y
-      value: 0.8082268
-      objectReference: {fileID: 0}
-    - target: {fileID: 3875587539062391384, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.71066487
-      objectReference: {fileID: 0}
-    - target: {fileID: 7858300630071390444, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
 --- !u!1001 &1513846074444942762
