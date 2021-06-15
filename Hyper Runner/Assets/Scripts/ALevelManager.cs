@@ -12,6 +12,7 @@ public abstract class ALevelManager : MonoBehaviour, ILevelManager
   public PlayerInput input;
   public Rigidbody2D player_rb;
   public GameObject flyingParticles;
+  public float launchToRhythmSpeed = 5f;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -48,7 +49,7 @@ public abstract class ALevelManager : MonoBehaviour, ILevelManager
 
           // this is how fast the player will jump into rhythym mode, will
           // fix this bad system later
-          rhythmMovement.startRhythm(5f);
+          rhythmMovement.startRhythm(this.launchToRhythmSpeed);
           break;
       }
     }
