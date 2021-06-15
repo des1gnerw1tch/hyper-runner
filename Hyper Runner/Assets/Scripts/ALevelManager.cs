@@ -6,25 +6,22 @@ using UnityEngine.InputSystem;
 public abstract class ALevelManager : MonoBehaviour, ILevelManager
 {
   public float playerCamMoveSpeed = 5f;
-  [SerializeField] private Move cameraMovement;
-  [SerializeField] private PlayerMovement playerMovement;
-  [SerializeField] private RhythmMovement rhythmMovement;
-  [SerializeField] private PlayerInput input;
-  [SerializeField] private Rigidbody2D player_rb;
-  [SerializeField] private GameObject flyingParticles;
-  [SerializeField] private Interpolate InterpolManager;
-  [SerializeField] private Color sky_launch2_color;
-  [SerializeField] private Color horizon_launch2_color;
-
+  public Move cameraMovement;
+  public PlayerMovement playerMovement;
+  public RhythmMovement rhythmMovement;
+  public PlayerInput input;
+  public Rigidbody2D player_rb;
+  public GameObject flyingParticles;
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
       UpdateSpeeds();
     }
 
     // UpdateSpeeds : Updates the values of speed for both the camera and the player
-    public void UpdateSpeeds()  {
+    public virtual void UpdateSpeeds()  {
+      Debug.Log("Using Amanager class");
       playerMovement.speed = playerCamMoveSpeed;
       rhythmMovement.speed = playerCamMoveSpeed;
       cameraMovement.speed = playerCamMoveSpeed;
@@ -32,7 +29,7 @@ public abstract class ALevelManager : MonoBehaviour, ILevelManager
 
     // using either "Rhythm" or "Platformer" as mode, performs operations
     // to switch mode of game
-    public void SetPlayerMode(string mode)  {
+    public virtual void SetPlayerMode(string mode)  {
       switch (mode) {
         case "Platformer":
           playerMovement.enabled = true;

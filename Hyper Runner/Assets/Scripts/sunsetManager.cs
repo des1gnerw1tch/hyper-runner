@@ -3,37 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class sunsetManager : MonoBehaviour
+public class sunsetManager : ALevelManager
 {
-    public float playerCamMoveSpeed = 5f;
-    [SerializeField] private Move cameraMovement;
-    [SerializeField] private PlayerMovement playerMovement;
-    [SerializeField] private RhythmMovement rhythmMovement;
-    [SerializeField] private PlayerInput input;
-    [SerializeField] private Rigidbody2D player_rb;
-    [SerializeField] private GameObject flyingParticles;
-    [SerializeField] private Interpolate InterpolManager;
-    [SerializeField] private Color sky_launch2_color;
-    [SerializeField] private Color horizon_launch2_color;
-
-    // KEEP
+    [SerializeField] public Interpolate InterpolManager;
     private float launches = 0;
+    [SerializeField] public Color sky_launch2_color;
+    [SerializeField] public Color horizon_launch2_color;
 
-    void Start()
+    public override void Start()
     {
       UpdateSpeeds();
       //Play welcome message
       StartCoroutine(PlayWelcome());
     }
 
-    // UpdateSpeeds : Updates the values of speed for both the camera and the player
-    public void UpdateSpeeds()  {
-      playerMovement.speed = playerCamMoveSpeed;
-      rhythmMovement.speed = playerCamMoveSpeed;
-      cameraMovement.speed = playerCamMoveSpeed;
-    }
-
-    public void SetPlayerMode(string mode)  {
+    public override void SetPlayerMode(string mode)  {
       switch (mode) {
         case "Platformer":
           playerMovement.enabled = true;
