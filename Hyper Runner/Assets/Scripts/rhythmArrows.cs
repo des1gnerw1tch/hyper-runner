@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class rhythmArrows : MonoBehaviour
 {
-    [SerializeField] private sunsetManager levelManager;
+    [SerializeField] private ALevelManager levelManager;
     [SerializeField] private float playerFloatingSpeed;
     [SerializeField] private float surroundingSpeedMultiplier;
 

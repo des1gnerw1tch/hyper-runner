@@ -1068,7 +1068,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 974554152}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2668ebe60776b4ef7b04407a8d991c6a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c609d33ea4d2481e8b7151cbd0e6516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamMoveSpeed: 8
@@ -1078,9 +1078,6 @@ MonoBehaviour:
   input: {fileID: 1935935509}
   player_rb: {fileID: 1935935508}
   flyingParticles: {fileID: 1935935507}
-  InterpolManager: {fileID: 1508790327}
-  sky_launch2_color: {r: 0.4339623, g: 0, b: 0.010669277, a: 1}
-  horizon_launch2_color: {r: 0.3301887, g: 0.15973689, b: 0, a: 1}
 --- !u!4 &974554154
 Transform:
   m_ObjectHideFlags: 0

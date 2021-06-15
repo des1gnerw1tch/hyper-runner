@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlatformArrows : MonoBehaviour
 {
-    [SerializeField] private sunsetManager levelManager;
+    [SerializeField] private ALevelManager levelManager;
     [SerializeField] private float playerRunningSpeed;
     [SerializeField] private float surroundingSpeedMultiplier;
     [SerializeField] private danceTileManager danceManager;
