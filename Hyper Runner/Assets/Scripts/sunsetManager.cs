@@ -18,36 +18,15 @@ public class sunsetManager : ALevelManager
     }
 
     public override void SetPlayerMode(string mode)  {
+      base.SetPlayerMode(mode); // call base SetPlayerMode function
       switch (mode) {
         case "Platformer":
-          playerMovement.enabled = true;
-          playerMovement.SetAnimatorControllerAsPlatformer();
-          rhythmMovement.enabled = false;
-          input.SwitchCurrentActionMap("Player"); // switches action map to rhythm
-          player_rb.gravityScale = 1f;
-          flyingParticles.SetActive(false);
-
-          //KEEP start sky and horizon color change back to normal, magnitude is speed
+          //start sky and horizon color change back to normal, magnitude is speed
           InterpolManager.LerpSky(-4f);
           InterpolManager.LerpHorizon(-4f);
-          // END KEEP
           break;
         case "Rhythm":
-          // KEEP
           launches++;
-          // END KEEP
-          playerMovement.enabled = false;
-          rhythmMovement.enabled = true;
-          input.SwitchCurrentActionMap("Dance Keys"); // switches action map to rhythm
-
-          player_rb.gravityScale = 0;
-          flyingParticles.SetActive(true);
-
-          // this is how fast the player will jump into rhythym mode, will
-          // fix this bad system later
-          rhythmMovement.startRhythm(5f);
-
-          // KEEP
           //start sky and horizon color change, including speed
           if (launches == 2)  {
             InterpolManager.SetSkyAltColor(sky_launch2_color);
@@ -55,7 +34,6 @@ public class sunsetManager : ALevelManager
           }
           InterpolManager.LerpSky(16f);
           InterpolManager.LerpHorizon(16f);
-          // END KEEP
           break;
       }
     }

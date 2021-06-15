@@ -21,7 +21,6 @@ public abstract class ALevelManager : MonoBehaviour, ILevelManager
 
     // UpdateSpeeds : Updates the values of speed for both the camera and the player
     public virtual void UpdateSpeeds()  {
-      Debug.Log("Using Amanager class");
       playerMovement.speed = playerCamMoveSpeed;
       rhythmMovement.speed = playerCamMoveSpeed;
       cameraMovement.speed = playerCamMoveSpeed;
