@@ -2254,6 +2254,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1374450472}
     - target: {fileID: 8831350328241824778, guid: 3f83efa97bb3c43f4832394a32523d6b, type: 3}
+      propertyPath: rb_player
+      value: 
+      objectReference: {fileID: 1374450474}
+    - target: {fileID: 8831350328241824778, guid: 3f83efa97bb3c43f4832394a32523d6b, type: 3}
       propertyPath: flashObject
       value: 
       objectReference: {fileID: 1424509934}
@@ -5756,6 +5760,7 @@ MonoBehaviour:
   input: {fileID: 1424509935}
   player_rb: {fileID: 1374450474}
   flyingParticles: {fileID: 1285083220}
+  launchToRhythmSpeed: 5
   InterpolManager: {fileID: 105801473}
   sky_launch2_color: {r: 0.4339623, g: 0, b: 0.010669277, a: 1}
   horizon_launch2_color: {r: 0.3301887, g: 0.15973689, b: 0, a: 1}
@@ -7255,6 +7260,10 @@ PrefabInstance:
       propertyPath: movement
       value: 
       objectReference: {fileID: 1374450472}
+    - target: {fileID: 8831350328241824778, guid: 3f83efa97bb3c43f4832394a32523d6b, type: 3}
+      propertyPath: rb_player
+      value: 
+      objectReference: {fileID: 1374450474}
     - target: {fileID: 8831350328241824778, guid: 3f83efa97bb3c43f4832394a32523d6b, type: 3}
       propertyPath: flashObject
       value: 
@@ -21201,6 +21210,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1374450472}
     - target: {fileID: 8831350328241824778, guid: 3f83efa97bb3c43f4832394a32523d6b, type: 3}
+      propertyPath: rb_player
+      value: 
+      objectReference: {fileID: 1374450474}
+    - target: {fileID: 8831350328241824778, guid: 3f83efa97bb3c43f4832394a32523d6b, type: 3}
       propertyPath: flashObject
       value: 
       objectReference: {fileID: 1424509934}
@@ -23308,6 +23321,10 @@ PrefabInstance:
       propertyPath: movement
       value: 
       objectReference: {fileID: 1374450472}
+    - target: {fileID: 8831350328241824778, guid: 3f83efa97bb3c43f4832394a32523d6b, type: 3}
+      propertyPath: rb_player
+      value: 
+      objectReference: {fileID: 1374450474}
     - target: {fileID: 8831350328241824778, guid: 3f83efa97bb3c43f4832394a32523d6b, type: 3}
       propertyPath: flashObject
       value: 

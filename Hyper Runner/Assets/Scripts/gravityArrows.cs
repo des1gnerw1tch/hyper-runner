@@ -7,6 +7,7 @@ public class gravityArrows : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private SpriteRenderer sprite;
     [SerializeField] private PlayerMovement movement;
+    [SerializeField] private Rigidbody2D rb_player;
     [SerializeField] private Flash flashObject;
     [SerializeField] private Color flashColor;
     [SerializeField] private float flashSpeed;
@@ -18,8 +19,10 @@ public class gravityArrows : MonoBehaviour
       if (active) {
         if (other.CompareTag("Player")) {
           if (Physics2D.gravity.y < 0)  {
+            rb_player.velocity=Vector3.zero;
             flippedGravity();
           } else {
+            rb_player.velocity=Vector3.zero;
             normalGravity();
           }
         }
