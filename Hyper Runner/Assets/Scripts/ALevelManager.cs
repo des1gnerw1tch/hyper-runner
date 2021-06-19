@@ -36,7 +36,7 @@ public abstract class ALevelManager : MonoBehaviour, ILevelManager
           playerMovement.SetAnimatorControllerAsPlatformer();
           rhythmMovement.enabled = false;
           input.SwitchCurrentActionMap("Player"); // switches action map to rhythm
-          player_rb.gravityScale = 1f;
+          player_rb.gravityScale = 5f;
           flyingParticles.SetActive(false);
           break;
         case "Rhythm":
