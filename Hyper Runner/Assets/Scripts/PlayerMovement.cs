@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour {
     public float jumpPower;
 
     private bool touchingGround;
-    /*[HideInInspector]*/
+    [HideInInspector]
     public int jumpsLeft;
     private float initialGravity;
 

@@ -5874,6 +5874,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: yay
+    clip: {fileID: 8300000, guid: dd5c3937eaa5e4743ae48ba89d6d3e3f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &648339246
 GameObject:
   m_ObjectHideFlags: 0
@@ -22535,6 +22541,14 @@ PrefabInstance:
     - target: {fileID: 752551082774792010, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
+      propertyPath: maxHeight
+      value: 13.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
+      propertyPath: minHeight
+      value: 3.8
       objectReference: {fileID: 0}
     - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
       propertyPath: portrait_animator
