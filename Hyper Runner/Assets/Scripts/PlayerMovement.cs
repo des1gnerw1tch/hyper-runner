@@ -83,7 +83,18 @@ public class PlayerMovement : MonoBehaviour
 
       if (!touchingGround)  {
         // double jump
-        animator.SetTrigger("doubleJump");
+        int randomNumber = Random.Range(0, 3);
+        switch(randomNumber)    {
+           case 0:
+                        animator.SetTrigger("doubleJump");
+                        break;
+           case 1:
+                        animator.SetTrigger("twirl");
+                        break;
+           case 2:
+                        animator.SetTrigger("gator");
+                        break;
+        }
         flashObject.StartFlash(flashColor, flashSpeed);
         audio.Play("clap");
         cameraAnimator.SetTrigger("parry");
