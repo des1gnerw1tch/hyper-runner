@@ -40,7 +40,7 @@ public class CharacterHealth : MonoBehaviour {
     }
 
     public void Die() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
     }
 
     // Charisma
