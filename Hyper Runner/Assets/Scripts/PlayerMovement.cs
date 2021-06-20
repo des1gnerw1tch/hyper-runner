@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour {
     private float lastSample;
     private float thisSample;
 
-    [Header ("When double jump")]
+    [Header("When double jump")]
     [SerializeField] private Flash flashObject;
     [SerializeField] private Color flashColor;
     [SerializeField] private float flashSpeed;
@@ -31,17 +31,17 @@ public class PlayerMovement : MonoBehaviour {
     private AParryObject parryObject;
 
     void Start() {
-        audio = FindObjectOfType<AudioManager> ();
+        audio = FindObjectOfType<AudioManager>();
         initialGravity = rb.gravityScale;
     }
 
     void Update() {
-        transform.position = new Vector3 (transform.position.x + speed * MusicSync.deltaSample,
+        transform.position = new Vector3(transform.position.x + speed * MusicSync.deltaSample,
           transform.position.y, transform.position.z);
 
         // keyboard control
-        if (Input.GetKeyDown ("space")) {
-            OnJump ();
+        if (Input.GetKeyDown("space")) {
+            OnJump();
 
         }
         //for mobile players
@@ -60,8 +60,8 @@ public class PlayerMovement : MonoBehaviour {
           rb.gravityScale = initialGravity;
         }*/
 
-        if (Input.GetKeyDown ("o")) {
-            Debug.Log (transform.position.x);
+        if (Input.GetKeyDown("o")) {
+            Debug.Log(transform.position.x);
         }
     }
 
@@ -75,32 +75,33 @@ public class PlayerMovement : MonoBehaviour {
 
     public void OnJump() {
         if (jumpsLeft > 0) {
-            rb.velocity = new Vector2 (rb.velocity.x, 0); ;
-            rb.AddForce (transform.up * jumpPower, ForceMode2D.Impulse);
+            rb.velocity = new Vector2(rb.velocity.x, 0); ;
+            rb.AddForce(transform.up * jumpPower, ForceMode2D.Impulse);
             jumpsLeft -= 1;
 
             if (!touchingGround) {
-                // double jump
-                int randomNumber = Random.Range (0, 3);
-                Debug.Log (randomNumber);
+                // double jump, will pick random between 2 diffrerent animations
+                // (gator archived for the moment) 
+                int randomNumber = Random.Range(0, 2);
+                Debug.Log(randomNumber);
                 switch (randomNumber) {
                     case 0:
-                        animator.SetTrigger ("doubleJump");
+                        animator.SetTrigger("doubleJump");
                         break;
                     case 1:
-                        animator.SetTrigger ("twirl");
+                        animator.SetTrigger("twirl");
                         break;
                     case 2:
-                        animator.SetTrigger ("gator");
+                        animator.SetTrigger("gator");
                         break;
                 }
-                flashObject.StartFlash (flashColor, flashSpeed);
-                audio.Play ("clap");
-                cameraAnimator.SetTrigger ("parry");
-                parryObject.onParry ();
+                flashObject.StartFlash(flashColor, flashSpeed);
+                audio.Play("clap");
+                cameraAnimator.SetTrigger("parry");
+                parryObject.onParry();
             } else {
                 // normal jump
-                audio.Play ("jump1");
+                audio.Play("jump1");
             }
         }
 
@@ -108,24 +109,24 @@ public class PlayerMovement : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other) {
 
-        if (jumpCollider.IsTouching (other)) {
-            if (other.gameObject.CompareTag ("Ground"))
-                TouchGround ();
+        if (jumpCollider.IsTouching(other)) {
+            if (other.gameObject.CompareTag("Ground"))
+                TouchGround();
         }
     }
 
     void TouchGround() {
         touchingGround = true;
         jumpsLeft = 1;
-        animator.SetBool ("jumping", false);
-        audio.Play ("landing");
-        FindObjectOfType<CameraShake> ().Begin (.02f, 10, .1f);
+        animator.SetBool("jumping", false);
+        audio.Play("landing");
+        FindObjectOfType<CameraShake>().Begin(.02f, 10, .1f);
     }
 
     void OnCollisionExit2D(Collision2D other) {
-        if (other.gameObject.CompareTag ("Ground")) {
+        if (other.gameObject.CompareTag("Ground")) {
             touchingGround = false;
-            animator.SetBool ("jumping", true);
+            animator.SetBool("jumping", true);
             jumpsLeft = 0;
         }
     }
