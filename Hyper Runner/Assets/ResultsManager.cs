@@ -33,4 +33,8 @@ public class ResultsManager : MonoBehaviour {
     public void IncNonPerfectTiles() {
         this.countNonPerfectTiles++;
     }
+    /*
+    public string GenerateScore() {
+        
+    }*/
 }
