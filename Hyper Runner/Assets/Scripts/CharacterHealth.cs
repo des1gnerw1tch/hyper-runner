@@ -80,10 +80,14 @@ public class CharacterHealth : MonoBehaviour {
         }
     }
 
+    // when the player runs into an object, they will be reset at the top of
+    // the screen, with gravity reset.
     void RunIntoObject() {
         this.AddCharisma(-10f);
         this.transform.position =
                 new Vector3(transform.position.x, maxHeight - .1f, 0);
+        Debug.Log(Physics2D.gravity.y);
+        Physics2D.gravity = new Vector2(0, -Mathf.Abs(Physics2D.gravity.y));
         FindObjectOfType<AudioManager>().Play("negative");
     }
 
