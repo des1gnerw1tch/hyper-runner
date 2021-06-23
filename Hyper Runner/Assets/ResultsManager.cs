@@ -34,4 +34,17 @@ public static class ResultsManager {
     public static void IncNonPerfectTiles() {
         countNonPerfectTiles++;
     }
+
+    // Getters
+    public static int GetPlayerCrashes() {
+        return countPlayerCrash;
+    }
+
+    public static int GetMissedDanceTiles() {
+        return countMissedDanceTiles;
+    }
+
+    public static int GetNonPerfectTiles() {
+        return countNonPerfectTiles;
+    }
 }
