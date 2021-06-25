@@ -47,6 +47,7 @@ public class GradeImage : MonoBehaviour {
     }
 
     // returns grade earned for current run
+    // TODO: create this method with good weights, for right it is limited to either earn P or F... 
     int CalculateGrade() {
         int normalScore = ResultsManager.GetMissedDanceTiles() + ResultsManager.GetPlayerCrashes();
         if (normalScore == 0) {
