@@ -4,21 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 
 // displays the final grade of your game
-public class GradeImage : MonoBehaviour {
+public class GradeImage : AResultText {
     [SerializeField] private Image imageComponent;
     [SerializeField] private Sprite[] grades; // all possible grade images
     [SerializeField] private float delayBetweenShuffle = .2f; // delay between shuffle images
-    private int gradeEarned; // the grade earned by player, calculated with ResultsManager
+    public int gradeEarned; // the grade earned by player, calculated with ResultsManager
 
     // called on first frame
     void Start() {
         this.imageComponent.enabled = false;
-        this.StartShuffle();
         this.gradeEarned = CalculateGrade();
     }
 
     // EFFECT: enables image component 
-    void StartShuffle() {
+    public override void Activate() {
         this.imageComponent.enabled = true;
         StartCoroutine("Shuffle");
     }
@@ -32,6 +31,7 @@ public class GradeImage : MonoBehaviour {
             yield return new WaitForSeconds(this.delayBetweenShuffle);
         }
         this.imageComponent.sprite = this.grades[gradeEarned];
+        this.ActivateNext();
     }
 
     // EFFECT: displays a random grade,

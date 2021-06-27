@@ -326,6 +326,7 @@ GameObject:
   - component: {fileID: 231885171}
   - component: {fileID: 231885173}
   - component: {fileID: 231885172}
+  - component: {fileID: 231885174}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -449,6 +450,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 231885170}
   m_CullTransparentMesh: 1
+--- !u!114 &231885174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231885170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c193d64668eb94030a51eb3ed7a4bf08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  next: {fileID: 2050105183}
+  tmp: {fileID: 231885172}
+  countAnimDelay: 0.001
+  score: 1210
 --- !u!1 &304126976
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,6 +656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59477b09c4bce42c7a38aa84c1ef1794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  next: {fileID: 0}
   imageComponent: {fileID: 1112834539}
   grades:
   - {fileID: 6106182905516972602, guid: a4773435d23d94b45ac5c0b0e41d59dc, type: 3}
@@ -647,6 +665,7 @@ MonoBehaviour:
   - {fileID: -2212755764982107462, guid: a4773435d23d94b45ac5c0b0e41d59dc, type: 3}
   - {fileID: -2392084622639469543, guid: a4773435d23d94b45ac5c0b0e41d59dc, type: 3}
   delayBetweenShuffle: 0.1
+  gradeEarned: 0
 --- !u!1 &1356141020
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,9 +692,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1356141020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6420baa5e21d34a0c9c8d6b598365405, type: 3}
+  m_Script: {fileID: 11500000, guid: de6cd88cb70be4059902a79f622cbe89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  first: {fileID: 231885174}
 --- !u!4 &1356141022
 Transform:
   m_ObjectHideFlags: 0
@@ -919,6 +939,7 @@ GameObject:
   - component: {fileID: 2050105180}
   - component: {fileID: 2050105182}
   - component: {fileID: 2050105181}
+  - component: {fileID: 2050105183}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -1042,3 +1063,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050105179}
   m_CullTransparentMesh: 1
+--- !u!114 &2050105183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050105179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c193d64668eb94030a51eb3ed7a4bf08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  next: {fileID: 1112834541}
+  tmp: {fileID: 2050105181}
+  countAnimDelay: 0.001
+  score: 2300
