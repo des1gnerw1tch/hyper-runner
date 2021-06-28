@@ -23,12 +23,12 @@ public class ScoreText : AResultText {
         for (int i = 0; i <= this.score; i += 10) {
             this.tmp.SetText(i + ""); // converts to string
             yield return new WaitForSeconds(this.countAnimDelay);
-            if (i % 100 == 0) { // play click on every other score
-                FindObjectOfType<AudioManager>().Play("Click", 1 + ((float)i / 1000));
+            if (i % 150 == 0) { // play click on every other score
+                FindObjectOfType<AudioManager>().Play("Bubble", 1 + ((float)i / 1000));
             }
 
         }
-        FindObjectOfType<AudioManager>().ResetPitch("Click"); // reset pitch of click
+        FindObjectOfType<AudioManager>().ResetPitch("Bubble"); // reset pitch of click
         this.ActivateNext(); // activate next object
     }
 }
