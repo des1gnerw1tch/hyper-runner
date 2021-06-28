@@ -17153,6 +17153,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -3268463772907903736, guid: 70faeb78cb37549d492679253f526549, type: 3}
+      propertyPath: waitTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -3268463772907903736, guid: 70faeb78cb37549d492679253f526549, type: 3}
       propertyPath: blackScreen
       value: 
       objectReference: {fileID: 2093468212}
@@ -22837,6 +22841,10 @@ PrefabInstance:
       propertyPath: musicSync
       value: 
       objectReference: {fileID: 1615074041}
+    - target: {fileID: 3533110327341007694, guid: c2669a9d3833d47b799e1a88baf06109, type: 3}
+      propertyPath: musicPitch
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3533110327341007695, guid: c2669a9d3833d47b799e1a88baf06109, type: 3}
       propertyPath: cameraMovement
       value: 

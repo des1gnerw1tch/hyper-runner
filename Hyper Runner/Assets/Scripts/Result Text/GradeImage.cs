@@ -26,7 +26,7 @@ public class GradeImage : AResultText {
     // makes sure that two grades don't pop up in a row, disrupting flow
     IEnumerator Shuffle() {
         int lastIndex = 0;
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 30; i++) {
             lastIndex = ShowRandomGrade(lastIndex);
             yield return new WaitForSeconds(this.delayBetweenShuffle);
         }
