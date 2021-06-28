@@ -44,7 +44,7 @@ public class GradeImage : AResultText {
         } while (randNum == lastIndex);
 
         this.imageComponent.sprite = this.grades[randNum];
-        FindObjectOfType<AudioManager>().Play("Click");
+        FindObjectOfType<AudioManager>().Play("Click");//
         return randNum;
     }
 
