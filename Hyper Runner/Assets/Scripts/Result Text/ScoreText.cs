@@ -23,6 +23,10 @@ public class ScoreText : AResultText {
         for (int i = 0; i <= this.score; i += 10) {
             this.tmp.SetText(i + ""); // converts to string
             yield return new WaitForSeconds(this.countAnimDelay);
+            Debug.Log(i % 100);
+            if (i % 100 == 0) { // play click on every other score
+                FindObjectOfType<AudioManager>().Play("Click");
+            }
         }
         this.ActivateNext(); // activate next object
     }

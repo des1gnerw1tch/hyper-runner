@@ -30,6 +30,7 @@ public class GradeImage : AResultText {
             lastIndex = ShowRandomGrade(lastIndex);
             yield return new WaitForSeconds(this.delayBetweenShuffle);
         }
+        FindObjectOfType<AudioManager>().Play("Click");
         this.imageComponent.sprite = this.grades[gradeEarned];
         this.ActivateNext();
     }
@@ -43,6 +44,7 @@ public class GradeImage : AResultText {
         } while (randNum == lastIndex);
 
         this.imageComponent.sprite = this.grades[randNum];
+        FindObjectOfType<AudioManager>().Play("Click");
         return randNum;
     }
 
