@@ -26,11 +26,12 @@ public class GradeImage : AResultText {
     // makes sure that two grades don't pop up in a row, disrupting flow
     IEnumerator Shuffle() {
         int lastIndex = 0;
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 10; i++) {
             lastIndex = ShowRandomGrade(lastIndex);
             yield return new WaitForSeconds(this.delayBetweenShuffle);
         }
         FindObjectOfType<AudioManager>().Play("Click");
+        FindObjectOfType<AudioManager>().Play("Yay");
         this.imageComponent.sprite = this.grades[gradeEarned];
         this.ActivateNext();
     }
@@ -44,7 +45,7 @@ public class GradeImage : AResultText {
         } while (randNum == lastIndex);
 
         this.imageComponent.sprite = this.grades[randNum];
-        FindObjectOfType<AudioManager>().Play("Click");//
+        FindObjectOfType<AudioManager>().Play("Click");
         return randNum;
     }
 

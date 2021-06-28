@@ -24,7 +24,7 @@ public class ScoreText : AResultText {
             this.tmp.SetText(i + ""); // converts to string
             yield return new WaitForSeconds(this.countAnimDelay);
             if (i % 150 == 0) { // play click on every other score
-                FindObjectOfType<AudioManager>().Play("Bubble", 1 + ((float)i / 1000));
+                FindObjectOfType<AudioManager>().Play("Bubble", 1 + ((float)i / 700));
             }
 
         }
