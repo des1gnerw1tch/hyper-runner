@@ -9,6 +9,7 @@ public class GradeImage : AResultText {
     [SerializeField] private Sprite[] grades; // all possible grade images
     [SerializeField] private float delayBetweenShuffle = .2f; // delay between shuffle images
     [SerializeField] private ResultsAnimationController controller;
+    [SerializeField] private Animator charismaAnimator;
     public int gradeEarned; // the grade earned by player, calculated with ResultsManager
     private bool isHighScore; // is grade earned a high score
 
@@ -33,13 +34,8 @@ public class GradeImage : AResultText {
             lastIndex = ShowRandomGrade(lastIndex);
             yield return new WaitForSeconds(this.delayBetweenShuffle);
         }
-        FindObjectOfType<AudioManager>().Play("Click");
-        FindObjectOfType<AudioManager>().Play("Yay");
-        this.imageComponent.sprite = this.grades[gradeEarned];
-
-        if (this.isHighScore) {
-            this.controller.DisplayHighScore();
-        }
+        // at the end of the shuffle, show earned grade
+        this.ShowEarnedGrade();
     }
 
     // EFFECT: displays a random grade,
@@ -64,5 +60,19 @@ public class GradeImage : AResultText {
         } else {
             return this.grades.Length;
         }
+    }
+
+    // shows the earned grade of the player, handles high score or not
+    // EFFECT: changes sprite of this image
+    void ShowEarnedGrade() {
+        FindObjectOfType<AudioManager>().Play("Click");
+        FindObjectOfType<AudioManager>().Play("Yay");
+        this.imageComponent.sprite = this.grades[gradeEarned];
+
+        if (this.isHighScore) {
+            this.controller.DisplayHighScore();
+        }
+
+        this.charismaAnimator.SetTrigger((4 - gradeEarned) + "");
     }
 }
