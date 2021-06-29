@@ -9,6 +9,7 @@ public class ResultsAnimationController : MonoBehaviour {
     private void Start() {
         this.first.Activate();
         this.highScoreText.SetActive(false);
+        ResultsManager.PrintResults();
     }
 
     // displays high score, along with some sounds

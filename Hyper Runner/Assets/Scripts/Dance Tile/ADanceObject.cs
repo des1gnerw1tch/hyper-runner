@@ -42,17 +42,21 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
 
     }
 
+    // TODO: clean this up this function sucks
     // spawns rating texts and adds to charisma when player presses a dance key
     // EFFECT: adds to characterHealth charisma, changes ResultsManager fields
     public void EvaluateScore(float _score) {
+        ResultsManager.IncTotalDanceTiles();
         if (_score > 9.7) {
             SpawnScoreText(perfectText); // spawn perfect text
             characterHealth.AddCharisma(10f);
             FindObjectOfType<AudioManager>().Play("metronome");
+
         } else if (_score > 9.5) {
             characterHealth.AddCharisma(3f);
             SpawnScoreText(goodText); // spawn good text
             FindObjectOfType<AudioManager>().Play("metronome");
+            ResultsManager.IncNonPerfectTiles();
         } else if (_score > 9) {
             if (characterHealth.charisma > 50f) {
                 characterHealth.AddCharisma(-5f); // "okay" rating will only penalize if at high-charisma
@@ -63,10 +67,13 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
             }
             FindObjectOfType<AudioManager>().Play("metronome");
             SpawnScoreText(okText); // spawn ok text
+            ResultsManager.IncNonPerfectTiles();
         } else {
             characterHealth.AddCharisma(-10f);
             SpawnScoreText(missedText); // spawn missed text pop up
             FindObjectOfType<AudioManager>().Play("negative");
+            ResultsManager.IncNonPerfectTiles();
+            ResultsManager.IncMissedDanceTiles();
         }
     }
 

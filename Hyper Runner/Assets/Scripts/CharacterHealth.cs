@@ -89,6 +89,7 @@ public class CharacterHealth : MonoBehaviour {
         Debug.Log(Physics2D.gravity.y);
         Physics2D.gravity = new Vector2(0, -Mathf.Abs(Physics2D.gravity.y));
         FindObjectOfType<AudioManager>().Play("negative");
+        ResultsManager.IncPlayerCrash();
     }
 
     void Update() {

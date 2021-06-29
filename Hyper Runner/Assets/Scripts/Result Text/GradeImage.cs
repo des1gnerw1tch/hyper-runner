@@ -54,11 +54,27 @@ public class GradeImage : AResultText {
     // returns grade earned for current run
     // TODO: create this method with good weights, for right it is limited to either earn P or F... 
     int CalculateGrade() {
-        int normalScore = ResultsManager.GetMissedDanceTiles() + ResultsManager.GetPlayerCrashes();
-        if (normalScore == 0) {
+        float totalTiles = (float)ResultsManager.GetTotalTiles();
+        float nonPerfectTiles = (float)ResultsManager.GetNonPerfectTiles();
+        float missedTiles = (float)ResultsManager.GetMissedDanceTiles();
+
+        float perfectRatio = (totalTiles - nonPerfectTiles)
+            / totalTiles;
+        Debug.Log("Perfect Ratio: " + perfectRatio);
+        float hitRatio = (totalTiles - missedTiles)
+            / totalTiles;
+        Debug.Log("Hit Ratio: " + hitRatio);
+
+        if (perfectRatio > .70 && ResultsManager.GetPlayerCrashes() == 0) {
             return 0;
+        } else if (hitRatio > .80 && ResultsManager.GetPlayerCrashes() <= 2) {
+            return 1;
+        } else if (hitRatio > .70 && ResultsManager.GetPlayerCrashes() <= 4) {
+            return 2;
+        } else if (hitRatio > .60 && ResultsManager.GetPlayerCrashes() <= 6) {
+            return 3;
         } else {
-            return this.grades.Length;
+            return 4;
         }
     }
 
@@ -66,13 +82,18 @@ public class GradeImage : AResultText {
     // EFFECT: changes sprite of this image
     void ShowEarnedGrade() {
         FindObjectOfType<AudioManager>().Play("Click");
-        FindObjectOfType<AudioManager>().Play("Yay");
+
         this.imageComponent.sprite = this.grades[gradeEarned];
+        int happyRating = (4 - gradeEarned);
+        if (happyRating < 3) {
+            this.isHighScore = false;
+        }
 
         if (this.isHighScore) {
             this.controller.DisplayHighScore();
+            FindObjectOfType<AudioManager>().Play("Yay");
         }
 
-        this.charismaAnimator.SetTrigger((4 - gradeEarned) + "");
+        this.charismaAnimator.SetTrigger(happyRating + "");
     }
 }
