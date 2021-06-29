@@ -8,12 +8,15 @@ public class GradeImage : AResultText {
     [SerializeField] private Image imageComponent;
     [SerializeField] private Sprite[] grades; // all possible grade images
     [SerializeField] private float delayBetweenShuffle = .2f; // delay between shuffle images
+    [SerializeField] private ResultsAnimationController controller;
     public int gradeEarned; // the grade earned by player, calculated with ResultsManager
+    private bool isHighScore; // is grade earned a high score
 
     // called on first frame
     void Start() {
         this.imageComponent.enabled = false;
         this.gradeEarned = CalculateGrade();
+        this.isHighScore = true; // TODO: display high score if this is saved as a high score
     }
 
     // EFFECT: enables image component 
@@ -33,7 +36,10 @@ public class GradeImage : AResultText {
         FindObjectOfType<AudioManager>().Play("Click");
         FindObjectOfType<AudioManager>().Play("Yay");
         this.imageComponent.sprite = this.grades[gradeEarned];
-        this.ActivateNext();
+
+        if (this.isHighScore) {
+            this.controller.DisplayHighScore();
+        }
     }
 
     // EFFECT: displays a random grade,
