@@ -33,9 +33,14 @@ public class ResultsAnimationController : MonoBehaviour {
             / totalTiles;
 
         // this crazy math makes a score, somewhere in the 1000 range
-        // the longer the level (more tiles) and the least crashes, gives the most points. 
-        this.mobilityScore.score =
-            2500 - ResultsManager.GetPlayerCrashes() * 500;
+        // the longer the level (more tiles) and the least crashes, gives the most points.
+        int mobilityScoreTemp = 2500 - ResultsManager.GetPlayerCrashes() * 500;
+        if (mobilityScoreTemp < 0) {
+            this.mobilityScore.score = 0;
+        } else {
+            this.mobilityScore.score = mobilityScoreTemp;
+        }
+
 
         // score for rhythm
         int rhythmScoreTemp =
