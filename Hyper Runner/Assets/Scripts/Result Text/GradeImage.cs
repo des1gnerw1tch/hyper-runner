@@ -65,16 +65,16 @@ public class GradeImage : AResultText {
             / totalTiles;
         Debug.Log("Hit Ratio: " + hitRatio);
 
-        if (perfectRatio > .70 && ResultsManager.GetPlayerCrashes() == 0) {
+        if (perfectRatio > .70 && ResultsManager.GetPlayerCrashes() == 0) { // P
             return 0;
-        } else if (hitRatio > .80 && ResultsManager.GetPlayerCrashes() <= 2) {
+        } else if (hitRatio > .80 && ResultsManager.GetPlayerCrashes() <= 2) { // A
             return 1;
-        } else if (hitRatio > .70 && ResultsManager.GetPlayerCrashes() <= 4) {
+        } else if (hitRatio > .70 && ResultsManager.GetPlayerCrashes() <= 4) { // B
             return 2;
-        } else if (hitRatio > .60 && ResultsManager.GetPlayerCrashes() <= 6) {
+        } else if (hitRatio > .60 && ResultsManager.GetPlayerCrashes() <= 6) { // C
             return 3;
         } else {
-            return 4;
+            return 4; // D
         }
     }
 
@@ -83,8 +83,8 @@ public class GradeImage : AResultText {
     void ShowEarnedGrade() {
         FindObjectOfType<AudioManager>().Play("Click");
 
-        this.imageComponent.sprite = this.grades[gradeEarned];
-        int happyRating = (4 - gradeEarned);
+        this.imageComponent.sprite = this.grades[this.gradeEarned];
+        int happyRating = (4 - this.gradeEarned);
         if (happyRating < 3) {
             this.isHighScore = false;
         }
@@ -94,6 +94,17 @@ public class GradeImage : AResultText {
             FindObjectOfType<AudioManager>().Play("Yay");
         }
 
-        this.charismaAnimator.SetTrigger(happyRating + "");
+        if (this.gradeEarned == 0) {
+            this.charismaAnimator.SetTrigger("4");
+        } else if (this.gradeEarned == 1 || this.gradeEarned == 2) {
+            this.charismaAnimator.SetTrigger("3");
+        } else if (this.gradeEarned == 3) {
+            this.charismaAnimator.SetTrigger("2");
+        } else if (this.gradeEarned == 4) {
+            this.charismaAnimator.SetTrigger("1");
+        } else {
+            throw new System.Exception("Grade earned out of bounds");
+        }
+
     }
 }
