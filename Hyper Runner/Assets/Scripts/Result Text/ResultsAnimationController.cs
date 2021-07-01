@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ResultsAnimationController : MonoBehaviour {
+    [SerializeField] private GameObject blackScreenPanel;
     [SerializeField] private AResultText first;
     [SerializeField] private ScoreText mobilityScore;
     [SerializeField] private ScoreText rhythmScore;
     [SerializeField] private GameObject highScoreText;
 
     private void Start() {
+        blackScreenPanel.SetActive(true);
         this.SetScores();
         this.first.Activate();
         this.highScoreText.SetActive(false);
