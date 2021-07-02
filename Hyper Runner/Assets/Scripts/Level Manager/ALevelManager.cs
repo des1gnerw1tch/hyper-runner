@@ -34,14 +34,14 @@ public abstract class ALevelManager : MonoBehaviour, ILevelManager {
                 playerMovement.enabled = true;
                 playerMovement.SetAnimatorControllerAsPlatformer();
                 rhythmMovement.enabled = false;
-                input.SwitchCurrentActionMap("Player"); // switches action map to rhythm
+                input.SwitchCurrentActionMap("Platformer"); // switches action map to platformer
                 player_rb.gravityScale = 5f;
                 flyingParticles.SetActive(false);
                 break;
             case "Rhythm":
                 playerMovement.enabled = false;
                 rhythmMovement.enabled = true;
-                input.SwitchCurrentActionMap("Dance Keys"); // switches action map to rhythm
+                input.SwitchCurrentActionMap("Dancer"); // switches action map to rhythm
 
                 player_rb.gravityScale = 0;
                 flyingParticles.SetActive(true);

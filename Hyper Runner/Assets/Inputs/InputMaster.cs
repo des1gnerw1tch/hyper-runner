@@ -15,7 +15,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     ""name"": ""InputMaster"",
     ""maps"": [
         {
-            ""name"": ""Player"",
+            ""name"": ""Platformer"",
             ""id"": ""22f5051d-fd71-4012-b249-920c105eb816"",
             ""actions"": [
                 {
@@ -80,7 +80,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
             ]
         },
         {
-            ""name"": ""Dance Keys"",
+            ""name"": ""Dancer"",
             ""id"": ""a4ed752d-8478-4fca-a144-1973bc585256"",
             ""actions"": [
                 {
@@ -208,18 +208,18 @@ public class @InputMaster : IInputActionCollection, IDisposable
         }
     ]
 }");
-        // Player
-        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
-        m_Player_FloorDown = m_Player.FindAction("FloorDown", throwIfNotFound: true);
-        m_Player_FloorUp = m_Player.FindAction("FloorUp", throwIfNotFound: true);
-        // Dance Keys
-        m_DanceKeys = asset.FindActionMap("Dance Keys", throwIfNotFound: true);
-        m_DanceKeys_UpDanceKeyPress = m_DanceKeys.FindAction("UpDanceKeyPress", throwIfNotFound: true);
-        m_DanceKeys_UpDanceKeyRelease = m_DanceKeys.FindAction("UpDanceKeyRelease", throwIfNotFound: true);
-        m_DanceKeys_DownDanceKeyPress = m_DanceKeys.FindAction("DownDanceKeyPress", throwIfNotFound: true);
-        m_DanceKeys_DownDanceKeyRelease = m_DanceKeys.FindAction("DownDanceKeyRelease", throwIfNotFound: true);
-        m_DanceKeys_AnyDanceKeyPress = m_DanceKeys.FindAction("AnyDanceKeyPress", throwIfNotFound: true);
+        // Platformer
+        m_Platformer = asset.FindActionMap("Platformer", throwIfNotFound: true);
+        m_Platformer_Jump = m_Platformer.FindAction("Jump", throwIfNotFound: true);
+        m_Platformer_FloorDown = m_Platformer.FindAction("FloorDown", throwIfNotFound: true);
+        m_Platformer_FloorUp = m_Platformer.FindAction("FloorUp", throwIfNotFound: true);
+        // Dancer
+        m_Dancer = asset.FindActionMap("Dancer", throwIfNotFound: true);
+        m_Dancer_UpDanceKeyPress = m_Dancer.FindAction("UpDanceKeyPress", throwIfNotFound: true);
+        m_Dancer_UpDanceKeyRelease = m_Dancer.FindAction("UpDanceKeyRelease", throwIfNotFound: true);
+        m_Dancer_DownDanceKeyPress = m_Dancer.FindAction("DownDanceKeyPress", throwIfNotFound: true);
+        m_Dancer_DownDanceKeyRelease = m_Dancer.FindAction("DownDanceKeyRelease", throwIfNotFound: true);
+        m_Dancer_AnyDanceKeyPress = m_Dancer.FindAction("AnyDanceKeyPress", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -266,39 +266,39 @@ public class @InputMaster : IInputActionCollection, IDisposable
         asset.Disable();
     }
 
-    // Player
-    private readonly InputActionMap m_Player;
-    private IPlayerActions m_PlayerActionsCallbackInterface;
-    private readonly InputAction m_Player_Jump;
-    private readonly InputAction m_Player_FloorDown;
-    private readonly InputAction m_Player_FloorUp;
-    public struct PlayerActions
+    // Platformer
+    private readonly InputActionMap m_Platformer;
+    private IPlatformerActions m_PlatformerActionsCallbackInterface;
+    private readonly InputAction m_Platformer_Jump;
+    private readonly InputAction m_Platformer_FloorDown;
+    private readonly InputAction m_Platformer_FloorUp;
+    public struct PlatformerActions
     {
         private @InputMaster m_Wrapper;
-        public PlayerActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Jump => m_Wrapper.m_Player_Jump;
-        public InputAction @FloorDown => m_Wrapper.m_Player_FloorDown;
-        public InputAction @FloorUp => m_Wrapper.m_Player_FloorUp;
-        public InputActionMap Get() { return m_Wrapper.m_Player; }
+        public PlatformerActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Jump => m_Wrapper.m_Platformer_Jump;
+        public InputAction @FloorDown => m_Wrapper.m_Platformer_FloorDown;
+        public InputAction @FloorUp => m_Wrapper.m_Platformer_FloorUp;
+        public InputActionMap Get() { return m_Wrapper.m_Platformer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerActions instance)
+        public static implicit operator InputActionMap(PlatformerActions set) { return set.Get(); }
+        public void SetCallbacks(IPlatformerActions instance)
         {
-            if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
+            if (m_Wrapper.m_PlatformerActionsCallbackInterface != null)
             {
-                @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
-                @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
-                @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
-                @FloorDown.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFloorDown;
-                @FloorDown.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFloorDown;
-                @FloorDown.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFloorDown;
-                @FloorUp.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFloorUp;
-                @FloorUp.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFloorUp;
-                @FloorUp.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFloorUp;
+                @Jump.started -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnJump;
+                @FloorDown.started -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnFloorDown;
+                @FloorDown.performed -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnFloorDown;
+                @FloorDown.canceled -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnFloorDown;
+                @FloorUp.started -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnFloorUp;
+                @FloorUp.performed -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnFloorUp;
+                @FloorUp.canceled -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnFloorUp;
             }
-            m_Wrapper.m_PlayerActionsCallbackInterface = instance;
+            m_Wrapper.m_PlatformerActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @Jump.started += instance.OnJump;
@@ -313,51 +313,51 @@ public class @InputMaster : IInputActionCollection, IDisposable
             }
         }
     }
-    public PlayerActions @Player => new PlayerActions(this);
+    public PlatformerActions @Platformer => new PlatformerActions(this);
 
-    // Dance Keys
-    private readonly InputActionMap m_DanceKeys;
-    private IDanceKeysActions m_DanceKeysActionsCallbackInterface;
-    private readonly InputAction m_DanceKeys_UpDanceKeyPress;
-    private readonly InputAction m_DanceKeys_UpDanceKeyRelease;
-    private readonly InputAction m_DanceKeys_DownDanceKeyPress;
-    private readonly InputAction m_DanceKeys_DownDanceKeyRelease;
-    private readonly InputAction m_DanceKeys_AnyDanceKeyPress;
-    public struct DanceKeysActions
+    // Dancer
+    private readonly InputActionMap m_Dancer;
+    private IDancerActions m_DancerActionsCallbackInterface;
+    private readonly InputAction m_Dancer_UpDanceKeyPress;
+    private readonly InputAction m_Dancer_UpDanceKeyRelease;
+    private readonly InputAction m_Dancer_DownDanceKeyPress;
+    private readonly InputAction m_Dancer_DownDanceKeyRelease;
+    private readonly InputAction m_Dancer_AnyDanceKeyPress;
+    public struct DancerActions
     {
         private @InputMaster m_Wrapper;
-        public DanceKeysActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
-        public InputAction @UpDanceKeyPress => m_Wrapper.m_DanceKeys_UpDanceKeyPress;
-        public InputAction @UpDanceKeyRelease => m_Wrapper.m_DanceKeys_UpDanceKeyRelease;
-        public InputAction @DownDanceKeyPress => m_Wrapper.m_DanceKeys_DownDanceKeyPress;
-        public InputAction @DownDanceKeyRelease => m_Wrapper.m_DanceKeys_DownDanceKeyRelease;
-        public InputAction @AnyDanceKeyPress => m_Wrapper.m_DanceKeys_AnyDanceKeyPress;
-        public InputActionMap Get() { return m_Wrapper.m_DanceKeys; }
+        public DancerActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
+        public InputAction @UpDanceKeyPress => m_Wrapper.m_Dancer_UpDanceKeyPress;
+        public InputAction @UpDanceKeyRelease => m_Wrapper.m_Dancer_UpDanceKeyRelease;
+        public InputAction @DownDanceKeyPress => m_Wrapper.m_Dancer_DownDanceKeyPress;
+        public InputAction @DownDanceKeyRelease => m_Wrapper.m_Dancer_DownDanceKeyRelease;
+        public InputAction @AnyDanceKeyPress => m_Wrapper.m_Dancer_AnyDanceKeyPress;
+        public InputActionMap Get() { return m_Wrapper.m_Dancer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(DanceKeysActions set) { return set.Get(); }
-        public void SetCallbacks(IDanceKeysActions instance)
+        public static implicit operator InputActionMap(DancerActions set) { return set.Get(); }
+        public void SetCallbacks(IDancerActions instance)
         {
-            if (m_Wrapper.m_DanceKeysActionsCallbackInterface != null)
+            if (m_Wrapper.m_DancerActionsCallbackInterface != null)
             {
-                @UpDanceKeyPress.started -= m_Wrapper.m_DanceKeysActionsCallbackInterface.OnUpDanceKeyPress;
-                @UpDanceKeyPress.performed -= m_Wrapper.m_DanceKeysActionsCallbackInterface.OnUpDanceKeyPress;
-                @UpDanceKeyPress.canceled -= m_Wrapper.m_DanceKeysActionsCallbackInterface.OnUpDanceKeyPress;
-                @UpDanceKeyRelease.started -= m_Wrapper.m_DanceKeysActionsCallbackInterface.OnUpDanceKeyRelease;
-                @UpDanceKeyRelease.performed -= m_Wrapper.m_DanceKeysActionsCallbackInterface.OnUpDanceKeyRelease;
-                @UpDanceKeyRelease.canceled -= m_Wrapper.m_DanceKeysActionsCallbackInterface.OnUpDanceKeyRelease;
-                @DownDanceKeyPress.started -= m_Wrapper.m_DanceKeysActionsCallbackInterface.OnDownDanceKeyPress;
-                @DownDanceKeyPress.performed -= m_Wrapper.m_DanceKeysActionsCallbackInterface.OnDownDanceKeyPress;
-                @DownDanceKeyPress.canceled -= m_Wrapper.m_DanceKeysActionsCallbackInterface.OnDownDanceKeyPress;
-                @DownDanceKeyRelease.started -= m_Wrapper.m_DanceKeysActionsCallbackInterface.OnDownDanceKeyRelease;
-                @DownDanceKeyRelease.performed -= m_Wrapper.m_DanceKeysActionsCallbackInterface.OnDownDanceKeyRelease;
-                @DownDanceKeyRelease.canceled -= m_Wrapper.m_DanceKeysActionsCallbackInterface.OnDownDanceKeyRelease;
-                @AnyDanceKeyPress.started -= m_Wrapper.m_DanceKeysActionsCallbackInterface.OnAnyDanceKeyPress;
-                @AnyDanceKeyPress.performed -= m_Wrapper.m_DanceKeysActionsCallbackInterface.OnAnyDanceKeyPress;
-                @AnyDanceKeyPress.canceled -= m_Wrapper.m_DanceKeysActionsCallbackInterface.OnAnyDanceKeyPress;
+                @UpDanceKeyPress.started -= m_Wrapper.m_DancerActionsCallbackInterface.OnUpDanceKeyPress;
+                @UpDanceKeyPress.performed -= m_Wrapper.m_DancerActionsCallbackInterface.OnUpDanceKeyPress;
+                @UpDanceKeyPress.canceled -= m_Wrapper.m_DancerActionsCallbackInterface.OnUpDanceKeyPress;
+                @UpDanceKeyRelease.started -= m_Wrapper.m_DancerActionsCallbackInterface.OnUpDanceKeyRelease;
+                @UpDanceKeyRelease.performed -= m_Wrapper.m_DancerActionsCallbackInterface.OnUpDanceKeyRelease;
+                @UpDanceKeyRelease.canceled -= m_Wrapper.m_DancerActionsCallbackInterface.OnUpDanceKeyRelease;
+                @DownDanceKeyPress.started -= m_Wrapper.m_DancerActionsCallbackInterface.OnDownDanceKeyPress;
+                @DownDanceKeyPress.performed -= m_Wrapper.m_DancerActionsCallbackInterface.OnDownDanceKeyPress;
+                @DownDanceKeyPress.canceled -= m_Wrapper.m_DancerActionsCallbackInterface.OnDownDanceKeyPress;
+                @DownDanceKeyRelease.started -= m_Wrapper.m_DancerActionsCallbackInterface.OnDownDanceKeyRelease;
+                @DownDanceKeyRelease.performed -= m_Wrapper.m_DancerActionsCallbackInterface.OnDownDanceKeyRelease;
+                @DownDanceKeyRelease.canceled -= m_Wrapper.m_DancerActionsCallbackInterface.OnDownDanceKeyRelease;
+                @AnyDanceKeyPress.started -= m_Wrapper.m_DancerActionsCallbackInterface.OnAnyDanceKeyPress;
+                @AnyDanceKeyPress.performed -= m_Wrapper.m_DancerActionsCallbackInterface.OnAnyDanceKeyPress;
+                @AnyDanceKeyPress.canceled -= m_Wrapper.m_DancerActionsCallbackInterface.OnAnyDanceKeyPress;
             }
-            m_Wrapper.m_DanceKeysActionsCallbackInterface = instance;
+            m_Wrapper.m_DancerActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @UpDanceKeyPress.started += instance.OnUpDanceKeyPress;
@@ -378,7 +378,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
             }
         }
     }
-    public DanceKeysActions @DanceKeys => new DanceKeysActions(this);
+    public DancerActions @Dancer => new DancerActions(this);
     private int m_XboxControlSchemeSchemeIndex = -1;
     public InputControlScheme XboxControlSchemeScheme
     {
@@ -388,13 +388,13 @@ public class @InputMaster : IInputActionCollection, IDisposable
             return asset.controlSchemes[m_XboxControlSchemeSchemeIndex];
         }
     }
-    public interface IPlayerActions
+    public interface IPlatformerActions
     {
         void OnJump(InputAction.CallbackContext context);
         void OnFloorDown(InputAction.CallbackContext context);
         void OnFloorUp(InputAction.CallbackContext context);
     }
-    public interface IDanceKeysActions
+    public interface IDancerActions
     {
         void OnUpDanceKeyPress(InputAction.CallbackContext context);
         void OnUpDanceKeyRelease(InputAction.CallbackContext context);

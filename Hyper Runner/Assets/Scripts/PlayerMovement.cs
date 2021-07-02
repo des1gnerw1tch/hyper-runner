@@ -44,21 +44,7 @@ public class PlayerMovement : MonoBehaviour {
             OnJump();
 
         }
-        //for mobile players
 
-        /*if (Input.touchCount > 0) {
-          Touch touch = Input.GetTouch(0);
-          if (touch.phase == TouchPhase.Began && touchingGround)  {
-            Jump();
-          }
-        }*/
-
-        //this will ground the player when holding s
-        /*if (Input.GetKey("s"))  {
-          rb.gravityScale = 20;
-        } else {
-          rb.gravityScale = initialGravity;
-        }*/
 
         if (Input.GetKeyDown("o")) {
             Debug.Log(transform.position.x);
