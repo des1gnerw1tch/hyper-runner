@@ -12,11 +12,6 @@ public class danceObject : ADanceObject {
     }
 
     void Update() {
-        // TODO: get input for keyboard, will change to new input system later
-        if (Input.GetKeyDown(keyToPress) && active) {
-            Pressed();
-        }
-
         // despawn object if missed
         if ((player.position.x - transform.position.x) >= distanceUntilDestroy) {
             characterHealth.AddCharisma(-10f);

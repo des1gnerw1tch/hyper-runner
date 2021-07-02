@@ -18,15 +18,6 @@ public class holdDanceObject : ADanceObject {
     }
 
     void Update() {
-        // input for old system TODO: update this keyboard input to new system
-        if (Input.GetKey(keyToPress) && active) {
-            Pressing();
-        }
-
-        if (Input.GetKeyUp(keyToPress) && active) {
-            EndAccuracy();
-            active = false;
-        }
 
         // for new input system
         if (isPressing && active) {
@@ -46,6 +37,8 @@ public class holdDanceObject : ADanceObject {
             }
             SpawnScoreText(missedText); // spawn missed text pop up
             FindObjectOfType<AudioManager>().Play("negative");
+            ResultsManager.IncMissedDanceTiles();
+            ResultsManager.IncNonPerfectTiles();
             Destroy(gameObject);
         }
     }
