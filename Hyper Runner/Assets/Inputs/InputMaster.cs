@@ -57,6 +57,39 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""ed0588b3-8918-4d98-8a97-d2e44b6b5c74"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3c2b5dee-3a73-44e9-b24f-6eb8815240b6"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f74a0936-e47d-4305-8dd4-a085e972505b"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""7bdde47d-8887-474a-b116-6ee8ba4fd457"",
                     ""path"": ""<XInputController>/leftStick/down"",
                     ""interactions"": ""Press"",
@@ -68,11 +101,55 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""8ea6cea3-2c91-4f0d-8cd1-3314ea72de2f"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""FloorDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4978dc9b-3dcb-43af-97b6-6d2afacc867e"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""FloorDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""01c454f2-7e2d-49b6-9fb1-df64ada081ff"",
                     ""path"": ""<XInputController>/leftStick/down"",
                     ""interactions"": ""Press(behavior=1)"",
                     ""processors"": """",
                     ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""FloorUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""03c2e77f-2bc3-4bd3-99c0-7423cb24bfd9"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""FloorUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2fd72f1a-a09f-45d0-8088-8fe133e8b5d4"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
                     ""action"": ""FloorUp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -138,11 +215,55 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""a319a9cf-789e-45b1-b83c-cea13206ae35"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""UpDanceKeyPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dec84756-0270-4335-a30e-509bc86cb33f"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""UpDanceKeyPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""e47e8428-c532-42b4-b16e-e4b16a0b230e"",
                     ""path"": ""<XInputController>/buttonNorth"",
                     ""interactions"": ""Press(behavior=1)"",
                     ""processors"": """",
                     ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""UpDanceKeyRelease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""20bbad5d-172b-42cf-bbf2-c36d14526109"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""UpDanceKeyRelease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""00b80775-ba67-4807-aee0-0865449d89cb"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
                     ""action"": ""UpDanceKeyRelease"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -171,22 +292,55 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""7be2d889-4c08-48d3-906c-4e287251d1c3"",
-                    ""path"": ""<XInputController>/buttonNorth"",
-                    ""interactions"": ""Press(behavior=2)"",
+                    ""id"": ""6b9df6b4-aea4-45ca-a1cf-b37ad3d65c1c"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""AnyDanceKeyPress"",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""DownDanceKeyPress"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e182aade-7697-47d7-a508-52d0ce61438a"",
-                    ""path"": ""<XInputController>/buttonSouth"",
-                    ""interactions"": ""Press(behavior=2)"",
+                    ""id"": ""1e0494ef-321b-47a5-b5e1-885a885fe824"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""DownDanceKeyPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eb342962-eb50-4b22-b1c2-7129bea0c25f"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""DownDanceKeyRelease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""493dc3fd-d1e8-4f23-9218-8e6321bf8ea7"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""DownDanceKeyRelease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""81e9a629-472d-40af-a375-4b9019cc6539"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
                     ""action"": ""AnyDanceKeyPress"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -205,6 +359,11 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""isOR"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Keyboard Control Scheme"",
+            ""bindingGroup"": ""Keyboard Control Scheme"",
+            ""devices"": []
         }
     ]
 }");
@@ -386,6 +545,15 @@ public class @InputMaster : IInputActionCollection, IDisposable
         {
             if (m_XboxControlSchemeSchemeIndex == -1) m_XboxControlSchemeSchemeIndex = asset.FindControlSchemeIndex("Xbox Control Scheme");
             return asset.controlSchemes[m_XboxControlSchemeSchemeIndex];
+        }
+    }
+    private int m_KeyboardControlSchemeSchemeIndex = -1;
+    public InputControlScheme KeyboardControlSchemeScheme
+    {
+        get
+        {
+            if (m_KeyboardControlSchemeSchemeIndex == -1) m_KeyboardControlSchemeSchemeIndex = asset.FindControlSchemeIndex("Keyboard Control Scheme");
+            return asset.controlSchemes[m_KeyboardControlSchemeSchemeIndex];
         }
     }
     public interface IPlatformerActions
