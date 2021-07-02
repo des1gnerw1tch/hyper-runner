@@ -22810,7 +22810,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1424509935, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
       propertyPath: m_DefaultActionMap
-      value: 22f5051d-fd71-4012-b249-920c105eb816
+      value: Platformer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1424509935, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Xbox Control Scheme
+      objectReference: {fileID: 0}
+    - target: {fileID: 1424509935, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 752551082774792005, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
       propertyPath: musicSync

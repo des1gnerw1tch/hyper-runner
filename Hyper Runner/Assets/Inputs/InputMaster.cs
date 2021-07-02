@@ -59,7 +59,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""ed0588b3-8918-4d98-8a97-d2e44b6b5c74"",
                     ""path"": ""<Keyboard>/w"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard Control Scheme"",
                     ""action"": ""Jump"",
@@ -70,7 +70,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""3c2b5dee-3a73-44e9-b24f-6eb8815240b6"",
                     ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard Control Scheme"",
                     ""action"": ""Jump"",
@@ -81,7 +81,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""f74a0936-e47d-4305-8dd4-a085e972505b"",
                     ""path"": ""<Keyboard>/space"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard Control Scheme"",
                     ""action"": ""Jump"",
@@ -363,7 +363,13 @@ public class @InputMaster : IInputActionCollection, IDisposable
         {
             ""name"": ""Keyboard Control Scheme"",
             ""bindingGroup"": ""Keyboard Control Scheme"",
-            ""devices"": []
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         }
     ]
 }");

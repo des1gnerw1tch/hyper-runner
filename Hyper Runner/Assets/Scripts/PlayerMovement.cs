@@ -38,17 +38,6 @@ public class PlayerMovement : MonoBehaviour {
     void Update() {
         transform.position = new Vector3(transform.position.x + speed * MusicSync.deltaSample,
           transform.position.y, transform.position.z);
-
-        // keyboard control
-        if (Input.GetKeyDown("space")) {
-            OnJump();
-
-        }
-
-
-        if (Input.GetKeyDown("o")) {
-            Debug.Log(transform.position.x);
-        }
     }
 
     public void OnFloorDown() {
