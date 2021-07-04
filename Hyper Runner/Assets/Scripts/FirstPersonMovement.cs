@@ -7,7 +7,7 @@ public class FirstPersonMovement : MonoBehaviour {
     [SerializeField] private float speed;
     private float hor;
     private float ver;
-
+    [SerializeField] private FirstPersonCameraController cameraController;
     void FixedUpdate() {
         //float hor = Input.GetAxis("Horizontal");
         //float ver = Input.GetAxis("Vertical");
@@ -26,5 +26,13 @@ public class FirstPersonMovement : MonoBehaviour {
     public void OnWalkHorizontal(InputValue value) {
         this.hor = value.Get<float>();
         Debug.Log("Input horizontal: " + hor);
+    }
+
+    public void OnLookVertical(InputValue value) {
+        this.cameraController.OnLookVertical(value);
+    }
+
+    public void OnLookHorizontal(InputValue value) {
+        this.cameraController.OnLookHorizontal(value);
     }
 }

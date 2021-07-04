@@ -366,6 +366,22 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": ""AxisDeadzone"",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Look Vertical"",
+                    ""type"": ""Button"",
+                    ""id"": ""2f06be00-3656-41a9-9adb-3a660e3c7d4a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": ""AxisDeadzone"",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Look Horizontal"",
+                    ""type"": ""Button"",
+                    ""id"": ""64f4a115-e413-4405-a7e4-18870ec0b57d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": ""AxisDeadzone"",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -434,6 +450,72 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""Walk Horizontal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""c008a98e-a695-43ae-ab93-327e277560de"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""Look Vertical"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""b58a8c30-d506-49e3-9d7d-4fe84953f2e2"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone"",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""Look Vertical"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""e5d30346-c1b7-4bed-81d9-19b335b247f0"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone"",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""Look Vertical"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""9478b454-256d-4ad2-97c9-51dd67caf944"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""Look Horizontal"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""ef4842de-f61d-48ae-8ef7-f69dfd346e70"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone"",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""Look Horizontal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""d08f7f8e-4f56-4538-806b-6cd6f919249f"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone"",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""Look Horizontal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -479,6 +561,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m__3D = asset.FindActionMap("3D", throwIfNotFound: true);
         m__3D_WalkVertical = m__3D.FindAction("Walk Vertical", throwIfNotFound: true);
         m__3D_WalkHorizontal = m__3D.FindAction("Walk Horizontal", throwIfNotFound: true);
+        m__3D_LookVertical = m__3D.FindAction("Look Vertical", throwIfNotFound: true);
+        m__3D_LookHorizontal = m__3D.FindAction("Look Horizontal", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -644,12 +728,16 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private I_3DActions m__3DActionsCallbackInterface;
     private readonly InputAction m__3D_WalkVertical;
     private readonly InputAction m__3D_WalkHorizontal;
+    private readonly InputAction m__3D_LookVertical;
+    private readonly InputAction m__3D_LookHorizontal;
     public struct _3DActions
     {
         private @InputMaster m_Wrapper;
         public _3DActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
         public InputAction @WalkVertical => m_Wrapper.m__3D_WalkVertical;
         public InputAction @WalkHorizontal => m_Wrapper.m__3D_WalkHorizontal;
+        public InputAction @LookVertical => m_Wrapper.m__3D_LookVertical;
+        public InputAction @LookHorizontal => m_Wrapper.m__3D_LookHorizontal;
         public InputActionMap Get() { return m_Wrapper.m__3D; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -665,6 +753,12 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @WalkHorizontal.started -= m_Wrapper.m__3DActionsCallbackInterface.OnWalkHorizontal;
                 @WalkHorizontal.performed -= m_Wrapper.m__3DActionsCallbackInterface.OnWalkHorizontal;
                 @WalkHorizontal.canceled -= m_Wrapper.m__3DActionsCallbackInterface.OnWalkHorizontal;
+                @LookVertical.started -= m_Wrapper.m__3DActionsCallbackInterface.OnLookVertical;
+                @LookVertical.performed -= m_Wrapper.m__3DActionsCallbackInterface.OnLookVertical;
+                @LookVertical.canceled -= m_Wrapper.m__3DActionsCallbackInterface.OnLookVertical;
+                @LookHorizontal.started -= m_Wrapper.m__3DActionsCallbackInterface.OnLookHorizontal;
+                @LookHorizontal.performed -= m_Wrapper.m__3DActionsCallbackInterface.OnLookHorizontal;
+                @LookHorizontal.canceled -= m_Wrapper.m__3DActionsCallbackInterface.OnLookHorizontal;
             }
             m_Wrapper.m__3DActionsCallbackInterface = instance;
             if (instance != null)
@@ -675,6 +769,12 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @WalkHorizontal.started += instance.OnWalkHorizontal;
                 @WalkHorizontal.performed += instance.OnWalkHorizontal;
                 @WalkHorizontal.canceled += instance.OnWalkHorizontal;
+                @LookVertical.started += instance.OnLookVertical;
+                @LookVertical.performed += instance.OnLookVertical;
+                @LookVertical.canceled += instance.OnLookVertical;
+                @LookHorizontal.started += instance.OnLookHorizontal;
+                @LookHorizontal.performed += instance.OnLookHorizontal;
+                @LookHorizontal.canceled += instance.OnLookHorizontal;
             }
         }
     }
@@ -715,5 +815,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     {
         void OnWalkVertical(InputAction.CallbackContext context);
         void OnWalkHorizontal(InputAction.CallbackContext context);
+        void OnLookVertical(InputAction.CallbackContext context);
+        void OnLookHorizontal(InputAction.CallbackContext context);
     }
 }

@@ -1709,6 +1709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  cameraController: {fileID: 1076968068}
 --- !u!54 &1314417892
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1752,7 +1753,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Xbox Control Scheme
-  m_DefaultActionMap: 2efcf548-4df8-4cc9-bac5-e430b1d8e68b
+  m_DefaultActionMap: 3D
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &1434544836
