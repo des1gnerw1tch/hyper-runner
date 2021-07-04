@@ -333,6 +333,96 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "3D",
+            "id": "2efcf548-4df8-4cc9-bac5-e430b1d8e68b",
+            "actions": [
+                {
+                    "name": "Walk Vertical",
+                    "type": "Button",
+                    "id": "78ecc4e5-94a8-436b-b96b-a7b57893f56a",
+                    "expectedControlType": "Button",
+                    "processors": "AxisDeadzone",
+                    "interactions": ""
+                },
+                {
+                    "name": "Walk Horizontal",
+                    "type": "Button",
+                    "id": "166f2c9a-026d-48e7-8263-987df4aba04e",
+                    "expectedControlType": "Button",
+                    "processors": "AxisDeadzone",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "1D Axis",
+                    "id": "3da5d1c9-7d2d-4e3e-8f73-5a06619ca7d6",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk Vertical",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "a8d8e0bf-7755-458a-aa69-2893bceb8d19",
+                    "path": "<Gamepad>/leftStick/down",
+                    "interactions": "",
+                    "processors": "StickDeadzone",
+                    "groups": "Xbox Control Scheme",
+                    "action": "Walk Vertical",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "02699c84-d1d1-40d6-bf5d-7df10232707f",
+                    "path": "<Gamepad>/leftStick/up",
+                    "interactions": "",
+                    "processors": "StickDeadzone",
+                    "groups": "Xbox Control Scheme",
+                    "action": "Walk Vertical",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "aa60e4c5-224d-4bcb-9d01-185f6fe46959",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox Control Scheme",
+                    "action": "Walk Horizontal",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "43a4921a-932c-4352-91d9-e659296dd219",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "StickDeadzone",
+                    "groups": "Xbox Control Scheme",
+                    "action": "Walk Horizontal",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "75a8b902-cb3b-4af2-b72e-0e5d552b1a4d",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "StickDeadzone",
+                    "groups": "Xbox Control Scheme",
+                    "action": "Walk Horizontal",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
         }
     ],
     "controlSchemes": [

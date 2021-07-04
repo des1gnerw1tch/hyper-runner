@@ -346,6 +346,96 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""3D"",
+            ""id"": ""2efcf548-4df8-4cc9-bac5-e430b1d8e68b"",
+            ""actions"": [
+                {
+                    ""name"": ""Walk Vertical"",
+                    ""type"": ""Button"",
+                    ""id"": ""78ecc4e5-94a8-436b-b96b-a7b57893f56a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": ""AxisDeadzone"",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Walk Horizontal"",
+                    ""type"": ""Button"",
+                    ""id"": ""166f2c9a-026d-48e7-8263-987df4aba04e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": ""AxisDeadzone"",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""3da5d1c9-7d2d-4e3e-8f73-5a06619ca7d6"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Walk Vertical"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""a8d8e0bf-7755-458a-aa69-2893bceb8d19"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone"",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""Walk Vertical"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""02699c84-d1d1-40d6-bf5d-7df10232707f"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone"",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""Walk Vertical"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""aa60e4c5-224d-4bcb-9d01-185f6fe46959"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""Walk Horizontal"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""43a4921a-932c-4352-91d9-e659296dd219"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone"",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""Walk Horizontal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""75a8b902-cb3b-4af2-b72e-0e5d552b1a4d"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone"",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""Walk Horizontal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -385,6 +475,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Dancer_DownDanceKeyPress = m_Dancer.FindAction("DownDanceKeyPress", throwIfNotFound: true);
         m_Dancer_DownDanceKeyRelease = m_Dancer.FindAction("DownDanceKeyRelease", throwIfNotFound: true);
         m_Dancer_AnyDanceKeyPress = m_Dancer.FindAction("AnyDanceKeyPress", throwIfNotFound: true);
+        // 3D
+        m__3D = asset.FindActionMap("3D", throwIfNotFound: true);
+        m__3D_WalkVertical = m__3D.FindAction("Walk Vertical", throwIfNotFound: true);
+        m__3D_WalkHorizontal = m__3D.FindAction("Walk Horizontal", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -544,6 +638,47 @@ public class @InputMaster : IInputActionCollection, IDisposable
         }
     }
     public DancerActions @Dancer => new DancerActions(this);
+
+    // 3D
+    private readonly InputActionMap m__3D;
+    private I_3DActions m__3DActionsCallbackInterface;
+    private readonly InputAction m__3D_WalkVertical;
+    private readonly InputAction m__3D_WalkHorizontal;
+    public struct _3DActions
+    {
+        private @InputMaster m_Wrapper;
+        public _3DActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
+        public InputAction @WalkVertical => m_Wrapper.m__3D_WalkVertical;
+        public InputAction @WalkHorizontal => m_Wrapper.m__3D_WalkHorizontal;
+        public InputActionMap Get() { return m_Wrapper.m__3D; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(_3DActions set) { return set.Get(); }
+        public void SetCallbacks(I_3DActions instance)
+        {
+            if (m_Wrapper.m__3DActionsCallbackInterface != null)
+            {
+                @WalkVertical.started -= m_Wrapper.m__3DActionsCallbackInterface.OnWalkVertical;
+                @WalkVertical.performed -= m_Wrapper.m__3DActionsCallbackInterface.OnWalkVertical;
+                @WalkVertical.canceled -= m_Wrapper.m__3DActionsCallbackInterface.OnWalkVertical;
+                @WalkHorizontal.started -= m_Wrapper.m__3DActionsCallbackInterface.OnWalkHorizontal;
+                @WalkHorizontal.performed -= m_Wrapper.m__3DActionsCallbackInterface.OnWalkHorizontal;
+                @WalkHorizontal.canceled -= m_Wrapper.m__3DActionsCallbackInterface.OnWalkHorizontal;
+            }
+            m_Wrapper.m__3DActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @WalkVertical.started += instance.OnWalkVertical;
+                @WalkVertical.performed += instance.OnWalkVertical;
+                @WalkVertical.canceled += instance.OnWalkVertical;
+                @WalkHorizontal.started += instance.OnWalkHorizontal;
+                @WalkHorizontal.performed += instance.OnWalkHorizontal;
+                @WalkHorizontal.canceled += instance.OnWalkHorizontal;
+            }
+        }
+    }
+    public _3DActions @_3D => new _3DActions(this);
     private int m_XboxControlSchemeSchemeIndex = -1;
     public InputControlScheme XboxControlSchemeScheme
     {
@@ -575,5 +710,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnDownDanceKeyPress(InputAction.CallbackContext context);
         void OnDownDanceKeyRelease(InputAction.CallbackContext context);
         void OnAnyDanceKeyPress(InputAction.CallbackContext context);
+    }
+    public interface I_3DActions
+    {
+        void OnWalkVertical(InputAction.CallbackContext context);
+        void OnWalkHorizontal(InputAction.CallbackContext context);
     }
 }
