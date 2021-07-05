@@ -4,28 +4,27 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class FirstPersonMovement : MonoBehaviour {
-    [SerializeField] private float speed;
-    private float hor;
-    private float ver;
-    [SerializeField] private FirstPersonCameraController cameraController;
+    [SerializeField] private float speed; // speed of walk
+    [SerializeField] private FirstPersonCameraController cameraController; // camera controller
+
+    [SerializeField] PlayerInput playerInput; // player input component
+    private InputAction verMovement; // vertical axis, from "Walk Vertical" of player input
+    private InputAction horMovement; // horizontal axis, from "Walk Horizontal" of player input
+
+    // Called on first frame
+    // EFFECT: initializes vertical movement and horizontal movement variables
+    private void Start() {
+        this.verMovement = this.playerInput.actions["Walk Vertical"];
+        this.horMovement = this.playerInput.actions["Walk Horizontal"];
+    }
+
+    // called every frame (FixedUpdate() is for physics)
+    // EFFECT: moves this transform by horizontal axis and vertical axis
     void FixedUpdate() {
-        //float hor = Input.GetAxis("Horizontal");
-        //float ver = Input.GetAxis("Vertical");
-
-        Vector3 move = new Vector3(this.hor, 0f, this.ver) * this.speed * Time.deltaTime;
+        float ver = this.verMovement.ReadValue<float>();
+        float hor = this.horMovement.ReadValue<float>();
+        Vector3 move = this.speed * Time.deltaTime * new Vector3(hor, 0f, ver);
         transform.Translate(move, Space.Self);
-    }
-
-    // When vertical movement is pressed
-    public void OnWalkVertical(InputValue value) {
-        this.ver = value.Get<float>();
-        Debug.Log("Input vertical: " + ver);
-    }
-
-    // when horizontal movement is pressed
-    public void OnWalkHorizontal(InputValue value) {
-        this.hor = value.Get<float>();
-        Debug.Log("Input horizontal: " + hor);
     }
 
     public void OnLookVertical(InputValue value) {
