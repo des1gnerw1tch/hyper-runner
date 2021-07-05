@@ -1419,6 +1419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotationSpeed: 3
   player: {fileID: 1314417890}
+  playerInput: {fileID: 1314417893}
 --- !u!1 &1086828118
 GameObject:
   m_ObjectHideFlags: 0
@@ -1711,14 +1712,6 @@ MonoBehaviour:
   speed: 4
   cameraController: {fileID: 1076968068}
   playerInput: {fileID: 1314417893}
-  verticalMovement:
-    m_Name: Vertical Movement
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: dce0b110-d5e2-4a64-95f3-0e736c685d73
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
 --- !u!54 &1314417892
 Rigidbody:
   m_ObjectHideFlags: 0

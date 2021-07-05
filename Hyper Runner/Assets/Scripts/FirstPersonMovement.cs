@@ -26,12 +26,4 @@ public class FirstPersonMovement : MonoBehaviour {
         Vector3 move = this.speed * Time.deltaTime * new Vector3(hor, 0f, ver);
         transform.Translate(move, Space.Self);
     }
-
-    public void OnLookVertical(InputValue value) {
-        this.cameraController.OnLookVertical(value);
-    }
-
-    public void OnLookHorizontal(InputValue value) {
-        this.cameraController.OnLookHorizontal(value);
-    }
 }

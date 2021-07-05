@@ -6,34 +6,32 @@ using UnityEngine.InputSystem;
 public class FirstPersonCameraController : MonoBehaviour {
     [SerializeField] private float RotationSpeed;
     [SerializeField] private Transform player;
-    float mouseX, mouseY;
+    [SerializeField] PlayerInput playerInput; // player input component
+    private InputAction verMovement; // vertical axis, from "Look Vertical" of player input
+    private InputAction horMovement; // horizontal axis, from "Look Horizontal" of player input
+    float rotX, rotY;
 
+    // Called on first frame,
+    // EFFECT: initializes verMovement and horMovement input actions, cursor is locked and hidden
     void Start() {
+        this.verMovement = this.playerInput.actions["Look Vertical"];
+        this.horMovement = this.playerInput.actions["Look Horizontal"];
         Cursor.visible = false;
+
         //locks the cursor so that it stays in the center of the screen
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Late Update, happens after other updates
+    // EFFECT: changes rotation of player, camera, and changes rotX and rotY variables
     void LateUpdate() {
-        //mouseX += Input.GetAxis("Mouse X") * RotationSpeed;
-        // - = because it is flipped
-        //mouseY -= Input.GetAxis("Mouse Y") * RotationSpeed;
-        /* Mathf.Clamp(object, min, max), makes sure that it doesn't get too high or low*/
-        mouseY = Mathf.Clamp(mouseY, -60, 60);
 
-        transform.rotation = Quaternion.Euler(mouseY, mouseX, 0);
-        player.rotation = Quaternion.Euler(0, mouseX, 0);
+        this.rotX += this.RotationSpeed * horMovement.ReadValue<float>();
+        this.rotY += this.RotationSpeed * verMovement.ReadValue<float>();
+
+        this.rotY = Mathf.Clamp(rotY, -60, 60);
+
+        transform.rotation = Quaternion.Euler(rotY, rotX, 0); // rotates the camera
+        this.player.rotation = Quaternion.Euler(0, rotX, 0); // rotates the player
     }
-
-    public void OnLookVertical(InputValue value) {
-        this.mouseY += value.Get<float>() * RotationSpeed;
-        Debug.Log("Pressed");
-    }
-
-    public void OnLookHorizontal(InputValue value) {
-        this.mouseX += value.Get<float>() * RotationSpeed;
-        Debug.Log("Pressed");
-    }
-
 }
