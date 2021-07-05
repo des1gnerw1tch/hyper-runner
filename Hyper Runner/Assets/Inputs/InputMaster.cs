@@ -456,7 +456,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""id"": ""c008a98e-a695-43ae-ab93-327e277560de"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""Invert"",
                     ""groups"": ""Xbox Control Scheme"",
                     ""action"": ""Look Vertical"",
                     ""isComposite"": true,
