@@ -356,17 +356,17 @@
                 },
                 {
                     "name": "Look Vertical",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "2f06be00-3656-41a9-9adb-3a660e3c7d4a",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Axis",
                     "processors": "AxisDeadzone",
                     "interactions": ""
                 },
                 {
                     "name": "Look Horizontal",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "64f4a115-e413-4405-a7e4-18870ec0b57d",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Axis",
                     "processors": "AxisDeadzone",
                     "interactions": ""
                 }
@@ -538,11 +538,33 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "",
+                    "id": "ab24a392-a05d-4357-aaf7-aac0a5ef2991",
+                    "path": "<Mouse>/delta/y",
+                    "interactions": "",
+                    "processors": "Invert,Scale(factor=0.5)",
+                    "groups": "Keyboard Control Scheme",
+                    "action": "Look Vertical",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a9931d91-8ff8-4a6a-b4e4-90a694dadb85",
+                    "path": "<Mouse>/delta/x",
+                    "interactions": "",
+                    "processors": "Scale(factor=1.5)",
+                    "groups": "Keyboard Control Scheme",
+                    "action": "Look Horizontal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "1D Axis",
-                    "id": "9478b454-256d-4ad2-97c9-51dd67caf944",
+                    "id": "eda29d67-a5ca-4e4b-bd2e-dbcd25a9a2ee",
                     "path": "1DAxis",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "Invert",
                     "groups": "Xbox Control Scheme",
                     "action": "Look Horizontal",
                     "isComposite": true,
@@ -550,8 +572,8 @@
                 },
                 {
                     "name": "negative",
-                    "id": "ef4842de-f61d-48ae-8ef7-f69dfd346e70",
-                    "path": "<Gamepad>/rightStick/left",
+                    "id": "050ea1e0-8655-4de6-a0e6-0838d8128247",
+                    "path": "<Gamepad>/rightStick/right",
                     "interactions": "",
                     "processors": "StickDeadzone",
                     "groups": "Xbox Control Scheme",
@@ -561,8 +583,8 @@
                 },
                 {
                     "name": "positive",
-                    "id": "d08f7f8e-4f56-4538-806b-6cd6f919249f",
-                    "path": "<Gamepad>/rightStick/right",
+                    "id": "3da6ad9b-ca25-4c72-8480-3a7092204191",
+                    "path": "<Gamepad>/rightStick/left",
                     "interactions": "",
                     "processors": "StickDeadzone",
                     "groups": "Xbox Control Scheme",
@@ -591,6 +613,11 @@
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
                     "isOptional": false,
                     "isOR": false
                 }
