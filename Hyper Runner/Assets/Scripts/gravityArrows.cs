@@ -2,49 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gravityArrows : MonoBehaviour
-{   // player fields
-    [SerializeField] private Transform player;
-    [SerializeField] private SpriteRenderer sprite;
-    [SerializeField] private PlayerMovement movement;
-    [SerializeField] private Rigidbody2D rb_player;
-    [SerializeField] private Flash flashObject;
-    [SerializeField] private Color flashColor;
-    [SerializeField] private float flashSpeed;
+public class gravityArrows : MonoBehaviour {   // player fields
+    [SerializeField] private PlayerMovement movement; // platformer movement script
+    [SerializeField] private Color flashColor; // the color you would like the player to flash 
+    [SerializeField] private float flashSpeed;// the speed you would like the player to flash 
 
     [SerializeField] private float rotation = 180;
     private bool active = true; // so that arrows only activate once
 
     void OnTriggerEnter2D(Collider2D other) {
-      if (active) {
-        if (other.CompareTag("Player")) {
-          if (Physics2D.gravity.y < 0)  {
-            rb_player.velocity=Vector3.zero;
-            flippedGravity();
-          } else {
-            rb_player.velocity=Vector3.zero;
-            normalGravity();
-          }
+        if (this.active) {
+            if (other.CompareTag("Player")) {
+                if (Physics2D.gravity.y < 0) {
+                    this.movement.ActivateNegativeGravity(this.flashColor, this.flashSpeed);
+                    this.active = false;
+
+                } else {
+                    this.movement.ActivateNormalGravity(this.flashColor, this.flashSpeed);
+                    this.active = false;
+                }
+            }
         }
-      }
-    }
-
-    void flippedGravity()  {
-      // this flips gravity, same magnitude negative direction
-      Physics2D.gravity = new Vector2 (0, -Physics2D.gravity.y);
-      player.rotation = Quaternion.Euler(Vector3.forward * rotation);
-      sprite.flipX = true;
-      flashObject.StartFlash(flashColor, flashSpeed);
-      movement.jumpsLeft -= 1;
-      active = false;
-    }
-
-    void normalGravity()  {
-      Physics2D.gravity = new Vector2 (0, -Physics2D.gravity.y);
-      player.rotation = Quaternion.Euler(Vector3.forward * 0);
-      sprite.flipX = false;
-      flashObject.StartFlash(flashColor, flashSpeed);
-      movement.jumpsLeft -= 1;
-      active = false;
     }
 }

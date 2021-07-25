@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour {
     public int jumpsLeft;
     private float initialGravity;
 
+    [SerializeField] private SpriteRenderer sprite;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator animator;
     [SerializeField] private Collider2D jumpCollider;
@@ -124,5 +125,24 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
+    // activates negative gravity on the player, and flips sprite
+    public void ActivateNegativeGravity(Color flashColor, float flashSpeed) {
+        // this flips gravity, same magnitude negative direction
+        this.rb.velocity = Vector3.zero; // resets velocity of player
+        Physics2D.gravity = new Vector2(0, Mathf.Abs(Physics2D.gravity.y));
+        this.transform.rotation = Quaternion.Euler(Vector3.forward * 180);
+        this.sprite.flipX = true;
+        flashObject.StartFlash(flashColor, flashSpeed);
+        this.jumpsLeft -= 1;
+    }
 
+    // activates normal gravity on the player, and flips sprite back to upright if needed
+    public void ActivateNormalGravity(Color flashColor, float flashSpeed) {
+        this.rb.velocity = Vector3.zero; // resets velocity of player 
+        Physics2D.gravity = new Vector2(0, -Mathf.Abs(Physics2D.gravity.y));
+        this.transform.rotation = Quaternion.Euler(Vector3.forward * 0);
+        this.sprite.flipX = false;
+        flashObject.StartFlash(flashColor, flashSpeed);
+        this.jumpsLeft -= 1;
+    }
 }

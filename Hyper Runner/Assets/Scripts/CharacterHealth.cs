@@ -15,6 +15,7 @@ public class CharacterHealth : MonoBehaviour {
     [SerializeField] private float flashSpeed;
     [SerializeField] private float minHeight = 3.8f;
     [SerializeField] private float maxHeight = 13.4f;
+    [SerializeField] private PlayerMovement movement;
     private bool charismaIsHighest; // make sure "yay" sound is played only once
 
     void Start() {
@@ -82,12 +83,12 @@ public class CharacterHealth : MonoBehaviour {
 
     // when the player runs into an object, they will be reset at the top of
     // the screen, with gravity reset.
+    //TODO: clean this function up, tints player two times
     void RunIntoObject() {
         this.AddCharisma(-10f);
+        movement.ActivateNormalGravity(this.negFlashColor, this.flashSpeed);
         this.transform.position =
                 new Vector3(transform.position.x, maxHeight - .1f, 0);
-        Debug.Log(Physics2D.gravity.y);
-        Physics2D.gravity = new Vector2(0, -Mathf.Abs(Physics2D.gravity.y));
         FindObjectOfType<AudioManager>().Play("negative");
         ResultsManager.IncPlayerCrash();
     }
@@ -95,7 +96,7 @@ public class CharacterHealth : MonoBehaviour {
     void Update() {
         // handle player hits max height of world
         if (transform.position.y > maxHeight || transform.position.y < minHeight) {
-            this.AddCharisma(-10f);
+            this.RunIntoObject();
         }
     }
 
