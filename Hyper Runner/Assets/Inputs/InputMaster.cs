@@ -41,6 +41,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""FastFowardStart"",
+                    ""type"": ""Button"",
+                    ""id"": ""2ca580a0-a8ce-4856-abac-b4acdc9457c7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -151,6 +159,17 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard Control Scheme"",
                     ""action"": ""FloorUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2414359a-a175-456f-96b4-fe4880b023d6"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""FastFowardStart"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -643,6 +662,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Platformer_Jump = m_Platformer.FindAction("Jump", throwIfNotFound: true);
         m_Platformer_FloorDown = m_Platformer.FindAction("FloorDown", throwIfNotFound: true);
         m_Platformer_FloorUp = m_Platformer.FindAction("FloorUp", throwIfNotFound: true);
+        m_Platformer_FastFowardStart = m_Platformer.FindAction("FastFowardStart", throwIfNotFound: true);
         // Dancer
         m_Dancer = asset.FindActionMap("Dancer", throwIfNotFound: true);
         m_Dancer_UpDanceKeyPress = m_Dancer.FindAction("UpDanceKeyPress", throwIfNotFound: true);
@@ -708,6 +728,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_Platformer_Jump;
     private readonly InputAction m_Platformer_FloorDown;
     private readonly InputAction m_Platformer_FloorUp;
+    private readonly InputAction m_Platformer_FastFowardStart;
     public struct PlatformerActions
     {
         private @InputMaster m_Wrapper;
@@ -715,6 +736,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_Platformer_Jump;
         public InputAction @FloorDown => m_Wrapper.m_Platformer_FloorDown;
         public InputAction @FloorUp => m_Wrapper.m_Platformer_FloorUp;
+        public InputAction @FastFowardStart => m_Wrapper.m_Platformer_FastFowardStart;
         public InputActionMap Get() { return m_Wrapper.m_Platformer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -733,6 +755,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @FloorUp.started -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnFloorUp;
                 @FloorUp.performed -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnFloorUp;
                 @FloorUp.canceled -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnFloorUp;
+                @FastFowardStart.started -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnFastFowardStart;
+                @FastFowardStart.performed -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnFastFowardStart;
+                @FastFowardStart.canceled -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnFastFowardStart;
             }
             m_Wrapper.m_PlatformerActionsCallbackInterface = instance;
             if (instance != null)
@@ -746,6 +771,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @FloorUp.started += instance.OnFloorUp;
                 @FloorUp.performed += instance.OnFloorUp;
                 @FloorUp.canceled += instance.OnFloorUp;
+                @FastFowardStart.started += instance.OnFastFowardStart;
+                @FastFowardStart.performed += instance.OnFastFowardStart;
+                @FastFowardStart.canceled += instance.OnFastFowardStart;
             }
         }
     }
@@ -895,6 +923,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnFloorDown(InputAction.CallbackContext context);
         void OnFloorUp(InputAction.CallbackContext context);
+        void OnFastFowardStart(InputAction.CallbackContext context);
     }
     public interface IDancerActions
     {

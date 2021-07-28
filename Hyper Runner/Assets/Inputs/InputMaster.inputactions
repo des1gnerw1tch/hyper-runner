@@ -28,6 +28,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "FastFowardStart",
+                    "type": "Button",
+                    "id": "2ca580a0-a8ce-4856-abac-b4acdc9457c7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -138,6 +146,17 @@
                     "processors": "",
                     "groups": "Keyboard Control Scheme",
                     "action": "FloorUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2414359a-a175-456f-96b4-fe4880b023d6",
+                    "path": "<Keyboard>/z",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "Keyboard Control Scheme",
+                    "action": "FastFowardStart",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

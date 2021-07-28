@@ -31,9 +31,13 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField] private Animator cameraAnimator;
     private AParryObject parryObject;
 
+    // DEV FEATURES TODO: Remove this in actual game
+    private bool isFastFoward;
+
     void Start() {
         audio = FindObjectOfType<AudioManager>();
         initialGravity = rb.gravityScale;
+        this.isFastFoward = false;
     }
 
     void Update() {
@@ -144,5 +148,18 @@ public class PlayerMovement : MonoBehaviour {
         this.sprite.flipX = false;
         flashObject.StartFlash(flashColor, flashSpeed);
         this.jumpsLeft -= 1;
+    }
+
+    //TODO: Dev feature, remove in actual game
+    // activates and deactivates fast foward mode, from PLAYERINPUT
+    public void OnFastFowardStart() {
+        Debug.Log("Pressed");
+        if (!this.isFastFoward) {
+            this.musicSync.changePitch(6f, 100f);
+            this.isFastFoward = true;
+        } else {
+            this.musicSync.changePitch(1f, 100f);
+            this.isFastFoward = false;
+        }
     }
 }
