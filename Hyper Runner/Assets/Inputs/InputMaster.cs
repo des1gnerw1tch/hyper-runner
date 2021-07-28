@@ -218,6 +218,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""FastFowardStart"",
+                    ""type"": ""Button"",
+                    ""id"": ""f7994f71-2ab6-4562-8686-4b0a7d73dcbf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -361,6 +369,17 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard Control Scheme"",
                     ""action"": ""AnyDanceKeyPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dc2634e5-4a6f-47a9-a2fd-bd42c16b75cc"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""FastFowardStart"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -670,6 +689,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Dancer_DownDanceKeyPress = m_Dancer.FindAction("DownDanceKeyPress", throwIfNotFound: true);
         m_Dancer_DownDanceKeyRelease = m_Dancer.FindAction("DownDanceKeyRelease", throwIfNotFound: true);
         m_Dancer_AnyDanceKeyPress = m_Dancer.FindAction("AnyDanceKeyPress", throwIfNotFound: true);
+        m_Dancer_FastFowardStart = m_Dancer.FindAction("FastFowardStart", throwIfNotFound: true);
         // 3D
         m__3D = asset.FindActionMap("3D", throwIfNotFound: true);
         m__3D_WalkVertical = m__3D.FindAction("Walk Vertical", throwIfNotFound: true);
@@ -787,6 +807,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_Dancer_DownDanceKeyPress;
     private readonly InputAction m_Dancer_DownDanceKeyRelease;
     private readonly InputAction m_Dancer_AnyDanceKeyPress;
+    private readonly InputAction m_Dancer_FastFowardStart;
     public struct DancerActions
     {
         private @InputMaster m_Wrapper;
@@ -796,6 +817,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @DownDanceKeyPress => m_Wrapper.m_Dancer_DownDanceKeyPress;
         public InputAction @DownDanceKeyRelease => m_Wrapper.m_Dancer_DownDanceKeyRelease;
         public InputAction @AnyDanceKeyPress => m_Wrapper.m_Dancer_AnyDanceKeyPress;
+        public InputAction @FastFowardStart => m_Wrapper.m_Dancer_FastFowardStart;
         public InputActionMap Get() { return m_Wrapper.m_Dancer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -820,6 +842,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @AnyDanceKeyPress.started -= m_Wrapper.m_DancerActionsCallbackInterface.OnAnyDanceKeyPress;
                 @AnyDanceKeyPress.performed -= m_Wrapper.m_DancerActionsCallbackInterface.OnAnyDanceKeyPress;
                 @AnyDanceKeyPress.canceled -= m_Wrapper.m_DancerActionsCallbackInterface.OnAnyDanceKeyPress;
+                @FastFowardStart.started -= m_Wrapper.m_DancerActionsCallbackInterface.OnFastFowardStart;
+                @FastFowardStart.performed -= m_Wrapper.m_DancerActionsCallbackInterface.OnFastFowardStart;
+                @FastFowardStart.canceled -= m_Wrapper.m_DancerActionsCallbackInterface.OnFastFowardStart;
             }
             m_Wrapper.m_DancerActionsCallbackInterface = instance;
             if (instance != null)
@@ -839,6 +864,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @AnyDanceKeyPress.started += instance.OnAnyDanceKeyPress;
                 @AnyDanceKeyPress.performed += instance.OnAnyDanceKeyPress;
                 @AnyDanceKeyPress.canceled += instance.OnAnyDanceKeyPress;
+                @FastFowardStart.started += instance.OnFastFowardStart;
+                @FastFowardStart.performed += instance.OnFastFowardStart;
+                @FastFowardStart.canceled += instance.OnFastFowardStart;
             }
         }
     }
@@ -932,6 +960,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnDownDanceKeyPress(InputAction.CallbackContext context);
         void OnDownDanceKeyRelease(InputAction.CallbackContext context);
         void OnAnyDanceKeyPress(InputAction.CallbackContext context);
+        void OnFastFowardStart(InputAction.CallbackContext context);
     }
     public interface I_3DActions
     {

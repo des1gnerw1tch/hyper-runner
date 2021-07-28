@@ -205,6 +205,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "FastFowardStart",
+                    "type": "Button",
+                    "id": "f7994f71-2ab6-4562-8686-4b0a7d73dcbf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -348,6 +356,17 @@
                     "processors": "",
                     "groups": "Keyboard Control Scheme",
                     "action": "AnyDanceKeyPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dc2634e5-4a6f-47a9-a2fd-bd42c16b75cc",
+                    "path": "<Keyboard>/z",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "Keyboard Control Scheme",
+                    "action": "FastFowardStart",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

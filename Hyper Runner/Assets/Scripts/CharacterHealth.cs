@@ -18,8 +18,13 @@ public class CharacterHealth : MonoBehaviour {
     [SerializeField] private PlayerMovement movement;
     private bool charismaIsHighest; // make sure "yay" sound is played only once
 
+    // DEV FEATURES TODO: Remove this in actual game
+    [SerializeField] private MusicSync musicSync;
+    private bool isFastFoward;
+
     void Start() {
         charisma = 70f;
+        this.isFastFoward = false;
     }
 
 
@@ -97,6 +102,19 @@ public class CharacterHealth : MonoBehaviour {
         // handle player hits max height of world
         if (transform.position.y > maxHeight || transform.position.y < minHeight) {
             this.RunIntoObject();
+        }
+    }
+
+    //TODO: Dev feature, remove in actual game
+    // activates and deactivates fast foward mode, from PLAYERINPUT
+    public void OnFastFowardStart() {
+        Debug.Log("Pressed");
+        if (!this.isFastFoward) {
+            this.musicSync.changePitch(6f, 100f);
+            this.isFastFoward = true;
+        } else {
+            this.musicSync.changePitch(1f, 100f);
+            this.isFastFoward = false;
         }
     }
 
