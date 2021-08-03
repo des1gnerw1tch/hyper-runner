@@ -199,6 +199,38 @@
                     "interactions": ""
                 },
                 {
+                    "name": "LeftDanceKeyPress",
+                    "type": "Button",
+                    "id": "f45c7248-1235-474a-82ee-73a3e9b9c7de",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "LeftDanceKeyRelease",
+                    "type": "Button",
+                    "id": "908ec07a-b98e-4857-9cf0-c60fc1f3810e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RightDanceKeyPress",
+                    "type": "Button",
+                    "id": "644359ec-a7ab-4f74-b40e-40464d5287af",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RightDanceKeyRelease",
+                    "type": "Button",
+                    "id": "9779c74c-f565-4b80-bdca-5791c5a5908d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "AnyDanceKeyPress",
                     "type": "Button",
                     "id": "1e0c36ad-9a79-4dba-a304-08c537101030",
@@ -367,6 +399,138 @@
                     "processors": "",
                     "groups": "Keyboard Control Scheme",
                     "action": "FastFowardStart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7b70ddb0-9f97-4677-bf6f-bffe84e19d9d",
+                    "path": "<XInputController>/buttonWest",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Xbox Control Scheme",
+                    "action": "LeftDanceKeyPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "58793332-5c0e-4c44-8625-cef51ba5e88a",
+                    "path": "<Keyboard>/a",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard Control Scheme",
+                    "action": "LeftDanceKeyPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2353fea9-b8fa-4194-a62e-d7961db8d94c",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard Control Scheme",
+                    "action": "LeftDanceKeyPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "43b7c420-02ad-4dfc-9914-65847b6eee9c",
+                    "path": "<XInputController>/buttonWest",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "Xbox Control Scheme",
+                    "action": "LeftDanceKeyRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "96fe84a1-319b-46b1-9203-10f3ba017bd3",
+                    "path": "<Keyboard>/a",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "Keyboard Control Scheme",
+                    "action": "LeftDanceKeyRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c74265c7-e8f9-4943-b85b-d9903d2b0f11",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "Keyboard Control Scheme",
+                    "action": "LeftDanceKeyRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0f9aaf8f-103d-4be6-9203-f902a40ac661",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "Xbox Control Scheme",
+                    "action": "RightDanceKeyRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b14572cd-0594-4f83-ba79-3820d4c49901",
+                    "path": "<Keyboard>/d",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "Keyboard Control Scheme",
+                    "action": "RightDanceKeyRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dd6f2470-9b7a-4a87-b847-2b05c042a67e",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "Keyboard Control Scheme",
+                    "action": "RightDanceKeyRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "27d391bf-470c-4f68-a2b4-a485aebdeeca",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Xbox Control Scheme",
+                    "action": "RightDanceKeyPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6fb3dac7-0a10-4484-b8ef-b24e77b13c44",
+                    "path": "<Keyboard>/d",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard Control Scheme",
+                    "action": "RightDanceKeyPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a9f50b2b-62ec-47bd-8543-b50f917ae421",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard Control Scheme",
+                    "action": "RightDanceKeyPress",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

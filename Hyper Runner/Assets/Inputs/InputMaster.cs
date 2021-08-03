@@ -212,6 +212,38 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
+                    ""name"": ""LeftDanceKeyPress"",
+                    ""type"": ""Button"",
+                    ""id"": ""f45c7248-1235-474a-82ee-73a3e9b9c7de"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""LeftDanceKeyRelease"",
+                    ""type"": ""Button"",
+                    ""id"": ""908ec07a-b98e-4857-9cf0-c60fc1f3810e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""RightDanceKeyPress"",
+                    ""type"": ""Button"",
+                    ""id"": ""644359ec-a7ab-4f74-b40e-40464d5287af"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""RightDanceKeyRelease"",
+                    ""type"": ""Button"",
+                    ""id"": ""9779c74c-f565-4b80-bdca-5791c5a5908d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""AnyDanceKeyPress"",
                     ""type"": ""Button"",
                     ""id"": ""1e0c36ad-9a79-4dba-a304-08c537101030"",
@@ -380,6 +412,138 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard Control Scheme"",
                     ""action"": ""FastFowardStart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7b70ddb0-9f97-4677-bf6f-bffe84e19d9d"",
+                    ""path"": ""<XInputController>/buttonWest"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""LeftDanceKeyPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""58793332-5c0e-4c44-8625-cef51ba5e88a"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""LeftDanceKeyPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2353fea9-b8fa-4194-a62e-d7961db8d94c"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""LeftDanceKeyPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""43b7c420-02ad-4dfc-9914-65847b6eee9c"",
+                    ""path"": ""<XInputController>/buttonWest"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""LeftDanceKeyRelease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""96fe84a1-319b-46b1-9203-10f3ba017bd3"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""LeftDanceKeyRelease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c74265c7-e8f9-4943-b85b-d9903d2b0f11"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""LeftDanceKeyRelease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0f9aaf8f-103d-4be6-9203-f902a40ac661"",
+                    ""path"": ""<XInputController>/buttonEast"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""RightDanceKeyRelease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b14572cd-0594-4f83-ba79-3820d4c49901"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""RightDanceKeyRelease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dd6f2470-9b7a-4a87-b847-2b05c042a67e"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""RightDanceKeyRelease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""27d391bf-470c-4f68-a2b4-a485aebdeeca"",
+                    ""path"": ""<XInputController>/buttonEast"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""RightDanceKeyPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6fb3dac7-0a10-4484-b8ef-b24e77b13c44"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""RightDanceKeyPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a9f50b2b-62ec-47bd-8543-b50f917ae421"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""RightDanceKeyPress"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -688,6 +852,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Dancer_UpDanceKeyRelease = m_Dancer.FindAction("UpDanceKeyRelease", throwIfNotFound: true);
         m_Dancer_DownDanceKeyPress = m_Dancer.FindAction("DownDanceKeyPress", throwIfNotFound: true);
         m_Dancer_DownDanceKeyRelease = m_Dancer.FindAction("DownDanceKeyRelease", throwIfNotFound: true);
+        m_Dancer_LeftDanceKeyPress = m_Dancer.FindAction("LeftDanceKeyPress", throwIfNotFound: true);
+        m_Dancer_LeftDanceKeyRelease = m_Dancer.FindAction("LeftDanceKeyRelease", throwIfNotFound: true);
+        m_Dancer_RightDanceKeyPress = m_Dancer.FindAction("RightDanceKeyPress", throwIfNotFound: true);
+        m_Dancer_RightDanceKeyRelease = m_Dancer.FindAction("RightDanceKeyRelease", throwIfNotFound: true);
         m_Dancer_AnyDanceKeyPress = m_Dancer.FindAction("AnyDanceKeyPress", throwIfNotFound: true);
         m_Dancer_FastFowardStart = m_Dancer.FindAction("FastFowardStart", throwIfNotFound: true);
         // 3D
@@ -806,6 +974,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_Dancer_UpDanceKeyRelease;
     private readonly InputAction m_Dancer_DownDanceKeyPress;
     private readonly InputAction m_Dancer_DownDanceKeyRelease;
+    private readonly InputAction m_Dancer_LeftDanceKeyPress;
+    private readonly InputAction m_Dancer_LeftDanceKeyRelease;
+    private readonly InputAction m_Dancer_RightDanceKeyPress;
+    private readonly InputAction m_Dancer_RightDanceKeyRelease;
     private readonly InputAction m_Dancer_AnyDanceKeyPress;
     private readonly InputAction m_Dancer_FastFowardStart;
     public struct DancerActions
@@ -816,6 +988,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @UpDanceKeyRelease => m_Wrapper.m_Dancer_UpDanceKeyRelease;
         public InputAction @DownDanceKeyPress => m_Wrapper.m_Dancer_DownDanceKeyPress;
         public InputAction @DownDanceKeyRelease => m_Wrapper.m_Dancer_DownDanceKeyRelease;
+        public InputAction @LeftDanceKeyPress => m_Wrapper.m_Dancer_LeftDanceKeyPress;
+        public InputAction @LeftDanceKeyRelease => m_Wrapper.m_Dancer_LeftDanceKeyRelease;
+        public InputAction @RightDanceKeyPress => m_Wrapper.m_Dancer_RightDanceKeyPress;
+        public InputAction @RightDanceKeyRelease => m_Wrapper.m_Dancer_RightDanceKeyRelease;
         public InputAction @AnyDanceKeyPress => m_Wrapper.m_Dancer_AnyDanceKeyPress;
         public InputAction @FastFowardStart => m_Wrapper.m_Dancer_FastFowardStart;
         public InputActionMap Get() { return m_Wrapper.m_Dancer; }
@@ -839,6 +1015,18 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @DownDanceKeyRelease.started -= m_Wrapper.m_DancerActionsCallbackInterface.OnDownDanceKeyRelease;
                 @DownDanceKeyRelease.performed -= m_Wrapper.m_DancerActionsCallbackInterface.OnDownDanceKeyRelease;
                 @DownDanceKeyRelease.canceled -= m_Wrapper.m_DancerActionsCallbackInterface.OnDownDanceKeyRelease;
+                @LeftDanceKeyPress.started -= m_Wrapper.m_DancerActionsCallbackInterface.OnLeftDanceKeyPress;
+                @LeftDanceKeyPress.performed -= m_Wrapper.m_DancerActionsCallbackInterface.OnLeftDanceKeyPress;
+                @LeftDanceKeyPress.canceled -= m_Wrapper.m_DancerActionsCallbackInterface.OnLeftDanceKeyPress;
+                @LeftDanceKeyRelease.started -= m_Wrapper.m_DancerActionsCallbackInterface.OnLeftDanceKeyRelease;
+                @LeftDanceKeyRelease.performed -= m_Wrapper.m_DancerActionsCallbackInterface.OnLeftDanceKeyRelease;
+                @LeftDanceKeyRelease.canceled -= m_Wrapper.m_DancerActionsCallbackInterface.OnLeftDanceKeyRelease;
+                @RightDanceKeyPress.started -= m_Wrapper.m_DancerActionsCallbackInterface.OnRightDanceKeyPress;
+                @RightDanceKeyPress.performed -= m_Wrapper.m_DancerActionsCallbackInterface.OnRightDanceKeyPress;
+                @RightDanceKeyPress.canceled -= m_Wrapper.m_DancerActionsCallbackInterface.OnRightDanceKeyPress;
+                @RightDanceKeyRelease.started -= m_Wrapper.m_DancerActionsCallbackInterface.OnRightDanceKeyRelease;
+                @RightDanceKeyRelease.performed -= m_Wrapper.m_DancerActionsCallbackInterface.OnRightDanceKeyRelease;
+                @RightDanceKeyRelease.canceled -= m_Wrapper.m_DancerActionsCallbackInterface.OnRightDanceKeyRelease;
                 @AnyDanceKeyPress.started -= m_Wrapper.m_DancerActionsCallbackInterface.OnAnyDanceKeyPress;
                 @AnyDanceKeyPress.performed -= m_Wrapper.m_DancerActionsCallbackInterface.OnAnyDanceKeyPress;
                 @AnyDanceKeyPress.canceled -= m_Wrapper.m_DancerActionsCallbackInterface.OnAnyDanceKeyPress;
@@ -861,6 +1049,18 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @DownDanceKeyRelease.started += instance.OnDownDanceKeyRelease;
                 @DownDanceKeyRelease.performed += instance.OnDownDanceKeyRelease;
                 @DownDanceKeyRelease.canceled += instance.OnDownDanceKeyRelease;
+                @LeftDanceKeyPress.started += instance.OnLeftDanceKeyPress;
+                @LeftDanceKeyPress.performed += instance.OnLeftDanceKeyPress;
+                @LeftDanceKeyPress.canceled += instance.OnLeftDanceKeyPress;
+                @LeftDanceKeyRelease.started += instance.OnLeftDanceKeyRelease;
+                @LeftDanceKeyRelease.performed += instance.OnLeftDanceKeyRelease;
+                @LeftDanceKeyRelease.canceled += instance.OnLeftDanceKeyRelease;
+                @RightDanceKeyPress.started += instance.OnRightDanceKeyPress;
+                @RightDanceKeyPress.performed += instance.OnRightDanceKeyPress;
+                @RightDanceKeyPress.canceled += instance.OnRightDanceKeyPress;
+                @RightDanceKeyRelease.started += instance.OnRightDanceKeyRelease;
+                @RightDanceKeyRelease.performed += instance.OnRightDanceKeyRelease;
+                @RightDanceKeyRelease.canceled += instance.OnRightDanceKeyRelease;
                 @AnyDanceKeyPress.started += instance.OnAnyDanceKeyPress;
                 @AnyDanceKeyPress.performed += instance.OnAnyDanceKeyPress;
                 @AnyDanceKeyPress.canceled += instance.OnAnyDanceKeyPress;
@@ -959,6 +1159,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnUpDanceKeyRelease(InputAction.CallbackContext context);
         void OnDownDanceKeyPress(InputAction.CallbackContext context);
         void OnDownDanceKeyRelease(InputAction.CallbackContext context);
+        void OnLeftDanceKeyPress(InputAction.CallbackContext context);
+        void OnLeftDanceKeyRelease(InputAction.CallbackContext context);
+        void OnRightDanceKeyPress(InputAction.CallbackContext context);
+        void OnRightDanceKeyRelease(InputAction.CallbackContext context);
         void OnAnyDanceKeyPress(InputAction.CallbackContext context);
         void OnFastFowardStart(InputAction.CallbackContext context);
     }

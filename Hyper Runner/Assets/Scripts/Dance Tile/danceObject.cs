@@ -54,4 +54,16 @@ public class danceObject : ADanceObject {
         }
     }
 
+    public override void OnLeftDanceKeyPress() {
+        if (this.keyToPress == "left" && active) {
+            Pressed();
+        }
+    }
+
+    public override void OnRightDanceKeyPress() {
+        if (this.keyToPress == "right" && active) {
+            Pressed();
+        }
+    }
+
 }

@@ -21,26 +21,25 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     public float camRumbleSpeed; // camera shake speed
     public float camRumbleDuration; // camera shake duration
 
-    // method stubs to override, all player input
-    public virtual void OnUpDanceKeyPress() {
+    // method stubs to override, all player input (reference unity input system 1.0.2)
+    // these functions are called when player presses buttons
+    public virtual void OnUpDanceKeyPress() { }
 
-    }
+    public virtual void OnDownDanceKeyPress() { }
 
-    public virtual void OnDownDanceKeyPress() {
+    public virtual void OnUpDanceKeyRelease() { }
 
-    }
+    public virtual void OnDownDanceKeyRelease() { }
 
-    public virtual void OnUpDanceKeyRelease() {
+    public virtual void OnLeftDanceKeyPress() { }
 
-    }
+    public virtual void OnRightDanceKeyPress() { }
 
-    public virtual void OnDownDanceKeyRelease() {
+    public virtual void OnLeftDanceKeyRelease() { }
 
-    }
+    public virtual void OnRightDanceKeyRelease() { }
 
-    public virtual void OnAnyDanceKeyPress() {
-
-    }
+    public virtual void OnAnyDanceKeyPress() { }
 
     // TODO: clean this up this function sucks
     // spawns rating texts and adds to charisma when player presses a dance key
