@@ -85,8 +85,6 @@ public class holdDanceObject : ADanceObject {
         Destroy(gameObject);
     }
 
-
-
     // INPUT: Will be called from player -> danceTileManager, as player is the only one with input connected
     // method stubs to override, all player input
     public override void OnUpDanceKeyPress() {
@@ -97,9 +95,7 @@ public class holdDanceObject : ADanceObject {
 
     public override void OnUpDanceKeyRelease() {
         if (keyToPress == "up" && active && isPressing) {
-            this.isPressing = false;
-            this.EndAccuracy();
-            this.active = false;
+            this.CorrectKeyReleased();
         }
     }
 
@@ -109,14 +105,41 @@ public class holdDanceObject : ADanceObject {
         }
     }
 
-
-
     public override void OnDownDanceKeyRelease() {
         if (keyToPress == "down" && active && isPressing) {
-            this.isPressing = false;
-            this.EndAccuracy();
-            this.active = false;
+            this.CorrectKeyReleased();
         }
+    }
+
+    public override void OnLeftDanceKeyPress() {
+        if (keyToPress == "left" && active) {
+            this.isPressing = true;
+        }
+    }
+
+    public override void OnLeftDanceKeyRelease() {
+        if (keyToPress == "left" && active && isPressing) {
+            this.CorrectKeyReleased();
+        }
+    }
+
+    public override void OnRightDanceKeyPress() {
+        if (keyToPress == "right" && active) {
+            this.isPressing = true;
+        }
+    }
+
+    public override void OnRightDanceKeyRelease() {
+        if (keyToPress == "right" && active && isPressing) {
+            this.CorrectKeyReleased();
+        }
+    }
+
+    // when the correct key for the dance object is released
+    void CorrectKeyReleased() {
+        this.isPressing = false;
+        this.EndAccuracy();
+        this.active = false;
     }
 
 }
