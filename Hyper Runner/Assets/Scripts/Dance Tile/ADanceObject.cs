@@ -21,37 +21,29 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     public float camRumbleSpeed; // camera shake speed
     public float camRumbleDuration; // camera shake duration
 
-    // When this dance object receives a key input
-    public abstract void Pressed(string key);
+    // Functions called directly from Dance Tile Manager, which uses Player Input (reference unity input system 1.0.2)
+    // these functions are called when player does an action that requires action from this dance tile
+    public virtual void OnUpDanceKeyPress() { this.Pressed("up"); }
 
-    // method stubs to override, all player input (reference unity input system 1.0.2)
-    // these functions are called when player presses buttons, on default, these
-    // buttons will cuase a score of 0, until overriden 
-    public virtual void OnUpDanceKeyPress() {
-        this.Pressed("up");
-    }
+    public virtual void OnDownDanceKeyPress() { this.Pressed("down"); }
 
-    public virtual void OnDownDanceKeyPress() {
-        this.Pressed("down");
-    }
+    public virtual void OnLeftDanceKeyPress() { this.Pressed("left"); }
 
-    public virtual void OnLeftDanceKeyPress() {
-        this.Pressed("left");
-    }
+    public virtual void OnRightDanceKeyPress() { this.Pressed("right"); }
 
-    public virtual void OnRightDanceKeyPress() {
-        this.Pressed("right");
-    }
+    public virtual void OnUpDanceKeyRelease() { this.Released("up"); }
 
-    public virtual void OnUpDanceKeyRelease() { }
+    public virtual void OnDownDanceKeyRelease() { this.Released("down"); }
 
-    public virtual void OnDownDanceKeyRelease() { }
+    public virtual void OnLeftDanceKeyRelease() { this.Released("left"); }
 
-    public virtual void OnLeftDanceKeyRelease() { }
-
-    public virtual void OnRightDanceKeyRelease() { }
+    public virtual void OnRightDanceKeyRelease() { this.Released("right"); }
 
     public virtual void OnAnyDanceKeyPress() { }
+
+    // Action Handlers
+    public abstract void Pressed(string key);
+    public virtual void Released(string key) { } // on default is empty
 
     // TODO: clean this up this function sucks
     // spawns rating texts and adds to charisma when player presses a dance key
