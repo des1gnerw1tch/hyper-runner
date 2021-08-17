@@ -97,21 +97,10 @@ public class holdDanceObject : ADanceObject {
     }
     // INPUT: Will be called from player -> danceTileManager, as player is the only one with input connected
     // method stubs to override, all player input
-    public override void OnUpDanceKeyPress() {
-        if (keyToPress == "up" && active) {
-            this.isPressing = true;
-        }
-    }
 
     public override void OnUpDanceKeyRelease() {
         if (keyToPress == "up" && active && isPressing) {
             this.CorrectKeyReleased();
-        }
-    }
-
-    public override void OnDownDanceKeyPress() {
-        if (keyToPress == "down" && active) {
-            this.isPressing = true;
         }
     }
 
@@ -121,21 +110,9 @@ public class holdDanceObject : ADanceObject {
         }
     }
 
-    public override void OnLeftDanceKeyPress() {
-        if (keyToPress == "left" && active) {
-            this.isPressing = true;
-        }
-    }
-
     public override void OnLeftDanceKeyRelease() {
         if (keyToPress == "left" && active && isPressing) {
             this.CorrectKeyReleased();
-        }
-    }
-
-    public override void OnRightDanceKeyPress() {
-        if (keyToPress == "right" && active) {
-            this.isPressing = true;
         }
     }
 

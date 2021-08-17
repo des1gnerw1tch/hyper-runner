@@ -14,16 +14,14 @@ public class danceObject : ADanceObject {
     void Update() {
         // despawn object if missed
         if ((player.position.x - transform.position.x) >= distanceUntilDestroy) {
-            characterHealth.AddCharisma(-10f);
             try {
                 FindObjectOfType<danceTileManager>().ActivateNextFowardKey();
             }
             catch (Exception e) {
                 Debug.Log("tried to access dance tile manager when it was deactivated");
             }
-            FindObjectOfType<AudioManager>().Play("negative");
-            SpawnScoreText(missedText); // spawn missed text pop up
-            Destroy(this.gameObject);
+            this.EvaluateScore(0);
+            this.DestroyDanceTile();
         }
     }
 
