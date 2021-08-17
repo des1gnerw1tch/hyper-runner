@@ -80,6 +80,7 @@ public class holdDanceObject : ADanceObject {
         EvaluateScore(endScore);
         Instantiate(destroyEffect, endNode.position, Quaternion.identity);
         FindObjectOfType<CameraShake>().Begin(camRumbleIntensity, camRumbleSpeed, .1f); // to cancel rumble
+        Destroy(this.endNode.gameObject);
         Destroy(gameObject);
     }
 
@@ -91,6 +92,7 @@ public class holdDanceObject : ADanceObject {
                 active = false;
                 this.EvaluateScore(0);
                 FindObjectOfType<CameraShake>().Begin(camRumbleIntensity, camRumbleSpeed, .1f); // to cancel rumble
+                Destroy(this.endNode.gameObject);
                 this.DestroyDanceTile();
             }
         }
