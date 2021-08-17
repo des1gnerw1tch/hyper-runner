@@ -59,9 +59,7 @@ public class holdDanceObject : ADanceObject {
                 FindObjectOfType<AudioManager>().Play("metronome");
             } else { // if first press is faliure
                 active = false;
-                Instantiate(destroyEffect, transform.position, Quaternion.identity);
-                SpawnScoreText(missedText); // spawn missed text pop up
-                Destroy(gameObject);
+                this.DestroyDanceTile();
             }
 
             Instantiate(destroyEffect, transform.position, Quaternion.identity);
@@ -90,7 +88,10 @@ public class holdDanceObject : ADanceObject {
             if (key == this.keyToPress) { // if key pressed is correct
                 this.isPressing = true;
             } else { // if key pressed is incorrect
-                //TODO: fill this out
+                active = false;
+                this.EvaluateScore(0);
+                FindObjectOfType<CameraShake>().Begin(camRumbleIntensity, camRumbleSpeed, .1f); // to cancel rumble
+                this.DestroyDanceTile();
             }
         }
 
