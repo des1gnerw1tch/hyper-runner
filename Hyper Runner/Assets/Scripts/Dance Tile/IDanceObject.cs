@@ -12,4 +12,7 @@ public interface IDanceObject {
     void OnRightDanceKeyPress();
     void OnRightDanceKeyRelease();
     void OnAnyDanceKeyPress();
+
+    // When a key is pressed while this dance object is active
+    void Pressed(string key);
 }

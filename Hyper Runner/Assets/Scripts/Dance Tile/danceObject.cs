@@ -27,43 +27,22 @@ public class danceObject : ADanceObject {
         }
     }
 
-    void Pressed() {
+    // When a dance key is pressed
+    public override void Pressed(string key) {
 
-        float difference = Mathf.Abs(player.position.x - transform.position.x);
-        score = 10 - difference;
-        if (score < 0)
-            score = 0;
+        if (this.active) { // if dance tile is next up
+            if (this.keyToPress == key) { // if key pressed is correct
+                float difference = Mathf.Abs(player.position.x - transform.position.x);
+                score = 10 - difference;
+                if (score < 0)
+                    score = 0;
 
-        this.EvaluateScore(score);
-
-        Instantiate(destroyEffect, transform.position, Quaternion.identity);
-        FindObjectOfType<CameraShake>().Begin(camRumbleIntensity, camRumbleSpeed, camRumbleDuration);
-        Destroy(gameObject);
-    }
-
-    // INPUT: Will be called from player object, as player is the only one with input connected
-    public override void OnUpDanceKeyPress() {
-        if (keyToPress == "up" && active) {
-            Pressed();
+                this.EvaluateScore(score);
+                this.DestroyDanceTile();
+            } else { // if key pressed is not correct
+                this.EvaluateScore(0);
+                this.DestroyDanceTile();
+            }
         }
     }
-
-    public override void OnDownDanceKeyPress() {
-        if (keyToPress == "down" && active) {
-            Pressed();
-        }
-    }
-
-    public override void OnLeftDanceKeyPress() {
-        if (this.keyToPress == "left" && active) {
-            Pressed();
-        }
-    }
-
-    public override void OnRightDanceKeyPress() {
-        if (this.keyToPress == "right" && active) {
-            Pressed();
-        }
-    }
-
 }

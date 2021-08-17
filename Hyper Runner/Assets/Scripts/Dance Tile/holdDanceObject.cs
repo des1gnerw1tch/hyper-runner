@@ -85,6 +85,16 @@ public class holdDanceObject : ADanceObject {
         Destroy(gameObject);
     }
 
+    public override void Pressed(string key) {
+        if (this.active) {
+            if (key == this.keyToPress) { // if key pressed is correct
+                this.isPressing = true;
+            } else { // if key pressed is incorrect
+                //TODO: fill this out
+            }
+        }
+
+    }
     // INPUT: Will be called from player -> danceTileManager, as player is the only one with input connected
     // method stubs to override, all player input
     public override void OnUpDanceKeyPress() {

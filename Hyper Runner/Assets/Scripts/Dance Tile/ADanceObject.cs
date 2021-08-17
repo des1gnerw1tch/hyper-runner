@@ -21,19 +21,31 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     public float camRumbleSpeed; // camera shake speed
     public float camRumbleDuration; // camera shake duration
 
-    // method stubs to override, all player input (reference unity input system 1.0.2)
-    // these functions are called when player presses buttons
-    public virtual void OnUpDanceKeyPress() { }
+    // When this dance object receives a key input
+    public abstract void Pressed(string key);
 
-    public virtual void OnDownDanceKeyPress() { }
+    // method stubs to override, all player input (reference unity input system 1.0.2)
+    // these functions are called when player presses buttons, on default, these
+    // buttons will cuase a score of 0, until overriden 
+    public virtual void OnUpDanceKeyPress() {
+        this.Pressed("up");
+    }
+
+    public virtual void OnDownDanceKeyPress() {
+        this.Pressed("down");
+    }
+
+    public virtual void OnLeftDanceKeyPress() {
+        this.Pressed("left");
+    }
+
+    public virtual void OnRightDanceKeyPress() {
+        this.Pressed("right");
+    }
 
     public virtual void OnUpDanceKeyRelease() { }
 
     public virtual void OnDownDanceKeyRelease() { }
-
-    public virtual void OnLeftDanceKeyPress() { }
-
-    public virtual void OnRightDanceKeyPress() { }
 
     public virtual void OnLeftDanceKeyRelease() { }
 
@@ -88,6 +100,10 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
         image.GetComponent<RectTransform>().Translate(new Vector3(difX, difY, 0), Space.World);
     }
 
-
-
+    // destroys dance tile, spawns effects
+    public void DestroyDanceTile() {
+        Instantiate(this.destroyEffect, this.transform.position, Quaternion.identity);
+        FindObjectOfType<CameraShake>().Begin(this.camRumbleIntensity, this.camRumbleSpeed, this.camRumbleDuration);
+        Destroy(this.gameObject);
+    }
 }
