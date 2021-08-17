@@ -59,19 +59,6 @@ public class danceTileManager : MonoBehaviour {
     // enables a dance key to receive input
     void enableDanceKey(GameObject obj) {
         this.activeDanceObj = obj.GetComponent<IDanceObject>();
-        try {
-            obj.GetComponent<danceObject>().active = true;
-        }
-        catch {
-            //Debug.Log("Object was not single key");
-        }
-
-        try {
-            obj.GetComponent<holdDanceObject>().active = true;
-        }
-        catch {
-            //Debug.Log("Object was not hold key");
-        }
     }
 
     // INPUTS

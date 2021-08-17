@@ -28,19 +28,18 @@ public class danceObject : ADanceObject {
     // When a dance key is pressed
     public override void Pressed(string key) {
 
-        if (this.active) { // if dance tile is next up
-            if (this.keyToPress == key) { // if key pressed is correct
-                float difference = Mathf.Abs(player.position.x - transform.position.x);
-                score = 10 - difference;
-                if (score < 0)
-                    score = 0;
+        if (this.keyToPress == key) { // if key pressed is correct
+            float difference = Mathf.Abs(player.position.x - transform.position.x);
+            score = 10 - difference;
+            if (score < 0)
+                score = 0;
 
-                this.EvaluateScore(score);
-                this.DestroyDanceTile();
-            } else { // if key pressed is not correct
-                this.EvaluateScore(0);
-                this.DestroyDanceTile();
-            }
+            this.EvaluateScore(score);
+            this.DestroyDanceTile();
+        } else { // if key pressed is not correct
+            this.EvaluateScore(0);
+            this.DestroyDanceTile();
         }
+
     }
 }

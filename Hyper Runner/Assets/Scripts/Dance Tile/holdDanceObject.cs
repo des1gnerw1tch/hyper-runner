@@ -20,7 +20,7 @@ public class holdDanceObject : ADanceObject {
     void Update() {
 
         // for new input system
-        if (isPressing && active) {
+        if (isPressing) {
             Pressing();
         }
 
@@ -58,7 +58,6 @@ public class holdDanceObject : ADanceObject {
             if (score > 9) { // if first press is success
                 FindObjectOfType<AudioManager>().Play("metronome");
             } else { // if first press is faliure
-                active = false;
                 this.DestroyDanceTile();
             }
 
@@ -85,16 +84,14 @@ public class holdDanceObject : ADanceObject {
     }
 
     public override void Pressed(string key) {
-        if (this.active) {
-            if (key == this.keyToPress) { // if key pressed is correct
-                this.isPressing = true;
-            } else { // if key pressed is incorrect
-                active = false;
-                this.EvaluateScore(0);
-                FindObjectOfType<CameraShake>().Begin(camRumbleIntensity, camRumbleSpeed, .1f); // to cancel rumble
-                Destroy(this.endNode.gameObject);
-                this.DestroyDanceTile();
-            }
+
+        if (key == this.keyToPress) { // if key pressed is correct
+            this.isPressing = true;
+        } else { // if key pressed is incorrect
+            this.EvaluateScore(0);
+            FindObjectOfType<CameraShake>().Begin(camRumbleIntensity, camRumbleSpeed, .1f); // to cancel rumble
+            Destroy(this.endNode.gameObject);
+            this.DestroyDanceTile();
         }
 
     }
@@ -102,7 +99,7 @@ public class holdDanceObject : ADanceObject {
     // method stubs to override, all player input
 
     public override void Released(string key) {
-        if (key == this.keyToPress && active && isPressing) {
+        if (key == this.keyToPress && isPressing) {
             this.CorrectKeyReleased();
         }
     }
@@ -111,7 +108,6 @@ public class holdDanceObject : ADanceObject {
     void CorrectKeyReleased() {
         this.isPressing = false;
         this.EndAccuracy();
-        this.active = false;
     }
 
 }

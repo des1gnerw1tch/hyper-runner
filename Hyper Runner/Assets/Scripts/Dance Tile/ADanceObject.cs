@@ -5,7 +5,6 @@ using UnityEngine;
 // a dance tile object
 public abstract class ADanceObject : MonoBehaviour, IDanceObject {
 
-    [HideInInspector] public bool active = false; // active is whether object can be interacted with
     [HideInInspector] public Transform player; // player transform 
     [HideInInspector] public float score; // score earned for this dance tile
     public CharacterHealth characterHealth; // character health of player
