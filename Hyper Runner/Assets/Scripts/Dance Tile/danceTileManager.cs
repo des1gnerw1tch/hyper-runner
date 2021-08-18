@@ -8,15 +8,6 @@ public class danceTileManager : MonoBehaviour {
     [SerializeField] private Transform player;
     [SerializeField] private IDanceObject activeDanceObj; // is mutated on by dance key movement on player
 
-    // TODO: for keyboard input, will change to newer input system later
-    void Update() {
-        // Will update active dance key, on KeyUp because want to make sure
-        // first object when clicked is deleted first (which is on KeyDown)
-        // TODO: update these keyboard controlls to new input system
-        if (Input.GetKeyUp("up") || Input.GetKeyUp("down")) {
-            UpdateValidDanceKeys();
-        }
-    }
     //Makes sure that only 1 dance key is okay to press at one time
     // finds dance key with smallest X position and activates it...
     public void UpdateValidDanceKeys() {
