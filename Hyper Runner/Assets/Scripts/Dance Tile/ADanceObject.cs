@@ -53,12 +53,13 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
             SpawnScoreText(perfectText); // spawn perfect text
             characterHealth.AddCharisma(10f);
             FindObjectOfType<AudioManager>().Play("metronome");
+            ResultsManager.IncPerfectTiles();
 
         } else if (_score > 9.5) {
             characterHealth.AddCharisma(3f);
             SpawnScoreText(goodText); // spawn good text
             FindObjectOfType<AudioManager>().Play("metronome");
-            ResultsManager.IncNonPerfectTiles();
+            ResultsManager.IncGoodTiles();
         } else if (_score > 9) {
             if (characterHealth.charisma > 50f) {
                 characterHealth.AddCharisma(-5f); // "okay" rating will only penalize if at high-charisma
@@ -69,12 +70,11 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
             }
             FindObjectOfType<AudioManager>().Play("metronome");
             SpawnScoreText(okText); // spawn ok text
-            ResultsManager.IncNonPerfectTiles();
+            ResultsManager.IncOkTiles();
         } else {
             characterHealth.AddCharisma(-10f);
             SpawnScoreText(missedText); // spawn missed text pop up
             FindObjectOfType<AudioManager>().Play("negative");
-            ResultsManager.IncNonPerfectTiles();
             ResultsManager.IncMissedDanceTiles();
         }
     }

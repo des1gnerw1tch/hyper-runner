@@ -16,7 +16,6 @@ public class GradeImage : AResultText {
     // called on first frame
     void Start() {
         this.imageComponent.enabled = false;
-        this.gradeEarned = CalculateGrade();
         this.isHighScore = true; // TODO: display high score if this is saved as a high score
     }
 
@@ -49,33 +48,6 @@ public class GradeImage : AResultText {
         this.imageComponent.sprite = this.grades[randNum];
         FindObjectOfType<AudioManager>().Play("Click");
         return randNum;
-    }
-
-    // returns grade earned for current run
-    // TODO: create this method with good weights, for right it is limited to either earn P or F... 
-    int CalculateGrade() {
-        float totalTiles = (float)ResultsManager.GetTotalTiles();
-        float nonPerfectTiles = (float)ResultsManager.GetNonPerfectTiles();
-        float missedTiles = (float)ResultsManager.GetMissedDanceTiles();
-
-        float perfectRatio = (totalTiles - nonPerfectTiles)
-            / totalTiles;
-        Debug.Log("Perfect Ratio: " + perfectRatio);
-        float hitRatio = (totalTiles - missedTiles)
-            / totalTiles;
-        Debug.Log("Hit Ratio: " + hitRatio);
-
-        if (perfectRatio > .70 && ResultsManager.GetPlayerCrashes() == 0) { // P
-            return 0;
-        } else if (hitRatio > .80 && ResultsManager.GetPlayerCrashes() <= 2) { // A
-            return 1;
-        } else if (hitRatio > .70 && ResultsManager.GetPlayerCrashes() <= 4) { // B
-            return 2;
-        } else if (hitRatio > .60 && ResultsManager.GetPlayerCrashes() <= 6) { // C
-            return 3;
-        } else {
-            return 4; // D
-        }
     }
 
     // shows the earned grade of the player, handles high score or not

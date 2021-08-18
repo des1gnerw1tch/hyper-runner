@@ -28,18 +28,14 @@ public class holdDanceObject : ADanceObject {
         bool missedEntry = (player.position.x - transform.position.x) >= distanceUntilDestroy;
         bool missedExit = (player.position.x - endNode.position.x) >= distanceUntilDestroy;
         if ((missedEntry && firstPress) || missedExit) {
-            characterHealth.AddCharisma(-10f);
             try {
                 FindObjectOfType<danceTileManager>().ActivateNextFowardKey();
             }
             catch (Exception e) {
                 Debug.Log("tried to access dance tile manager when it was deactivated");
             }
-            SpawnScoreText(missedText); // spawn missed text pop up
-            FindObjectOfType<AudioManager>().Play("negative");
-            ResultsManager.IncMissedDanceTiles();
-            ResultsManager.IncNonPerfectTiles();
-            Destroy(gameObject);
+            this.EvaluateScore(0);
+            this.DestroyDanceTile();
         }
     }
 
@@ -55,9 +51,7 @@ public class holdDanceObject : ADanceObject {
                 score = 0;
 
             EvaluateScore(score);
-            if (score > 9) { // if first press is success
-                FindObjectOfType<AudioManager>().Play("metronome");
-            } else { // if first press is faliure
+            if (score < 9) { // if first press is failure
                 this.DestroyDanceTile();
             }
 
