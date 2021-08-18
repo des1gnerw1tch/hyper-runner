@@ -15,4 +15,7 @@ public interface IDanceObject {
 
     // When a key is pressed while this dance object is active
     void Pressed(string key);
+
+    // When key is released while this dance object is active
+    void Released(string key);
 }
