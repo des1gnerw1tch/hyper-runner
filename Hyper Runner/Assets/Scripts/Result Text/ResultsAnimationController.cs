@@ -26,16 +26,11 @@ public class ResultsAnimationController : MonoBehaviour {
 
     // sets the scores for mobility and rhythm 
     void SetScores() {
-        // TODO: Also calculate grade image here, would be cleaner (right now calculates in own script
         float totalTiles = (float)ResultsManager.GetTotalTiles();
         float okTiles = (float)ResultsManager.GetOkTiles();
         float goodTiles = (float)ResultsManager.GetGoodTiles();
         float perfectTiles = (float)ResultsManager.GetPerfectTiles();
         float missedTiles = (float)ResultsManager.GetMissedDanceTiles();
-
-        float perfectRatio = perfectTiles / totalTiles;
-        float hitRatio = (totalTiles - missedTiles)
-            / totalTiles;
 
         // this crazy math makes a score, somewhere in the 1000 range
         // the longer the level (more tiles) and the least crashes, gives the most points.
@@ -51,8 +46,8 @@ public class ResultsAnimationController : MonoBehaviour {
         // okay tile, 0% credit awarded for missed tile
         float rawScore = perfectTiles + 0.8f * goodTiles + 0.6f * okTiles;
         float fracScore = rawScore / totalTiles; // how well you did out of the max score, a score of 1 is perfect,
+                                                 // while a score of 0 means you got no dance tiles
         Debug.Log("Frac Rhythm Score: " + fracScore);
-        // while a score of 0 means you got no dance tiles
 
         int weightedScore = (int)Mathf.Ceil(250 * fracScore) * 10; // max score is 100
         this.rhythmScore.score = weightedScore;
