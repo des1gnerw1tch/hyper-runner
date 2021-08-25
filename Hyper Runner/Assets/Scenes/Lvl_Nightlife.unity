@@ -20002,22 +20002,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1424509935, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: m_DefaultActionMap
-      value: Platformer
-      objectReference: {fileID: 0}
-    - target: {fileID: 1424509935, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: m_DefaultControlScheme
-      value: Xbox Control Scheme
-      objectReference: {fileID: 0}
-    - target: {fileID: 1424509935, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: m_NeverAutoSwitchControlSchemes
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 752551082774792005, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: sprite
-      value: 
-      objectReference: {fileID: 1424509933}
     - target: {fileID: 752551082774792005, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
       propertyPath: musicSync
       value: 
@@ -20073,18 +20057,6 @@ PrefabInstance:
     - target: {fileID: 752551082774792010, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: movement
-      value: 
-      objectReference: {fileID: 1374450472}
-    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: maxHeight
-      value: 13.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
-      propertyPath: minHeight
-      value: 3.8
       objectReference: {fileID: 0}
     - target: {fileID: 2745784147261088146, guid: 2296d39433fc94ab29ad2af31bf25552, type: 3}
       propertyPath: musicSync

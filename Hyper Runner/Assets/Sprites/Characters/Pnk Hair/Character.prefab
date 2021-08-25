@@ -175,6 +175,7 @@ MonoBehaviour:
   speed: 5
   jumpPower: 13
   jumpsLeft: 0
+  sprite: {fileID: 752551082774792011}
   rb: {fileID: 752551082774792007}
   animator: {fileID: 752551082774792008}
   jumpCollider: {fileID: 4290473769257929723}
@@ -220,6 +221,10 @@ MonoBehaviour:
   posFlashColor: {r: 1, g: 1, b: 1, a: 1}
   negFlashColor: {r: 1, g: 0, b: 0, a: 1}
   flashSpeed: 3
+  minHeight: 3.8
+  maxHeight: 13.4
+  movement: {fileID: 752551082774792005}
+  musicSync: {fileID: 0}
 --- !u!114 &1424509934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,7 +294,7 @@ MonoBehaviour:
     m_ActionName: Player/Floor[/XboxOneGampadMacOSWireless/leftStick/down]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Xbox Control Scheme
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: Platformer
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &1424509936
