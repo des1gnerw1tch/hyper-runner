@@ -26,17 +26,18 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
 
     public virtual void OnDownDanceKeyPress() { this.Pressed("down"); }
 
-    public virtual void OnLeftDanceKeyPress() { this.Pressed("left"); }
+    // left and right dance keys have to swap input when Cam is flipped over Y
+    public virtual void OnLeftDanceKeyPress() { this.Pressed(CameraOrientation.isYFlipped ? "right" : "left"); }
 
-    public virtual void OnRightDanceKeyPress() { this.Pressed("right"); }
+    public virtual void OnRightDanceKeyPress() { this.Pressed(CameraOrientation.isYFlipped ? "left" : "right"); }
 
     public virtual void OnUpDanceKeyRelease() { this.Released("up"); }
 
     public virtual void OnDownDanceKeyRelease() { this.Released("down"); }
 
-    public virtual void OnLeftDanceKeyRelease() { this.Released("left"); }
+    public virtual void OnLeftDanceKeyRelease() { this.Released(CameraOrientation.isYFlipped ? "right" : "left"); }
 
-    public virtual void OnRightDanceKeyRelease() { this.Released("right"); }
+    public virtual void OnRightDanceKeyRelease() { this.Released(CameraOrientation.isYFlipped ? "left" : "right"); }
 
     public virtual void OnAnyDanceKeyPress() { }
 

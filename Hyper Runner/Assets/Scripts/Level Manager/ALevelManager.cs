@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+// Holds level wide variables and functions
 public abstract class ALevelManager : MonoBehaviour, ILevelManager {
     public float playerCamMoveSpeed = 5f;
     public Move cameraMovement;
