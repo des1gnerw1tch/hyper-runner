@@ -1984,17 +1984,22 @@ MonoBehaviour:
   player: {fileID: 0}
   score: 0
   characterHealth: {fileID: 0}
-  keyToPress: up
-  distanceUntilDestroy: 3
+  canvas: {fileID: 1275966722}
   destroyEffect: {fileID: 3848182383814694509, guid: 42c3914cfb9d94727b89a262be40b55f, type: 3}
   okText: {fileID: 3331136396928422065, guid: 815773130346f4307af97e010a174629, type: 3}
   goodText: {fileID: 3331136396928422065, guid: 46087c2cf6c214237ac7c59169fbbe20, type: 3}
   perfectText: {fileID: 3331136396928422065, guid: ed53a89ed2aa54e3ea90a4c2a9d0ec76, type: 3}
   missedText: {fileID: 3331136396928422065, guid: 7454358818a40426a88bef7a4b3a43de, type: 3}
-  canvas: {fileID: 1275966722}
+  keyToPress: up
+  distanceUntilDestroy: 3
   camRumbleIntensity: 0.2
   camRumbleSpeed: 10
   camRumbleDuration: 0.1
+  isLastTileInSequence: 0
+  levelManager: {fileID: 0}
+  playerRunningSpeed: 0
+  surroundingSpeedMultiplier: 0
+  danceManager: {fileID: 0}
 --- !u!212 &342833460
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9212,9 +9217,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1275966722}
     - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: danceManager
+      value: 
+      objectReference: {fileID: 1424509936}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 633569203}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: characterHealth
       value: 
       objectReference: {fileID: 962306085}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: playerRunningSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: isLastTileInSequence
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
+      propertyPath: surroundingSpeedMultiplier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: m_RootOrder
       value: 92
@@ -16430,6 +16455,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1424509934}
     - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: danceManager
+      value: 
+      objectReference: {fileID: 1424509936}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
       propertyPath: flashColor.a
       value: 1
       objectReference: {fileID: 0}
@@ -16446,12 +16475,28 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 633569203}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
       propertyPath: camRumbleDuration
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
       propertyPath: camRumbleIntensity
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: playerRunningSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: isLastTileInSequence
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219637414331819521, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
+      propertyPath: surroundingSpeedMultiplier
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
       propertyPath: m_RootOrder
@@ -18903,6 +18948,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform Arrows 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4582488140973833091, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4582488140973833100, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
       propertyPath: danceManager
       value: 
@@ -20705,6 +20754,10 @@ PrefabInstance:
     - target: {fileID: 4582488140973833091, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
       propertyPath: m_Name
       value: Platform Arrows
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582488140973833091, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4582488140973833100, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
       propertyPath: danceManager

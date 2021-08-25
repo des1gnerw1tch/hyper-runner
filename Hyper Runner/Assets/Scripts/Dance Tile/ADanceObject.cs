@@ -4,21 +4,32 @@ using UnityEngine;
 
 // a dance tile object
 public abstract class ADanceObject : MonoBehaviour, IDanceObject {
-
     [HideInInspector] public Transform player; // player transform 
     [HideInInspector] public float score; // score earned for this dance tile
+
+    [Header("Required Components/Prefabs")]
     public CharacterHealth characterHealth; // character health of player
-    public string keyToPress; // the key to press for this dance object
-    public float distanceUntilDestroy; // the dist from player for this object to destroy itself after miss
+    public GameObject canvas; // current scene canvas
     public GameObject destroyEffect; // gameobject spawned when dance tile is destroyed
     public GameObject okText; // OK rating text prefab
     public GameObject goodText; // GOOD rating text prefab
     public GameObject perfectText; // PERFECT rating text prefab
     public GameObject missedText; // MISSED rating text prefab
-    public GameObject canvas; // current scene canvas
+
+    [Header("Dance Tile Properties")]
+    public string keyToPress; // the key to press for this dance object
+    public float distanceUntilDestroy; // the dist from player for this object to destroy itself after miss
+
     public float camRumbleIntensity; // camera shake amplitude
     public float camRumbleSpeed; // camera shake speed
     public float camRumbleDuration; // camera shake duration
+
+    [Header("Required If Tile Is Last In Sequence")]
+    public bool isLastTileInSequence; // is this the last tile before platform mode?
+    [SerializeField] private ALevelManager levelManager; // Level Manager of current game
+    [SerializeField] private float playerRunningSpeed; // How fast should player run when platform mode activated?
+    [SerializeField] private float surroundingSpeedMultiplier; // How fast should surroundings move past screen? 
+    [SerializeField] private danceTileManager danceManager; // Dance manager script on Player
 
     // Functions called directly from Dance Tile Manager, which uses Player Input (reference unity input system 1.0.2)
     // these functions are called when player does an action that requires action from this dance tile
@@ -97,5 +108,14 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
         Instantiate(this.destroyEffect, this.transform.position, Quaternion.identity);
         FindObjectOfType<CameraShake>().Begin(this.camRumbleIntensity, this.camRumbleSpeed, this.camRumbleDuration);
         Destroy(this.gameObject);
+    }
+
+    // deactivates Rhythm mode, puts player into Platformer mode
+    public void StartPlatformMode() {
+        this.levelManager.SetPlayerMode("Platformer"); // sets correct player mode
+        this.levelManager.playerCamMoveSpeed = playerRunningSpeed; //  sets player and camera speed 
+        Parallax.multiplier = surroundingSpeedMultiplier; // sets how fast objects should move in background
+        this.levelManager.UpdateSpeeds();
+        this.danceManager.enabled = false;
     }
 }

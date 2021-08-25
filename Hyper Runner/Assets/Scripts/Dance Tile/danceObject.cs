@@ -21,6 +21,11 @@ public class danceObject : ADanceObject {
                 Debug.Log("tried to access dance tile manager when it was deactivated");
             }
             this.EvaluateScore(0);
+
+            if (this.isLastTileInSequence) {
+                this.StartPlatformMode();
+            }
+
             this.DestroyDanceTile();
         }
     }
@@ -35,10 +40,19 @@ public class danceObject : ADanceObject {
                 score = 0;
 
             this.EvaluateScore(score);
+            CheckIfLastTile();
             this.DestroyDanceTile();
         } else { // if key pressed is not correct
             this.EvaluateScore(0);
+            CheckIfLastTile();
             this.DestroyDanceTile();
+        }
+
+        // LOCAL: if is the last tile in the game, switch player to platform mode
+        void CheckIfLastTile() {
+            if (this.isLastTileInSequence) {
+                this.StartPlatformMode();
+            }
         }
 
     }
