@@ -11,7 +11,8 @@ public class holdDanceObject : ADanceObject {
     private bool firstPress = true;
     private bool isPressing;
 
-    void Start() {
+    public override void Start() {
+        base.Start(); // from ADanceObject
         player = GameObject.FindWithTag("Player").GetComponent<Transform>();
         characterHealth = FindObjectOfType<CharacterHealth>();
         firstPress = true;

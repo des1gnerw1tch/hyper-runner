@@ -6,7 +6,9 @@ using System;
 // Normal Dance Tile, press a key to interact
 public class danceObject : ADanceObject {
 
-    void Start() {
+    // on first frame
+    public override void Start() {
+        base.Start(); // from ADanceObject
         player = GameObject.FindWithTag("Player").GetComponent<Transform>();
         characterHealth = FindObjectOfType<CharacterHealth>();
     }

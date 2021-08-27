@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 // a dance tile object
 public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     [HideInInspector] public Transform player; // player transform 
     [HideInInspector] public float score; // score earned for this dance tile
+    public static int perfectInARow; // how many perfects in a row one as got
 
     [Header("Required Components/Prefabs")]
     public CharacterHealth characterHealth; // character health of player
@@ -15,6 +17,7 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     public GameObject goodText; // GOOD rating text prefab
     public GameObject perfectText; // PERFECT rating text prefab
     public GameObject missedText; // MISSED rating text prefab
+    public GameObject perfectStreakText; // Text holding Streak of Perfects prefab
 
     [Header("Dance Tile Properties")]
     public string keyToPress; // the key to press for this dance object
@@ -63,16 +66,24 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
         ResultsManager.IncTotalDanceTiles();
         if (_score > 9.7) {
             SpawnScoreText(perfectText); // spawn perfect text
+            perfectInARow++;
+
+            if (perfectInARow > 1) { // if over 1 perfect in a row
+                this.SpawnPerfectMultiplierText();
+            }
+
             characterHealth.AddCharisma(10f);
             FindObjectOfType<AudioManager>().Play("metronome");
             ResultsManager.IncPerfectTiles();
 
         } else if (_score > 9.5) {
+            perfectInARow = 0;
             characterHealth.AddCharisma(3f);
             SpawnScoreText(goodText); // spawn good text
             FindObjectOfType<AudioManager>().Play("metronome");
             ResultsManager.IncGoodTiles();
         } else if (_score > 9) {
+            perfectInARow = 0;
             if (characterHealth.charisma > 50f) {
                 characterHealth.AddCharisma(-5f); // "okay" rating will only penalize if at high-charisma
                 FindObjectOfType<AudioManager>().Play("metronome");
@@ -84,6 +95,7 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
             SpawnScoreText(okText); // spawn ok text
             ResultsManager.IncOkTiles();
         } else {
+            perfectInARow = 0;
             characterHealth.AddCharisma(-10f);
             SpawnScoreText(missedText); // spawn missed text pop up
             FindObjectOfType<AudioManager>().Play("negative");
@@ -97,10 +109,23 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
         image.transform.SetParent(canvas.transform, false);
 
         // set the placement of these pop ups a little random
-        float wobble = 15;
+        this.Wobble(image.GetComponent<RectTransform>(), 15);
+    }
+
+    // spawns the text for how many perfects you got in a row
+    public void SpawnPerfectMultiplierText() {
+        GameObject instance = Instantiate(this.perfectStreakText);
+        instance.transform.SetParent(canvas.transform, false);
+        instance.GetComponent<TextMeshProUGUI>().text = "x" + perfectInARow;
+        // set the placement of these pop ups a little random
+        this.Wobble(instance.GetComponent<RectTransform>(), 100);
+    }
+
+    // Makes UI element have slight X and Y shift, magnitude depending on wobble
+    void Wobble(RectTransform rt, float wobble) {
         float difX = UnityEngine.Random.Range(-wobble, wobble);
         float difY = UnityEngine.Random.Range(-wobble, wobble);
-        image.GetComponent<RectTransform>().Translate(new Vector3(difX, difY, 0), Space.World);
+        rt.Translate(new Vector3(difX, difY, 0), Space.World);
     }
 
     // destroys dance tile, spawns effects
@@ -117,5 +142,10 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
         Parallax.multiplier = surroundingSpeedMultiplier; // sets how fast objects should move in background
         this.levelManager.UpdateSpeeds();
         this.danceManager.enabled = false;
+    }
+
+    // Called on first frame
+    public virtual void Start() {
+        perfectInARow = 0;
     }
 }

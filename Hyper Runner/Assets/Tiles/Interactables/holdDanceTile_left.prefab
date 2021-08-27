@@ -98,15 +98,21 @@ MonoBehaviour:
   player: {fileID: 0}
   score: 0
   characterHealth: {fileID: 0}
-  keyToPress: left
-  distanceUntilDestroy: 3
+  canvas: {fileID: 0}
   destroyEffect: {fileID: 3848182383814694509, guid: b6f8395df78314894bd0e4350fe7504e, type: 3}
   okText: {fileID: 3331136396928422065, guid: 815773130346f4307af97e010a174629, type: 3}
   goodText: {fileID: 3331136396928422065, guid: 46087c2cf6c214237ac7c59169fbbe20, type: 3}
   perfectText: {fileID: 3331136396928422065, guid: ed53a89ed2aa54e3ea90a4c2a9d0ec76, type: 3}
   missedText: {fileID: 3331136396928422065, guid: 7454358818a40426a88bef7a4b3a43de, type: 3}
-  canvas: {fileID: 0}
+  perfectStreakText: {fileID: 3252608051743359050, guid: 974bbdbda10834ba6ac4f70000140930, type: 3}
+  keyToPress: left
+  distanceUntilDestroy: 3
   camRumbleIntensity: 0.5
   camRumbleSpeed: 10
   camRumbleDuration: 1000
+  isLastTileInSequence: 0
+  levelManager: {fileID: 0}
+  playerRunningSpeed: 0
+  surroundingSpeedMultiplier: 0
+  danceManager: {fileID: 0}
   endNode: {fileID: 0}

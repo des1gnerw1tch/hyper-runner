@@ -1990,6 +1990,7 @@ MonoBehaviour:
   goodText: {fileID: 3331136396928422065, guid: 46087c2cf6c214237ac7c59169fbbe20, type: 3}
   perfectText: {fileID: 3331136396928422065, guid: ed53a89ed2aa54e3ea90a4c2a9d0ec76, type: 3}
   missedText: {fileID: 3331136396928422065, guid: 7454358818a40426a88bef7a4b3a43de, type: 3}
+  perfectStreakText: {fileID: 0}
   keyToPress: up
   distanceUntilDestroy: 3
   camRumbleIntensity: 0.2
@@ -8864,7 +8865,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
