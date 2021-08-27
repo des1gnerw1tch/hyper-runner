@@ -7,14 +7,13 @@ using System;
 a the key. once key is let up, charisma will be awarded based on how far from
 the end your player is */
 public class holdDanceObject : ADanceObject {
+    [Header("Hold Dance Object Required Components")]
     [SerializeField] private Transform endNode;
     private bool firstPress = true;
     private bool isPressing;
 
     public override void Start() {
         base.Start(); // from ADanceObject
-        player = GameObject.FindWithTag("Player").GetComponent<Transform>();
-        characterHealth = FindObjectOfType<CharacterHealth>();
         firstPress = true;
     }
 

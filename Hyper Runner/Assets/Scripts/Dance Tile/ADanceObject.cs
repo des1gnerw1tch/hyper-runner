@@ -9,9 +9,10 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     [HideInInspector] public float score; // score earned for this dance tile
     public static int perfectInARow; // how many perfects in a row one as got
 
-    [Header("Required Components/Prefabs")]
+    [Header("Required Components/Prefabs (Auto)")]
     public CharacterHealth characterHealth; // character health of player
     public GameObject canvas; // current scene canvas
+    [Header("Required Components/Prefabs")]
     public GameObject destroyEffect; // gameobject spawned when dance tile is destroyed
     public GameObject okText; // OK rating text prefab
     public GameObject goodText; // GOOD rating text prefab
@@ -147,5 +148,8 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     // Called on first frame
     public virtual void Start() {
         perfectInARow = 0;
+        this.player = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        this.characterHealth = FindObjectOfType<CharacterHealth>();
+        this.canvas = FindObjectOfType<Canvas>().gameObject;
     }
 }

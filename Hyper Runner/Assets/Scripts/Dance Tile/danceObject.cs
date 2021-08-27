@@ -6,13 +6,6 @@ using System;
 // Normal Dance Tile, press a key to interact
 public class danceObject : ADanceObject {
 
-    // on first frame
-    public override void Start() {
-        base.Start(); // from ADanceObject
-        player = GameObject.FindWithTag("Player").GetComponent<Transform>();
-        characterHealth = FindObjectOfType<CharacterHealth>();
-    }
-
     void Update() {
         // despawn object if missed
         if ((player.position.x - transform.position.x) >= distanceUntilDestroy) {
