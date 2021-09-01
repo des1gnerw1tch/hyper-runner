@@ -57,7 +57,7 @@ public class GradeImage : AResultText {
 
         this.imageComponent.sprite = this.grades[this.gradeEarned];
         int happyRating = (4 - this.gradeEarned);
-        if (happyRating < 3) {
+        if (happyRating < 0) {
             this.isHighScore = false;
         }
 
