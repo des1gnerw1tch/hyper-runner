@@ -13,9 +13,11 @@ public abstract class ALevelManager : MonoBehaviour, ILevelManager {
     public Rigidbody2D player_rb;
     public GameObject flyingParticles;
     public float launchToRhythmSpeed = 5f;
+    [SerializeField] private GameObject transitionPanel;
 
     // Start is called before the first frame update
     public virtual void Start() {
+        this.transitionPanel.SetActive(true); // gets transition panel activated
         UpdateSpeeds();
         ResultsManager.init(); // initializes results of current game, which has just started
     }
