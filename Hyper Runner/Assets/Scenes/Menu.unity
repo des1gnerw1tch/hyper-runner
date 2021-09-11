@@ -270,7 +270,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: c05fcb68963bc44e7a7cb70126aa076e, type: 3}
+  - {fileID: 2100000, guid: 44aa0922d5b9943609c25bcd9dd46dfe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -564,6 +564,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: -8288719943971160903, guid: c05fcb68963bc44e7a7cb70126aa076e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 44aa0922d5b9943609c25bcd9dd46dfe, type: 2}
     - target: {fileID: -8003475078545299194, guid: c05fcb68963bc44e7a7cb70126aa076e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
@@ -672,6 +676,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: -1443554048756491979, guid: c05fcb68963bc44e7a7cb70126aa076e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 44aa0922d5b9943609c25bcd9dd46dfe, type: 2}
     - target: {fileID: -1191636905845341406, guid: c05fcb68963bc44e7a7cb70126aa076e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
@@ -1070,8 +1078,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
+  m_RequiresDepthTextureOption: 1
+  m_RequiresOpaqueTextureOption: 1
   m_CameraType: 0
   m_Cameras: []
   m_RendererIndex: 1
