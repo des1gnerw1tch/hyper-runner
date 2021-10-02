@@ -20192,6 +20192,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1275966726}
     m_Modifications:
+    - target: {fileID: 334122967425467067, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 334122967425467067, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 334122967425467067, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1936126839}
+    - target: {fileID: 334122967425467067, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 334122967425467067, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 334122967425467067, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 334122967425467067, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 334122968334937624, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
       propertyPath: m_Name
       value: Pause Canvas

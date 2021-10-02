@@ -45,6 +45,7 @@ public class arcadeMachine : MonoBehaviour {
 
     // Loads the scene the arcade game is linked to 
     public void LoadGameScene() {
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene(this.sceneToLoad);
     }
 }

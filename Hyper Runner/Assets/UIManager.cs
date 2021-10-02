@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
  * Deals with setting up scene transitions and user interface
@@ -45,5 +46,11 @@ public class UIManager : MonoBehaviour {
         this.musicSync.ResumeMusic();
         Time.timeScale = 1f;
         this.pauseScreen.SetActive(false);
+    }
+
+    // When player wants to exit game
+    public void ExitGame() {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Menu"); // load the arcade machine scene, exits this game
     }
 }
