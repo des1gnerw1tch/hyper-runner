@@ -49,6 +49,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""PauseGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""04ff4765-a800-4512-ab9e-f3ab33d4bc3b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -172,6 +180,28 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""FastFowardStart"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a5472834-6b81-4cc7-81e6-c12e567d53c6"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""PauseGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e010cf5e-0d3d-4028-b15b-2b40eb6987f9"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""PauseGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -255,6 +285,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""name"": ""FastFowardStart"",
                     ""type"": ""Button"",
                     ""id"": ""f7994f71-2ab6-4562-8686-4b0a7d73dcbf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""PauseGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""d90c9bfb-f7df-4d61-a312-5b699486c171"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -544,6 +582,28 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard Control Scheme"",
                     ""action"": ""RightDanceKeyPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8cafd875-9faa-4de8-a0ef-41a2f8e00212"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""PauseGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bce0ede6-64e7-420c-a332-fde1177aede1"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""PauseGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -846,6 +906,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Platformer_FloorDown = m_Platformer.FindAction("FloorDown", throwIfNotFound: true);
         m_Platformer_FloorUp = m_Platformer.FindAction("FloorUp", throwIfNotFound: true);
         m_Platformer_FastFowardStart = m_Platformer.FindAction("FastFowardStart", throwIfNotFound: true);
+        m_Platformer_PauseGame = m_Platformer.FindAction("PauseGame", throwIfNotFound: true);
         // Dancer
         m_Dancer = asset.FindActionMap("Dancer", throwIfNotFound: true);
         m_Dancer_UpDanceKeyPress = m_Dancer.FindAction("UpDanceKeyPress", throwIfNotFound: true);
@@ -858,6 +919,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Dancer_RightDanceKeyRelease = m_Dancer.FindAction("RightDanceKeyRelease", throwIfNotFound: true);
         m_Dancer_AnyDanceKeyPress = m_Dancer.FindAction("AnyDanceKeyPress", throwIfNotFound: true);
         m_Dancer_FastFowardStart = m_Dancer.FindAction("FastFowardStart", throwIfNotFound: true);
+        m_Dancer_PauseGame = m_Dancer.FindAction("PauseGame", throwIfNotFound: true);
         // 3D
         m__3D = asset.FindActionMap("3D", throwIfNotFound: true);
         m__3D_WalkVertical = m__3D.FindAction("Walk Vertical", throwIfNotFound: true);
@@ -917,6 +979,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_Platformer_FloorDown;
     private readonly InputAction m_Platformer_FloorUp;
     private readonly InputAction m_Platformer_FastFowardStart;
+    private readonly InputAction m_Platformer_PauseGame;
     public struct PlatformerActions
     {
         private @InputMaster m_Wrapper;
@@ -925,6 +988,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @FloorDown => m_Wrapper.m_Platformer_FloorDown;
         public InputAction @FloorUp => m_Wrapper.m_Platformer_FloorUp;
         public InputAction @FastFowardStart => m_Wrapper.m_Platformer_FastFowardStart;
+        public InputAction @PauseGame => m_Wrapper.m_Platformer_PauseGame;
         public InputActionMap Get() { return m_Wrapper.m_Platformer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -946,6 +1010,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @FastFowardStart.started -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnFastFowardStart;
                 @FastFowardStart.performed -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnFastFowardStart;
                 @FastFowardStart.canceled -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnFastFowardStart;
+                @PauseGame.started -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnPauseGame;
+                @PauseGame.performed -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnPauseGame;
+                @PauseGame.canceled -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnPauseGame;
             }
             m_Wrapper.m_PlatformerActionsCallbackInterface = instance;
             if (instance != null)
@@ -962,6 +1029,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @FastFowardStart.started += instance.OnFastFowardStart;
                 @FastFowardStart.performed += instance.OnFastFowardStart;
                 @FastFowardStart.canceled += instance.OnFastFowardStart;
+                @PauseGame.started += instance.OnPauseGame;
+                @PauseGame.performed += instance.OnPauseGame;
+                @PauseGame.canceled += instance.OnPauseGame;
             }
         }
     }
@@ -980,6 +1050,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_Dancer_RightDanceKeyRelease;
     private readonly InputAction m_Dancer_AnyDanceKeyPress;
     private readonly InputAction m_Dancer_FastFowardStart;
+    private readonly InputAction m_Dancer_PauseGame;
     public struct DancerActions
     {
         private @InputMaster m_Wrapper;
@@ -994,6 +1065,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @RightDanceKeyRelease => m_Wrapper.m_Dancer_RightDanceKeyRelease;
         public InputAction @AnyDanceKeyPress => m_Wrapper.m_Dancer_AnyDanceKeyPress;
         public InputAction @FastFowardStart => m_Wrapper.m_Dancer_FastFowardStart;
+        public InputAction @PauseGame => m_Wrapper.m_Dancer_PauseGame;
         public InputActionMap Get() { return m_Wrapper.m_Dancer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1033,6 +1105,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @FastFowardStart.started -= m_Wrapper.m_DancerActionsCallbackInterface.OnFastFowardStart;
                 @FastFowardStart.performed -= m_Wrapper.m_DancerActionsCallbackInterface.OnFastFowardStart;
                 @FastFowardStart.canceled -= m_Wrapper.m_DancerActionsCallbackInterface.OnFastFowardStart;
+                @PauseGame.started -= m_Wrapper.m_DancerActionsCallbackInterface.OnPauseGame;
+                @PauseGame.performed -= m_Wrapper.m_DancerActionsCallbackInterface.OnPauseGame;
+                @PauseGame.canceled -= m_Wrapper.m_DancerActionsCallbackInterface.OnPauseGame;
             }
             m_Wrapper.m_DancerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1067,6 +1142,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @FastFowardStart.started += instance.OnFastFowardStart;
                 @FastFowardStart.performed += instance.OnFastFowardStart;
                 @FastFowardStart.canceled += instance.OnFastFowardStart;
+                @PauseGame.started += instance.OnPauseGame;
+                @PauseGame.performed += instance.OnPauseGame;
+                @PauseGame.canceled += instance.OnPauseGame;
             }
         }
     }
@@ -1152,6 +1230,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnFloorDown(InputAction.CallbackContext context);
         void OnFloorUp(InputAction.CallbackContext context);
         void OnFastFowardStart(InputAction.CallbackContext context);
+        void OnPauseGame(InputAction.CallbackContext context);
     }
     public interface IDancerActions
     {
@@ -1165,6 +1244,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnRightDanceKeyRelease(InputAction.CallbackContext context);
         void OnAnyDanceKeyPress(InputAction.CallbackContext context);
         void OnFastFowardStart(InputAction.CallbackContext context);
+        void OnPauseGame(InputAction.CallbackContext context);
     }
     public interface I_3DActions
     {
