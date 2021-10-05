@@ -1851,6 +1851,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5806627208138827580, guid: a148f1bbba60240168621d04d79df0a1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8328879601773634800, guid: a148f1bbba60240168621d04d79df0a1, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -2779,7 +2783,7 @@ MonoBehaviour:
   player_rb: {fileID: 1935935508}
   flyingParticles: {fileID: 1935935507}
   launchToRhythmSpeed: 20
-  transitionPanel: {fileID: 1132428066}
+  transitionPanel: {fileID: 2129315220}
 --- !u!4 &974554154
 Transform:
   m_ObjectHideFlags: 0
@@ -5944,11 +5948,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 718d1c26770144032bf2d8feae66620b, type: 3}
---- !u!1 &1132428066 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8328879602974323222, guid: a148f1bbba60240168621d04d79df0a1, type: 3}
-  m_PrefabInstance: {fileID: 719384092}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1135638833
 GameObject:
   m_ObjectHideFlags: 0
@@ -12378,6 +12377,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2129315220 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5806627208138827580, guid: a148f1bbba60240168621d04d79df0a1, type: 3}
+  m_PrefabInstance: {fileID: 719384092}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4627764181159077228
 PrefabInstance:
   m_ObjectHideFlags: 0
