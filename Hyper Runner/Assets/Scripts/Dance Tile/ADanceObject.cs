@@ -12,13 +12,14 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     [Header("Required Components/Prefabs (Auto)")]
     public CharacterHealth characterHealth; // character health of player
     public GameObject canvas; // current scene canvas
+    public PerfectStreakTextManager perfectStreakTextManager; // Text holding Streak of Perfects prefab
     [Header("Required Components/Prefabs")]
     public GameObject destroyEffect; // gameobject spawned when dance tile is destroyed
     public GameObject okText; // OK rating text prefab
     public GameObject goodText; // GOOD rating text prefab
     public GameObject perfectText; // PERFECT rating text prefab
     public GameObject missedText; // MISSED rating text prefab
-    public GameObject perfectStreakText; // Text holding Streak of Perfects prefab
+
 
     [Header("Dance Tile Properties")]
     public string keyToPress; // the key to press for this dance object
@@ -64,11 +65,11 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     // spawns rating texts and adds to charisma when player presses a dance key
     // EFFECT: adds to characterHealth charisma, changes ResultsManager fields
     public void EvaluateScore(float _score) {
+
         ResultsManager.IncTotalDanceTiles();
         if (_score > 9.7) {
             SpawnScoreText(perfectText); // spawn perfect text
             perfectInARow++;
-
             if (perfectInARow > 1) { // if over 1 perfect in a row
                 this.SpawnPerfectMultiplierText();
             }
@@ -115,9 +116,7 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
 
     // spawns the text for how many perfects you got in a row
     public void SpawnPerfectMultiplierText() {
-        GameObject instance = Instantiate(this.perfectStreakText);
-        instance.transform.SetParent(canvas.transform, false);
-        instance.GetComponent<TextMeshProUGUI>().text = "x" + perfectInARow;
+        GameObject instance = this.perfectStreakTextManager.SpawnPerfectStreakText(perfectInARow); // Spawns a perfect streak text
         // set the placement of these pop ups a little random
         this.Wobble(instance.GetComponent<RectTransform>(), 100);
     }
@@ -151,5 +150,6 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
         this.player = GameObject.FindWithTag("Player").GetComponent<Transform>();
         this.characterHealth = FindObjectOfType<CharacterHealth>();
         this.canvas = FindObjectOfType<Canvas>().gameObject;
+        this.perfectStreakTextManager = FindObjectOfType<PerfectStreakTextManager>();
     }
 }
