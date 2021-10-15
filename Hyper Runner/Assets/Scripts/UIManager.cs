@@ -51,6 +51,8 @@ public class UIManager : MonoBehaviour {
     // When player wants to exit game
     public void ExitGame() {
         Time.timeScale = 1f;
+        LoadArcadeScene.sceneFrom = SceneManager.GetActiveScene().name; // tells LoadArcadeScene to load
+                                                                        // settings based on THIS scene
         SceneManager.LoadScene("Menu"); // load the arcade machine scene, exits this game
     }
 }

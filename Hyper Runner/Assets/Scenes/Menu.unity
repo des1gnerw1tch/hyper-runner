@@ -1760,6 +1760,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb13be3ae25cb4b21ad7dd80c49e3bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startGamePos: {fileID: 0}
+  machine1Pos: {fileID: 1645445158}
+  machine1Cam: {fileID: 896394964}
+  machine1CamAnimation: {fileID: 896394969}
+  player: {fileID: 1314417886}
+  playerCam: {fileID: 836202811}
+  playerCamHolder: {fileID: 1076968066}
 --- !u!1 &1434544836
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,6 +20,10 @@ public class FirstPersonCameraController : MonoBehaviour {
 
         //locks the cursor so that it stays in the center of the screen
         Cursor.lockState = CursorLockMode.Locked;
+
+        // TODO: Make these have starting parameters we can feed in, this is how player starts rotation
+        this.rotX = 90f;
+        this.rotY = 0;
     }
 
     // Late Update, happens after other updates

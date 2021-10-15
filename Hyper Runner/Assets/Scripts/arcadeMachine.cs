@@ -13,11 +13,11 @@ public class arcadeMachine : MonoBehaviour {
     private bool animationPlaying;
 
     void Start() {
-        playerCam.SetActive(true);
+        /*playerCam.SetActive(true);
         animCam.SetActive(false);
         backlight.SetActive(false);
         popUpText.SetActive(false);
-        animationPlaying = false;
+        animationPlaying = false;*/
     }
 
     void OnTriggerStay(Collider other) {
