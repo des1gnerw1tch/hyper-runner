@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class arcadeMachine : MonoBehaviour {
     [SerializeField] private GameObject playerCam;
     [SerializeField] private GameObject animCam;
+    [SerializeField] private Animator animCamAnimator;
     [SerializeField] private GameObject backlight;
     [SerializeField] private GameObject popUpText;
     [SerializeField] private string sceneToLoad;
@@ -25,6 +26,7 @@ public class arcadeMachine : MonoBehaviour {
             animationPlaying = true;
             playerCam.SetActive(false);
             animCam.SetActive(true);
+            animCamAnimator.SetTrigger("PanIntoMachine");
             backlight.SetActive(true);
             popUpText.SetActive(false);
             Debug.Log("Worked");

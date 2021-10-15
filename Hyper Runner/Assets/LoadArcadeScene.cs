@@ -9,7 +9,7 @@ public class LoadArcadeScene : MonoBehaviour {
 
     private Transform machine1Pos; // first machine position to spawn player at
     private GameObject machine1Cam;
-    private Animator machine1ExitAnimation; // first machine exit animation 
+    private Animator machine1CamAnimation; // first machine exit animation 
 
     private GameObject player; // player of the game
     private GameObject playerCam;
@@ -17,12 +17,13 @@ public class LoadArcadeScene : MonoBehaviour {
     public static string sceneFrom; // what level did the player come from? 
     // Start is called before the first frame update
     void Start() {
-        /*if (sceneFrom.Equals("Lvl_Nightlife")) {
+        if (sceneFrom != null && sceneFrom.Equals("Lvl_Nightlife")) {
             this.player.transform.position = new Vector3(machine1Pos.position.x, machine1Pos.position.y,
                 machine1Pos.position.z);
             this.playerCam.SetActive(false);
             this.machine1Cam.SetActive(true);
-        }*/
+            this.machine1CamAnimation.SetTrigger("PanOutOfMachine");
+        }
     }
 
     // Update is called once per frame
