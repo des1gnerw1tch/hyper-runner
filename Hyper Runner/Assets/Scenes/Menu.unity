@@ -1766,7 +1766,7 @@ MonoBehaviour:
   machine1CamAnimation: {fileID: 896394969}
   player: {fileID: 1314417886}
   playerCam: {fileID: 836202811}
-  playerCamHolder: {fileID: 1076968066}
+  playerCamHolder: {fileID: 1076968068}
 --- !u!1 &1434544836
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,7 +1874,7 @@ GameObject:
   m_Layer: 0
   m_Name: PlayerSpawnPoint Machine1
   m_TagString: Untagged
-  m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1885,13 +1885,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645445157}
-  m_LocalRotation: {x: -0, y: 0.7792845, z: -0, w: 0.62667036}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -2.09, y: 0.285, z: 0.006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 914318161}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1684695080
 GameObject:
   m_ObjectHideFlags: 0
