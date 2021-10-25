@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 // displays the final grade of your game
 public class GradeImage : AResultText {
@@ -35,6 +36,15 @@ public class GradeImage : AResultText {
         }
         // at the end of the shuffle, show earned grade
         this.ShowEarnedGrade();
+        StartCoroutine("EndScene");
+    }
+
+    //TODO: This is a test
+    // Will shift character to main scene
+    IEnumerator EndScene() {
+        //TODO: Replace this
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Menu");
     }
 
     // EFFECT: displays a random grade,
