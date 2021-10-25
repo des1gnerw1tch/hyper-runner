@@ -60,6 +60,7 @@ public class CharacterHealth : MonoBehaviour {
         }
     }
 
+    // Updates the UI portrait of character depending on current charisma!
     private void UpdatePortrait() {
         if (charisma == 100) {
             portrait_animator.SetTrigger("4");
@@ -78,6 +79,7 @@ public class CharacterHealth : MonoBehaviour {
         }
     }
 
+    // Tints the player either a positive or negative color
     private void TintPlayer(float num) {
         if (num > 0) {
             objToFlash.StartFlash(posFlashColor, flashSpeed);
@@ -98,6 +100,7 @@ public class CharacterHealth : MonoBehaviour {
         ResultsManager.IncPlayerCrash();
     }
 
+    // Called on every frame update
     void Update() {
         // handle player hits max height of world
         if (transform.position.y > maxHeight || transform.position.y < minHeight) {
