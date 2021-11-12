@@ -644,6 +644,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Axis"",
                     ""processors"": ""AxisDeadzone"",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""5c21af16-f2a5-4fb9-a004-cd83fa2ac40a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": ""AxisDeadzone"",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -866,6 +874,28 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""Look Horizontal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""233a04b1-84bb-4729-bd99-d7dd5f8bf8de"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""25dc27be-4499-47d5-bff0-4eea18a7cc0e"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -926,6 +956,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m__3D_WalkHorizontal = m__3D.FindAction("Walk Horizontal", throwIfNotFound: true);
         m__3D_LookVertical = m__3D.FindAction("Look Vertical", throwIfNotFound: true);
         m__3D_LookHorizontal = m__3D.FindAction("Look Horizontal", throwIfNotFound: true);
+        m__3D_Interact = m__3D.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1157,6 +1188,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m__3D_WalkHorizontal;
     private readonly InputAction m__3D_LookVertical;
     private readonly InputAction m__3D_LookHorizontal;
+    private readonly InputAction m__3D_Interact;
     public struct _3DActions
     {
         private @InputMaster m_Wrapper;
@@ -1165,6 +1197,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @WalkHorizontal => m_Wrapper.m__3D_WalkHorizontal;
         public InputAction @LookVertical => m_Wrapper.m__3D_LookVertical;
         public InputAction @LookHorizontal => m_Wrapper.m__3D_LookHorizontal;
+        public InputAction @Interact => m_Wrapper.m__3D_Interact;
         public InputActionMap Get() { return m_Wrapper.m__3D; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1186,6 +1219,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @LookHorizontal.started -= m_Wrapper.m__3DActionsCallbackInterface.OnLookHorizontal;
                 @LookHorizontal.performed -= m_Wrapper.m__3DActionsCallbackInterface.OnLookHorizontal;
                 @LookHorizontal.canceled -= m_Wrapper.m__3DActionsCallbackInterface.OnLookHorizontal;
+                @Interact.started -= m_Wrapper.m__3DActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m__3DActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m__3DActionsCallbackInterface.OnInteract;
             }
             m_Wrapper.m__3DActionsCallbackInterface = instance;
             if (instance != null)
@@ -1202,6 +1238,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @LookHorizontal.started += instance.OnLookHorizontal;
                 @LookHorizontal.performed += instance.OnLookHorizontal;
                 @LookHorizontal.canceled += instance.OnLookHorizontal;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
             }
         }
     }
@@ -1252,5 +1291,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnWalkHorizontal(InputAction.CallbackContext context);
         void OnLookVertical(InputAction.CallbackContext context);
         void OnLookHorizontal(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }

@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class arcadeMachine : MonoBehaviour {
+public class arcadeMachine : MonoBehaviour, IInteractableArcadeObject {
     [SerializeField] private GameObject playerCam;
     [SerializeField] private GameObject animCam;
     [SerializeField] private Animator animCamAnimator;
     [SerializeField] private GameObject backlight;
     [SerializeField] private GameObject popUpText;
     [SerializeField] private string sceneToLoad;
-    private bool animationPlaying;
 
     void Start() {
         /*playerCam.SetActive(true);
@@ -20,28 +19,17 @@ public class arcadeMachine : MonoBehaviour {
         animationPlaying = false;*/
     }
 
-    void OnTriggerStay(Collider other) {
-        if (other.CompareTag("Player") && Input.GetKeyDown("e") && !animationPlaying) {
-            // start animation
-            animationPlaying = true;
-            playerCam.SetActive(false);
-            animCam.SetActive(true);
-            animCamAnimator.SetTrigger("PanIntoMachine");
-            backlight.SetActive(true);
-            popUpText.SetActive(false);
-            Debug.Log("Worked");
-        }
-    }
-
     void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
             popUpText.SetActive(true);
+            other.gameObject.GetComponent<InteractArcade>().SetCurrentInteractable(this);
         }
     }
 
     void OnTriggerExit(Collider other) {
         if (other.CompareTag("Player")) {
             popUpText.SetActive(false);
+            other.gameObject.GetComponent<InteractArcade>().ClearCurrentInteractable();
         }
     }
 
@@ -49,5 +37,16 @@ public class arcadeMachine : MonoBehaviour {
     public void LoadGameScene() {
         Cursor.lockState = CursorLockMode.None; // so that we can use cursor in main game
         SceneManager.LoadScene(this.sceneToLoad);
+    }
+
+    // When player interacts with this arcade object
+    public void Interact(InteractArcade player) {
+        player.ClearCurrentInteractable();
+        // start animation
+        playerCam.SetActive(false);
+        animCam.SetActive(true);
+        animCamAnimator.SetTrigger("PanIntoMachine");
+        backlight.SetActive(true);
+        popUpText.SetActive(false);
     }
 }
