@@ -13,6 +13,7 @@ public class InterpolateColor : MonoBehaviour {
     private void Start() {
         this.currentColor = this.mainCamera.backgroundColor;
     }
+
     void Update() {
         //sky interpolation
         if (interpolateSpeed > 0) { // Start interpolation

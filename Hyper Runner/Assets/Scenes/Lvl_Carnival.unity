@@ -1284,6 +1284,26 @@ PrefabInstance:
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 974554153}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: speedToInterpolate
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: objectToInterpolate
+      value: 
+      objectReference: {fileID: 773281833}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: colorToInterpolate.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: colorToInterpolate.g
+      value: 0.5691917
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: colorToInterpolate.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4496124525633985544, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
       propertyPath: m_Name
       value: Rhythm Arrows
@@ -8475,7 +8495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4582488140973833100, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
       propertyPath: speedToInterpolate
-      value: 8
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4582488140973833100, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
       propertyPath: objectToInterpolate
