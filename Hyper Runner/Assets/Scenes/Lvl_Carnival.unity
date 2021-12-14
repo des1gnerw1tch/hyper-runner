@@ -3404,6 +3404,7 @@ GameObject:
   - component: {fileID: 773281828}
   - component: {fileID: 773281827}
   - component: {fileID: 773281832}
+  - component: {fileID: 773281833}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3553,6 +3554,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCameraStartYFlipped: 0
+--- !u!114 &773281833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773281825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e90c89d59c5f6402e8ad9332749f1d1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 773281831}
 --- !u!1 &801256065
 GameObject:
   m_ObjectHideFlags: 0
@@ -8460,6 +8474,26 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4582488140973833100, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
+      propertyPath: speedToInterpolate
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582488140973833100, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
+      propertyPath: objectToInterpolate
+      value: 
+      objectReference: {fileID: 773281833}
+    - target: {fileID: 4582488140973833100, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
+      propertyPath: colorToInterpolate.b
+      value: 0.7607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582488140973833100, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
+      propertyPath: colorToInterpolate.g
+      value: 0.6862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582488140973833100, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
+      propertyPath: colorToInterpolate.r
+      value: 0.28627452
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582488140973833100, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
       propertyPath: surroundingSpeedMultiplier
       value: 1
       objectReference: {fileID: 0}
@@ -13004,8 +13038,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 974554153}
     - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: speedToInterpolate
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: objectToInterpolate
+      value: 
+      objectReference: {fileID: 773281833}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
       propertyPath: playerFloatingSpeed
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: colorToInterpolate.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: colorToInterpolate.g
+      value: 0.97048855
+      objectReference: {fileID: 0}
+    - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: colorToInterpolate.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
       propertyPath: danceMoves.Array.size
