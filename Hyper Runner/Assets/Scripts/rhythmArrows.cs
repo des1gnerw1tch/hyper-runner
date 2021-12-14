@@ -22,7 +22,8 @@ public class rhythmArrows : MonoBehaviour {
             danceManager.enabled = true;
             danceManager.UpdateValidDanceKeys();
             if (objectToInterpolate != null) {
-                this.objectToInterpolate.Lerp(speedToInterpolate, colorToInterpolate);
+                //this.objectToInterpolate.Lerp(speedToInterpolate, colorToInterpolate);
+                this.objectToInterpolate.RainbowMash(30f);
             }
 
         }
