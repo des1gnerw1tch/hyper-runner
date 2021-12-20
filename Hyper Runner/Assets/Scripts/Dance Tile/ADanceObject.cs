@@ -35,6 +35,10 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     [SerializeField] private float playerRunningSpeed; // How fast should player run when platform mode activated?
     [SerializeField] private float surroundingSpeedMultiplier; // How fast should surroundings move past screen? 
     [SerializeField] private danceTileManager danceManager; // Dance manager script on Player
+    [SerializeField] private AInterpolateColor objectToInterpolate;
+    [SerializeField] private float speedToInterpolate;
+    [SerializeField] private Color colorToInterpolate;
+    [SerializeField] private bool shouldRainbowMash = false;
 
     // Functions called directly from Dance Tile Manager, which uses Player Input (reference unity input system 1.0.2)
     // these functions are called when player does an action that requires action from this dance tile
@@ -142,6 +146,18 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
         Parallax.multiplier = surroundingSpeedMultiplier; // sets how fast objects should move in background
         this.levelManager.UpdateSpeeds();
         this.danceManager.enabled = false;
+
+        if (objectToInterpolate != null) {
+            //this.objectToInterpolate.Lerp(speedToInterpolate, colorToInterpolate);
+            if (this.shouldRainbowMash) {
+                this.objectToInterpolate.RainbowMash(speedToInterpolate);
+            } else {
+                this.objectToInterpolate.Lerp(speedToInterpolate, colorToInterpolate);
+            }
+
+        } else {
+            Debug.LogError("No Object to interpolate selected");
+        }
     }
 
     // Called on first frame
