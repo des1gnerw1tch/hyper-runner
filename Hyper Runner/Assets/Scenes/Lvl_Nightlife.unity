@@ -4857,9 +4857,41 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: speedToInterpolate
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: colorsToInterpolate.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: objectsToInterpolate.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
       propertyPath: objectsToInterpolate.Array.data[0]
       value: 
       objectReference: {fileID: 2845117104495882140}
+    - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: objectsToInterpolate.Array.data[1]
+      value: 
+      objectReference: {fileID: 979380569}
+    - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: colorsToInterpolate.Array.data[1].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: colorsToInterpolate.Array.data[1].b
+      value: 0.8862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: colorsToInterpolate.Array.data[1].g
+      value: 0.25882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: colorsToInterpolate.Array.data[1].r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
       propertyPath: player
       value: 
@@ -7365,6 +7397,7 @@ GameObject:
   - component: {fileID: 979380566}
   - component: {fileID: 979380567}
   - component: {fileID: 979380568}
+  - component: {fileID: 979380569}
   m_Layer: 0
   m_Name: Horizon
   m_TagString: Horizon
@@ -7480,6 +7513,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   material: {fileID: 2100000, guid: f1159b2c342e44ef7b9bec6ef1c3475f, type: 2}
+--- !u!114 &979380569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979380563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e1abc827c5114e4daeb4a7d637d1ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 979380564}
 --- !u!1001 &986474229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7983,8 +8029,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToInterpolate:
   - {fileID: 2845117104495882140}
+  - {fileID: 979380569}
   colorsToInterpolate:
   - {r: 0.3529412, g: 0.09411765, b: 0.6313726, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
   speedToInterpolate: 8
   shouldRainbowMash: 0
 --- !u!1001 &1223537026
@@ -20053,9 +20101,37 @@ PrefabInstance:
     m_TransformParent: {fileID: 229678314}
     m_Modifications:
     - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: colorsToInterpolate.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: objectsToInterpolate.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
       propertyPath: objectsToInterpolate.Array.data[0]
       value: 
       objectReference: {fileID: 2845117104495882140}
+    - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: objectsToInterpolate.Array.data[1]
+      value: 
+      objectReference: {fileID: 979380569}
+    - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: colorsToInterpolate.Array.data[1].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: colorsToInterpolate.Array.data[1].b
+      value: 0.9461339
+      objectReference: {fileID: 0}
+    - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: colorsToInterpolate.Array.data[1].g
+      value: 0.5707547
+      objectReference: {fileID: 0}
+    - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: colorsToInterpolate.Array.data[1].r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
       propertyPath: player
       value: 
@@ -20223,16 +20299,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8077507342958484171, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
       propertyPath: colorsToInterpolate.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8077507342958484171, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
       propertyPath: objectsToInterpolate.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8077507342958484171, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
       propertyPath: objectsToInterpolate.Array.data[0]
       value: 
       objectReference: {fileID: 2845117104495882140}
+    - target: {fileID: 8077507342958484171, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
+      propertyPath: objectsToInterpolate.Array.data[1]
+      value: 
+      objectReference: {fileID: 979380569}
     - target: {fileID: 8077507342958484171, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
       propertyPath: colorsToInterpolate.Array.data[0].b
       value: 0.6313726
@@ -20244,6 +20324,22 @@ PrefabInstance:
     - target: {fileID: 8077507342958484171, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
       propertyPath: colorsToInterpolate.Array.data[0].r
       value: 0.3529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077507342958484171, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
+      propertyPath: colorsToInterpolate.Array.data[1].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077507342958484171, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
+      propertyPath: colorsToInterpolate.Array.data[1].b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077507342958484171, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
+      propertyPath: colorsToInterpolate.Array.data[1].g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077507342958484171, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
+      propertyPath: colorsToInterpolate.Array.data[1].r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
