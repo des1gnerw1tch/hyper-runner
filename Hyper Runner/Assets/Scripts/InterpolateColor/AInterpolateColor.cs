@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// This script will interpolate between original color and color of choice
-public class InterpolateColor : MonoBehaviour {
-    [SerializeField] private Camera mainCamera; // camera we will change the background color of
-    private Color currentColor;
+// For interpolating a color of an object
+public abstract class AInterpolateColor : MonoBehaviour {
+    //[SerializeField] private Camera mainCamera; // camera we will change the background color of
+    protected Color currentColor;
     private Color nextColor; // the color we should interpolate to
     private float interpolateSpeed; // how fast to interpolate
     private float counter; // clamped between 0,1
 
     private bool isRainbowMash; // is rainbowMash activated?
+
     private void Start() {
-        this.currentColor = this.mainCamera.backgroundColor;
+        InitCurrentColor();
+        //this.currentColor = this.mainCamera.backgroundColor;
     }
 
+    // called every frame
     void Update() {
         //sky interpolation
         if (interpolateSpeed > 0) { // Start interpolation
@@ -32,14 +35,22 @@ public class InterpolateColor : MonoBehaviour {
                     interpolateSpeed = 0;
                 }
             }
-            mainCamera.backgroundColor = c;
+            UpdateColor(c);
+            //mainCamera.backgroundColor = c;
         }
     }
+
+    // Updates color of this object
+    public abstract void UpdateColor(Color c);
+
+    // initializes variable current color as soon as game starts
+    public abstract void InitCurrentColor();
 
     public void Lerp(float speed, Color color) {
         interpolateSpeed = speed / 10;
         counter = 0; // resets our counter variable
         this.nextColor = color;
+        this.isRainbowMash = false;
     }
 
     // experimental rainbow mashing of colors!

@@ -111,7 +111,7 @@ public class CharacterHealth : MonoBehaviour {
     //TODO: Dev feature, remove in actual game
     // activates and deactivates fast foward mode, from PLAYERINPUT
     public void OnFastFowardStart() {
-        Debug.Log("Pressed");
+        //Debug.Log("Pressed");
         if (!this.isFastFoward) {
             this.musicSync.changePitch(6f, 100f);
             this.isFastFoward = true;

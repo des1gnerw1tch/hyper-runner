@@ -7,9 +7,10 @@ public class PlatformArrows : MonoBehaviour {
     [SerializeField] private float playerRunningSpeed;
     [SerializeField] private float surroundingSpeedMultiplier;
     [SerializeField] private danceTileManager danceManager;
-    [SerializeField] private InterpolateColor objectToInterpolate;
+    [SerializeField] private AInterpolateColor objectToInterpolate;
     [SerializeField] private float speedToInterpolate;
     [SerializeField] private Color colorToInterpolate;
+    [SerializeField] private bool shouldRainbowMash = false;
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
@@ -21,6 +22,13 @@ public class PlatformArrows : MonoBehaviour {
 
             if (objectToInterpolate != null) {
                 this.objectToInterpolate.Lerp(speedToInterpolate, colorToInterpolate);
+                if (this.shouldRainbowMash) {
+                    this.objectToInterpolate.RainbowMash(speedToInterpolate);
+                } else {
+                    this.objectToInterpolate.Lerp(speedToInterpolate, colorToInterpolate);
+                }
+            } else {
+                Debug.LogError("No Object to interpolate selected");
             }
         }
     }
