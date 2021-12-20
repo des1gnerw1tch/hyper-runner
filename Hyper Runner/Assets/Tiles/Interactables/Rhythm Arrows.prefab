@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4496124525633985545}
   - component: {fileID: 629329105082514531}
   - component: {fileID: 8291251719583020183}
+  - component: {fileID: 285512517}
   m_Layer: 0
   m_Name: Rhythm Arrows
   m_TagString: Untagged
@@ -98,9 +99,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelManager: {fileID: 0}
   playerFloatingSpeed: 20
-  surroundingSpeedMultiplier: 8
+  surroundingSpeedMultiplier: 4
   player: {fileID: 0}
   danceManager: {fileID: 0}
+  interpolationTrigger: {fileID: 285512517}
 --- !u!61 &8291251719583020183
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -127,3 +129,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.058533873, y: 6.7145977}
   m_EdgeRadius: 0
+--- !u!114 &285512517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4496124525633985544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7755b48cabe6463c87969fe4c88eacc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToInterpolate:
+  - {fileID: 0}
+  colorsToInterpolate:
+  - {r: 1, g: 0.25882354, b: 0.8862745, a: 1}
+  speedToInterpolate: 4
+  shouldRainbowMash: 0
