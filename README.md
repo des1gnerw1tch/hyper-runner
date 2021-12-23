@@ -1,2 +1,2 @@
 # hyper-runner
-A rhythm based game. 
+A rhythm based game coming soon.
