@@ -11,6 +11,8 @@ public class FirstPersonMovement : MonoBehaviour {
     private InputAction verMovement; // vertical axis, from "Walk Vertical" of player input
     private InputAction horMovement; // horizontal axis, from "Walk Horizontal" of player input
 
+    private bool isMoving = false; // is the player in motino? (for footstep audio)
+
     // Called on first frame
     // EFFECT: initializes vertical movement and horizontal movement variables
     private void Start() {
@@ -25,5 +27,18 @@ public class FirstPersonMovement : MonoBehaviour {
         float hor = this.horMovement.ReadValue<float>();
         Vector3 move = this.speed * Time.deltaTime * new Vector3(hor, 0f, ver);
         transform.Translate(move, Space.Self);
+
+        // to play footstep noise
+        if (ver != 0 || hor != 0) {
+            if (!isMoving) {
+                FindObjectOfType<AudioManager>().Play("footstep");
+                this.isMoving = true;
+            }
+        } else {
+            if (isMoving) {
+                FindObjectOfType<AudioManager>().Stop("footstep");
+                this.isMoving = false;
+            }
+        }
     }
 }
