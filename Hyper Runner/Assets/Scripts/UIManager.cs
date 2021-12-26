@@ -9,8 +9,10 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour {
 
     [SerializeField] private GameObject pauseScreen;
-    [SerializeField] private MusicSync musicSync;
     private bool isGamePaused;
+
+    [Header("Required Prefab in Scene, automatically fetched")]
+    [SerializeField] private MusicSync musicSync;
 
     // Start is called before the first frame update
     void Start() {
@@ -24,6 +26,8 @@ public class UIManager : MonoBehaviour {
 
         // tells LoadArcadeScene to load settings based on THIS scene
         LoadArcadeScene.sceneFrom = SceneManager.GetActiveScene().name;
+
+        this.musicSync = FindObjectOfType<MusicSync>();
     }
 
     // When a pause key is pressed
