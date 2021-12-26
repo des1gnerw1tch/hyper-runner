@@ -34,7 +34,7 @@ public class UIManager : MonoBehaviour {
             this.PauseGame();
         }
 
-        this.isGamePaused = !this.isGamePaused;
+        //this.isGamePaused = !this.isGamePaused;
     }
 
     // Pauses the game by enabling pause screen, makes sure game is in paused state as well
@@ -42,13 +42,15 @@ public class UIManager : MonoBehaviour {
         this.musicSync.PauseMusic();
         Time.timeScale = 0f;
         this.pauseScreen.SetActive(true);
+        this.isGamePaused = true;
     }
 
     // Resumes the game if paused
-    void ResumeGame() {
+    public void ResumeGame() {
         this.musicSync.ResumeMusic();
         Time.timeScale = 1f;
         this.pauseScreen.SetActive(false);
+        this.isGamePaused = false;
     }
 
     // When player wants to exit game
