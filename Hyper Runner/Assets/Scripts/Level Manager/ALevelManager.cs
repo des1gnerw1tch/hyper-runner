@@ -47,6 +47,8 @@ public abstract class ALevelManager : MonoBehaviour, ILevelManager {
                 input.SwitchCurrentActionMap("Dancer"); // switches action map to rhythm
 
                 player_rb.gravityScale = 0;
+                player_rb.velocity = new Vector2(player_rb.velocity.x, 0); // nullfies current Y velocity
+
                 flyingParticles.SetActive(true);
 
                 // this is how fast the player will jump into rhythym mode, will

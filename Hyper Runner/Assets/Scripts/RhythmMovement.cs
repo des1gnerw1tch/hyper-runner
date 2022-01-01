@@ -14,12 +14,12 @@ public class RhythmMovement : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         Debug.Log("Switched!");
-
     }
 
     // Update is called once per frame
     void Update() {
-        transform.position = new Vector3(transform.position.x + speed * MusicSync.deltaSample, transform.position.y, transform.position.z);
+        transform.position = new Vector3(transform.position.x + speed * MusicSync.deltaSample,
+            transform.position.y, transform.position.z);
 
         if (teleporting) {
             float step = teleportSpeed * MusicSync.deltaSample;
