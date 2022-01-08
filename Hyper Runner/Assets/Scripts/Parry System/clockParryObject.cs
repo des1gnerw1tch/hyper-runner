@@ -8,7 +8,7 @@ public class clockParryObject : AParryObject
     [SerializeField] private float effectLength = 1f;
     [SerializeField] private MusicSync musicSync;
 
-    public override void onParry()  {
+    public override void OnParry()  {
       musicSync.changePitch(musicPitch, effectLength);
     }
 }

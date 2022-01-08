@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4427974079410937494}
   - component: {fileID: 273681452156355112}
   - component: {fileID: 3571381935125422890}
+  - component: {fileID: 1377293106714021806}
   m_Layer: 0
   m_Name: parryTile
   m_TagString: Untagged
@@ -132,3 +133,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef6f57184e93843869c41d4a43c44fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movement: {fileID: 0}
+--- !u!114 &1377293106714021806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4427974079410937495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dc53a36370bd426ab935762dce3d3ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 0}
+  particles: {fileID: 3848182383814694509, guid: ddc571b45dc4e4d9ca925113e8fc7ee9, type: 3}

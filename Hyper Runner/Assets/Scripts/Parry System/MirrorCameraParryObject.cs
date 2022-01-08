@@ -15,7 +15,7 @@ public class MirrorCameraParryObject : AParryObject {
         this.flashPanel = FindObjectOfType<FlashPanel>();
     }
     // when parry object is parried off of
-    public override void onParry() {
+    public override void OnParry() {
         this.cameraOrientation.Mirror();
         this.flashPanel.Flash();
     }

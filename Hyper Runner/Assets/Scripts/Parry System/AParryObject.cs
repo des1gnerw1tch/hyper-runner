@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class AParryObject : MonoBehaviour {
-    [Header("Required Components (Automatic, don't drag in)")]
+    [Header("Required AParryObject Components (Automatic, don't drag in)")]
     [SerializeField] private PlayerMovement movement;
     private bool isActive = true;
 
@@ -29,5 +29,5 @@ public abstract class AParryObject : MonoBehaviour {
     }
 
     // when this parry object used
-    public abstract void onParry();
+    public abstract void OnParry();
 }

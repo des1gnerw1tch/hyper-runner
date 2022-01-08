@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour {
                 flashObject.StartFlash(flashColor, flashSpeed);
                 audio.Play("clap");
                 cameraAnimator.SetTrigger("parry");
-                parryObject.onParry();
+                parryObject.OnParry();
             } else {
                 // normal jump
                 audio.Play("jump1");
