@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MirrorCameraParryObject : AParryObject {
+public class MirrorCameraParryObject : ExplodingParryObject {
     // Start is called before the first frame update
     [Header("Mirror Camera Object Required Components (Auto)")]
     [SerializeField] private CameraOrientation cameraOrientation;
@@ -18,5 +18,6 @@ public class MirrorCameraParryObject : AParryObject {
     public override void OnParry() {
         this.cameraOrientation.Mirror();
         this.flashPanel.Flash();
+        base.OnParry();
     }
 }
