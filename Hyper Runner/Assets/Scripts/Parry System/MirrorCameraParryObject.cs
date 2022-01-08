@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class MirrorCameraParryObject : ExplodingParryObject {
@@ -7,6 +8,8 @@ public class MirrorCameraParryObject : ExplodingParryObject {
     [Header("Mirror Camera Object Required Components (Auto)")]
     [SerializeField] private CameraOrientation cameraOrientation;
     [SerializeField] private FlashPanel flashPanel;
+    [Header("Mirror Camera Object Required Serialization")]
+    [SerializeField] private Color colorToFlash;
 
     // on first frame call
     public override void Start() {
@@ -17,7 +20,7 @@ public class MirrorCameraParryObject : ExplodingParryObject {
     // when parry object is parried off of
     public override void OnParry() {
         this.cameraOrientation.Mirror();
-        this.flashPanel.Flash();
+        this.flashPanel.Flash(this.colorToFlash);
         base.OnParry();
     }
 }
