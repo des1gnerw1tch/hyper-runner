@@ -1,6 +1,8 @@
+using System;
 using UnityEngine.UI;
 using UnityEngine;
 
+[RequireComponent(typeof(Image))]
 public class FlashPanel : MonoBehaviour {
     [SerializeField] private Image panel;
     [SerializeField] private Animator animator;
