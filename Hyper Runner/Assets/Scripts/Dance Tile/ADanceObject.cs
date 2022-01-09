@@ -68,7 +68,7 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     public void EvaluateScore(float _score) {
 
         ResultsManager.IncTotalDanceTiles();
-        if (_score > 9.7) {
+        if (_score > 9.6) {
             SpawnScoreText(perfectText); // spawn perfect text
             perfectInARow++;
             if (perfectInARow > 1) { // if over 1 perfect in a row
@@ -79,7 +79,7 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
             FindObjectOfType<AudioManager>().Play("metronome");
             ResultsManager.IncPerfectTiles();
 
-        } else if (_score > 9.5) {
+        } else if (_score > 9.3) {
             perfectInARow = 0;
             characterHealth.AddCharisma(3f);
             SpawnScoreText(goodText); // spawn good text
