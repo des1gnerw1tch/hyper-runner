@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 /*
  * Deals with setting up scene transitions and user interface
@@ -10,8 +12,10 @@ public class UIManager : MonoBehaviour {
 
     [SerializeField] private GameObject pauseScreen;
     private bool isGamePaused;
-
+    private string inputMapBeforePaused; // what input map was enabled before we paused the game?
+    
     [Header("Required Prefab in Scene, automatically fetched")]
+    [SerializeField] private PlayerInput input;
     [SerializeField] private MusicSync musicSync;
 
     // Start is called before the first frame update
@@ -28,6 +32,7 @@ public class UIManager : MonoBehaviour {
         LoadArcadeScene.sceneFrom = SceneManager.GetActiveScene().name;
 
         this.musicSync = FindObjectOfType<MusicSync>();
+        this.input = FindObjectOfType<PlayerInput>();
     }
 
     // When a pause key is pressed
@@ -43,6 +48,10 @@ public class UIManager : MonoBehaviour {
 
     // Pauses the game by enabling pause screen, makes sure game is in paused state as well
     void PauseGame() {
+        this.inputMapBeforePaused = this.input.currentActionMap.name;
+        Debug.Log(this.input.currentActionMap.name);
+        input.SwitchCurrentActionMap("UI"); // switches action map to rhythm
+        
         this.musicSync.PauseMusic();
         Time.timeScale = 0f;
         this.pauseScreen.SetActive(true);
@@ -51,6 +60,8 @@ public class UIManager : MonoBehaviour {
 
     // Resumes the game if paused
     public void ResumeGame() {
+        input.SwitchCurrentActionMap(this.inputMapBeforePaused); // switches action map to rhythm
+        
         this.musicSync.ResumeMusic();
         Time.timeScale = 1f;
         this.pauseScreen.SetActive(false);

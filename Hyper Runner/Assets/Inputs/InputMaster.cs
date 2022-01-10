@@ -898,6 +898,120 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""UI"",
+            ""id"": ""2de05b09-2637-4e27-9d70-80764ddda516"",
+            ""actions"": [
+                {
+                    ""name"": ""Up"",
+                    ""type"": ""Button"",
+                    ""id"": ""496fc090-348e-4cc5-9377-a145146447fd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Down"",
+                    ""type"": ""Button"",
+                    ""id"": ""4c7f5601-6240-45cf-a9a6-710b66602e15"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Left"",
+                    ""type"": ""Button"",
+                    ""id"": ""e7bef0e3-7ca3-4b1b-9afb-d53a81d0dbc4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Right"",
+                    ""type"": ""Button"",
+                    ""id"": ""43ef0b62-b476-445d-b940-ae8cdf210a31"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""PauseGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""cf27eab8-e7bf-4b20-9d09-ec6401dec2e1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""e8ae6fd1-5b63-4163-b3b2-3f44a1eff506"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""Down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""77a75b16-638e-42c7-b99f-295721f99643"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""Up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""511c1e92-5f2f-4fd0-9efa-b992e535756a"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""Left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""75fc479a-d720-4e40-8011-bad9e3a9f9a6"",
+                    ""path"": ""<XInputController>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0772df92-5397-4bec-86d3-8ce4b6fdc193"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""PauseGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1dd2da07-9f9a-4b7a-855c-97e691380d6f"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""PauseGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -957,6 +1071,13 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m__3D_LookVertical = m__3D.FindAction("Look Vertical", throwIfNotFound: true);
         m__3D_LookHorizontal = m__3D.FindAction("Look Horizontal", throwIfNotFound: true);
         m__3D_Interact = m__3D.FindAction("Interact", throwIfNotFound: true);
+        // UI
+        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
+        m_UI_Up = m_UI.FindAction("Up", throwIfNotFound: true);
+        m_UI_Down = m_UI.FindAction("Down", throwIfNotFound: true);
+        m_UI_Left = m_UI.FindAction("Left", throwIfNotFound: true);
+        m_UI_Right = m_UI.FindAction("Right", throwIfNotFound: true);
+        m_UI_PauseGame = m_UI.FindAction("PauseGame", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1245,6 +1366,71 @@ public class @InputMaster : IInputActionCollection, IDisposable
         }
     }
     public _3DActions @_3D => new _3DActions(this);
+
+    // UI
+    private readonly InputActionMap m_UI;
+    private IUIActions m_UIActionsCallbackInterface;
+    private readonly InputAction m_UI_Up;
+    private readonly InputAction m_UI_Down;
+    private readonly InputAction m_UI_Left;
+    private readonly InputAction m_UI_Right;
+    private readonly InputAction m_UI_PauseGame;
+    public struct UIActions
+    {
+        private @InputMaster m_Wrapper;
+        public UIActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Up => m_Wrapper.m_UI_Up;
+        public InputAction @Down => m_Wrapper.m_UI_Down;
+        public InputAction @Left => m_Wrapper.m_UI_Left;
+        public InputAction @Right => m_Wrapper.m_UI_Right;
+        public InputAction @PauseGame => m_Wrapper.m_UI_PauseGame;
+        public InputActionMap Get() { return m_Wrapper.m_UI; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
+        public void SetCallbacks(IUIActions instance)
+        {
+            if (m_Wrapper.m_UIActionsCallbackInterface != null)
+            {
+                @Up.started -= m_Wrapper.m_UIActionsCallbackInterface.OnUp;
+                @Up.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnUp;
+                @Up.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnUp;
+                @Down.started -= m_Wrapper.m_UIActionsCallbackInterface.OnDown;
+                @Down.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnDown;
+                @Down.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnDown;
+                @Left.started -= m_Wrapper.m_UIActionsCallbackInterface.OnLeft;
+                @Left.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnLeft;
+                @Left.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnLeft;
+                @Right.started -= m_Wrapper.m_UIActionsCallbackInterface.OnRight;
+                @Right.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnRight;
+                @Right.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnRight;
+                @PauseGame.started -= m_Wrapper.m_UIActionsCallbackInterface.OnPauseGame;
+                @PauseGame.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnPauseGame;
+                @PauseGame.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnPauseGame;
+            }
+            m_Wrapper.m_UIActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Up.started += instance.OnUp;
+                @Up.performed += instance.OnUp;
+                @Up.canceled += instance.OnUp;
+                @Down.started += instance.OnDown;
+                @Down.performed += instance.OnDown;
+                @Down.canceled += instance.OnDown;
+                @Left.started += instance.OnLeft;
+                @Left.performed += instance.OnLeft;
+                @Left.canceled += instance.OnLeft;
+                @Right.started += instance.OnRight;
+                @Right.performed += instance.OnRight;
+                @Right.canceled += instance.OnRight;
+                @PauseGame.started += instance.OnPauseGame;
+                @PauseGame.performed += instance.OnPauseGame;
+                @PauseGame.canceled += instance.OnPauseGame;
+            }
+        }
+    }
+    public UIActions @UI => new UIActions(this);
     private int m_XboxControlSchemeSchemeIndex = -1;
     public InputControlScheme XboxControlSchemeScheme
     {
@@ -1292,5 +1478,13 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnLookVertical(InputAction.CallbackContext context);
         void OnLookHorizontal(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+    }
+    public interface IUIActions
+    {
+        void OnUp(InputAction.CallbackContext context);
+        void OnDown(InputAction.CallbackContext context);
+        void OnLeft(InputAction.CallbackContext context);
+        void OnRight(InputAction.CallbackContext context);
+        void OnPauseGame(InputAction.CallbackContext context);
     }
 }
