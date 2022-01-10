@@ -49,7 +49,6 @@ public class UIManager : MonoBehaviour {
     // Pauses the game by enabling pause screen, makes sure game is in paused state as well
     void PauseGame() {
         this.inputMapBeforePaused = this.input.currentActionMap.name;
-        Debug.Log(this.input.currentActionMap.name);
         input.SwitchCurrentActionMap("UI"); // switches action map to rhythm
         
         this.musicSync.PauseMusic();
@@ -75,4 +74,5 @@ public class UIManager : MonoBehaviour {
         // settings based on THIS scene
         SceneManager.LoadScene("Menu"); // load the arcade machine scene, exits this game
     }
+
 }
