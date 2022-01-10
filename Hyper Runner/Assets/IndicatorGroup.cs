@@ -34,14 +34,30 @@ public class IndicatorGroup : MonoBehaviour
     }
     void OnUp()
     {
+        int oldSelection = currentSelection;
         currentSelection = Mathf.Clamp(currentSelection - 1, 0, buttons.Length - 1);
-        UpdateIndicatorPosition();
+        
+        //TODO: this is a bad way to know if to play sound effect
+        
+        if (oldSelection != currentSelection)
+        {
+            FindObjectOfType<AudioManager>().Play("scroll");
+            UpdateIndicatorPosition();
+        }
+        
     }
 
     void OnDown()
     {
+        int oldSelection = currentSelection;
         currentSelection = Mathf.Clamp(currentSelection + 1, 0, buttons.Length - 1);
-        UpdateIndicatorPosition();
+        
+        if (oldSelection != currentSelection)
+        {
+            FindObjectOfType<AudioManager>().Play("scroll");
+            UpdateIndicatorPosition();
+        }
+       
     }
 
     void OnLeft()

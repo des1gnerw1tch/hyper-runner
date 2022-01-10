@@ -48,6 +48,7 @@ public class UIManager : MonoBehaviour {
 
     // Pauses the game by enabling pause screen, makes sure game is in paused state as well
     void PauseGame() {
+        FindObjectOfType<AudioManager>().Play("pause");
         this.inputMapBeforePaused = this.input.currentActionMap.name;
         input.SwitchCurrentActionMap("UI"); // switches action map to rhythm
         
@@ -59,6 +60,7 @@ public class UIManager : MonoBehaviour {
 
     // Resumes the game if paused
     public void ResumeGame() {
+        FindObjectOfType<AudioManager>().Play("resume");
         input.SwitchCurrentActionMap(this.inputMapBeforePaused); // switches action map to rhythm
         
         this.musicSync.ResumeMusic();
