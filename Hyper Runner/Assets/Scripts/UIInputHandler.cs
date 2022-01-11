@@ -16,6 +16,7 @@ public class UIInputHandler : MonoBehaviour {
     public UnityEvent OnScrollDown { get; } = new UnityEvent();
     public UnityEvent OnScrollLeft { get; } = new UnityEvent();
     public UnityEvent OnScrollRight { get; } = new UnityEvent();
+    public UnityEvent OnSelectOption { get; } = new UnityEvent();
 
 
     
@@ -50,5 +51,10 @@ public class UIInputHandler : MonoBehaviour {
     void OnRight()
     {
         OnScrollRight.Invoke();
+    }
+
+    void OnSelect()
+    {
+        OnSelectOption.Invoke();
     }
 }

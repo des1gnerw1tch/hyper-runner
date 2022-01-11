@@ -923,6 +923,14 @@
                     "interactions": "Press"
                 },
                 {
+                    "name": "Select",
+                    "type": "Button",
+                    "id": "c70d7263-a1fd-42b3-8653-280c1e1e37da",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
                     "name": "PauseGame",
                     "type": "Button",
                     "id": "cf27eab8-e7bf-4b20-9d09-ec6401dec2e1",
@@ -995,6 +1003,17 @@
                     "processors": "",
                     "groups": "Xbox Control Scheme",
                     "action": "PauseGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b6e6a208-52ef-49b0-88e0-8391029f4d5f",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox Control Scheme",
+                    "action": "Select",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

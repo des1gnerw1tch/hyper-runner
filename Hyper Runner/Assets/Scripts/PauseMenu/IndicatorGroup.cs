@@ -6,6 +6,7 @@ public class IndicatorGroup : MonoBehaviour
     [Header("Needed Serialization")]
     [SerializeField] private RectTransform[] indicators;
     [SerializeField] private RectTransform[] buttons; // this should be the locations of the buttons
+    [SerializeField] private AInGamePauseButton[] buttonsActions; // related to the action this button does
     
     [Header("Auto Completed Serialization")]
     [SerializeField] private UIInputHandler uiInputHandler;
@@ -19,6 +20,7 @@ public class IndicatorGroup : MonoBehaviour
         uiInputHandler.OnScrollDown.AddListener(OnDown);
         uiInputHandler.OnScrollLeft.AddListener(OnLeft);
         uiInputHandler.OnScrollRight.AddListener(OnRight);
+        uiInputHandler.OnSelectOption.AddListener(OnSelect);
 
         currentSelection = 0;
         UpdateIndicatorPosition();
@@ -68,6 +70,11 @@ public class IndicatorGroup : MonoBehaviour
     void OnRight()
     {
         
+    }
+
+    void OnSelect()
+    {
+        buttonsActions[currentSelection].OnClick();
     }
 
 

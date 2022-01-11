@@ -936,6 +936,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""interactions"": ""Press""
                 },
                 {
+                    ""name"": ""Select"",
+                    ""type"": ""Button"",
+                    ""id"": ""c70d7263-a1fd-42b3-8653-280c1e1e37da"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
                     ""name"": ""PauseGame"",
                     ""type"": ""Button"",
                     ""id"": ""cf27eab8-e7bf-4b20-9d09-ec6401dec2e1"",
@@ -1010,6 +1018,17 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""PauseGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b6e6a208-52ef-49b0-88e0-8391029f4d5f"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1077,6 +1096,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_UI_Down = m_UI.FindAction("Down", throwIfNotFound: true);
         m_UI_Left = m_UI.FindAction("Left", throwIfNotFound: true);
         m_UI_Right = m_UI.FindAction("Right", throwIfNotFound: true);
+        m_UI_Select = m_UI.FindAction("Select", throwIfNotFound: true);
         m_UI_PauseGame = m_UI.FindAction("PauseGame", throwIfNotFound: true);
     }
 
@@ -1374,6 +1394,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_UI_Down;
     private readonly InputAction m_UI_Left;
     private readonly InputAction m_UI_Right;
+    private readonly InputAction m_UI_Select;
     private readonly InputAction m_UI_PauseGame;
     public struct UIActions
     {
@@ -1383,6 +1404,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @Down => m_Wrapper.m_UI_Down;
         public InputAction @Left => m_Wrapper.m_UI_Left;
         public InputAction @Right => m_Wrapper.m_UI_Right;
+        public InputAction @Select => m_Wrapper.m_UI_Select;
         public InputAction @PauseGame => m_Wrapper.m_UI_PauseGame;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
@@ -1405,6 +1427,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Right.started -= m_Wrapper.m_UIActionsCallbackInterface.OnRight;
                 @Right.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnRight;
                 @Right.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnRight;
+                @Select.started -= m_Wrapper.m_UIActionsCallbackInterface.OnSelect;
+                @Select.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnSelect;
+                @Select.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnSelect;
                 @PauseGame.started -= m_Wrapper.m_UIActionsCallbackInterface.OnPauseGame;
                 @PauseGame.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnPauseGame;
                 @PauseGame.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnPauseGame;
@@ -1424,6 +1449,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Right.started += instance.OnRight;
                 @Right.performed += instance.OnRight;
                 @Right.canceled += instance.OnRight;
+                @Select.started += instance.OnSelect;
+                @Select.performed += instance.OnSelect;
+                @Select.canceled += instance.OnSelect;
                 @PauseGame.started += instance.OnPauseGame;
                 @PauseGame.performed += instance.OnPauseGame;
                 @PauseGame.canceled += instance.OnPauseGame;
@@ -1485,6 +1513,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnDown(InputAction.CallbackContext context);
         void OnLeft(InputAction.CallbackContext context);
         void OnRight(InputAction.CallbackContext context);
+        void OnSelect(InputAction.CallbackContext context);
         void OnPauseGame(InputAction.CallbackContext context);
     }
 }

@@ -872,8 +872,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f410d8926ad6040eb8b461b839267af9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicators: []
-  buttons: []
+  indicators:
+  - {fileID: 1827278625006082156}
+  - {fileID: 1929009006374428108}
+  buttons:
+  - {fileID: 334122968726779065}
+  - {fileID: 4123750842518938925}
+  - {fileID: 334122967425467064}
+  buttonsActions:
+  - {fileID: 2153535053556988398}
+  - {fileID: 5653893434207337825}
+  - {fileID: 7328570324094807365}
   uiInputHandler: {fileID: 0}
 --- !u!1 &7635889706180831744
 GameObject:
