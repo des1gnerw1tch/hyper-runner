@@ -10,13 +10,18 @@ using UnityEngine.InputSystem;
  */
 public class UIManager : MonoBehaviour {
 
+    [Header("Required Serialization")]
     [SerializeField] private GameObject pauseScreen;
-    private bool isGamePaused;
-    private string inputMapBeforePaused; // what input map was enabled before we paused the game?
     
+    // indicator of what button we are on for control scheme 
+    [SerializeField] private GameObject indicatorGroup;
+        
     [Header("Required Prefab in Scene, automatically fetched")]
     [SerializeField] private PlayerInput input;
     [SerializeField] private MusicSync musicSync;
+    
+    private bool isGamePaused;
+    private string inputMapBeforePaused; // what input map was enabled before we paused the game?
 
     // Start is called before the first frame update
     void Start() {
@@ -51,6 +56,17 @@ public class UIManager : MonoBehaviour {
         FindObjectOfType<AudioManager>().Play("pause");
         this.inputMapBeforePaused = this.input.currentActionMap.name;
         input.SwitchCurrentActionMap("UI"); // switches action map to rhythm
+        
+        // turn off indicators if not on a controller 
+        Debug.Log(input.currentControlScheme);
+        if (input.currentControlScheme != "Xbox Control Scheme")
+        {
+            indicatorGroup.SetActive(false);
+        }
+        else
+        {
+            indicatorGroup.SetActive(true);
+        }
         
         this.musicSync.PauseMusic();
         Time.timeScale = 0f;

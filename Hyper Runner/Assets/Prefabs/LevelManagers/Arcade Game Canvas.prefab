@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseScreen: {fileID: 8328879603202080767}
+  indicatorGroup: {fileID: 3584189259334291422}
   input: {fileID: 0}
   musicSync: {fileID: 0}
 --- !u!1 &8328879601773634800
@@ -882,11 +883,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 974bbdbda10834ba6ac4f70000140930, type: 3}
---- !u!224 &6824512631832645068 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3252608051743359051, guid: 974bbdbda10834ba6ac4f70000140930, type: 3}
-  m_PrefabInstance: {fileID: 8328879601563471239}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5259233893395716909 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -4941976553862211926, guid: 974bbdbda10834ba6ac4f70000140930, type: 3}
@@ -898,6 +894,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f231b1ecfc14105a35d28b7a408b14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &6824512631832645068 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3252608051743359051, guid: 974bbdbda10834ba6ac4f70000140930, type: 3}
+  m_PrefabInstance: {fileID: 8328879601563471239}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8328879601803431558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2319,6 +2320,11 @@ RectTransform:
 --- !u!224 &7957536139699210635 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1827278625006082156, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
+  m_PrefabInstance: {fileID: 8589794744295231975}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3584189259334291422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5082468220235423289, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
   m_PrefabInstance: {fileID: 8589794744295231975}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &8328879602358145887 stripped
