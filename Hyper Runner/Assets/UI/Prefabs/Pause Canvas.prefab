@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 334122967425467066}
   - component: {fileID: 334122967425467067}
   - component: {fileID: 7328570324094807365}
+  - component: {fileID: 6401659080930317729}
   m_Layer: 5
   m_Name: Exit Button
   m_TagString: Untagged
@@ -135,6 +136,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 0}
+--- !u!95 &6401659080930317729
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334122967425467065}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fb4803fed4bd047c8b5e12d4c90ef8d7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &334122968334937624
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,6 +381,7 @@ GameObject:
   - component: {fileID: 334122968726779067}
   - component: {fileID: 334122968726779064}
   - component: {fileID: 2153535053556988398}
+  - component: {fileID: 6372538815843041280}
   m_Layer: 5
   m_Name: Resume Button
   m_TagString: Untagged
@@ -483,6 +504,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 0}
+--- !u!95 &6372538815843041280
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334122968726779070}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fb4803fed4bd047c8b5e12d4c90ef8d7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &334122968736921313
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,6 +670,7 @@ GameObject:
   - component: {fileID: 6422465693682294465}
   - component: {fileID: 5676963160568549813}
   - component: {fileID: 5653893434207337825}
+  - component: {fileID: 5176828321228487440}
   m_Layer: 5
   m_Name: Options Button
   m_TagString: Untagged
@@ -752,6 +793,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 0}
+--- !u!95 &5176828321228487440
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2585884520927478776}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fb4803fed4bd047c8b5e12d4c90ef8d7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2631536286646713103
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,6 +944,10 @@ MonoBehaviour:
   - {fileID: 5653893434207337825}
   - {fileID: 7328570324094807365}
   indicatorMoveSpeed: 1000
+  buttonsAnimators:
+  - {fileID: 6372538815843041280}
+  - {fileID: 5176828321228487440}
+  - {fileID: 6401659080930317729}
   uiInputHandler: {fileID: 0}
 --- !u!1 &7635889706180831744
 GameObject:

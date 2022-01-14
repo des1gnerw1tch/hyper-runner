@@ -58,7 +58,6 @@ public class UIManager : MonoBehaviour {
         input.SwitchCurrentActionMap("UI"); // switches action map to rhythm
         
         // turn off indicators if not on a controller 
-        Debug.Log(input.currentControlScheme);
         if (input.currentControlScheme != "Xbox Control Scheme")
         {
             indicatorGroup.SetActive(false);

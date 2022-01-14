@@ -1,15 +1,17 @@
+using System;
 using System.Collections;
-using UnityEditor;
-using UnityEditor.Experimental;
 using UnityEngine;
 
 public class IndicatorGroup : MonoBehaviour
 {
+    
     [Header("Needed Serialization")]
     [SerializeField] private RectTransform[] indicators;
     [SerializeField] private RectTransform[] buttons; // this should be the locations of the buttons
     [SerializeField] private AInGamePauseButton[] buttonsActions; // related to the action this button does
     [SerializeField] private float indicatorMoveSpeed;
+    [SerializeField] private Animator[] buttonsAnimators;
+    [SerializeField] private bool resetCurrentSelectionOnResume = true;
     
     [Header("Auto Completed Serialization")]
     [SerializeField] private UIInputHandler uiInputHandler;
@@ -26,11 +28,24 @@ public class IndicatorGroup : MonoBehaviour
         uiInputHandler.OnScrollLeft.AddListener(OnLeft);
         uiInputHandler.OnScrollRight.AddListener(OnRight);
         uiInputHandler.OnSelectOption.AddListener(OnSelect);
-
-        currentSelection = 0;
-        UpdateIndicatorPosition();
     }
 
+    void OnEnable()
+    {
+        if (resetCurrentSelectionOnResume)
+        {
+            currentSelection = 0;
+        }
+
+        foreach (RectTransform indicator in indicators)
+        {
+            indicator.transform.position = new Vector3(indicator.transform.position.x,
+                buttons[currentSelection].position.y, indicator.transform.position.z);
+        }
+        
+        buttonsAnimators[currentSelection].SetBool("isHoveredOver", true);
+    }
+    
     void UpdateIndicatorPosition()
     {
         if (!Mathf.Approximately(indicators[0].position.y, buttons[currentSelection].position.y))
@@ -89,22 +104,14 @@ public class IndicatorGroup : MonoBehaviour
             }
             
             yield return new WaitForEndOfFrame();
-        } 
-        
+        }
     }
     void OnUp()
     {
         int oldSelection = currentSelection;
         currentSelection = Mathf.Clamp(currentSelection - 1, 0, buttons.Length - 1);
         
-        //TODO: this is a bad way to know if to play sound effect
-        
-        if (oldSelection != currentSelection)
-        {
-            FindObjectOfType<AudioManager>().Play("scroll");
-            UpdateIndicatorPosition();
-        }
-        
+        UpdateStatesIfNewSelection(oldSelection);
     }
 
     void OnDown()
@@ -112,12 +119,18 @@ public class IndicatorGroup : MonoBehaviour
         int oldSelection = currentSelection;
         currentSelection = Mathf.Clamp(currentSelection + 1, 0, buttons.Length - 1);
         
+        UpdateStatesIfNewSelection(oldSelection);
+    }
+
+    void UpdateStatesIfNewSelection(int oldSelection)
+    {
         if (oldSelection != currentSelection)
         {
+            buttonsAnimators[oldSelection].SetBool("isHoveredOver", false);
+            buttonsAnimators[currentSelection].SetBool("isHoveredOver", true);
             FindObjectOfType<AudioManager>().Play("scroll");
             UpdateIndicatorPosition();
         }
-       
     }
 
     void OnLeft()
