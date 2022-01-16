@@ -56,7 +56,6 @@ public class PlayerMovement : MonoBehaviour {
                 // double jump, will pick random between 2 diffrerent animations
                 // (gator archived for the moment) 
                 int randomNumber = Random.Range(0, 2);
-                Debug.Log(randomNumber);
                 switch (randomNumber) {
                     case 0:
                         animator.SetTrigger("doubleJump");

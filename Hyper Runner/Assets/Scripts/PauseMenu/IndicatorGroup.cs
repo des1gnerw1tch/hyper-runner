@@ -124,7 +124,7 @@ public class IndicatorGroup : MonoBehaviour
 
     void UpdateStatesIfNewSelection(int oldSelection)
     {
-        if (oldSelection != currentSelection)
+        if (oldSelection != currentSelection && gameObject.activeSelf)
         {
             buttonsAnimators[oldSelection].SetBool("isHoveredOver", false);
             buttonsAnimators[currentSelection].SetBool("isHoveredOver", true);
