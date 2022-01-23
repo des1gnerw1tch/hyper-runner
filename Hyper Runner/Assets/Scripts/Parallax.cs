@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
-    [SerializeField] private Move cameraMovement;
+    
     public float parallaxEffect;
     public static float multiplier = 1;
+    [Header("Auto filled Serialization")]
+    [SerializeField] private Move cameraMovement;
 
     // Update is called once per frame
     void Start()  {
