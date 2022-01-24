@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 629329105082514531}
   - component: {fileID: 8291251719583020183}
   - component: {fileID: 285512517}
+  - component: {fileID: 6241317602996292039}
   m_Layer: 0
   m_Name: Rhythm Arrows
   m_TagString: Untagged
@@ -147,3 +148,18 @@ MonoBehaviour:
   - {r: 1, g: 0.25882354, b: 0.8862745, a: 1}
   speedToInterpolate: 4
   shouldRainbowMash: 0
+--- !u!114 &6241317602996292039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4496124525633985544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b754cc7b772b40babe2ca6deff27998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intensity: 0.5
+  speed: 10
+  duration: 1
