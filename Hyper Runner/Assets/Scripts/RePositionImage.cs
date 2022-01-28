@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class RePositionImage : MonoBehaviour
 {
-    [SerializeField] private float distFromPlayerToRespawn; // how far from player until respawn
-    [SerializeField] private float spawnDist = 10f; // position placed in front of player
+    [Tooltip("How far from player until respawn")]
+    [SerializeField] private float distFromPlayerToRespawn;
+    [Tooltip("Distance placed in front of player")]
+    [SerializeField] private float spawnDist = 10f;
     [SerializeField] private float spawnDistWiggle = 0f; // position randomly placed
     private Transform player;
 
