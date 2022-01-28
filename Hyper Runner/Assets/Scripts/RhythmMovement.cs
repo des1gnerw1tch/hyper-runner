@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RhythmMovement : MonoBehaviour {
-    public float speed;
+    [HideInInspector] public float speed; // Set in ALevelManager
     private bool teleporting;
     private float teleportSpeed;
     [SerializeField] private const float MIDDLE_OF_SCREEN_Y = 8.8f;
