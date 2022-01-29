@@ -28,11 +28,10 @@ namespace Editor
             
             if (GUILayout.Button("Apply to scene"))
             {
-                float width = objSprite.bounds.size.x;
-
+                float width;
                 if (objToRepeat.TryGetComponent(out SpriteRenderer sprite))
                 {
-                    objSprite = sprite;
+                    width = sprite.bounds.size.x;
                 }
                 else
                 {
@@ -46,7 +45,7 @@ namespace Editor
                     Vector3 pos = new Vector3 (objToRepeat.transform.position.x + (width * (i + 1)) + spaceBetweenRepeats, 
                         objToRepeat.transform.position.y, 0);
                     GameObject newObj = Instantiate(objToRepeat, pos, Quaternion.identity);
-                    newObj.name = objToRepeat.name + "(" + i + 1 + ")";
+                    newObj.name = objToRepeat.name + "(" + (i + 1) + ")";
                 }
                 Debug.Log("Objects generated.");
             }
