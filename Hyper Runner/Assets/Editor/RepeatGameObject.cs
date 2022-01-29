@@ -7,6 +7,7 @@ namespace Editor
     {
         private GameObject objToRepeat;
         private float spaceBetweenRepeats; // 0 indicates gameobjects will be perfectly back to back
+        private bool absoluteDistance = false; // if checked, will take spaceBetweenRepeats without factoring in size of sprite
         private SpriteRenderer objSprite;
         private int numberOfRepeats;
         
@@ -25,6 +26,7 @@ namespace Editor
             objToRepeat = (GameObject) EditorGUILayout.ObjectField("Object to repeat", objToRepeat, typeof(GameObject));
             spaceBetweenRepeats = EditorGUILayout.FloatField("Space between repeats", spaceBetweenRepeats);
             numberOfRepeats = EditorGUILayout.IntField("Number of repeats", numberOfRepeats);
+            absoluteDistance = EditorGUILayout.Toggle("Absolute Distance?", absoluteDistance);
             
             if (GUILayout.Button("Apply to scene"))
             {
@@ -42,8 +44,18 @@ namespace Editor
                 
                 for (int i = 0; i < numberOfRepeats; i++)
                 {
-                    Vector3 pos = new Vector3 (objToRepeat.transform.position.x + (width * (i + 1)) + spaceBetweenRepeats, 
-                        objToRepeat.transform.position.y, 0);
+                    Vector3 pos;
+                    if (!absoluteDistance)
+                    {
+                        pos = new Vector3 (objToRepeat.transform.position.x + ((width + spaceBetweenRepeats) * (i + 1)) , 
+                            objToRepeat.transform.position.y, 0);
+                    }
+                    else
+                    {
+                        pos = new Vector3 (objToRepeat.transform.position.x + (spaceBetweenRepeats * (i + 1)) , 
+                            objToRepeat.transform.position.y, 0);
+                    }
+                    
                     GameObject newObj = Instantiate(objToRepeat, pos, Quaternion.identity);
                     newObj.name = objToRepeat.name + "(" + (i + 1) + ")";
                 }

@@ -12,7 +12,7 @@ using System.Collections;
 
 public class ReplaceGameObjects : ScriptableWizard {
     public bool copyValues = true;
-    public GameObject NewType;
+    public GameObject[] NewType;
     public GameObject[] OldObjects;
 
     [MenuItem("Custom/Replace GameObjects")]
@@ -28,7 +28,8 @@ public class ReplaceGameObjects : ScriptableWizard {
 
         foreach (GameObject go in OldObjects) {
             GameObject newObject;
-            newObject = (GameObject)PrefabUtility.InstantiatePrefab(NewType);
+            int rand = Random.Range(0, NewType.Length);
+            newObject = (GameObject)PrefabUtility.InstantiatePrefab(NewType[rand]);
             newObject.SetActive(go.activeSelf); // will disable new prefab object if needed
             newObject.transform.position = go.transform.position;
             newObject.transform.rotation = go.transform.rotation;
