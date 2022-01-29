@@ -5,12 +5,10 @@ namespace Editor
 {
     public class RepeatGameObject : EditorWindow
     {
-        [SerializeField] private GameObject objToRepeat;
-
-        [SerializeField] private float spaceBetweenRepeats;
-
-        [SerializeField] private SpriteRenderer objSprite;
-        [SerializeField] private int numberOfRepeats;
+        private GameObject objToRepeat;
+        private float spaceBetweenRepeats; // 0 indicates gameobjects will be perfectly back to back
+        private SpriteRenderer objSprite;
+        private int numberOfRepeats;
         
         [MenuItem("Custom/RepeatGameObject")]
         public static void ShowWindow()
@@ -22,9 +20,27 @@ namespace Editor
         private void OnGUI()
         {
             GUILayout.Label("Will repeat a GameObject across the X axis");
+            GUILayout.Label("Object to repeat must have SpriteRenderer");
+            
+            objToRepeat = (GameObject) EditorGUILayout.ObjectField("Object to repeat", objToRepeat, typeof(GameObject));
+            spaceBetweenRepeats = EditorGUILayout.FloatField("Space between repeats", spaceBetweenRepeats);
+            numberOfRepeats = EditorGUILayout.IntField("Number of repeats", numberOfRepeats);
+            
             if (GUILayout.Button("Apply to scene"))
             {
                 float width = objSprite.bounds.size.x;
+
+                if (objToRepeat.TryGetComponent(out SpriteRenderer sprite))
+                {
+                    objSprite = sprite;
+                }
+                else
+                {
+                    Debug.LogError("Object to repeat did not have SpriteRenderer");
+                    return;
+                }
+                
+                
                 for (int i = 0; i < numberOfRepeats; i++)
                 {
                     Vector3 pos = new Vector3 (objToRepeat.transform.position.x + (width * (i + 1)) + spaceBetweenRepeats, 
