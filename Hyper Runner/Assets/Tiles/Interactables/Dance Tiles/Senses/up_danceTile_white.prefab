@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2219637414331819522}
   - component: {fileID: 2219637414331819521}
   m_Layer: 0
-  m_Name: up_danceTile 1
+  m_Name: up_danceTile_white
   m_TagString: DanceTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,8 +108,8 @@ MonoBehaviour:
   keyToPress: up
   distanceUntilDestroy: 3
   camRumbleIntensity: 0.2
-  camRumbleSpeed: 10
-  camRumbleDuration: 0.1
+  camRumbleSpeed: 5
+  camRumbleDuration: 0.25
   isLastTileInSequence: 0
   levelManager: {fileID: 0}
   playerRunningSpeed: 0
