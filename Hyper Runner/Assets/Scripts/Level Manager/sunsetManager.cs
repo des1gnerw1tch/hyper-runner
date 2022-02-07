@@ -9,7 +9,6 @@ public class sunsetManager : ALevelManager {
 
     public override void Start() {
         base.Start();
-        UpdateSpeeds();
         //Play welcome message
         StartCoroutine(PlayWelcome());
     }
