@@ -8,14 +8,7 @@ public class arcadeMachine : MonoBehaviour, IInteractableArcadeObject {
     [SerializeField] private GameObject backlight;
     [SerializeField] private GameObject popUpText;
     [SerializeField] private string sceneToLoad;
-
-    void Start() {
-        /*playerCam.SetActive(true);
-        animCam.SetActive(false);
-        backlight.SetActive(false);
-        popUpText.SetActive(false);
-        animationPlaying = false;*/
-    }
+    [SerializeField] private Transform machineSpawnPosition; // first machine position to spawn player at
 
     void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
@@ -47,4 +40,28 @@ public class arcadeMachine : MonoBehaviour, IInteractableArcadeObject {
         backlight.SetActive(true);
         popUpText.SetActive(false);
     }
+    
+    // When player exits this arcade machine
+    public void ExitArcadeMachine(Transform player)
+    {
+        player.SetPositionAndRotation(machineSpawnPosition.position, Quaternion.identity);
+        FindObjectOfType<FirstPersonCameraController>().RotatePlayer(machineSpawnPosition);
+        this.animCam.SetActive(true);
+        this.animCamAnimator.SetTrigger("PanOutOfMachine");
+    }
+
+    #region Getters
+    
+    public string GetSceneToLoad()
+    {
+        return sceneToLoad;
+    }
+
+    public GameObject GetAnimCam()
+    {
+        return animCam;
+    }
+
+    #endregion
+    
 }

@@ -295,6 +295,7 @@ MonoBehaviour:
   backlight: {fileID: 337957041325354655}
   popUpText: {fileID: 0}
   sceneToLoad: Lvl_Nightlife
+  machineSpawnPosition: {fileID: 337957040462283901}
 --- !u!1 &337957040029999481
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,7 +407,7 @@ GameObject:
   m_Component:
   - component: {fileID: 337957040462283901}
   m_Layer: 0
-  m_Name: PlayerSpawnPoint Machine1
+  m_Name: PlayerSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
