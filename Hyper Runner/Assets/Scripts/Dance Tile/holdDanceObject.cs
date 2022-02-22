@@ -12,7 +12,7 @@ public class holdDanceObject : ADanceObject {
     private bool firstPress = true;
     private bool isPressing;
 
-    public override void Start() {
+    protected override void Start() {
         base.Start(); // from ADanceObject
         firstPress = true;
     }

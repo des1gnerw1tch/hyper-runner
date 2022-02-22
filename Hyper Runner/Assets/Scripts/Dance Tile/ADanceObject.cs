@@ -65,7 +65,7 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     // TODO: clean this up this function sucks
     // spawns rating texts and adds to charisma when player presses a dance key
     // EFFECT: adds to characterHealth charisma, changes ResultsManager fields
-    public void EvaluateScore(float _score) {
+    protected void EvaluateScore(float _score) {
 
         ResultsManager.IncTotalDanceTiles();
         if (_score > 9.6) {
@@ -107,7 +107,7 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     }
 
     // spawns a score text on the players canvas
-    public void SpawnScoreText(GameObject text) {
+    private void SpawnScoreText(GameObject text) {
         var image = Instantiate(text) as GameObject;
         image.transform.SetParent(canvas.transform, false);
 
@@ -116,7 +116,7 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     }
 
     // spawns the text for how many perfects you got in a row
-    public void SpawnPerfectMultiplierText() {
+    private void SpawnPerfectMultiplierText() {
         GameObject instance = this.perfectStreakTextManager.SpawnPerfectStreakText(perfectInARow); // Spawns a perfect streak text
         // set the placement of these pop ups a little random
         this.Wobble(instance.GetComponent<RectTransform>(), 100);
@@ -130,14 +130,14 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     }
 
     // destroys dance tile, spawns effects
-    public void DestroyDanceTile() {
+    protected void DestroyDanceTile() {
         Instantiate(this.destroyEffect, this.transform.position, Quaternion.identity);
         FindObjectOfType<CameraShake>().Begin(this.camRumbleIntensity, this.camRumbleSpeed, this.camRumbleDuration);
         Destroy(this.gameObject);
     }
 
     // deactivates Rhythm mode, puts player into Platformer mode
-    public void StartPlatformMode() {
+    protected void StartPlatformMode() {
         this.levelManager.SetPlayerMode("Platformer"); // sets correct player mode
         this.levelManager.playerCamMoveSpeed = playerRunningSpeed; //  sets player and camera speed 
         Parallax.multiplier = surroundingSpeedMultiplier; // sets how fast objects should move in background
@@ -153,7 +153,7 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     }
 
     // Called on first frame
-    public virtual void Start() {
+    protected virtual void Start() {
         perfectInARow = 0;
         this.player = GameObject.FindWithTag("Player").GetComponent<Transform>();
         this.characterHealth = FindObjectOfType<CharacterHealth>();

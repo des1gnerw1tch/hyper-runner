@@ -6,11 +6,11 @@ using UnityEngine;
 public class InterpolateCameraColor : AInterpolateColor {
     [SerializeField] private Camera mainCamera; // camera we will change the background color of
 
-    public override void InitCurrentColor() {
+    protected override void InitCurrentColor() {
         this.currentColor = this.mainCamera.backgroundColor;
     }
 
-    public override void UpdateColor(Color c) {
+    protected override void UpdateColor(Color c) {
         this.mainCamera.backgroundColor = c;
     }
 }

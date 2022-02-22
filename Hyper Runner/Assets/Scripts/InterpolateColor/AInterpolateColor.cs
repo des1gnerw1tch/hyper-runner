@@ -4,14 +4,13 @@ using UnityEngine;
 
 // For interpolating a color of an object
 public abstract class AInterpolateColor : MonoBehaviour {
-    //[SerializeField] private Camera mainCamera; // camera we will change the background color of
     protected Color currentColor;
     private Color nextColor; // the color we should interpolate to
     private float interpolateSpeed; // how fast to interpolate
     private float counter; // clamped between 0,1
 
     private bool isRainbowMash; // is rainbowMash activated?
-
+    private Color[] rainbowMashColors; // colors to be rainbow mashed
     private void Start() {
         InitCurrentColor();
         //this.currentColor = this.mainCamera.backgroundColor;
@@ -41,10 +40,10 @@ public abstract class AInterpolateColor : MonoBehaviour {
     }
 
     // Updates color of this object
-    public abstract void UpdateColor(Color c);
+    protected abstract void UpdateColor(Color c);
 
     // initializes variable current color as soon as game starts
-    public abstract void InitCurrentColor();
+    protected abstract void InitCurrentColor();
 
     public void Lerp(float speed, Color color) {
         interpolateSpeed = speed / 10;
@@ -54,7 +53,15 @@ public abstract class AInterpolateColor : MonoBehaviour {
     }
 
     // experimental rainbow mashing of colors!
-    public void RainbowMash(float speed) {
+    public void RainbowMash(float speed, Color[] listOfColors)
+    {
+        if (listOfColors.Length < 2)
+        {
+            Debug.LogError("RainbowMashColors is < 2");
+            return;
+        }
+        
+        rainbowMashColors = listOfColors;
         interpolateSpeed = speed / 10;
         counter = 0;
         this.isRainbowMash = true;
@@ -62,11 +69,12 @@ public abstract class AInterpolateColor : MonoBehaviour {
     }
 
     // picks a random color from the rainbow!
-    public Color RandomColor() {
-        Color[] colors = { Color.blue, Color.cyan, Color.green, Color.magenta,
-            Color.red, Color.yellow, Color.white, Color.black};
-        int rand = Random.Range(0, colors.Length);
-        return colors[rand];
+    private Color RandomColor() {
+        /*Color[] colors = { Color.blue, Color.cyan, Color.green, Color.magenta,
+            Color.red, Color.yellow, Color.white, Color.black};*/
+        
+        int rand = Random.Range(0, rainbowMashColors.Length);
+        return rainbowMashColors[rand];
 
     }
 }
