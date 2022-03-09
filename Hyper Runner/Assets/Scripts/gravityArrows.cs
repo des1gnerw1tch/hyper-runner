@@ -3,13 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class gravityArrows : MonoBehaviour {   // player fields
-    [SerializeField] private PlayerMovement movement; // platformer movement script
+    
     [SerializeField] private Color flashColor; // the color you would like the player to flash 
     [SerializeField] private float flashSpeed;// the speed you would like the player to flash 
 
     [SerializeField] private float rotation = 180;
     private bool active = true; // so that arrows only activate once
 
+    [Header("Auto-Serialized fields")]
+    [SerializeField] private PlayerMovement movement; // platformer movement script
+
+    void Start()
+    {
+        movement = FindObjectOfType<PlayerMovement>();
+    }
+    
     void OnTriggerEnter2D(Collider2D other) {
         if (this.active) {
             if (other.CompareTag("Player")) {
