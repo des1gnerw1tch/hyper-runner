@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class AResultText : MonoBehaviour {
+public abstract class AResultText : MonoBehaviour 
+{
     [SerializeField] public AResultText next;
 
     // activates this result text, starts animation

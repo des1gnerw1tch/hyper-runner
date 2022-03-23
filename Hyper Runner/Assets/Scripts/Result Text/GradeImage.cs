@@ -11,13 +11,15 @@ public class GradeImage : AResultText {
     [SerializeField] private float delayBetweenShuffle = .2f; // delay between shuffle images
     [SerializeField] private ResultsAnimationController controller;
     [SerializeField] private Animator charismaAnimator;
-    public int gradeEarned; // the grade earned by player, calculated with ResultsManager
+    [SerializeField] private GameObject clickToProceedToMenuText;
+    [HideInInspector] public int gradeEarned; // the grade earned by player, calculated with ResultsManager
     private bool isHighScore; // is grade earned a high score
 
     // called on first frame
     void Start() {
         this.imageComponent.enabled = false;
         this.isHighScore = true; // TODO: display high score if this is saved as a high score
+        clickToProceedToMenuText.SetActive(false);
     }
 
     // EFFECT: enables image component 
@@ -36,15 +38,12 @@ public class GradeImage : AResultText {
         }
         // at the end of the shuffle, show earned grade
         this.ShowEarnedGrade();
-        StartCoroutine("EndScene");
     }
 
     //TODO: This is a test
     // Will shift character to main scene
-    IEnumerator EndScene() {
-        //TODO: Replace this
-        yield return new WaitForSeconds(3f);
-        //SceneManager.LoadScene("Menu");
+    private void EndScene() {
+        SceneManager.LoadScene("Menu");
     }
 
     // EFFECT: displays a random grade,
@@ -88,5 +87,12 @@ public class GradeImage : AResultText {
             throw new System.Exception("Grade earned out of bounds");
         }
 
+        StartCoroutine("ShowClickToProceedToMenuText");
+    }
+
+    private IEnumerator ShowClickToProceedToMenuText()
+    {
+        yield return new WaitForSeconds(3f);
+        clickToProceedToMenuText.SetActive(true);
     }
 }
