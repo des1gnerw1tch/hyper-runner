@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class AParryObject : MonoBehaviour {
@@ -29,5 +27,8 @@ public abstract class AParryObject : MonoBehaviour {
     }
 
     // when this parry object used
-    public abstract void OnParry();
+    public virtual void OnParry()
+    {
+        ResultsManager.IncPlayerTotalParries();
+    }
 }

@@ -9,6 +9,7 @@ public class clockParryObject : AParryObject
     [SerializeField] private MusicSync musicSync;
 
     public override void OnParry()  {
-      musicSync.changePitch(musicPitch, effectLength);
+        base.OnParry();
+        musicSync.changePitch(musicPitch, effectLength);
     }
 }

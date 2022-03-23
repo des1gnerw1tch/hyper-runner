@@ -32,9 +32,9 @@ public class ResultsAnimationController : MonoBehaviour {
         float perfectTiles = (float)ResultsManager.GetPerfectTiles();
         float missedTiles = (float)ResultsManager.GetMissedDanceTiles();
 
-        // this crazy math makes a score, somewhere in the 1000 range
-        // the longer the level (more tiles) and the least crashes, gives the most points.
-        int mobilityScoreTemp = 2500 - ResultsManager.GetPlayerCrashes() * 313; // can die 8 times before score is 0
+        // this crazy math makes a score
+        // More parries and the least crashes, gives the most points.
+        int mobilityScoreTemp = Mathf.Clamp(ResultsManager.GetPlayerTotalParries()* 100 - ResultsManager.GetPlayerCrashes() * 313, 0, int.MaxValue); // can die 8 times before score is 0
         if (mobilityScoreTemp < 0) {
             this.mobilityScore.score = 0;
         } else {
@@ -49,7 +49,7 @@ public class ResultsAnimationController : MonoBehaviour {
                                                  // while a score of 0 means you got no dance tiles
         Debug.Log("Frac Rhythm Score: " + fracScore);
 
-        int weightedScore = (int)Mathf.Ceil(250 * fracScore) * 10; // max score is 100
+        int weightedScore = (int) rawScore * 100; // max score is 100
         this.rhythmScore.score = weightedScore;
 
         // grade earned calculation, mixing Rhythm score and mobility score

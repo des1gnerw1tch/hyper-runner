@@ -17,8 +17,11 @@ public class MirrorCameraParryObject : ExplodingParryObject {
         this.cameraOrientation = FindObjectOfType<CameraOrientation>();
         this.flashPanel = FindObjectOfType<FlashPanel>();
     }
+    
     // when parry object is parried off of
-    public override void OnParry() {
+    public override void OnParry() 
+    {
+        base.OnParry();
         this.cameraOrientation.Mirror();
         this.flashPanel.Flash(this.colorToFlash);
         base.OnParry();

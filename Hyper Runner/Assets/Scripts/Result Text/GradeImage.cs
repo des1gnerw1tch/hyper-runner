@@ -44,7 +44,7 @@ public class GradeImage : AResultText {
     IEnumerator EndScene() {
         //TODO: Replace this
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("Menu");
+        //SceneManager.LoadScene("Menu");
     }
 
     // EFFECT: displays a random grade,

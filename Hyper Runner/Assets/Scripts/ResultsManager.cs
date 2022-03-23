@@ -11,6 +11,7 @@ public static class ResultsManager {
     private static int countGoodTiles; // amount of Good's player received during game
     private static int countPerfectTiles; // amount of Perfect's player received during game
     private static int countTotalDanceTiles; // total tiles in the game
+    private static int countTotalParries; // total time a player parrys in the game
 
     // Start is called before the first frame update
     public static void init() {
@@ -20,6 +21,7 @@ public static class ResultsManager {
         countGoodTiles = 0;
         countPerfectTiles = 0;
         countTotalDanceTiles = 0;
+        countTotalParries = 0;
     }
 
     // When a player has run into an obstacle
@@ -87,6 +89,17 @@ public static class ResultsManager {
 
     public static int GetTotalTiles() {
         return countTotalDanceTiles;
+    }
+
+    public static int GetPlayerTotalParries()
+    {
+        return countTotalParries;
+    }
+
+    public static void IncPlayerTotalParries()
+    {
+        countTotalParries++;
+        Debug.Log("Total Parries: " + countTotalParries);
     }
 
 

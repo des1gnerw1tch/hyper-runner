@@ -11,6 +11,7 @@ public class ExplodingParryObject : AParryObject {
     
     public override void OnParry()
     {
+        base.OnParry();
         Vector3 pos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         Instantiate(this.particles, pos, Quaternion.identity);
         Destroy((this.gameObject));
