@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ResultsAnimationController : MonoBehaviour {
@@ -49,7 +47,7 @@ public class ResultsAnimationController : MonoBehaviour {
                                                  // while a score of 0 means you got no dance tiles
         Debug.Log("Frac Rhythm Score: " + fracScore);
 
-        int weightedScore = (int) rawScore * 100; // max score is 100
+        int weightedScore = (int) rawScore * 30;
         this.rhythmScore.score = weightedScore;
 
         // grade earned calculation, mixing Rhythm score and mobility score

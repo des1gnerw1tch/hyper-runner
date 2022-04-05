@@ -1,10 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-// displays the final grade of your game
+// Displays the final grade of your game
 public class GradeImage : AResultText {
     [SerializeField] private Image imageComponent;
     [SerializeField] private Sprite[] grades; // all possible grade images
