@@ -1,29 +1,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class arcadeMachine : MonoBehaviour, IInteractableArcadeObject {
+public class arcadeMachine : AInteractableArcadeObject {
     [SerializeField] private GameObject playerCam;
     [SerializeField] private GameObject animCam;
     [SerializeField] private Animator animCamAnimator;
     [SerializeField] private GameObject backlight;
-    [SerializeField] private GameObject popUpText;
     [SerializeField] private string sceneToLoad;
     [SerializeField] private Transform machineSpawnPosition; // first machine position to spawn player at
-
-    void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Player")) {
-            popUpText.SetActive(true);
-            other.gameObject.GetComponent<InteractArcade>().SetCurrentInteractable(this);
-        }
-    }
-
-    void OnTriggerExit(Collider other) {
-        if (other.CompareTag("Player")) {
-            popUpText.SetActive(false);
-            other.gameObject.GetComponent<InteractArcade>().ClearCurrentInteractable();
-        }
-    }
-
+    
     // Loads the scene the arcade game is linked to 
     public void LoadGameScene() {
         Cursor.lockState = CursorLockMode.None; // so that we can use cursor in main game
@@ -31,7 +16,7 @@ public class arcadeMachine : MonoBehaviour, IInteractableArcadeObject {
     }
 
     // When player interacts with this arcade object
-    public void Interact(InteractArcade player) {
+    public override void Interact(InteractArcade player) {
         player.ClearCurrentInteractable();
         // start animation
         playerCam.SetActive(false);

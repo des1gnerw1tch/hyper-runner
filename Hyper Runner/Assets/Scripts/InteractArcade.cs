@@ -5,7 +5,7 @@ using UnityEngine;
 // deals with player interacting with elements in arcade scene
 public class InteractArcade : MonoBehaviour {
 
-    [SerializeField] private IInteractableArcadeObject currentInteractableObject;
+    [SerializeField] private AInteractableArcadeObject currentInteractableObject;
 
     // When player presses interact key
     void OnInteract() {
@@ -14,7 +14,7 @@ public class InteractArcade : MonoBehaviour {
         }
     }
 
-    public void SetCurrentInteractable(IInteractableArcadeObject obj) {
+    public void SetCurrentInteractable(AInteractableArcadeObject obj) {
         this.currentInteractableObject = obj;
     }
 

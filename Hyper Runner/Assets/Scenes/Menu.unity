@@ -1688,6 +1688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2eada36010474731a34732d71f5fc30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentInteractableObject: {fileID: 0}
 --- !u!1 &1351762986
 GameObject:
   m_ObjectHideFlags: 0
@@ -6358,6 +6359,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClawMachine
       objectReference: {fileID: 0}
+    - target: {fileID: 4851250485551298235, guid: 84e688b5b1f744268ae41a3cebe58e85, type: 3}
+      propertyPath: popUpText
+      value: 
+      objectReference: {fileID: 1086828118}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84e688b5b1f744268ae41a3cebe58e85, type: 3}
 --- !u!23 &5180105381701871141
