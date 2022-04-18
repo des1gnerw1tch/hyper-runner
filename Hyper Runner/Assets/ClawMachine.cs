@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ClawMachine : AInteractableArcadeObject
 {
+    [SerializeField] private Animator animator;
     public override void Interact(InteractArcade player)
     {
-        throw new System.NotImplementedException();
+        base.Interact(player);
+        animator.SetTrigger("Activate");
     }
 }

@@ -17,13 +17,13 @@ public class arcadeMachine : AInteractableArcadeObject {
 
     // When player interacts with this arcade object
     public override void Interact(InteractArcade player) {
+        base.Interact(player);
         player.ClearCurrentInteractable();
         // start animation
         playerCam.SetActive(false);
         animCam.SetActive(true);
         animCamAnimator.SetTrigger("PanIntoMachine");
         backlight.SetActive(true);
-        popUpText.SetActive(false);
     }
     
     // When player exits this arcade machine

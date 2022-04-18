@@ -7,8 +7,12 @@ using UnityEngine;
 public abstract class AInteractableArcadeObject : MonoBehaviour
 {
     [SerializeField] protected GameObject popUpText;
-    
-    public abstract void Interact(InteractArcade player); // Player interacts with this arcade object
+
+    // Player interacts with this arcade object
+    public virtual void Interact(InteractArcade player)
+    {
+        popUpText.SetActive(false);
+    }
     
     void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
