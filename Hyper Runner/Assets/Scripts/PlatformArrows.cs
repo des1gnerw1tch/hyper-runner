@@ -6,9 +6,16 @@ public class PlatformArrows : MonoBehaviour {
     [SerializeField] private ALevelManager levelManager;
     [SerializeField] private float playerRunningSpeed;
     [SerializeField] private float surroundingSpeedMultiplier;
-    [SerializeField] private danceTileManager danceManager;
     [SerializeField] private InterpolateTrigger interpolationTrigger;
+    
+    [Header("Auto-get singleton")]
+    [SerializeField] private danceTileManager danceManager;
 
+    private void Start()
+    {
+        danceManager = danceTileManager.Instance;
+    }
+    
     void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             levelManager.SetPlayerMode("Platformer");

@@ -2,12 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.ComponentModel.Design.Serialization;
 
 // handles activating dance tiles, the once closest to the player
 public class danceTileManager : MonoBehaviour {
     [SerializeField] private Transform player;
     [SerializeField] private IDanceObject activeDanceObj; // is mutated on by dance key movement on player
 
+    public static danceTileManager Instance { get; private set; }
+
+    void Awake()
+    {
+        Instance = this;
+    }
+    
     //Makes sure that only 1 dance key is okay to press at one time
     // finds dance key with smallest X position and activates it...
     public void UpdateValidDanceKeys() {

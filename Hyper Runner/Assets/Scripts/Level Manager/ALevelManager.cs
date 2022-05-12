@@ -7,16 +7,27 @@ using UnityEngine.InputSystem;
 public abstract class ALevelManager : MonoBehaviour, ILevelManager {
     public float playerCamMoveSpeed = 5f;
     public Move cameraMovement;
-    public PlayerMovement playerMovement;
-    public RhythmMovement rhythmMovement;
-    public PlayerInput input;
-    public Rigidbody2D player_rb;
+    
     public GameObject flyingParticles;
     public float launchToRhythmSpeed = 5f;
     [SerializeField] private GameObject transitionPanel;
+    
+    [Header("Auto-get Player components")]
+    public PlayerMovement playerMovement;
+    public RhythmMovement rhythmMovement;
+    public Rigidbody2D player_rb;
+    public PlayerInput input;
+    
 
     // Start is called before the first frame update
-    public virtual void Start() {
+    public virtual void Start()
+    {
+        playerMovement = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
+        rhythmMovement = GameObject.FindWithTag("Player").GetComponent<RhythmMovement>();
+        player_rb = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>();
+        input = GameObject.FindWithTag("Player").GetComponent<PlayerInput>();
+        
+        
         this.transitionPanel.SetActive(true); // gets transition panel activated
         UpdateSpeeds();
         ResultsManager.init(); // initializes results of current game, which has just started

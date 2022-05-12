@@ -24,7 +24,6 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField] private float flashSpeed;
 
     // parry slo mo effect information
-    [SerializeField] private MusicSync musicSync;
     [SerializeField] private Animator cameraAnimator;
     private AParryObject parryObject;
 
