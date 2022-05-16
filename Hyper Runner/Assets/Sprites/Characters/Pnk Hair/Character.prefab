@@ -185,8 +185,6 @@ MonoBehaviour:
   flashObject: {fileID: 1424509934}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 5
-  musicSync: {fileID: 0}
-  cameraAnimator: {fileID: 0}
 --- !u!114 &752551082774792000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +200,7 @@ MonoBehaviour:
   speed: 0
   animatorComponent: {fileID: 752551082774792008}
   rhythmAnimator: {fileID: 9100000, guid: 5be0ac0425dbe4a18a0c006e63a6c25d, type: 2}
+  flyingParticles: {fileID: 7858300630071390444}
   rhythm_up_tile: {fileID: 2219637414331819520, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
   rhythm_down_tile: {fileID: 2219637414331819520, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
 --- !u!114 &2745784147261088146
@@ -218,7 +217,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frontCollider: {fileID: 3875587539062391384}
   charisma: 70
-  portrait_animator: {fileID: 0}
   objToFlash: {fileID: 1424509934}
   posFlashColor: {r: 1, g: 1, b: 1, a: 1}
   negFlashColor: {r: 1, g: 0, b: 0, a: 1}
@@ -226,7 +224,6 @@ MonoBehaviour:
   minHeight: 3.8
   maxHeight: 13.4
   movement: {fileID: 752551082774792005}
-  musicSync: {fileID: 0}
 --- !u!114 &1424509934
 MonoBehaviour:
   m_ObjectHideFlags: 0

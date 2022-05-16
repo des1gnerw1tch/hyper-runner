@@ -24,12 +24,14 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField] private float flashSpeed;
 
     // parry slo mo effect information
-    [SerializeField] private Animator cameraAnimator;
+    private Animator cameraAnimator;
     private AParryObject parryObject;
 
     void Start() {
         audio = FindObjectOfType<AudioManager>();
         initialGravity = rb.gravityScale;
+
+        cameraAnimator = Camera.main.GetComponent<Animator>();
     }
 
     void Update() {

@@ -159,5 +159,6 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
         this.characterHealth = FindObjectOfType<CharacterHealth>();
         this.canvas = FindObjectOfType<Canvas>().gameObject;
         this.perfectStreakTextManager = FindObjectOfType<PerfectStreakTextManager>();
+        this.danceManager = FindObjectOfType<danceTileManager>();
     }
 }

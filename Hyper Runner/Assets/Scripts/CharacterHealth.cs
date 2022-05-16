@@ -1,14 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CharacterHealth : MonoBehaviour {
     [SerializeField] private Collider2D frontCollider;
     public float charisma = 70f;
     private const float MIN_CHARISMA = 0f;
     private const float MAX_CHARISMA = 100f;
-    [SerializeField] private Animator portrait_animator;
     [SerializeField] private Flash objToFlash;
     [SerializeField] private Color posFlashColor;
     [SerializeField] private Color negFlashColor;
@@ -16,15 +12,20 @@ public class CharacterHealth : MonoBehaviour {
     [SerializeField] private float minHeight = 3.8f;
     [SerializeField] private float maxHeight = 13.4f;
     [SerializeField] private PlayerMovement movement;
+    
+    private Animator portrait_animator;
     private bool charismaIsHighest; // make sure "yay" sound is played only once
 
     // DEV FEATURES TODO: Remove this in actual game
-    [SerializeField] private MusicSync musicSync;
+    private MusicSync musicSync;
     private bool isFastFoward;
 
     void Start() {
         charisma = 70f;
         this.isFastFoward = false;
+        
+        portrait_animator = GameObject.FindWithTag("CharismaPortrait").GetComponent<Animator>();
+        musicSync = FindObjectOfType<MusicSync>();
     }
 
 

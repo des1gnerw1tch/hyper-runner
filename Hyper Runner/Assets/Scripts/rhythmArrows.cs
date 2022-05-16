@@ -6,11 +6,11 @@ public class rhythmArrows : MonoBehaviour {
     [SerializeField] private ALevelManager levelManager;
     [SerializeField] private float playerFloatingSpeed;
     [SerializeField] private float surroundingSpeedMultiplier;
+    [SerializeField] private InterpolateTrigger interpolationTrigger;
     
     [Header("Auto-get player components")]
     [SerializeField] private Transform player;
     [SerializeField] private danceTileManager danceManager;
-    [SerializeField] private InterpolateTrigger interpolationTrigger;
 
     private void Start()
     {

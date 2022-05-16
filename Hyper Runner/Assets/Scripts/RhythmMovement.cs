@@ -6,11 +6,14 @@ public class RhythmMovement : MonoBehaviour {
     [HideInInspector] public float speed; // Set in ALevelManager
     private bool teleporting;
     private float teleportSpeed;
-    [SerializeField] private const float MIDDLE_OF_SCREEN_Y = 8.8f;
+    private const float MIDDLE_OF_SCREEN_Y = 8.8f;
     [SerializeField] private Animator animatorComponent;
     [SerializeField] private RuntimeAnimatorController rhythmAnimator;
+    [SerializeField] private GameObject flyingParticles;
+    
     [SerializeField] private GameObject rhythm_up_tile;
     [SerializeField] private GameObject rhythm_down_tile;
+    
     // Start is called before the first frame update
     void Start() {
         Debug.Log("Switched!");
@@ -51,7 +54,13 @@ public class RhythmMovement : MonoBehaviour {
     // screen. it will turn off gravity too.
     public void startRhythm(float teleSpeed) {
         Debug.Log("Started teleporting");
+        flyingParticles.SetActive(true);
         teleporting = true;
         teleportSpeed = teleSpeed;
+    }
+
+    public void DeactivateFlyingParticles()
+    {
+        flyingParticles.SetActive(false);
     }
 }

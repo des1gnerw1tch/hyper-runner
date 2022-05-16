@@ -8,8 +8,9 @@ public class Train : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] string trainSound;
     public bool trainBeforePlayer;
-
-    void Start()  {
+    
+    // TODO: Script doesn't work well, in theory this would play a toot noise when the train is close to the player
+    /*void Start()  {
       trainBeforePlayer = true;
     }
 
@@ -25,5 +26,5 @@ public class Train : MonoBehaviour
         trainBeforePlayer = true;
       }
 
-    }
+    }*/
 }

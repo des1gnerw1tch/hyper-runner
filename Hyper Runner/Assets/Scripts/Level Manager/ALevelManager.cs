@@ -50,7 +50,7 @@ public abstract class ALevelManager : MonoBehaviour, ILevelManager {
                 rhythmMovement.enabled = false;
                 input.SwitchCurrentActionMap("Platformer"); // switches action map to platformer
                 player_rb.gravityScale = 5f;
-                flyingParticles.SetActive(false);
+                rhythmMovement.DeactivateFlyingParticles();
                 break;
             case "Rhythm":
                 playerMovement.enabled = false;
@@ -59,8 +59,6 @@ public abstract class ALevelManager : MonoBehaviour, ILevelManager {
 
                 player_rb.gravityScale = 0;
                 player_rb.velocity = new Vector2(player_rb.velocity.x, 0); // nullfies current Y velocity
-
-                flyingParticles.SetActive(true);
 
                 // this is how fast the player will jump into rhythym mode, will
                 // fix this bad system later
