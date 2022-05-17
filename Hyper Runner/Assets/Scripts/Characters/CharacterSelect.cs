@@ -8,5 +8,7 @@ namespace Characters
         [SerializeField] private GameObject currentCharacter;
         
         [SerializeField] private CharacterContainer characters;
+        
+        public GameObject GetCharacterPrefab() => currentCharacter;
     }
 }
