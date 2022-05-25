@@ -5042,7 +5042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
       propertyPath: speedToInterpolate
-      value: 100
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
       propertyPath: colorsToInterpolate.Array.size
@@ -5050,7 +5050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
       propertyPath: colorsToRainbowMash.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
       propertyPath: objectsToInterpolate.Array.size
@@ -5081,40 +5081,48 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
-      propertyPath: colorsToRainbowMash.Array.data[0].b
+      propertyPath: colorsToRainbowMash.Array.data[0].a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: colorsToRainbowMash.Array.data[0].b
+      value: 0.40392157
       objectReference: {fileID: 0}
     - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
       propertyPath: colorsToRainbowMash.Array.data[0].g
-      value: 0
+      value: 0.050980393
       objectReference: {fileID: 0}
     - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
       propertyPath: colorsToRainbowMash.Array.data[0].r
-      value: 0
+      value: 0.36078432
       objectReference: {fileID: 0}
     - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
       propertyPath: colorsToRainbowMash.Array.data[1].b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
-      propertyPath: colorsToRainbowMash.Array.data[1].g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
-      propertyPath: colorsToRainbowMash.Array.data[1].r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
-      propertyPath: colorsToRainbowMash.Array.data[2].b
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: colorsToRainbowMash.Array.data[1].g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: colorsToRainbowMash.Array.data[1].r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: colorsToRainbowMash.Array.data[2].a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
+      propertyPath: colorsToRainbowMash.Array.data[2].b
+      value: 0.8018868
+      objectReference: {fileID: 0}
+    - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
       propertyPath: colorsToRainbowMash.Array.data[2].g
-      value: 0.8805921
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 285512517, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
       propertyPath: colorsToRainbowMash.Array.data[2].r
-      value: 1
+      value: 0.7038782
       objectReference: {fileID: 0}
     - target: {fileID: 629329105082514531, guid: e791f8e00d32545ee9facd7c683e1719, type: 3}
       propertyPath: player
@@ -20838,7 +20846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8077507342958484171, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
       propertyPath: colorsToInterpolate.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8077507342958484171, guid: 6374ebff9b0e0441b91356d677821818, type: 3}
       propertyPath: objectsToInterpolate.Array.size
