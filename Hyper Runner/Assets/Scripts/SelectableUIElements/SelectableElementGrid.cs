@@ -24,12 +24,20 @@ namespace SelectableUIElements
         {
             currentRow = 0;
             currentColumn = 0;
+            
+            UIInputHandler uiInputHandler = UIInputHandler.Instance;
+            uiInputHandler.OnScrollLeft.AddListener(OnLeft);
+            uiInputHandler.OnScrollRight.AddListener(OnRight);
+            uiInputHandler.OnScrollUp.AddListener(OnUp);
+            uiInputHandler.OnScrollDown.AddListener(OnDown);
+            uiInputHandler.OnSelectOption.AddListener(OnSelect);
         }
         
-        #region Input handlers
+        #region Inputs Handlers
 
         private void OnLeft()
         {
+            Debug.Log("Pressed left");
             if (currentColumn == 0)
             {
                 return;
