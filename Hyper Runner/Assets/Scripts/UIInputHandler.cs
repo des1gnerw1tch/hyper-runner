@@ -1,33 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 // handles player input for UI elements, such as pausing.
 // Passes many inputs to our UI Manager
 public class UIInputHandler : MonoBehaviour {
-    [Header("Required Prefab in Scene, automatically fetched")]
-    [SerializeField] private UIManager uiManager;
-
-    //private UnityEvent onScrollUp;
-
-    // UI Scroll Events
+    // UI Events
     public UnityEvent OnScrollUp { get; } = new UnityEvent();
+    
     public UnityEvent OnScrollDown { get; } = new UnityEvent();
+    
     public UnityEvent OnScrollLeft { get; } = new UnityEvent();
+    
     public UnityEvent OnScrollRight { get; } = new UnityEvent();
+    
     public UnityEvent OnSelectOption { get; } = new UnityEvent();
-
-
     
-    private void Start()
+    public UnityEvent OnPause { get; } = new UnityEvent();
+
+    public static UIInputHandler Instance { get; private set; }
+
+    private void Awake()
     {
-        uiManager = FindObjectOfType<UIManager>();
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+
+        Instance = this;
     }
-    
+
     // When Player pushes a "Pause Game" button
     void OnPauseGame() {
-        this.uiManager.PauseKeyPressed(); // delegates tasks to uiManager
+        OnPause.Invoke();
     }
     
     /// <summary>

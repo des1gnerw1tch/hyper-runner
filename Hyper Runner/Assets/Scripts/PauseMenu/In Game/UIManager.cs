@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
 /*
- * Deals with setting up scene transitions and user interface
+ * Deals with setting up scene transitions and user interface inside of the rhythm game.
  */
 public class UIManager : MonoBehaviour {
 
@@ -35,10 +35,12 @@ public class UIManager : MonoBehaviour {
 
         this.musicSync = FindObjectOfType<MusicSync>();
         this.input = FindObjectOfType<PlayerInput>();
+        
+        UIInputHandler.Instance.OnPause.AddListener(PauseKeyPressed);
     }
 
     // When a pause key is pressed
-    public void PauseKeyPressed() {
+    private void PauseKeyPressed() {
         if (this.isGamePaused) {
             this.ResumeGame();
         } else {
