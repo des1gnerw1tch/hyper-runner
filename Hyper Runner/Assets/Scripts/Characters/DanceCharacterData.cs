@@ -1,9 +1,10 @@
 using System;
 using UnityEngine;
+using UnityEngine.Playables;
 
 namespace Characters
 {
-    public enum PlayableCharacters
+    public enum PlayableCharacterEnum
     {
         Tracy,
         John,
@@ -17,7 +18,7 @@ namespace Characters
     [Serializable]
     public class DanceCharacterData
     {
-        [SerializeField] private string name;
+        [SerializeField] private PlayableCharacterEnum character;
         
         // What "pack" of character is this in? A pack may be poketrainers, or rappers, etc. 
         [SerializeField] private string family;
@@ -25,9 +26,9 @@ namespace Characters
         // Prefab that will be spawned in game
         [SerializeField] private GameObject characterPrefab;
 
-        public string GetName()
+        public PlayableCharacterEnum GetCharacterEnum()
         {
-            return name;
+            return character;
         }
 
         public string GetPackName()

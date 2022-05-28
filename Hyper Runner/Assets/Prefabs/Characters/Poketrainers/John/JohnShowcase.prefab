@@ -109,7 +109,11 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 7ac211ccd0b04479bbce19620bc4758f, type: 2}
     - target: {fileID: 7445344226060347431, guid: 71ec46f39be0c419c9e4d9f0460524b1, type: 3}
       propertyPath: nameOfCharacter
-      value: John
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8516740808057609628, guid: 71ec46f39be0c419c9e4d9f0460524b1, type: 3}
+      propertyPath: character
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8516740808057609628, guid: 71ec46f39be0c419c9e4d9f0460524b1, type: 3}
       propertyPath: characterName

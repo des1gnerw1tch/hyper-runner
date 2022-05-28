@@ -8,12 +8,12 @@ namespace SelectableUIElements
     /// </summary>
     public class CharacterSelectableElement : ASelectableElement
     {
-        [SerializeField] private string characterName;
+        [SerializeField] private PlayableCharacterEnum character;
         [SerializeField] private GameObject selectedBorder;
         
         public override void Selected()
         {
-            CharacterSelect.Instance.ChangeCurrentCharacter(characterName);
+            CharacterSelect.Instance.ChangeCurrentCharacter(character);
         }
 
         public override void Highlight()

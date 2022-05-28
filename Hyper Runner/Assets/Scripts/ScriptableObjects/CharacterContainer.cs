@@ -12,11 +12,11 @@ namespace ScriptableObjects
     {
         [SerializeField] private DanceCharacterData[] characters;
         
-        public GameObject GetCharacterByName(string name)
+        public GameObject GetCharacterDataByEnum(PlayableCharacterEnum playableCharacter)
         {
             foreach (DanceCharacterData character in characters)
             {
-                if (name == character.GetName())
+                if (playableCharacter == character.GetCharacterEnum())
                 {
                     return character.GetCharacterPrefab();
                 }

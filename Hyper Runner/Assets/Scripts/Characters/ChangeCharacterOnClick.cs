@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.UI;
 
 namespace Characters
@@ -10,7 +11,7 @@ namespace Characters
     public class ChangeCharacterOnClick : MonoBehaviour
     {
         [SerializeField] private Button button;
-        [SerializeField] private string nameOfCharacter;
+        [SerializeField] private PlayableCharacterEnum nameOfCharacter;
         
         void Start()
         {

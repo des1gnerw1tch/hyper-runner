@@ -24,9 +24,9 @@ namespace Characters
         }
         public GameObject GetCharacterPrefab() => currentCharacter;
 
-        public void ChangeCurrentCharacter(string name)
+        public void ChangeCurrentCharacter(PlayableCharacterEnum characterEnum)
         {
-            GameObject character = characters.GetCharacterByName(name);
+            GameObject character = characters.GetCharacterDataByEnum(characterEnum);
             
             if (character == null)
             {
