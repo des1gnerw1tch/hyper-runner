@@ -3,6 +3,14 @@ using UnityEngine;
 
 namespace Characters
 {
+    public enum PlayableCharacters
+    {
+        Tracy,
+        John,
+        Kevin,
+        Jahmir
+    }
+    
     /// <summary>
     /// Holds all the data needed for a character in the game. 
     /// </summary>

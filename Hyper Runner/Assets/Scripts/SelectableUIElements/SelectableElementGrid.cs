@@ -31,13 +31,14 @@ namespace SelectableUIElements
             uiInputHandler.OnScrollUp.AddListener(OnUp);
             uiInputHandler.OnScrollDown.AddListener(OnDown);
             uiInputHandler.OnSelectOption.AddListener(OnSelect);
+            
+            HighlightCurrentElement();
         }
         
         #region Inputs Handlers
 
         private void OnLeft()
         {
-            Debug.Log("Pressed left");
             if (currentColumn == 0)
             {
                 return;
@@ -71,9 +72,8 @@ namespace SelectableUIElements
             
             StopHighlightCurrentElement();
             currentRow--;
-            HighlightCurrentElement();
-
             ClampColumn();
+            HighlightCurrentElement();
         }
 
         private void OnDown()
@@ -85,9 +85,8 @@ namespace SelectableUIElements
             
             StopHighlightCurrentElement();
             currentRow++;
-            HighlightCurrentElement();
-            
             ClampColumn();
+            HighlightCurrentElement();
         }
 
         private void OnSelect() => SelectCurrentElement();
@@ -105,7 +104,7 @@ namespace SelectableUIElements
         {
             if (currentColumn >= row[currentRow].column.Length)
             {
-                currentColumn = row[currentRow].column.Length;
+                currentColumn = row[currentRow].column.Length - 1;
             }
         }
     }

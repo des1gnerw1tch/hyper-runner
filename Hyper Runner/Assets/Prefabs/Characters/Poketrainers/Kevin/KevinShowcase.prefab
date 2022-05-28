@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: KevinShowcase
       objectReference: {fileID: 0}
+    - target: {fileID: 2034748892722027027, guid: 71ec46f39be0c419c9e4d9f0460524b1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5511866691976713521, guid: b790bbf601b2449dcb4f8514e571cd28, type: 3}
     - target: {fileID: 3496693450783158997, guid: 71ec46f39be0c419c9e4d9f0460524b1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -103,8 +107,20 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -5511866691976713521, guid: b790bbf601b2449dcb4f8514e571cd28, type: 3}
+    - target: {fileID: 5929695316961569616, guid: 71ec46f39be0c419c9e4d9f0460524b1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5511866691976713521, guid: b790bbf601b2449dcb4f8514e571cd28, type: 3}
+    - target: {fileID: 6992930880821248434, guid: 71ec46f39be0c419c9e4d9f0460524b1, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 293d37d57117947e8906488de60a68ef, type: 2}
     - target: {fileID: 7445344226060347431, guid: 71ec46f39be0c419c9e4d9f0460524b1, type: 3}
       propertyPath: nameOfCharacter
+      value: Kevin
+      objectReference: {fileID: 0}
+    - target: {fileID: 8516740808057609628, guid: 71ec46f39be0c419c9e4d9f0460524b1, type: 3}
+      propertyPath: characterName
       value: Kevin
       objectReference: {fileID: 0}
     m_RemovedComponents: []
