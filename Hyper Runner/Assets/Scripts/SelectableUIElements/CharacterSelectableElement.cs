@@ -17,12 +17,16 @@ namespace SelectableUIElements
 
         public override void Selected()
         {
+            base.Selected();
+            
             CharacterSelect.Instance.ChangeCurrentCharacter(character);
             currentCharacterPanel.UpdateInformation();
         }
 
         public override void Highlight()
         {
+            base.Highlight();
+            
             selectedBorder.SetActive(true);
         }
 

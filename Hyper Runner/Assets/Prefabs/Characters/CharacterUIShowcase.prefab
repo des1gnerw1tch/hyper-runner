@@ -141,8 +141,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb7b6279334141369e46ab0b052dba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedSound: selectCharacter
+  highlightSound: scroll
   character: 1
   selectedBorder: {fileID: 452256447673145120}
+  currentCharacterPanel: {fileID: 0}
 --- !u!1 &7275317571803036185
 GameObject:
   m_ObjectHideFlags: 0
