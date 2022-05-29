@@ -12,13 +12,27 @@ namespace ScriptableObjects
     {
         [SerializeField] private DanceCharacterData[] characters;
         
-        public GameObject GetCharacterDataByEnum(PlayableCharacterEnum playableCharacter)
+        public GameObject GetCharacterPrefabByEnum(PlayableCharacterEnum playableCharacter)
         {
             foreach (DanceCharacterData character in characters)
             {
                 if (playableCharacter == character.GetCharacterEnum())
                 {
                     return character.GetCharacterPrefab();
+                }
+            }
+            
+            Debug.LogError("Could not find name in Character Container scriptable object");
+            return null;
+        }
+
+        public DanceCharacterData GetCharacterDataByEnum(PlayableCharacterEnum playableCharacter)
+        {
+            foreach (DanceCharacterData character in characters)
+            {
+                if (playableCharacter == character.GetCharacterEnum())
+                {
+                    return character;
                 }
             }
             

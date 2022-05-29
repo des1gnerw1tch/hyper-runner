@@ -1,17 +1,25 @@
-using System.ComponentModel.Design.Serialization;
+using System;
 using ScriptableObjects;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEditor.Animations;
 
 namespace Characters
 {
+    /// <summary>
+    /// Stores your current character, along with it's data.
+    /// </summary>
     public class CharacterSelect : MonoBehaviour
     {
-        [SerializeField] private GameObject currentCharacter;
+        
         [SerializeField] private CharacterContainer characters;
         
-        public static CharacterSelect Instance { get; private set; }
+        private GameObject currentCharacter;
+        private DanceCharacterData characterData;
         
-        private void Start()
+        public static CharacterSelect Instance { get; private set; }
+
+        private void Awake()
         {
             if (Instance == null)
             {
@@ -21,12 +29,16 @@ namespace Characters
             {
                 Destroy(this.gameObject);
             }
+            
+            //TODO: Remove this and have character save on file.
+            ChangeCurrentCharacter(PlayableCharacterEnum.Tracy);
         }
+
         public GameObject GetCharacterPrefab() => currentCharacter;
 
         public void ChangeCurrentCharacter(PlayableCharacterEnum characterEnum)
         {
-            GameObject character = characters.GetCharacterDataByEnum(characterEnum);
+            GameObject character = characters.GetCharacterPrefabByEnum(characterEnum);
             
             if (character == null)
             {
@@ -35,6 +47,22 @@ namespace Characters
             }
 
             currentCharacter = character;
+
+            characterData = characters.GetCharacterDataByEnum(characterEnum);
         }
+
+        public string GetCurrentCharacterName()
+        {
+            return characterData.GetName();
+        }
+
+        public string GetCurrentCharacterFamily()
+        {
+            return characterData.GetFamily();
+        }
+
+        public Sprite GetCurrentCharacterImage => characterData.GetSprite;
+
+        public AnimatorController GetCurrentCharacterShowcaseAnimatorController => characterData.GetShowcaseController;
     }
 }

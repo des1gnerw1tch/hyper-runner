@@ -1,6 +1,7 @@
 using System;
+using UnityEditor.Animations;
 using UnityEngine;
-using UnityEngine.Playables;
+using UnityEngine.UI;
 
 namespace Characters
 {
@@ -22,6 +23,10 @@ namespace Characters
         
         // What "pack" of character is this in? A pack may be poketrainers, or rappers, etc. 
         [SerializeField] private string family;
+
+        [SerializeField] private Sprite characterShowcaseSprite;
+
+        [SerializeField] private AnimatorController characterShowcaseController;
         
         // Prefab that will be spawned in game
         [SerializeField] private GameObject characterPrefab;
@@ -31,7 +36,12 @@ namespace Characters
             return character;
         }
 
-        public string GetPackName()
+        public string GetName()
+        {
+            return character.ToString();
+        }
+        
+        public string GetFamily()
         {
             return family;
         }
@@ -40,5 +50,9 @@ namespace Characters
         {
             return characterPrefab;
         }
+
+        public Sprite GetSprite => characterShowcaseSprite;
+
+        public AnimatorController GetShowcaseController => characterShowcaseController;
     }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using Characters;
+using UnityEngine.UI;
 
 namespace SelectableUIElements
 {
@@ -11,9 +12,13 @@ namespace SelectableUIElements
         [SerializeField] private PlayableCharacterEnum character;
         [SerializeField] private GameObject selectedBorder;
         
+        // To change current character sprite and animator.
+        [SerializeField] private CurrentCharacterPanel currentCharacterPanel;
+
         public override void Selected()
         {
             CharacterSelect.Instance.ChangeCurrentCharacter(character);
+            currentCharacterPanel.UpdateInformation();
         }
 
         public override void Highlight()
