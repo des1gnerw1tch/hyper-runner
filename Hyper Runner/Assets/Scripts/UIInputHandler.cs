@@ -17,6 +17,8 @@ public class UIInputHandler : MonoBehaviour {
     
     public UnityEvent OnPause { get; } = new UnityEvent();
 
+    public UnityEvent OnBackButton { get; } = new UnityEvent();
+
     public static UIInputHandler Instance { get; private set; }
 
     private void Awake()
@@ -61,5 +63,10 @@ public class UIInputHandler : MonoBehaviour {
     void OnSelect()
     {
         OnSelectOption.Invoke();
+    }
+
+    void OnBack()
+    {
+        OnBackButton.Invoke();
     }
 }

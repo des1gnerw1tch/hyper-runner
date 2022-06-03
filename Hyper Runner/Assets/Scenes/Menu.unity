@@ -790,13 +790,25 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: f338b53f621874f9b8e51e6fc0194688, type: 3}
     volume: 1
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: footstep
     clip: {fileID: 8300000, guid: e7f11812ac86142d6ba8e0d638055a2b, type: 3}
     volume: 1
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: scroll
+    clip: {fileID: 8300000, guid: cfd0ff438641c4d78836eb727af7e297, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: selectCharacter
+    clip: {fileID: 8300000, guid: b53e7a55e1155445c88ae91442299b6f, type: 3}
+    volume: 0.366
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
 --- !u!1 &620377571
 GameObject:
@@ -1640,6 +1652,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7061350222963359357, guid: 54ffb9417b4304178b92f1fc5879d122, type: 3}
   m_PrefabInstance: {fileID: 7061350221893898283}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1261400309 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 806983207799628012, guid: 54ffb9417b4304178b92f1fc5879d122, type: 3}
+  m_PrefabInstance: {fileID: 7061350221893898283}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1303476602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,6 +1694,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7290382693966148741, guid: 77c99427d24c44ec3926515b6f4b5a27, type: 3}
   m_PrefabInstance: {fileID: 7290382694810753115}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1314417888 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7290382693966148798, guid: 77c99427d24c44ec3926515b6f4b5a27, type: 3}
+  m_PrefabInstance: {fileID: 7290382694810753115}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314417886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1351762986
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,7 +2122,7 @@ Transform:
   - {fileID: 59586473}
   - {fileID: 1303476603}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1638689839
 GameObject:
@@ -6682,7 +6710,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3708019466005447465, guid: 84e688b5b1f744268ae41a3cebe58e85, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3708019466005447465, guid: 84e688b5b1f744268ae41a3cebe58e85, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7303,7 +7331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5713102681312917122, guid: 89c59cb5647d049e69698fdcc2782942, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5713102681312917122, guid: 89c59cb5647d049e69698fdcc2782942, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7353,6 +7381,18 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 6737939221042114374, guid: 89c59cb5647d049e69698fdcc2782942, type: 3}
+      propertyPath: popUpText
+      value: 
+      objectReference: {fileID: 1086828118}
+    - target: {fileID: 6737939221042114374, guid: 89c59cb5647d049e69698fdcc2782942, type: 3}
+      propertyPath: playerInput
+      value: 
+      objectReference: {fileID: 1314417888}
+    - target: {fileID: 6737939221042114374, guid: 89c59cb5647d049e69698fdcc2782942, type: 3}
+      propertyPath: characterPanel
+      value: 
+      objectReference: {fileID: 1261400309}
     - target: {fileID: 8750989378378349179, guid: 89c59cb5647d049e69698fdcc2782942, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295

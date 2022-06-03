@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using InteractableArcade;
 using UnityEngine;
 
 // This loads the arcade scene setup once scene entered. If the scene is entered from a previous arcade game

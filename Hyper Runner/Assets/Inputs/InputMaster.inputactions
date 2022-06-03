@@ -937,6 +937,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Back",
+                    "type": "Button",
+                    "id": "9cb710d7-5cf9-4f40-b61d-9ba67817962d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -1069,6 +1077,17 @@
                     "processors": "",
                     "groups": "Keyboard Control Scheme",
                     "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cefae018-02c4-4eb9-845a-1bb03ebb8a6a",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox Control Scheme",
+                    "action": "Back",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -950,6 +950,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Back"",
+                    ""type"": ""Button"",
+                    ""id"": ""9cb710d7-5cf9-4f40-b61d-9ba67817962d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -1084,6 +1092,17 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cefae018-02c4-4eb9-845a-1bb03ebb8a6a"",
+                    ""path"": ""<XInputController>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox Control Scheme"",
+                    ""action"": ""Back"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1153,6 +1172,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_UI_Right = m_UI.FindAction("Right", throwIfNotFound: true);
         m_UI_Select = m_UI.FindAction("Select", throwIfNotFound: true);
         m_UI_PauseGame = m_UI.FindAction("PauseGame", throwIfNotFound: true);
+        m_UI_Back = m_UI.FindAction("Back", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1451,6 +1471,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_UI_Right;
     private readonly InputAction m_UI_Select;
     private readonly InputAction m_UI_PauseGame;
+    private readonly InputAction m_UI_Back;
     public struct UIActions
     {
         private @InputMaster m_Wrapper;
@@ -1461,6 +1482,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @Right => m_Wrapper.m_UI_Right;
         public InputAction @Select => m_Wrapper.m_UI_Select;
         public InputAction @PauseGame => m_Wrapper.m_UI_PauseGame;
+        public InputAction @Back => m_Wrapper.m_UI_Back;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1488,6 +1510,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @PauseGame.started -= m_Wrapper.m_UIActionsCallbackInterface.OnPauseGame;
                 @PauseGame.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnPauseGame;
                 @PauseGame.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnPauseGame;
+                @Back.started -= m_Wrapper.m_UIActionsCallbackInterface.OnBack;
+                @Back.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnBack;
+                @Back.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnBack;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
@@ -1510,6 +1535,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @PauseGame.started += instance.OnPauseGame;
                 @PauseGame.performed += instance.OnPauseGame;
                 @PauseGame.canceled += instance.OnPauseGame;
+                @Back.started += instance.OnBack;
+                @Back.performed += instance.OnBack;
+                @Back.canceled += instance.OnBack;
             }
         }
     }
@@ -1570,5 +1598,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnRight(InputAction.CallbackContext context);
         void OnSelect(InputAction.CallbackContext context);
         void OnPauseGame(InputAction.CallbackContext context);
+        void OnBack(InputAction.CallbackContext context);
     }
 }
