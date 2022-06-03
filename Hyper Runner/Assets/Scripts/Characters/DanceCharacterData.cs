@@ -21,6 +21,8 @@ namespace Characters
     {
         [SerializeField] private PlayableCharacterEnum character;
         
+        [SerializeField] private string name;
+        
         // What "pack" of character is this in? A pack may be poketrainers, or rappers, etc. 
         [SerializeField] private string family;
 
@@ -31,6 +33,8 @@ namespace Characters
         // Prefab that will be spawned in game
         [SerializeField] private GameObject characterPrefab;
 
+        
+
         public PlayableCharacterEnum GetCharacterEnum()
         {
             return character;
@@ -38,7 +42,7 @@ namespace Characters
 
         public string GetName()
         {
-            return character.ToString();
+            return name;
         }
         
         public string GetFamily()
