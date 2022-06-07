@@ -11,7 +11,7 @@ public class CharacterHealth : MonoBehaviour {
     [SerializeField] private float flashSpeed;
     [SerializeField] private float minHeight = 3.8f;
     [SerializeField] private float maxHeight = 13.4f;
-    [SerializeField] private PlayerMovement movement;
+    [SerializeField] private Rigidbody2D rb;
     
     private Animator portrait_animator;
     private bool charismaIsHighest; // make sure "yay" sound is played only once
@@ -94,9 +94,9 @@ public class CharacterHealth : MonoBehaviour {
     //TODO: clean this function up, tints player two times
     void RunIntoObject() {
         this.AddCharisma(-10f);
-        movement.ActivateNormalGravity(this.negFlashColor, this.flashSpeed);
+        rb.velocity = Vector2.zero;
         this.transform.position =
-                new Vector3(transform.position.x, maxHeight - .1f, 0);
+            Physics2D.gravity.y < 0 ? new Vector3(transform.position.x, maxHeight - .1f, 0) : new Vector3(transform.position.x, minHeight + .1f, 0);
         FindObjectOfType<AudioManager>().Play("negative");
         ResultsManager.IncPlayerCrash();
     }

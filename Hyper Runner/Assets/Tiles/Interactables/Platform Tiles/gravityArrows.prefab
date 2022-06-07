@@ -108,7 +108,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 23.648617}
   m_EdgeRadius: 0
 --- !u!114 &8831350328241824778
 MonoBehaviour:
@@ -122,9 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 484fc4b85842949769d74d73ec9e24fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  sprite: {fileID: 0}
-  flashObject: {fileID: 0}
   flashColor: {r: 0.781368, g: 0.514151, b: 1, a: 1}
   flashSpeed: 4
   rotation: 180
+  movement: {fileID: 0}
