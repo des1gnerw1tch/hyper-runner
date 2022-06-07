@@ -116,11 +116,17 @@ public class PlayerMovement : MonoBehaviour {
 
         if (isJumpStashed)
         {
-            StopCoroutine(routine);
-            routine = null;
-            isJumpStashed = false;
-            OnJump();
+            StashedJump();
         }
+    }
+
+    // Executes a stashed jump from the player. 
+    private void StashedJump()
+    {
+        StopCoroutine(routine);
+        routine = null;
+        isJumpStashed = false;
+        OnJump();
     }
 
     void OnCollisionExit2D(Collision2D other) {
@@ -140,6 +146,11 @@ public class PlayerMovement : MonoBehaviour {
     public void enterParryObject(AParryObject parryObject) {
         jumpsLeft = 1;
         this.parryObject = parryObject;
+        
+        if (isJumpStashed)
+        {
+            StashedJump();
+        }
     }
 
     // when player leaves parry obbject
