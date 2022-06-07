@@ -9,9 +9,10 @@ public class CharacterHealth : MonoBehaviour {
     [SerializeField] private Color posFlashColor;
     [SerializeField] private Color negFlashColor;
     [SerializeField] private float flashSpeed;
-    [SerializeField] private float minHeight = 3.8f;
-    [SerializeField] private float maxHeight = 13.4f;
     [SerializeField] private Rigidbody2D rb;
+    
+    private const float MIN_HEIGHT = 3.8f;
+    private const float MAX_HEIGHT = 14f;
     
     private Animator portrait_animator;
     private bool charismaIsHighest; // make sure "yay" sound is played only once
@@ -96,7 +97,7 @@ public class CharacterHealth : MonoBehaviour {
         this.AddCharisma(-10f);
         rb.velocity = Vector2.zero;
         this.transform.position =
-            Physics2D.gravity.y < 0 ? new Vector3(transform.position.x, maxHeight - .1f, 0) : new Vector3(transform.position.x, minHeight + .1f, 0);
+            Physics2D.gravity.y < 0 ? new Vector3(transform.position.x, MAX_HEIGHT - .1f, 0) : new Vector3(transform.position.x, MIN_HEIGHT + .1f, 0);
         FindObjectOfType<AudioManager>().Play("negative");
         ResultsManager.IncPlayerCrash();
     }
@@ -104,7 +105,7 @@ public class CharacterHealth : MonoBehaviour {
     // Called on every frame update
     void Update() {
         // handle player hits max height of world
-        if (transform.position.y > maxHeight || transform.position.y < minHeight) {
+        if (transform.position.y > MAX_HEIGHT || transform.position.y < MIN_HEIGHT) {
             this.RunIntoObject();
         }
     }

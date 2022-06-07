@@ -1,8 +1,5 @@
-using System;
 using ScriptableObjects;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEditor.Animations;
 
 namespace Characters
 {
@@ -63,6 +60,6 @@ namespace Characters
 
         public Sprite GetCurrentCharacterImage => characterData.GetSprite;
 
-        public AnimatorController GetCurrentCharacterShowcaseAnimatorController => characterData.GetShowcaseController;
+        public RuntimeAnimatorController GetCurrentCharacterShowcaseAnimatorController => characterData.GetShowcaseController;
     }
 }

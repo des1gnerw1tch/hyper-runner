@@ -1,7 +1,5 @@
 using System;
-using UnityEditor.Animations;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Characters
 {
@@ -28,7 +26,7 @@ namespace Characters
 
         [SerializeField] private Sprite characterShowcaseSprite;
 
-        [SerializeField] private AnimatorController characterShowcaseController;
+        [SerializeField] private RuntimeAnimatorController characterShowcaseController;
         
         // Prefab that will be spawned in game
         [SerializeField] private GameObject characterPrefab;
@@ -57,6 +55,6 @@ namespace Characters
 
         public Sprite GetSprite => characterShowcaseSprite;
 
-        public AnimatorController GetShowcaseController => characterShowcaseController;
+        public RuntimeAnimatorController GetShowcaseController => characterShowcaseController;
     }
 }
