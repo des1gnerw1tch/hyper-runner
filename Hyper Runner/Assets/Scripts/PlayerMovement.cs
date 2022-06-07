@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
@@ -8,6 +9,11 @@ public class PlayerMovement : MonoBehaviour {
     [HideInInspector]
     public int jumpsLeft;
     private float initialGravity;
+
+    // For jump stashing: Jump should be activated if pressed a fraction of a second before collide with ground
+    private bool isJumpStashed;
+    private Coroutine routine;
+    private const float STASH_JUMP_FOR_SECONDS = .1f;
 
     [SerializeField] private SpriteRenderer sprite;
     [SerializeField] private Rigidbody2D rb;
@@ -37,6 +43,8 @@ public class PlayerMovement : MonoBehaviour {
           transform.position.y, transform.position.z);
     }
 
+    #region Input
+    
     public void OnFloorDown() {
         rb.gravityScale = 20;
     }
@@ -45,7 +53,7 @@ public class PlayerMovement : MonoBehaviour {
         rb.gravityScale = initialGravity;
     }
 
-    public void OnJump() {
+    private void OnJump() {
         if (jumpsLeft > 0) {
             rb.velocity = new Vector2(rb.velocity.x, 0); ;
             rb.AddForce(transform.up * jumpPower, ForceMode2D.Impulse);
@@ -75,7 +83,20 @@ public class PlayerMovement : MonoBehaviour {
                 audio.Play("jump1");
             }
         }
+        else
+        {
+            routine = StartCoroutine(nameof(StashJump));
+        }
+    }
+    
+    #endregion
 
+    private IEnumerator StashJump()
+    {
+        isJumpStashed = true;
+        yield return new WaitForSeconds(STASH_JUMP_FOR_SECONDS);
+        isJumpStashed = false;
+        routine = null;
     }
 
     void OnTriggerEnter2D(Collider2D other) {
@@ -92,6 +113,14 @@ public class PlayerMovement : MonoBehaviour {
         animator.SetBool("jumping", false);
         audio.Play("landing");
         FindObjectOfType<CameraShake>().Begin(.02f, 10, .1f);
+
+        if (isJumpStashed)
+        {
+            StopCoroutine(routine);
+            routine = null;
+            isJumpStashed = false;
+            OnJump();
+        }
     }
 
     void OnCollisionExit2D(Collision2D other) {
@@ -101,6 +130,7 @@ public class PlayerMovement : MonoBehaviour {
             jumpsLeft = 0;
         }
     }
+    
     // this will set our players animator controller to the platformer animator controller
     public void SetAnimatorControllerAsPlatformer() {
         animator.runtimeAnimatorController = platformAnimator;
