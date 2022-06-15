@@ -3,7 +3,27 @@ guid: a81b790c53f5d4c92a0bb1ba7c884006
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black_plastic
+    second: {fileID: 2100000, guid: aa4bf46665deb45b6aef728dfb0e4f24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: buttons
+    second: {fileID: 2100000, guid: d873f6b0b374e4c76aa33db788edd229, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: display
+    second: {fileID: 2100000, guid: b33eea98b4ff34226af05d632c450f57, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: silver
+    second: {fileID: 2100000, guid: 625c0887a37e1479bbfaf03589457429, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
