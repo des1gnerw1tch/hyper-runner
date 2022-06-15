@@ -3,7 +3,62 @@ guid: c05fcb68963bc44e7a7cb70126aa076e
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground
+    second: {fileID: 2100000, guid: 7352b8df89eaf4fbc8fd9b2e12e960f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: d6a7dab3b5cbe4dbea576790e04ed599, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body
+    second: {fileID: 2100000, guid: 2864f7e0014f3465fab29e96d202ffbc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: button_top
+    second: {fileID: 2100000, guid: 50751e682fdc948a490fbb8160f2cc10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: coin slot
+    second: {fileID: 2100000, guid: 80ff0d9229db14ff1bd8ffcee4e7b60f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: coinpad
+    second: {fileID: 2100000, guid: 54b6da99927a14d57808c915ecd63c30, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: display
+    second: {fileID: 2100000, guid: 2fb3cde6fcdb745be82225a1015332e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gamepad
+    second: {fileID: 2100000, guid: 36b98fc2b16274667b29699c129b3b79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: joystick_ball
+    second: {fileID: 2100000, guid: f010988eef8564e8783deb3fe1136c87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: joystick_base
+    second: {fileID: 2100000, guid: 9e05224c1c045488c99609b2342f3955, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: joystick_stick
+    second: {fileID: 2100000, guid: 2ce36f4087f7d46ad81aa9be2a73abd6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
