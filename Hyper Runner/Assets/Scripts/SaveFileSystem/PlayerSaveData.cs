@@ -14,11 +14,6 @@ namespace SaveFileSystem
         
         public PlayerSaveData() {}
 
-        public PlayerSaveData(PlayerSaveData data)
-        {
-            playTokens = data.playTokens;
-        }
-        
         #endregion
 
         public void AddPlayToken() => playTokens++;
