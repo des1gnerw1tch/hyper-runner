@@ -683,6 +683,11 @@ Transform:
   m_Father: {fileID: 1987761511}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &479590358 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7953262902683926370, guid: 54ffb9417b4304178b92f1fc5879d122, type: 3}
+  m_PrefabInstance: {fileID: 7061350221893898283}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &483882197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7144,7 +7149,7 @@ PrefabInstance:
     - target: {fileID: 4851250485551298235, guid: 84e688b5b1f744268ae41a3cebe58e85, type: 3}
       propertyPath: popUpText
       value: 
-      objectReference: {fileID: 1086828118}
+      objectReference: {fileID: 479590358}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84e688b5b1f744268ae41a3cebe58e85, type: 3}
 --- !u!23 &5180105381701871141
@@ -8544,10 +8549,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 157892578, guid: 54ffb9417b4304178b92f1fc5879d122, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7061350221101141194, guid: 54ffb9417b4304178b92f1fc5879d122, type: 3}
       propertyPath: m_Name
       value: MenuCanvas
@@ -8634,6 +8635,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7061350221101141198, guid: 54ffb9417b4304178b92f1fc5879d122, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7953262902683926370, guid: 54ffb9417b4304178b92f1fc5879d122, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
