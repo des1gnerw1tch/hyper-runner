@@ -12,9 +12,12 @@ public class MusicSync : MonoBehaviour {
     public static float deltaSample;
     private float pitch;
     private float duration;
+    
+    private ProgressBar progressBar;
 
     void Start() {
         deltaSample = 0f;
+        progressBar = ProgressBar.Instance;
     }
 
     // Update is called once per frame
@@ -22,6 +25,7 @@ public class MusicSync : MonoBehaviour {
         thisSample = levelMusic.timeSamples;
         deltaSample = (thisSample - lastSample) / 90000;
         lastSample = thisSample;
+        UpdateProgressBar();
         //Debug.Log(deltaSample);
     }
 
@@ -47,5 +51,11 @@ public class MusicSync : MonoBehaviour {
     // Resumes the music that is being played
     public void ResumeMusic() {
         this.levelMusic.Play();
+    }
+
+    private void UpdateProgressBar()
+    {
+        Debug.Log(levelMusic.time / levelMusic.clip.length);
+        progressBar.UpdateProgress(levelMusic.time / levelMusic.clip.length);
     }
 }
