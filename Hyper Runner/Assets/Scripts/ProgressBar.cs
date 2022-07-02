@@ -19,14 +19,5 @@ public class ProgressBar : MonoBehaviour
         }
     }
 
-    public void UpdateProgress(float progress)
-    {
-        if (progress < 0 || progress > 1)
-        {
-            Debug.LogError("Progress was not between 0-1, cannot update slider");
-            return;
-        }
-
-        progressBar.value = progress;
-    }
+    public void UpdateProgress(float progress) => progressBar.value = Mathf.Clamp(progress, 0f, 1f);
 }

@@ -12,6 +12,10 @@ public class MusicSync : MonoBehaviour {
     public static float deltaSample;
     private float pitch;
     private float duration;
+
+    // Fraction of the music completed until level is completed
+    [SerializeField]
+    [Range(0, 1)] private float completeLevelFrac = .99f;
     
     private ProgressBar progressBar;
 
@@ -55,7 +59,12 @@ public class MusicSync : MonoBehaviour {
 
     private void UpdateProgressBar()
     {
-        Debug.Log(levelMusic.time / levelMusic.clip.length);
-        progressBar.UpdateProgress(levelMusic.time / levelMusic.clip.length);
+        float progress = levelMusic.time / (levelMusic.clip.length * completeLevelFrac);
+        progressBar.UpdateProgress(progress);
+
+        if (progress > 1)
+        {
+            StartCoroutine(ALevelManager.Instance.LevelCompleted());
+        }
     }
 }

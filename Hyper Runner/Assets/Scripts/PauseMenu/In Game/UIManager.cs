@@ -12,14 +12,31 @@ public class UIManager : MonoBehaviour {
     
     // indicator of what button we are on for control scheme 
     [SerializeField] private GameObject indicatorGroup;
-        
+    
+    [SerializeField] private GameObject startTransitionPanel;
+    [SerializeField] private Animator fadeToResultsScreenPanel;
+
     [Header("Required Prefab in Scene, automatically fetched")]
     [SerializeField] private PlayerInput input;
     [SerializeField] private MusicSync musicSync;
     
     private bool isGamePaused;
     private string inputMapBeforePaused; // what input map was enabled before we paused the game?
+    
+    public static UIManager Instance {get; private set; }
 
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+    
     // Start is called before the first frame update
     void Start() {
         this.Init();
@@ -90,5 +107,11 @@ public class UIManager : MonoBehaviour {
         // settings based on THIS scene
         SceneManager.LoadScene("Menu"); // load the arcade machine scene, exits this game
     }
+
+    public void PlayStartTransition() => startTransitionPanel.SetActive(true);
+    
+    public void PlayEndTransition() => fadeToResultsScreenPanel.SetTrigger("activate");
+
+    
 
 }

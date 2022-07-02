@@ -1,7 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 // Holds level wide variables and functions
 public abstract class ALevelManager : MonoBehaviour, ILevelManager {
@@ -10,7 +10,8 @@ public abstract class ALevelManager : MonoBehaviour, ILevelManager {
     
     public GameObject flyingParticles;
     public float launchToRhythmSpeed = 5f;
-    [SerializeField] private GameObject transitionPanel;
+
+    private const float TRANSITION_TO_RESULTS_WAIT_TIME = 4f;
     
     [Header("Auto-get Player components")]
     public PlayerMovement playerMovement;
@@ -18,7 +19,20 @@ public abstract class ALevelManager : MonoBehaviour, ILevelManager {
     public Rigidbody2D player_rb;
     public PlayerInput input;
     
+    public static ALevelManager Instance { get; private set; }
 
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+    
     // Start is called before the first frame update
     public virtual void Start()
     {
@@ -28,7 +42,7 @@ public abstract class ALevelManager : MonoBehaviour, ILevelManager {
         input = GameObject.FindWithTag("Player").GetComponent<PlayerInput>();
         
         
-        this.transitionPanel.SetActive(true); // gets transition panel activated
+        UIManager.Instance.PlayStartTransition();
         UpdateSpeeds();
         ResultsManager.init(); // initializes results of current game, which has just started
     }
@@ -65,5 +79,13 @@ public abstract class ALevelManager : MonoBehaviour, ILevelManager {
                 rhythmMovement.startRhythm(this.launchToRhythmSpeed);
                 break;
         }
+    }
+
+    // Ends the game, goes to results screen
+    public IEnumerator LevelCompleted()
+    {
+        UIManager.Instance.PlayEndTransition();
+        yield return new WaitForSeconds(TRANSITION_TO_RESULTS_WAIT_TIME);
+        SceneManager.LoadScene("ResultsScreen");
     }
 }
