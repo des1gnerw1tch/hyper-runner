@@ -26,7 +26,7 @@ public class CharacterHealth : MonoBehaviour {
 
     void Start() {
         charisma = 100f;
-        motivationBar.UpdateSlider(charisma / MAX_CHARISMA);
+        motivationBar.UpdateSlider(charisma / MAX_CHARISMA, false);
         this.isFastFoward = false;
         
         portrait_animator = GameObject.FindWithTag("CharismaPortrait").GetComponent<Animator>();
@@ -56,12 +56,14 @@ public class CharacterHealth : MonoBehaviour {
     }
 
     // Charisma
-    public void AddCharisma(float value) {
+    public void AddCharisma(float value)
+    {
+        float oldCharisma = charisma;
         float raw = charisma + value;
         charisma = Mathf.Clamp(raw, MIN_CHARISMA, MAX_CHARISMA);
         UpdatePortrait();
         TintPlayer(value);
-        motivationBar.UpdateSlider(charisma / MAX_CHARISMA);
+        motivationBar.UpdateSlider(charisma / MAX_CHARISMA, !Mathf.Approximately(oldCharisma, charisma));
         
         if (charisma == 0) {
             Die();
