@@ -157,7 +157,7 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
         perfectInARow = 0;
         this.player = GameObject.FindWithTag("Player").GetComponent<Transform>();
         this.characterHealth = FindObjectOfType<CharacterHealth>();
-        this.canvas = FindObjectOfType<Canvas>().gameObject;
+        this.canvas = GameObject.FindWithTag("ArcadeGameCanvas");
         this.perfectStreakTextManager = FindObjectOfType<PerfectStreakTextManager>();
         this.danceManager = FindObjectOfType<danceTileManager>();
     }

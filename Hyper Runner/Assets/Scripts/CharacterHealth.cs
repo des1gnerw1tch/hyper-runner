@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterHealth : MonoBehaviour {
     [SerializeField] private Collider2D frontCollider;
@@ -11,6 +12,8 @@ public class CharacterHealth : MonoBehaviour {
     [SerializeField] private float flashSpeed;
     [SerializeField] private Rigidbody2D rb;
     
+    [SerializeField] private MotivationBar motivationBar;
+    
     private const float MIN_HEIGHT = 3.8f;
     private const float MAX_HEIGHT = 14f;
     
@@ -22,7 +25,8 @@ public class CharacterHealth : MonoBehaviour {
     private bool isFastFoward;
 
     void Start() {
-        charisma = 70f;
+        charisma = 100f;
+        motivationBar.UpdateSlider(charisma / MAX_CHARISMA);
         this.isFastFoward = false;
         
         portrait_animator = GameObject.FindWithTag("CharismaPortrait").GetComponent<Animator>();
@@ -47,7 +51,7 @@ public class CharacterHealth : MonoBehaviour {
         }
     }
 
-    public void Die() {
+    private void Die() {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
     }
 
@@ -57,6 +61,8 @@ public class CharacterHealth : MonoBehaviour {
         charisma = Mathf.Clamp(raw, MIN_CHARISMA, MAX_CHARISMA);
         UpdatePortrait();
         TintPlayer(value);
+        motivationBar.UpdateSlider(charisma / MAX_CHARISMA);
+        
         if (charisma == 0) {
             Die();
         }

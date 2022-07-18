@@ -36,6 +36,8 @@ public class PlayerMovement : MonoBehaviour {
         initialGravity = rb.gravityScale;
 
         cameraAnimator = Camera.main.GetComponent<Animator>();
+        
+        ResetGravity();
     }
 
     void Update() {
@@ -181,5 +183,7 @@ public class PlayerMovement : MonoBehaviour {
         flashObject.StartFlash(flashColor, flashSpeed);
         this.jumpsLeft -= 1;
     }
+
+    private void ResetGravity() => Physics2D.gravity = new Vector2(0, -Mathf.Abs(Physics2D.gravity.y));
 
 }
