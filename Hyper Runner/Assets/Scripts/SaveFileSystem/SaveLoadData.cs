@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using Currency;
 
 namespace SaveFileSystem
 {
@@ -11,7 +12,7 @@ namespace SaveFileSystem
     {
         private PlayerSaveData currentSaveData;
         
-        public SaveLoadData Instance { get; private set; }
+        public static SaveLoadData Instance { get; private set; }
 
         private void Awake()
         {
@@ -22,10 +23,7 @@ namespace SaveFileSystem
             }
 
             Instance = this;
-        }
-        
-        private void Start()
-        {
+            
             currentSaveData = LoadPlayer();
             
             if (currentSaveData == null)
@@ -35,7 +33,15 @@ namespace SaveFileSystem
                 SavePlayer();
             }
         }
-        
+
+        public int GetNumTokens() => currentSaveData.GetNumTokens();
+
+        public void SetNewTokenBalance(int numTokens)
+        {
+            currentSaveData.SetPlayTokens(numTokens);
+            SavePlayer();
+        }
+
         private void SavePlayer()
         {
             BinaryFormatter formatter = new BinaryFormatter();

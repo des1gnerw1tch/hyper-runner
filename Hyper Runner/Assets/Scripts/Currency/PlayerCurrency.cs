@@ -1,17 +1,21 @@
+using SaveFileSystem;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Currency
 {
     /// <summary>
-    /// Stores how much money the player has, and handles transactions.
+    /// Stores how much money the player has, and handles transactions during runtime.
     /// </summary>
     public class PlayerCurrency : MonoBehaviour
     {
-        private int coins;
-        
         public static PlayerCurrency Instance { get; private set; }
+
+        public UnityEvent PlayerBalanceChanged { get; } = new UnityEvent();
+
+        private SaveLoadData saveLoadData;
         
-        private void Start()
+        private void Awake()
         {
             if (Instance != null && Instance != this)
             {
@@ -23,19 +27,25 @@ namespace Currency
             }
         }
 
-        public int CurrentBalance() => coins;
+        private void Start() => saveLoadData = SaveLoadData.Instance;
 
-        public void SubtractBalance(int num)
+        public int AddBalance(int num)
         {
-            if (num > coins)
+            int newValue = saveLoadData.GetNumTokens() + num;
+            
+            if (newValue < 0)
             {
                 Debug.LogError("Insufficient funds");
-                return;
+                return -1;
+            }
+
+            if (saveLoadData.GetNumTokens() != newValue)
+            {
+                saveLoadData.SetNewTokenBalance(newValue);
+                PlayerBalanceChanged.Invoke();
             }
             
-            coins -= num;
+            return saveLoadData.GetNumTokens();
         }
-
-        public void AddBalance(int num) => coins += num;
     }
 }

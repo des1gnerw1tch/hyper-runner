@@ -16,8 +16,8 @@ namespace SaveFileSystem
 
         #endregion
 
-        public void AddPlayToken() => playTokens++;
-
-        public int GetPlayTokens() => playTokens;
+        public void SetPlayTokens(int tokens) => playTokens = tokens;
+        
+        public int GetNumTokens() => playTokens;
     }
 }
