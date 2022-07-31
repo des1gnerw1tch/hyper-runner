@@ -11,10 +11,10 @@ namespace Currency
         private void Start()
         {
             UpdateText();
-            PlayerCurrency.Instance.PlayerBalanceChanged.AddListener(UpdateText);
+            GameDataManager.Instance.PlayerBalanceChanged.AddListener(UpdateText);
         }
 
-        private void UpdateText() => textObject.text = SaveLoadData.Instance.GetNumTokens() + "";
+        private void UpdateText() => textObject.text = GameDataManager.Instance.GetNumTokens() + "";
 
     }
 }

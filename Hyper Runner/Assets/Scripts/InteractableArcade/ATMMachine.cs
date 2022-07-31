@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Currency;
-using UnityEngine;
+using SaveFileSystem;
 
 namespace InteractableArcade
 {
@@ -10,7 +7,7 @@ namespace InteractableArcade
         public override void Interact(InteractArcade player)
         {
             base.Interact(player);
-            PlayerCurrency.Instance.AddBalance(1);
+            GameDataManager.Instance.AddTokens(1);
         }
     }
 }
