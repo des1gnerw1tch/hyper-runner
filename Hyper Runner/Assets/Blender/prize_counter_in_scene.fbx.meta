@@ -3,7 +3,12 @@ guid: 387249c0cc00840079447fb4beb934f8
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TallBoxPrize
+    second: {fileID: 2100000, guid: e2682867fa15c4ec687db3f9cdc3bf3f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
