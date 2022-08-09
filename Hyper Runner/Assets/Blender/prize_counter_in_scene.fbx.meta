@@ -7,12 +7,57 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: BigCylinderPrize
+    second: {fileID: 2100000, guid: c123b23ccc62f4ecab32eb697a37c908, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: c1e23b42bdece4d80bae8803d23fa312, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HangingCards1
+    second: {fileID: 2100000, guid: 6ab13d4e2171a4b26904d813327d732f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HangingCards2
+    second: {fileID: 2100000, guid: 252028b904b2744f89876112f70131b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HangingCards3
+    second: {fileID: 2100000, guid: 452aded114ae84cdc8a8d31f06e2a8d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HorizontalPrize
+    second: {fileID: 2100000, guid: 4f4056e9fb7fc4e4c932c7bec0ecef64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RedGlow
+    second: {fileID: 2100000, guid: a9df2deca86e842f4a13e987cefe4262, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SmallCylinderPrize
+    second: {fileID: 2100000, guid: e3e4a7348a3294fc8886bf7313dfad31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: TallBoxPrize
     second: {fileID: 2100000, guid: e2682867fa15c4ec687db3f9cdc3bf3f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WhitePlastic
+    second: {fileID: 2100000, guid: 26283423c38ef4ed2a08658e9df8ad2d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
-    materialSearch: 1
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
