@@ -10,11 +10,20 @@ namespace InteractableArcade
     {
         [SerializeField] protected GameObject popUpText;
 
+        private void Start()
+        {
+            UIInputHandler.Instance.OnPause.AddListener(Close);
+            UIInputHandler.Instance.OnBackButton.AddListener(Close);
+        }
+        
         // Player interacts with this arcade object
         public virtual void Interact(InteractArcade player)
         {
             popUpText.SetActive(false);
         }
+
+        // Player disengages with this arcade object
+        protected virtual void Close() { }
 
         void OnTriggerEnter(Collider other)
         {

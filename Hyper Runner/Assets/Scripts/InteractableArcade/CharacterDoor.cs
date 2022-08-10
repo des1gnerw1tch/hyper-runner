@@ -8,13 +8,7 @@ namespace InteractableArcade
         [SerializeField] private GameObject characterPanel;
         [SerializeField] private PlayerInput playerInput;
 
-        private void Start()
-        {
-            UIInputHandler.Instance.OnPause.AddListener(ClosePanel);
-            UIInputHandler.Instance.OnBackButton.AddListener(ClosePanel);
-        }
-
-        private void ClosePanel()
+        protected override void Close()
         {
             if (characterPanel.activeSelf)
             {
