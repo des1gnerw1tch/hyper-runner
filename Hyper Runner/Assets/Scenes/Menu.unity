@@ -2181,6 +2181,30 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: robotBleep1
+    clip: {fileID: 8300000, guid: c4387043d580f4d948c6b04596dac288, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: robotBleep2
+    clip: {fileID: 8300000, guid: 148bdfaf10ed44fe081be3c4961e05ec, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: robotBleep3
+    clip: {fileID: 8300000, guid: ea0450bc24810419d84d807193bb5656, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: robotBleep4
+    clip: {fileID: 8300000, guid: 4a20d253e49ed43fa8cdfa23e62955e2, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &606889315
 GameObject:
   m_ObjectHideFlags: 0
@@ -2227,9 +2251,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popUpText: {fileID: 1086828118}
+  playerInput: {fileID: 1314417888}
   dialogueBoxGameObject: {fileID: 7061350221893898284}
   robotDialogue: {fileID: 7061350221893898285}
-  playerInput: {fileID: 1314417888}
 --- !u!65 &606889318
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12316,6 +12340,10 @@ PrefabInstance:
     - target: {fileID: 62195138486292420, guid: 54ffb9417b4304178b92f1fc5879d122, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866617788184033332, guid: 54ffb9417b4304178b92f1fc5879d122, type: 3}
+      propertyPath: textToDisplay
+      value: I'm the prize vendor! Anything of interest in my shop today?
       objectReference: {fileID: 0}
     - target: {fileID: 7061350221101141194, guid: 54ffb9417b4304178b92f1fc5879d122, type: 3}
       propertyPath: m_Name

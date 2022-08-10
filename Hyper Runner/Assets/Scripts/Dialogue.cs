@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Dialogue : MonoBehaviour
 {
@@ -9,6 +10,13 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private string textToDisplay;
 
     [SerializeField] private float delayBetweenEachCharacter;
+
+    private AudioManager audioManager;
+    
+    private void Start()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
     
     public void StartDialogue()
     {
@@ -27,6 +35,7 @@ public class Dialogue : MonoBehaviour
         if (curChar != 0 && !Char.IsWhiteSpace(textToDisplay, curChar - 1))
         {
             yield return new WaitForSeconds(delayBetweenEachCharacter);
+            PlayRandomRobotSound();
         }
 
         tmp.text = textToDisplay.Substring(0, curChar);
@@ -36,6 +45,12 @@ public class Dialogue : MonoBehaviour
     private void DialogueEnded()
     {
         Debug.Log("Dialogue Ended");
+    }
+
+    private void PlayRandomRobotSound()
+    {
+        int rand = Random.Range(1, 5);
+        audioManager.Play("robotBleep" + rand);
     }
     
 }
