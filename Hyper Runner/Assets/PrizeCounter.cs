@@ -3,13 +3,11 @@ using UnityEngine.InputSystem;
 
 namespace InteractableArcade
 {
-    public class PrizeCounter : AInteractableArcadeObject
+    public class PrizeCounter : AInteractableArcadeObjectUI
     {
         [SerializeField] private GameObject dialogueBoxGameObject;
         [SerializeField] private Dialogue robotDialogue;
 
-        [SerializeField] private PlayerInput playerInput;
-        
         public override void Interact(InteractArcade player)
         {
             base.Interact(player);
@@ -18,15 +16,14 @@ namespace InteractableArcade
 
         private void ShowDialogueWindow()
         {
-            playerInput.SwitchCurrentActionMap("UI");
             dialogueBoxGameObject.SetActive(true);
             robotDialogue.StartDialogue();
         }
 
         protected override void Close()
         {
+            base.Close();
             dialogueBoxGameObject.SetActive(false);
-            playerInput.SwitchCurrentActionMap("3D");
         }
     }
 }
