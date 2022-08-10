@@ -12343,7 +12343,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1866617788184033332, guid: 54ffb9417b4304178b92f1fc5879d122, type: 3}
       propertyPath: textToDisplay
-      value: I'm the prize vendor! Anything of interest in my shop today?
+      value: Got play tokens? I got some great consumables in my shop today...
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866617788184033332, guid: 54ffb9417b4304178b92f1fc5879d122, type: 3}
+      propertyPath: delayBetweenEachCharacter
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 7061350221101141194, guid: 54ffb9417b4304178b92f1fc5879d122, type: 3}
       propertyPath: m_Name
