@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5550121400741717762}
   - component: {fileID: 1749979470787175714}
   m_Layer: 0
-  m_Name: faux_danceTile
+  m_Name: faux_danceTile_up
   m_TagString: DanceTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,12 +102,12 @@ MonoBehaviour:
   score: 0
   characterHealth: {fileID: 0}
   canvas: {fileID: 0}
+  perfectStreakTextManager: {fileID: 0}
   destroyEffect: {fileID: 3848182383814694509, guid: f7fd81eb05f9b4b52944602f924d8e27, type: 3}
   okText: {fileID: 3331136396928422065, guid: 815773130346f4307af97e010a174629, type: 3}
   goodText: {fileID: 3331136396928422065, guid: 46087c2cf6c214237ac7c59169fbbe20, type: 3}
   perfectText: {fileID: 3331136396928422065, guid: ed53a89ed2aa54e3ea90a4c2a9d0ec76, type: 3}
   missedText: {fileID: 3331136396928422065, guid: 7454358818a40426a88bef7a4b3a43de, type: 3}
-  perfectStreakText: {fileID: 3252608051743359050, guid: 974bbdbda10834ba6ac4f70000140930, type: 3}
   keyToPress: down
   distanceUntilDestroy: 3
   camRumbleIntensity: 0.2
@@ -118,6 +118,7 @@ MonoBehaviour:
   playerRunningSpeed: 0
   surroundingSpeedMultiplier: 0
   danceManager: {fileID: 0}
+  interpolationTrigger: {fileID: 0}
 --- !u!61 &4346687641680060409
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -142,7 +143,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.0000005, y: 16.680307}
   m_EdgeRadius: 0
 --- !u!114 &5550121400741717762
 MonoBehaviour:

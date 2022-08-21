@@ -3214,7 +3214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: a3e896bdc94784196993645b179c484b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.8
+      value: 8.49
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: a3e896bdc94784196993645b179c484b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4667,7 +4667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: 11f5aa831cf3749a78370b4a8d97b50c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.8
+      value: 8.75
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: 11f5aa831cf3749a78370b4a8d97b50c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4996,6 +4996,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1839385915264087049, guid: a148f1bbba60240168621d04d79df0a1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839385915264087049, guid: a148f1bbba60240168621d04d79df0a1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5806627208138827580, guid: a148f1bbba60240168621d04d79df0a1, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -6369,7 +6377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.8
+      value: 8.53
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6639,7 +6647,6 @@ MonoBehaviour:
   cameraMovement: {fileID: 2109905434}
   flyingParticles: {fileID: 0}
   launchToRhythmSpeed: 20
-  transitionPanel: {fileID: 2129315220}
   playerMovement: {fileID: 0}
   rhythmMovement: {fileID: 0}
   player_rb: {fileID: 0}
@@ -13428,7 +13435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.8
+      value: 8.71
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14350,7 +14357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: 1d0d3631da9dc4ec7ac56c74b6752c57, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.8
+      value: 8.42
       objectReference: {fileID: 0}
     - target: {fileID: 2219637414331819523, guid: 1d0d3631da9dc4ec7ac56c74b6752c57, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15129,6 +15136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelMusic: {fileID: 1613052393}
+  completeLevelFrac: 0.99
 --- !u!82 &1613052393
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19832,11 +19840,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 101
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2129315220 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5806627208138827580, guid: a148f1bbba60240168621d04d79df0a1, type: 3}
-  m_PrefabInstance: {fileID: 719384092}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2130385672
 PrefabInstance:
   m_ObjectHideFlags: 0

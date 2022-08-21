@@ -77,18 +77,16 @@ public class holdDanceObject : ADanceObject {
         Destroy(gameObject);
     }
 
-    public override void Pressed(string key) {
+    protected override void KeyPressedCorrectly() => this.isPressing = true;
 
-        if (key == this.keyToPress) { // if key pressed is correct
-            this.isPressing = true;
-        } else { // if key pressed is incorrect
-            this.EvaluateScore(0);
-            FindObjectOfType<CameraShake>().Begin(camRumbleIntensity, camRumbleSpeed, .1f); // to cancel rumble
-            Destroy(this.endNode.gameObject);
-            this.DestroyDanceTile();
-        }
-
+    protected override void KeyPressedIncorrectly()
+    {
+        this.EvaluateScore(0);
+        FindObjectOfType<CameraShake>().Begin(camRumbleIntensity, camRumbleSpeed, .1f); // to cancel rumble
+        Destroy(this.endNode.gameObject);
+        this.DestroyDanceTile();
     }
+    
     // INPUT: Will be called from player -> danceTileManager, as player is the only one with input connected
     // method stubs to override, all player input
 

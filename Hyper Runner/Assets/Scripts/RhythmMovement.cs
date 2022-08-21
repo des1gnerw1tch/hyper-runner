@@ -1,66 +1,74 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RhythmMovement : MonoBehaviour {
     [HideInInspector] public float speed; // Set in ALevelManager
-    private bool teleporting;
-    private float teleportSpeed;
-    private const float MIDDLE_OF_SCREEN_Y = 8.8f;
+    private bool isLaunchingFromRhythmArrows;
+    private float verticalLaunchSpeed;
     [SerializeField] private Animator animatorComponent;
     [SerializeField] private RuntimeAnimatorController rhythmAnimator;
     [SerializeField] private GameObject flyingParticles;
-    
-    [SerializeField] private GameObject rhythm_up_tile;
-    [SerializeField] private GameObject rhythm_down_tile;
-    
-    // Start is called before the first frame update
-    void Start() {
-        Debug.Log("Switched!");
-    }
+
+    // For vertical movement (bouncing between rhythm tiles)
+    private Vector3? lastPosition = null;
+    private Vector3? nextTilePosition = null;
 
     // Update is called once per frame
-    void Update() {
-        transform.position = new Vector3(transform.position.x + speed * MusicSync.deltaSample,
-            transform.position.y, transform.position.z);
+    void Update()
+    {
+        float xPos = transform.position.x + speed * MusicSync.deltaSample;
+        float yPos;
 
-        if (teleporting) {
-            float step = teleportSpeed * MusicSync.deltaSample;
-            Vector2 target = new Vector2(transform.position.x, MIDDLE_OF_SCREEN_Y);
-            transform.position = Vector2.MoveTowards(transform.position, target, step);
-            if (transform.position.y == MIDDLE_OF_SCREEN_Y) {
-                teleporting = false;
-                Debug.Log("Stopped Teleporting");
-                animatorComponent.runtimeAnimatorController = rhythmAnimator;
+        if (lastPosition.HasValue && nextTilePosition.HasValue)
+        {
+            // If we just launched from rhythm arrows, vertical speed can be controlled with verticalLaunchSpeed
+            if (isLaunchingFromRhythmArrows)
+            { 
+                yPos = transform.position.y + verticalLaunchSpeed * MusicSync.deltaSample;
+                if (yPos > nextTilePosition.Value.y)
+                {
+                    yPos = nextTilePosition.Value.y;
+                    animatorComponent.runtimeAnimatorController = rhythmAnimator;
+                    lastPosition = transform.position;
+                    isLaunchingFromRhythmArrows = false;
+                }
+            }
+            // If not, vertical speed is lerped
+            else
+            {
+                float totalXDistanceToCover = nextTilePosition.Value.x - lastPosition.Value.x;
+                float currentXDistanceCovered = transform.position.x - lastPosition.Value.x;
+                float fracDistanceCovered = currentXDistanceCovered / totalXDistanceToCover;
+                yPos = Mathf.Lerp(lastPosition.Value.y, nextTilePosition.Value.y, fracDistanceCovered);
             }
         }
-
-        // TODO: MAKE this another key, OR CHANGE W and S to not be dance keys in input manager
-
-        // will print rhythm blocks at current X position of player, helps with creating rhythym lines
-        /* if (Input.GetKeyDown("w"))  {
-           Vector3 position = new Vector3(transform.position.x, transform.position.y, 0);
-           Instantiate(rhythm_up_tile, position, Quaternion.identity);
-         }
-         if (Input.GetKeyDown("s"))  {
-           Vector3 position = new Vector3(transform.position.x, transform.position.y, 0);
-           Instantiate(rhythm_down_tile, position, Quaternion.identity);
-           Debug.Log(transform.position.x);
-         }*/
+        else
+        {
+            yPos = transform.position.y;
+            Debug.LogError("Next and/or Last tile positions are null.");
+        }
+        
+        transform.position = new Vector3(xPos, yPos, 0);
     }
 
     // startRhythm : Float -> will move player
-    // when called will over time kick the player into the middle of the
-    // screen. it will turn off gravity too.
+    // When called will over time kick the player into position to hit first dance tile.
+
     public void startRhythm(float teleSpeed) {
         Debug.Log("Started teleporting");
         flyingParticles.SetActive(true);
-        teleporting = true;
-        teleportSpeed = teleSpeed;
+        isLaunchingFromRhythmArrows = true;
+        verticalLaunchSpeed = teleSpeed;
     }
 
     public void DeactivateFlyingParticles()
     {
         flyingParticles.SetActive(false);
+    }
+
+    // Sets up vertical movement for character. Creates a bouncing between dance tiles effect.
+    public void StartVerticalMovement(Vector3 nextTilePosition)
+    {
+        lastPosition = transform.position;
+        this.nextTilePosition =  nextTilePosition;
     }
 }

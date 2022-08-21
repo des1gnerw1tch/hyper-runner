@@ -24,29 +24,28 @@ public class danceObject : ADanceObject {
     }
 
     // When a dance key is pressed
-    public override void Pressed(string key) {
+    protected override void KeyPressedCorrectly() 
+    {
+        float difference = Mathf.Abs(player.position.x - transform.position.x);
+        score = 10 - difference;
+        if (score < 0)
+            score = 0;
 
-        if (this.keyToPress == key) { // if key pressed is correct
-            float difference = Mathf.Abs(player.position.x - transform.position.x);
-            score = 10 - difference;
-            if (score < 0)
-                score = 0;
+        this.EvaluateScore(score);
+        CheckIfLastTile();
+        this.DestroyDanceTile();
+    }
 
-            this.EvaluateScore(score);
-            CheckIfLastTile();
-            this.DestroyDanceTile();
-        } else { // if key pressed is not correct
-            this.EvaluateScore(0);
-            CheckIfLastTile();
-            this.DestroyDanceTile();
+    protected override void KeyPressedIncorrectly()
+    {
+        this.EvaluateScore(0);
+        CheckIfLastTile();
+        this.DestroyDanceTile();
+    }
+    
+    private void CheckIfLastTile() {
+        if (this.isLastTileInSequence) {
+            this.StartPlatformMode();
         }
-
-        // LOCAL: if is the last tile in the game, switch player to platform mode
-        void CheckIfLastTile() {
-            if (this.isLastTileInSequence) {
-                this.StartPlatformMode();
-            }
-        }
-
     }
 }

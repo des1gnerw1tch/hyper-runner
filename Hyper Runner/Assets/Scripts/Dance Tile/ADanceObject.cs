@@ -13,6 +13,7 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     public CharacterHealth characterHealth; // character health of player
     public GameObject canvas; // current scene canvas
     public PerfectStreakTextManager perfectStreakTextManager; // Text holding Streak of Perfects prefab
+
     [Header("Required Components/Prefabs")]
     public GameObject destroyEffect; // gameobject spawned when dance tile is destroyed
     public GameObject okText; // OK rating text prefab
@@ -39,14 +40,14 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
 
     // Functions called directly from Dance Tile Manager, which uses Player Input (reference unity input system 1.0.2)
     // these functions are called when player does an action that requires action from this dance tile
-    public virtual void OnUpDanceKeyPress() { this.Pressed("up"); }
+    public virtual void OnUpDanceKeyPress() { this.KeyPressed("up"); }
 
-    public virtual void OnDownDanceKeyPress() { this.Pressed("down"); }
+    public virtual void OnDownDanceKeyPress() { this.KeyPressed("down"); }
 
     // left and right dance keys have to swap input when Cam is flipped over Y
-    public virtual void OnLeftDanceKeyPress() { this.Pressed(CameraOrientation.isYFlipped ? "right" : "left"); }
+    public virtual void OnLeftDanceKeyPress() { this.KeyPressed(CameraOrientation.isYFlipped ? "right" : "left"); }
 
-    public virtual void OnRightDanceKeyPress() { this.Pressed(CameraOrientation.isYFlipped ? "left" : "right"); }
+    public virtual void OnRightDanceKeyPress() { this.KeyPressed(CameraOrientation.isYFlipped ? "left" : "right"); }
 
     public virtual void OnUpDanceKeyRelease() { this.Released("up"); }
 
@@ -59,7 +60,22 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     public virtual void OnAnyDanceKeyPress() { }
 
     // Action Handlers
-    public abstract void Pressed(string key);
+    public void KeyPressed(string key)
+    {
+        if (key == keyToPress)
+        {
+            KeyPressedCorrectly();
+        }
+        else
+        {
+            KeyPressedIncorrectly();
+        }
+    }
+    
+    protected abstract void KeyPressedCorrectly();
+    
+    protected abstract void KeyPressedIncorrectly();
+    
     public virtual void Released(string key) { } // on default is empty
 
     // TODO: clean this up this function sucks

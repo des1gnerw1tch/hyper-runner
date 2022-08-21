@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System;
-using System.ComponentModel.Design.Serialization;
 
 // handles activating dance tiles, the once closest to the player
 public class danceTileManager : MonoBehaviour {
     [SerializeField] private Transform player;
     [SerializeField] private IDanceObject activeDanceObj; // is mutated on by dance key movement on player
+    [SerializeField] private RhythmMovement rhythmMovement;
 
     public static danceTileManager Instance { get; private set; }
 
@@ -58,6 +55,7 @@ public class danceTileManager : MonoBehaviour {
     // enables a dance key to receive input
     void enableDanceKey(GameObject obj) {
         this.activeDanceObj = obj.GetComponent<IDanceObject>();
+        rhythmMovement.StartVerticalMovement(obj.transform.position);
     }
 
     // INPUTS
