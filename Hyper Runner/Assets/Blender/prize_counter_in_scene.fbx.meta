@@ -12,6 +12,61 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: BoxCandy
+    second: {fileID: 2100000, guid: d2880dcd643ab4e2d952a33803952ad3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BoxCandyMaterial2
+    second: {fileID: 2100000, guid: b22dadbcf86a54ed38cffa628240507e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BoxThing
+    second: {fileID: 2100000, guid: b68202f0b163e439792c4e33d902fec6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CircleCandyBig
+    second: {fileID: 2100000, guid: 79aebb328b28c4703ab371d4b3483dca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CircleCandyBig2
+    second: {fileID: 2100000, guid: 5dfa629fc30ef4257be724f2a2e2e1ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CircularCandySmall
+    second: {fileID: 2100000, guid: 73fcf2b7e1b2847d8a42c5ebd6f8ec4c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DiceBlack
+    second: {fileID: 2100000, guid: f0c6226c66d8d418f8a8af3eb7e0c358, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DiceRed
+    second: {fileID: 2100000, guid: 3a502684ef75346ddb7c57348c49cfdc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DiceWhite
+    second: {fileID: 2100000, guid: 62360bf01048f4e63b46a19c1c86981f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EyeWhite
+    second: {fileID: 2100000, guid: 7de5da1a09ab84d36a69d224a5a947aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FrogGreen
+    second: {fileID: 2100000, guid: a399da565b9ba4e52804792464903b9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Glass
     second: {fileID: 2100000, guid: c1e23b42bdece4d80bae8803d23fa312, type: 2}
   - first:
@@ -37,8 +92,38 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: LollipopStick
+    second: {fileID: 2100000, guid: f5d8e46b5eb6d4e98a5ae7821e282ac4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LollipopWrapper
+    second: {fileID: 2100000, guid: 68a9cc2f54ca24be99d2a39eaecc3b8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LollipopWrapper2
+    second: {fileID: 2100000, guid: a386379d5b50c4c35868563b3d707b5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LollipopWrapper3
+    second: {fileID: 2100000, guid: 663efb04886cb4f359a756e1a6904726, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 94ca99275c3e54dd4b7be5cac6982e7d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: RedGlow
     second: {fileID: 2100000, guid: a9df2deca86e842f4a13e987cefe4262, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shelf
+    second: {fileID: 2100000, guid: 8ed3710e35a424cc5b2472a52a86a79c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -52,8 +137,38 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: WallHangar
+    second: {fileID: 2100000, guid: f5e513af7c5b04662adb08c57b927f57, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: WhitePlastic
     second: {fileID: 2100000, guid: 26283423c38ef4ed2a08658e9df8ad2d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bearEyes
+    second: {fileID: 2100000, guid: 71e4e540dfdd540db9b542918d87af97, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dinoBelly
+    second: {fileID: 2100000, guid: 6132a760061c04e8cb5ca3be234716f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dinoHorns
+    second: {fileID: 2100000, guid: e84262cc743624eaaa1d08dfd87df38a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dinoPlushie
+    second: {fileID: 2100000, guid: 61b67cb7f296b48f3b5e5f1d979e7766, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plushBear
+    second: {fileID: 2100000, guid: e656384fe518342499d2f6423e939bcf, type: 2}
   materials:
     materialImportMode: 2
     materialName: 2
