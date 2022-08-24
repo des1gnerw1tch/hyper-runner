@@ -1,5 +1,5 @@
+using PrizeVendor;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace InteractableArcade
 {
@@ -7,11 +7,13 @@ namespace InteractableArcade
     {
         [SerializeField] private GameObject dialogueBoxGameObject;
         [SerializeField] private Dialogue robotDialogue;
+        [SerializeField] private RobotAnimController robotAnimController;
 
         public override void Interact(InteractArcade player)
         {
             base.Interact(player);
             ShowDialogueWindow();
+            robotAnimController.TriggerWaveAnimation();
         }
 
         private void ShowDialogueWindow()
