@@ -22080,11 +22080,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1866617788184033332, guid: 54ffb9417b4304178b92f1fc5879d122, type: 3}
       propertyPath: textToDisplay
-      value: Got play tokens? I got some great consumables in my shop today...
+      value: Hey! Got play tokens? I got some great consumables in my shop today...
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866617788184033332, guid: 54ffb9417b4304178b92f1fc5879d122, type: 3}
+      propertyPath: textToDisplay.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1866617788184033332, guid: 54ffb9417b4304178b92f1fc5879d122, type: 3}
       propertyPath: delayBetweenEachCharacter
       value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866617788184033332, guid: 54ffb9417b4304178b92f1fc5879d122, type: 3}
+      propertyPath: textToDisplay.Array.data[0]
+      value: Hi! Got tokens? I have cosmetics for sale.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866617788184033332, guid: 54ffb9417b4304178b92f1fc5879d122, type: 3}
+      propertyPath: textToDisplay.Array.data[1]
+      value: Hey take a break. You look hungry, how about a snack?
       objectReference: {fileID: 0}
     - target: {fileID: 7061350221101141194, guid: 54ffb9417b4304178b92f1fc5879d122, type: 3}
       propertyPath: m_Name
