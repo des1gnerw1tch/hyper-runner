@@ -3,6 +3,8 @@ using UnityEngine;
 
 namespace Checkpoints
 {
+    #if UNITY_EDITOR
+    
     /// <summary>
     /// Custom inspector for the CheckpointManager class.
     /// </summary>
@@ -26,4 +28,6 @@ namespace Checkpoints
             }
         }
     }
+    
+    #endif
 }
