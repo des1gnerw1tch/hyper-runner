@@ -1,3 +1,5 @@
+using System.Collections;
+using Checkpoints;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +13,8 @@ public class CharacterHealth : MonoBehaviour {
     [SerializeField] private Color negFlashColor;
     [SerializeField] private float flashSpeed;
     [SerializeField] private Rigidbody2D rb;
+
+    private CheckpointManager checkpointManager;
     
     [SerializeField] private MotivationBar motivationBar;
     
@@ -20,6 +24,8 @@ public class CharacterHealth : MonoBehaviour {
     private Animator portrait_animator;
     private bool charismaIsHighest; // make sure "yay" sound is played only once
 
+    private bool isInvincible = false; // Is in this state after platforming collision and now waiting for next checkpoint.
+    
     // DEV FEATURES TODO: Remove this in actual game
     private MusicSync musicSync;
     private bool isFastFoward;
@@ -31,6 +37,8 @@ public class CharacterHealth : MonoBehaviour {
         
         portrait_animator = GameObject.FindWithTag("CharismaPortrait").GetComponent<Animator>();
         musicSync = FindObjectOfType<MusicSync>();
+        
+        checkpointManager = CheckpointManager.Instance;
     }
 
 
@@ -98,18 +106,59 @@ public class CharacterHealth : MonoBehaviour {
         }
     }
 
-    // when the player runs into an object, they will be reset at the top of
-    // the screen, with gravity reset.
-    //TODO: clean this function up, tints player two times
-    void RunIntoObject() {
-        this.AddCharisma(-10f);
-        rb.velocity = Vector2.zero;
-        this.transform.position =
-            Physics2D.gravity.y < 0 ? new Vector3(transform.position.x, MAX_HEIGHT - .1f, 0) : new Vector3(transform.position.x, MIN_HEIGHT + .1f, 0);
+    // When the player runs into an object.
+    private void RunIntoObject() 
+    {
+        if (isInvincible)
+        {
+            return;
+        }
+        
+        AddCharisma(-10f);
         FindObjectOfType<AudioManager>().Play("negative");
         ResultsManager.IncPlayerCrash();
+        
+        Vector3? checkpointPos = checkpointManager.FindNearestCheckpoint(transform.position.x);
+
+        if (checkpointPos.HasValue)
+        {
+            PlayerToNextCheckpoint(checkpointPos.Value);
+        }
+        else
+        {
+            Debug.LogError("Player has run into object, and there is no checkpoint in front of player");
+            transform.position =
+                Physics2D.gravity.y < 0 ? new Vector3(transform.position.x, MAX_HEIGHT - .1f, 0) : new Vector3(transform.position.x, MIN_HEIGHT + .1f, 0);
+        }
     }
 
+    // Player will be frozen and invincible until they reach the next checkpoint. 
+    private void PlayerToNextCheckpoint(Vector3 checkpointPos)
+    {
+        transform.position = new Vector3(transform.position.x, checkpointPos.y, transform.position.z);
+        rb.isKinematic = true;
+        rb.velocity = Vector2.zero;
+        isInvincible = true;
+        
+        StartCoroutine(EnableMovementPastCheckpoint(checkpointPos.x));
+
+        // Local coroutine to enable movement once we get past the checkpoint.
+        IEnumerator EnableMovementPastCheckpoint(float checkpointX)
+        {
+            if (transform.position.x < checkpointX)
+            {
+                yield return new WaitForEndOfFrame();
+                StartCoroutine(EnableMovementPastCheckpoint(checkpointX));
+            }
+            else
+            {
+                isInvincible = false;
+                rb.isKinematic = false;
+            }
+        
+        }
+    }
+    
     // Called on every frame update
     void Update() {
         // handle player hits max height of world
