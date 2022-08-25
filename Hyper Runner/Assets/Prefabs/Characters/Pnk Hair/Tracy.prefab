@@ -202,8 +202,6 @@ MonoBehaviour:
   animatorComponent: {fileID: 752551082774792008}
   rhythmAnimator: {fileID: 9100000, guid: 5be0ac0425dbe4a18a0c006e63a6c25d, type: 2}
   flyingParticles: {fileID: 7858300630071390444}
-  rhythm_up_tile: {fileID: 2219637414331819520, guid: bab2bb5031d5243258627fbf989adad9, type: 3}
-  rhythm_down_tile: {fileID: 2219637414331819520, guid: f3a1ab47b96cc46b284af534a9d83853, type: 3}
 --- !u!114 &2745784147261088146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,7 +290,7 @@ MonoBehaviour:
     m_ActionId: 92636550-eaad-49fc-83ae-4d641b28e354
     m_ActionName: Player/Floor[/XboxOneGampadMacOSWireless/leftStick/down]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Xbox Control Scheme
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Platformer
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

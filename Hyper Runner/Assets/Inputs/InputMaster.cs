@@ -63,10 +63,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4168ad15-e0e3-41d8-bda5-dffd3837f3f5"",
-                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -107,10 +107,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""7bdde47d-8887-474a-b116-6ee8ba4fd457"",
-                    ""path"": ""<XInputController>/leftStick/down"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""FloorDown"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -140,10 +140,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""01c454f2-7e2d-49b6-9fb1-df64ada081ff"",
-                    ""path"": ""<XInputController>/leftStick/down"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
                     ""interactions"": ""Press(behavior=1)"",
                     ""processors"": """",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""FloorUp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -183,6 +183,17 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""b7b97b74-ba8c-44f3-a5a4-4f0128704e03"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad Control Scheme"",
+                    ""action"": ""FastFowardStart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""a5472834-6b81-4cc7-81e6-c12e567d53c6"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
@@ -198,7 +209,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/start"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""PauseGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -302,10 +313,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""23e7114e-7de7-464c-8a8b-c9cfd9df80e9"",
-                    ""path"": ""<XInputController>/buttonNorth"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""UpDanceKeyPress"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -335,10 +346,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""e47e8428-c532-42b4-b16e-e4b16a0b230e"",
-                    ""path"": ""<XInputController>/buttonNorth"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": ""Press(behavior=1)"",
                     ""processors"": """",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""UpDanceKeyRelease"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -368,10 +379,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""1bf3ed89-49ca-4bfe-975d-d943e72524a9"",
-                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": ""Press(behavior=1)"",
                     ""processors"": """",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""DownDanceKeyRelease"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -379,10 +390,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d913bab6-6f2d-4941-9c40-885293d3a808"",
-                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""DownDanceKeyPress"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -455,11 +466,22 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""fa0ccb0c-4d16-4c3c-80f4-607ca105a34f"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad Control Scheme"",
+                    ""action"": ""FastFowardStart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""7b70ddb0-9f97-4677-bf6f-bffe84e19d9d"",
-                    ""path"": ""<XInputController>/buttonWest"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""LeftDanceKeyPress"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -489,10 +511,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""43b7c420-02ad-4dfc-9914-65847b6eee9c"",
-                    ""path"": ""<XInputController>/buttonWest"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": ""Press(behavior=1)"",
                     ""processors"": """",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""LeftDanceKeyRelease"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -522,10 +544,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""0f9aaf8f-103d-4be6-9203-f902a40ac661"",
-                    ""path"": ""<XInputController>/buttonEast"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": ""Press(behavior=1)"",
                     ""processors"": """",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""RightDanceKeyRelease"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -555,10 +577,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""27d391bf-470c-4f68-a2b4-a485aebdeeca"",
-                    ""path"": ""<XInputController>/buttonEast"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""RightDanceKeyPress"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -602,7 +624,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/start"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""PauseGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -672,7 +694,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": ""StickDeadzone"",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""Walk Vertical"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -683,7 +705,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": ""StickDeadzone"",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""Walk Vertical"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -727,7 +749,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""Walk Horizontal"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
@@ -738,7 +760,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": ""StickDeadzone"",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""Walk Horizontal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -749,7 +771,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": ""StickDeadzone"",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""Walk Horizontal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -793,7 +815,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": ""Invert"",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""Look Vertical"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
@@ -804,7 +826,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/rightStick/down"",
                     ""interactions"": """",
                     ""processors"": ""StickDeadzone"",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""Look Vertical"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -815,7 +837,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/rightStick/up"",
                     ""interactions"": """",
                     ""processors"": ""StickDeadzone"",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""Look Vertical"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -848,7 +870,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": ""Invert"",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""Look Horizontal"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
@@ -859,7 +881,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/rightStick/right"",
                     ""interactions"": """",
                     ""processors"": ""StickDeadzone"",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""Look Horizontal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -870,7 +892,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/rightStick/left"",
                     ""interactions"": """",
                     ""processors"": ""StickDeadzone"",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""Look Horizontal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -881,7 +903,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -967,7 +989,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""Down"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -989,7 +1011,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""Up"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -1011,7 +1033,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""Left"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -1030,10 +1052,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""75fc479a-d720-4e40-8011-bad9e3a9f9a6"",
-                    ""path"": ""<XInputController>/leftStick/right"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""Right"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -1066,7 +1088,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/start"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""PauseGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -1077,7 +1099,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -1096,10 +1118,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""cefae018-02c4-4eb9-845a-1bb03ebb8a6a"",
-                    ""path"": ""<XInputController>/buttonEast"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox Control Scheme"",
+                    ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""Back"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -1109,8 +1131,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
     ],
     ""controlSchemes"": [
         {
-            ""name"": ""Xbox Control Scheme"",
-            ""bindingGroup"": ""Xbox Control Scheme"",
+            ""name"": ""Gamepad Control Scheme"",
+            ""bindingGroup"": ""Gamepad Control Scheme"",
             ""devices"": [
                 {
                     ""devicePath"": ""<XInputController>"",
@@ -1542,13 +1564,13 @@ public class @InputMaster : IInputActionCollection, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
-    private int m_XboxControlSchemeSchemeIndex = -1;
-    public InputControlScheme XboxControlSchemeScheme
+    private int m_GamepadControlSchemeSchemeIndex = -1;
+    public InputControlScheme GamepadControlSchemeScheme
     {
         get
         {
-            if (m_XboxControlSchemeSchemeIndex == -1) m_XboxControlSchemeSchemeIndex = asset.FindControlSchemeIndex("Xbox Control Scheme");
-            return asset.controlSchemes[m_XboxControlSchemeSchemeIndex];
+            if (m_GamepadControlSchemeSchemeIndex == -1) m_GamepadControlSchemeSchemeIndex = asset.FindControlSchemeIndex("Gamepad Control Scheme");
+            return asset.controlSchemes[m_GamepadControlSchemeSchemeIndex];
         }
     }
     private int m_KeyboardControlSchemeSchemeIndex = -1;
