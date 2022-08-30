@@ -1,3 +1,4 @@
+using Achievements;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,6 +11,8 @@ namespace SaveFileSystem
     {
         private PlayerSaveData currentSaveData;
 
+        [SerializeField] private AchievementManager achievementManager;
+        
         public UnityEvent PlayerBalanceChanged { get; } = new UnityEvent();
         
         public static GameDataManager Instance { get; private set; }
@@ -30,7 +33,12 @@ namespace SaveFileSystem
             {
                 Debug.Log("Save file not found. Creating new save.");
                 currentSaveData = new PlayerSaveData();
+                currentSaveData.SetAchievementData(achievementManager.GetAchievementDataList());
                 FileSaveManager.SavePlayer(currentSaveData);
+            }
+            else
+            {
+                achievementManager.SetAchievementsFromData(currentSaveData.GetAchievementData());
             }
         }
         

@@ -46,7 +46,7 @@ namespace SaveFileSystem
 
         public static void DeletePlayer()
         {
-            string path = Application.persistentDataPath + "/player.fun";
+            string path = Application.persistentDataPath + "/hp2d.data";
             File.Delete(path);
         }
     }
