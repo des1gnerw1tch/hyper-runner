@@ -18,7 +18,6 @@ namespace Achievements
         public int currentProgress;
         public int numToReach;
         
-
         public void WriteData(AchievementData data)
         {
             ID = data.ID;

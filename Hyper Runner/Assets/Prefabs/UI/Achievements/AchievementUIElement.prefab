@@ -223,6 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be8e800b755224434b1df4db9d905c14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  achievementID: 
   tokenRewardText: {fileID: 6340294671484942816}
   border: {fileID: 9026435924124182471}
 --- !u!1 &2705866441939446876
@@ -499,7 +500,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1098b306dca2a43489b71ccc93274a0a, type: 2}
   m_sharedMaterial: {fileID: -4978519047187266502, guid: 1098b306dca2a43489b71ccc93274a0a, type: 2}

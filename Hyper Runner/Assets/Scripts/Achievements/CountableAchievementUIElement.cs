@@ -6,22 +6,15 @@ namespace Achievements
     public class CountableAchievementUIElement : AchievementUIElement
     {
         [SerializeField] private TextMeshProUGUI progressFractionText;
-        [SerializeField] private int currentNumber;
-        [SerializeField] private int numberToReach;
-        
-        public void UpdateCountableProgress(int numToAdd)
+
+        public override void UpdateContent()
         {
-            currentNumber = Mathf.Clamp(currentNumber + numToAdd, 0, numberToReach);
-            UpdateCountableProgress();
-        }
-        
-        public void UpdateCountableProgress()
-        {
-            progressFractionText.text = currentNumber + "/" + numberToReach;
+            base.UpdateContent();
+            progressFractionText.text = achievement.currentProgress + "/" + achievement.numToReach;
             UpdateSliderValue();
         }
 
-        public void UpdateSliderValue()
+        private void UpdateSliderValue()
         {
             Debug.Log("Slider updating not implemented yet");
             //throw new NotImplementedException();

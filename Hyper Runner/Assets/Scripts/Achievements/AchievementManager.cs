@@ -10,6 +10,20 @@ namespace Achievements
     {
         [SerializeField] private List<AAchievement> achievements;
 
+        public static AchievementManager Instance { get; private set; }
+
+        private void Awake()
+        {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                Instance = this;
+            }
+        }
+
         public List<AchievementData> GetAchievementDataList()
         {
             List<AchievementData> l = new List<AchievementData>();
