@@ -2242,12 +2242,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027636efffc34467a83278c958d6aab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data:
-    ID: test2
-    completed: 1
-    tokensToEarn: 3
-    currentProgress: 4
-    numToReach: 4
+  achievement:
+    ID: parry10Objects
+    completed: 0
+    tokensToEarn: 4
+    currentProgress: 0
+    numToReach: 10
 --- !u!1 &597639787
 GameObject:
   m_ObjectHideFlags: 0
@@ -4391,10 +4391,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b0c5bce546f94224ad44a493698a4ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data:
-    ID: test1
+  achievement:
+    ID: interactWithATM
     completed: 0
-    tokensToEarn: 1
+    tokensToEarn: 3
     currentProgress: 0
     numToReach: 0
 --- !u!1 &1303476602

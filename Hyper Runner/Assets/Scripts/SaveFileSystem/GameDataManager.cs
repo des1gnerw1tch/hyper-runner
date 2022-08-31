@@ -68,5 +68,14 @@ namespace SaveFileSystem
             currentSaveData.SetPlayTokens(numTokens);
             FileSaveManager.SavePlayer(currentSaveData);
         }
+            
+        /// <summary>
+        /// Updates the save file to any achievement changes under AchievementManager
+        /// </summary>
+        public void SaveAchievementData()
+        {
+            currentSaveData.SetAchievementData(achievementManager.GetAchievementDataList());
+            FileSaveManager.SavePlayer(currentSaveData);
+        }
     }
 }

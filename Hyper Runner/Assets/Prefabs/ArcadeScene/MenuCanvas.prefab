@@ -904,7 +904,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7f0a7d8b9c5446a484b0b48e66959b2, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: d7f0a7d8b9c5446a484b0b48e66959b2, type: 2}
@@ -3327,7 +3327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7365006126087377262, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
       propertyPath: achievementID
-      value: test1
+      value: interactWithATM
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
@@ -3345,7 +3345,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1520259738643933619, guid: 08ab98f2ee48f4e3593dc94e08c7eb16, type: 3}
       propertyPath: achievementID
-      value: test2
+      value: parry10Objects
       objectReference: {fileID: 0}
     - target: {fileID: 1544580482011241416, guid: 08ab98f2ee48f4e3593dc94e08c7eb16, type: 3}
       propertyPath: m_text

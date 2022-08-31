@@ -9,24 +9,31 @@ namespace InteractableArcade
     /// </summary>
     public abstract class AInteractableArcadeObjectUI : AInteractableArcadeObject
     {
-        [SerializeField] private PlayerInput playerInput;
-        
+        private PlayerInput playerInput;
+
+        private bool isInteracting = false;
         private void Start()
         {
             UIInputHandler.Instance.OnPause.AddListener(Close);
             UIInputHandler.Instance.OnBackButton.AddListener(Close);
+            playerInput = UIInputHandler.Instance.PlayerInputComponent;
         }
 
         public override void Interact(InteractArcade player)
         {
             base.Interact(player);
             playerInput.SwitchCurrentActionMap("UI");
+            isInteracting = true;
         } 
         
         // Player disengages with this arcade object
         protected virtual void Close()
         {
-            playerInput.SwitchCurrentActionMap("3D");
+            if (isInteracting)
+            {
+                playerInput.SwitchCurrentActionMap("3D");
+                isInteracting = false;
+            }
         }
         
     }

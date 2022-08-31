@@ -1,3 +1,4 @@
+using Achievements;
 using SaveFileSystem;
 
 namespace InteractableArcade
@@ -7,7 +8,7 @@ namespace InteractableArcade
         public override void Interact(InteractArcade player)
         {
             base.Interact(player);
-            GameDataManager.Instance.AddTokens(1);
+            FindObjectOfType<TestAchievement1>().CompleteAchievement();
         }
     }
 }

@@ -1,3 +1,4 @@
+using SaveFileSystem;
 using UnityEngine;
 
 namespace Achievements
@@ -8,9 +9,20 @@ namespace Achievements
     /// </summary>
     public abstract class AAchievement : MonoBehaviour
     {
-        [SerializeField] private AchievementData data;
+        [SerializeField] private AchievementData achievement;
 
-        public AchievementData GetAchievementData() => data;
+        public AchievementData GetAchievementData() => achievement;
 
+        public void CompleteAchievement()
+        {
+            if (achievement.completed)
+            {
+                return;
+            }
+            
+            GameDataManager.Instance.AddTokens(achievement.tokensToEarn);
+            achievement.completed = true;
+            GameDataManager.Instance.SaveAchievementData();
+        }
     }
 }

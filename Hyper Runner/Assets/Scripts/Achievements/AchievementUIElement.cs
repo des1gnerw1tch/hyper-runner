@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,6 +23,11 @@ namespace Achievements
                     {
                         achievement = a;
                     }
+                }
+
+                if (achievement == null)
+                {
+                    Debug.LogError("Could not find achievement in AchievementManager with ID: " + achievementID);
                 }
             }
             
