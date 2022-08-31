@@ -12,22 +12,21 @@ namespace Achievements
         [SerializeField] private Image border;
 
         protected AchievementData achievement;
-        
-        private void Start()
-        {
-            foreach (AchievementData a in AchievementManager.Instance.GetAchievementDataList())
-            {
-                if (achievementID == a.ID)
-                {
-                    achievement = a;
-                }
-            }
-            
-            UpdateContent();
-        }
 
         public virtual void UpdateContent()
         {
+            
+            if (achievement == null)
+            {
+                foreach (AchievementData a in AchievementManager.Instance.GetAchievementDataList())
+                {
+                    if (achievementID == a.ID)
+                    {
+                        achievement = a;
+                    }
+                }
+            }
+            
             tokenRewardText.text = achievement.tokensToEarn + "";
             
             if (achievement.completed)

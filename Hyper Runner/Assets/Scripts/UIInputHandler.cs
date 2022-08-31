@@ -1,9 +1,13 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
-// handles player input for UI elements, such as pausing.
+// handles player input for UI elements, such as pausing. Should live on same gameobject as PlayerInput
 // Passes many inputs to our UI Manager
-public class UIInputHandler : MonoBehaviour {
+public class UIInputHandler : MonoBehaviour
+{
+    public PlayerInput PlayerInputComponent { get; private set; }
+
     // UI Events
     public UnityEvent OnScrollUp { get; } = new UnityEvent();
     
@@ -30,6 +34,7 @@ public class UIInputHandler : MonoBehaviour {
         }
 
         Instance = this;
+        PlayerInputComponent = GetComponent<PlayerInput>();
     }
 
     // When Player pushes a "Pause Game" button

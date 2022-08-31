@@ -674,6 +674,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": ""AxisDeadzone"",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""PauseGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""f8418090-c908-4d71-86d6-239bd0e715f3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -916,6 +924,28 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard Control Scheme"",
                     ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""15c05f49-d73f-4463-bc45-dbae199ff499"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""PauseGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a3ac7cf3-87b3-4700-a230-9f10b89b836c"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad Control Scheme"",
+                    ""action"": ""PauseGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1186,6 +1216,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m__3D_LookVertical = m__3D.FindAction("Look Vertical", throwIfNotFound: true);
         m__3D_LookHorizontal = m__3D.FindAction("Look Horizontal", throwIfNotFound: true);
         m__3D_Interact = m__3D.FindAction("Interact", throwIfNotFound: true);
+        m__3D_PauseGame = m__3D.FindAction("PauseGame", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Up = m_UI.FindAction("Up", throwIfNotFound: true);
@@ -1427,6 +1458,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m__3D_LookVertical;
     private readonly InputAction m__3D_LookHorizontal;
     private readonly InputAction m__3D_Interact;
+    private readonly InputAction m__3D_PauseGame;
     public struct _3DActions
     {
         private @InputMaster m_Wrapper;
@@ -1436,6 +1468,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @LookVertical => m_Wrapper.m__3D_LookVertical;
         public InputAction @LookHorizontal => m_Wrapper.m__3D_LookHorizontal;
         public InputAction @Interact => m_Wrapper.m__3D_Interact;
+        public InputAction @PauseGame => m_Wrapper.m__3D_PauseGame;
         public InputActionMap Get() { return m_Wrapper.m__3D; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1460,6 +1493,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Interact.started -= m_Wrapper.m__3DActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m__3DActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m__3DActionsCallbackInterface.OnInteract;
+                @PauseGame.started -= m_Wrapper.m__3DActionsCallbackInterface.OnPauseGame;
+                @PauseGame.performed -= m_Wrapper.m__3DActionsCallbackInterface.OnPauseGame;
+                @PauseGame.canceled -= m_Wrapper.m__3DActionsCallbackInterface.OnPauseGame;
             }
             m_Wrapper.m__3DActionsCallbackInterface = instance;
             if (instance != null)
@@ -1479,6 +1515,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @PauseGame.started += instance.OnPauseGame;
+                @PauseGame.performed += instance.OnPauseGame;
+                @PauseGame.canceled += instance.OnPauseGame;
             }
         }
     }
@@ -1611,6 +1650,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnLookVertical(InputAction.CallbackContext context);
         void OnLookHorizontal(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnPauseGame(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
