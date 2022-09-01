@@ -23,17 +23,41 @@ namespace SelectableUIElements
         {
             currentRow = 0;
             currentColumn = 0;
-            
-            UIInputHandler uiInputHandler = UIInputHandler.Instance;
-            uiInputHandler.OnScrollLeft.AddListener(OnLeft);
-            uiInputHandler.OnScrollRight.AddListener(OnRight);
-            uiInputHandler.OnScrollUp.AddListener(OnUp);
-            uiInputHandler.OnScrollDown.AddListener(OnDown);
-            uiInputHandler.OnSelectOption.AddListener(OnSelect);
-            
             HighlightCurrentElement();
         }
+
+        private void OnEnable() => AddInputListeners();
+
+        private void OnDisable() => RemoveInputListeners();
+
+        private void AddInputListeners()
+        {
+            UIInputHandler uiInputHandler = UIInputHandler.Instance;
+            
+            if (uiInputHandler != null)
+            {
+                uiInputHandler.OnScrollLeft.AddListener(OnLeft);
+                uiInputHandler.OnScrollRight.AddListener(OnRight);
+                uiInputHandler.OnScrollUp.AddListener(OnUp);
+                uiInputHandler.OnScrollDown.AddListener(OnDown);
+                uiInputHandler.OnSelectOption.AddListener(OnSelect);
+            }
+        }
         
+        private void RemoveInputListeners()
+        {
+            UIInputHandler uiInputHandler = UIInputHandler.Instance;
+
+            if (uiInputHandler != null)
+            {
+                uiInputHandler.OnScrollLeft.RemoveListener(OnLeft);
+                uiInputHandler.OnScrollRight.RemoveListener(OnRight);
+                uiInputHandler.OnScrollUp.RemoveListener(OnUp);
+                uiInputHandler.OnScrollDown.RemoveListener(OnDown);
+                uiInputHandler.OnSelectOption.RemoveListener(OnSelect);
+            }
+        }
+
         #region Inputs Handlers
 
         private void OnLeft()
