@@ -7,11 +7,14 @@ namespace InteractableArcade
     /// A interactable arcade object where a window pops up. Input map is switched to UI mode. Input map is switched back to 3D mode when
     /// interaction is closed. 
     /// </summary>
-    public abstract class AInteractableArcadeObjectUI : AInteractableArcadeObject
+    public class InteractableArcadeObjectUI : AInteractableArcadeObject
     {
+        [SerializeField] private GameObject uiContent;
+        
         private PlayerInput playerInput;
 
         private bool isInteracting = false;
+        
         private void Start()
         {
             UIInputHandler.Instance.OnPause.AddListener(Close);
@@ -24,6 +27,7 @@ namespace InteractableArcade
             base.Interact(player);
             playerInput.SwitchCurrentActionMap("UI");
             isInteracting = true;
+            uiContent.SetActive(true);
         } 
         
         // Player disengages with this arcade object
@@ -33,6 +37,7 @@ namespace InteractableArcade
             {
                 playerInput.SwitchCurrentActionMap("3D");
                 isInteracting = false;
+                uiContent.SetActive(false);
             }
         }
         

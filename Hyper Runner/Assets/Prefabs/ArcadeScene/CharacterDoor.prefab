@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5713102681312917122}
   - component: {fileID: 8315770872155268283}
-  - component: {fileID: 6737939221042114374}
+  - component: {fileID: 1589183564718716676}
   m_Layer: 0
   m_Name: CharacterDoor
   m_TagString: Untagged
@@ -46,7 +46,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.5738878, y: 4.9900627, z: 1.445303}
   m_Center: {x: 0, y: -0.024565697, z: 0.44530392}
---- !u!114 &6737939221042114374
+--- !u!114 &1589183564718716676
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,12 +55,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5713102681312917123}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb2b5a4fd89de45b1b61fedc9fd67c66, type: 3}
+  m_Script: {fileID: 11500000, guid: c9f144dc553bd4ffd9ed5ea62887c7ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   popUpText: {fileID: 0}
-  characterPanel: {fileID: 0}
-  playerInput: {fileID: 0}
+  uiContent: {fileID: 0}
 --- !u!1001 &5713102681471680487
 PrefabInstance:
   m_ObjectHideFlags: 0

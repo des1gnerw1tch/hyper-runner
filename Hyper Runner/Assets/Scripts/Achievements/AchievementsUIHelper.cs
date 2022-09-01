@@ -7,32 +7,32 @@ namespace Achievements
     /// </summary>
     public class AchievementsUIHelper : MonoBehaviour
     {
-        [SerializeField] private GameObject achievementsWindow;
-
         private AchievementUIElement[] achievementUIElements;
 
-        private void Start()
-        {
-            achievementUIElements = FindObjectsOfType<AchievementUIElement>(true);
-            UIInputHandler.Instance.OnPause.AddListener(ToggleAchievementsWindow);
-        }
+        public static AchievementsUIHelper Instance { get; private set; }
 
-        private void ToggleAchievementsWindow()
+        private void Awake()
         {
-            achievementsWindow.SetActive(!achievementsWindow.activeSelf);
-
-            if (achievementsWindow.activeSelf)
+            if (Instance != null && Instance != this)
             {
-                foreach (AchievementUIElement element in achievementUIElements)
-                {
-                    element.UpdateContent();
-                }
-
-                UIInputHandler.Instance.PlayerInputComponent.SwitchCurrentActionMap("UI");
+                Destroy(this.gameObject);
             }
             else
             {
-                UIInputHandler.Instance.PlayerInputComponent.SwitchCurrentActionMap("3D");
+                Instance = this;
+            }
+        }
+        
+        private void Start()
+        {
+            achievementUIElements = FindObjectsOfType<AchievementUIElement>(true);
+        }
+        
+        public void UpdateContent()
+        {
+            foreach (AchievementUIElement element in achievementUIElements)
+            {
+                element.UpdateContent();
             }
         }
     }
