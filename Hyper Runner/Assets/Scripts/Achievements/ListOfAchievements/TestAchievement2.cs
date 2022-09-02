@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 namespace Achievements
 {
-    public class TestAchievement2 : AAchievement
+    /// <summary>
+    /// A test achievement, parry off of 10 objects.
+    /// </summary>
+    public class TestAchievement2 : ACountableAchievement
     {
         
     }

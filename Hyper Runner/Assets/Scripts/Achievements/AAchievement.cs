@@ -9,7 +9,7 @@ namespace Achievements
     /// </summary>
     public abstract class AAchievement : MonoBehaviour
     {
-        [SerializeField] private AchievementData achievement;
+        [SerializeField] protected AchievementData achievement;
 
         public AchievementData GetAchievementData() => achievement;
 

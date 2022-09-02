@@ -1,3 +1,4 @@
+using Achievements;
 using UnityEngine;
 
 public abstract class AParryObject : MonoBehaviour {
@@ -30,5 +31,6 @@ public abstract class AParryObject : MonoBehaviour {
     public virtual void OnParry()
     {
         ResultsManager.IncPlayerTotalParries();
+        FindObjectOfType<TestAchievement2>().AddNumToProgress(1);
     }
 }
