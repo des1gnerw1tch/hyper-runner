@@ -632,7 +632,6 @@ GameObject:
   m_Component:
   - component: {fileID: 367194029867699042}
   - component: {fileID: 3609593424622427880}
-  - component: {fileID: 2568594478483064732}
   - component: {fileID: 2726664687262472943}
   m_Layer: 5
   m_Name: MotivationBar
@@ -713,19 +712,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2568594478483064732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4693954777107347731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1229652ed8fef44f79b0ab3eaa6caa93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  progressBar: {fileID: 3609593424622427880}
 --- !u!114 &2726664687262472943
 MonoBehaviour:
   m_ObjectHideFlags: 0

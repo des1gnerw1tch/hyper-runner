@@ -12,6 +12,7 @@ public class ProgressBar : MonoBehaviour
         if (Instance != null && Instance != this)
         {
             Destroy(this);
+            Debug.LogError("Destroyed duplicate Progress Bar singleton");
         }
         else
         {
