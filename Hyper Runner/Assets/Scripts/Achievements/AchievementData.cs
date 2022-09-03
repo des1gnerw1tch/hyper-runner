@@ -13,6 +13,7 @@ namespace Achievements
         public string ID;
         public bool completed;
         public int tokensToEarn;
+        public bool rewardCollected;
         
         [Header("For countable achievements")]
         public int currentProgress;
@@ -22,9 +23,12 @@ namespace Achievements
         {
             ID = data.ID;
             completed = data.completed;
+            tokensToEarn = data.tokensToEarn;
+            rewardCollected = data.rewardCollected;
             currentProgress = data.currentProgress;
             numToReach = data.numToReach;
-            tokensToEarn = data.tokensToEarn;
         }
+
+        public bool IsRewardCollectable() => completed && !rewardCollected;
     }
 }

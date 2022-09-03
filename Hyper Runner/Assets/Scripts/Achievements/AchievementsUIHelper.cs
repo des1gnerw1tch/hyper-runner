@@ -1,9 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Achievements
 {
     /// <summary>
-    /// Handles bringing up Achievements UI window. Updates achievement UI elements when window is brought up
+    /// Updates achievement UI elements
     /// </summary>
     public class AchievementsUIHelper : MonoBehaviour
     {
@@ -30,10 +31,29 @@ namespace Achievements
         
         public void UpdateContent()
         {
+            List<AchievementUIElement> rewardsToCollect = new List<AchievementUIElement>();
+            
             foreach (AchievementUIElement element in achievementUIElements)
             {
                 element.UpdateContent();
+                
+                if (element.IsRewardCollectable())
+                {
+                    rewardsToCollect.Add(element);
+                }
             }
+            
+            foreach (AchievementUIElement element in rewardsToCollect)
+            {
+                element.PlayAchievementCompletedAnim();
+                element.RedeemReward();
+            }
+
+            if (rewardsToCollect.Count > 0)
+            {
+                FindObjectOfType<AudioManager>().Play("rewardCollected");
+            }
+            
         }
     }
 }

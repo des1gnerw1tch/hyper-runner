@@ -1,3 +1,5 @@
+using System.Collections;
+using SaveFileSystem;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -45,5 +47,38 @@ namespace Achievements
             
             border.color = Color.green;
         }
+        
+        public bool IsRewardCollectable() => achievement.IsRewardCollectable();
+
+        public void PlayAchievementCompletedAnim()
+        {
+            StartCoroutine(Anim());
+            
+            IEnumerator Anim()
+            {
+                for (int i = 0; i < 14; i++)
+                {
+                    if (i % 2 == 0)
+                    {
+                        border.color = Color.white;
+                    }
+                    else
+                    {
+                        border.color = Color.green;
+                    }
+
+                    yield return new WaitForSeconds(.2f);
+                }
+            }
+        }
+
+        // Where the player gets the reward tokens.
+        public void RedeemReward()
+        {
+            GameDataManager.Instance.AddTokens(achievement.tokensToEarn);
+            achievement.rewardCollected = true;
+            GameDataManager.Instance.SaveAchievementData();
+        }
+        
     }
 }

@@ -20,7 +20,7 @@ namespace Achievements
                 return;
             }
             
-            GameDataManager.Instance.AddTokens(achievement.tokensToEarn);
+            //GameDataManager.Instance.AddTokens(achievement.tokensToEarn);
             achievement.completed = true;
             GameDataManager.Instance.SaveAchievementData();
         }

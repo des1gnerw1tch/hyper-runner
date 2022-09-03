@@ -2010,6 +2010,7 @@ MonoBehaviour:
     ID: parry10Objects
     completed: 0
     tokensToEarn: 4
+    rewardCollected: 0
     currentProgress: 0
     numToReach: 10
 --- !u!1 &597639787
@@ -2212,6 +2213,12 @@ MonoBehaviour:
   - name: robotBleep4
     clip: {fileID: 8300000, guid: 4a20d253e49ed43fa8cdfa23e62955e2, type: 3}
     volume: 0.05
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: rewardCollected
+    clip: {fileID: 8300000, guid: cce61db158638485bb6df5a4018636bb, type: 3}
+    volume: 0.317
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -4223,6 +4230,7 @@ MonoBehaviour:
     ID: interactWithATM
     completed: 0
     tokensToEarn: 3
+    rewardCollected: 0
     currentProgress: 0
     numToReach: 0
 --- !u!1 &1303476602
