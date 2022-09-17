@@ -77,6 +77,7 @@ public class UIManager : MonoBehaviour {
         if (input.currentControlScheme != "Gamepad Control Scheme")
         {
             indicatorGroup.SetActive(false);
+            Cursor.visible = true;
         }
         else
         {
@@ -98,6 +99,7 @@ public class UIManager : MonoBehaviour {
         Time.timeScale = 1f;
         this.pauseScreen.SetActive(false);
         this.isGamePaused = false;
+        Cursor.visible = false;
     }
 
     // When player wants to exit game
