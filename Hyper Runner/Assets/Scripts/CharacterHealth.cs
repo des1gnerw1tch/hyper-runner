@@ -132,16 +132,36 @@ public class CharacterHealth : MonoBehaviour {
         }
     }
 
-    // Player will be frozen and invincible until they reach the next checkpoint. 
+    // Player will be frozen and invincible until they reach the next checkpoint. Player will lerp from their last position to the next checkpoint. 
     private void PlayerToNextCheckpoint(Vector3 checkpointPos)
     {
-        transform.position = new Vector3(transform.position.x, checkpointPos.y, transform.position.z);
+        Vector3 initialPos = transform.position;
+        float xDistanceForLerp = (checkpointPos.x - initialPos.x) / 4; // Distance to reach for Y pos to match checkpoint
+        
         rb.isKinematic = true;
         rb.velocity = Vector2.zero;
         isInvincible = true;
         
+        StartCoroutine(LerpToYPos());
         StartCoroutine(EnableMovementPastCheckpoint(checkpointPos.x));
+        
+        // Local coroutine to lerp character to next checkpoint Y position 
+        IEnumerator LerpToYPos()
+        {
+            float lerpProgress = (transform.position.x - initialPos.x) / xDistanceForLerp;
 
+            while (lerpProgress <= 1)
+            {
+                float xPos = transform.position.x;
+                transform.position = new Vector3(xPos, Mathf.Lerp(initialPos.y, checkpointPos.y, lerpProgress), initialPos.z);
+                lerpProgress = (xPos - initialPos.x) / xDistanceForLerp;
+                yield return new WaitForEndOfFrame();
+            }
+            
+            transform.position = new Vector3(transform.position.x, checkpointPos.y, initialPos.z);
+        }
+        
+        
         // Local coroutine to enable movement once we get past the checkpoint.
         IEnumerator EnableMovementPastCheckpoint(float checkpointX)
         {
