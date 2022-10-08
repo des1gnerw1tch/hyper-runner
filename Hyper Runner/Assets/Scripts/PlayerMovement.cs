@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-    public float speed;
+    [HideInInspector] public float speed;
     public float jumpPower;
 
     private bool touchingGround;
