@@ -1,11 +1,13 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Achievements
 {
     public class CountableAchievementUIElement : AchievementUIElement
     {
         [SerializeField] private TextMeshProUGUI progressFractionText;
+        [SerializeField] private Slider slider;
 
         public override void UpdateContent()
         {
@@ -14,10 +16,6 @@ namespace Achievements
             UpdateSliderValue();
         }
 
-        private void UpdateSliderValue()
-        {
-            Debug.Log("Slider updating not implemented yet");
-            //throw new NotImplementedException();
-        }
+        private void UpdateSliderValue() => slider.value = (float) achievement.currentProgress / achievement.numToReach;
     }
 }

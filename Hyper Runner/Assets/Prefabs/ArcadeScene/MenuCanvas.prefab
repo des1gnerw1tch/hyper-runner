@@ -3342,21 +3342,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6253324886915898565}
     m_Modifications:
-    - target: {fileID: 1520259738643933619, guid: 08ab98f2ee48f4e3593dc94e08c7eb16, type: 3}
-      propertyPath: achievementID
-      value: parry10Objects
-      objectReference: {fileID: 0}
-    - target: {fileID: 1544580482011241416, guid: 08ab98f2ee48f4e3593dc94e08c7eb16, type: 3}
-      propertyPath: m_text
-      value: Bunny Hopper
+    - target: {fileID: 2859155030986078392, guid: 08ab98f2ee48f4e3593dc94e08c7eb16, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3197350465406253473, guid: 08ab98f2ee48f4e3593dc94e08c7eb16, type: 3}
       propertyPath: m_Name
       value: CountableAchievement
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163482418964346704, guid: 08ab98f2ee48f4e3593dc94e08c7eb16, type: 3}
-      propertyPath: m_text
-      value: Parry 10 objects
       objectReference: {fileID: 0}
     - target: {fileID: 6655188338093602000, guid: 08ab98f2ee48f4e3593dc94e08c7eb16, type: 3}
       propertyPath: m_Pivot.x
