@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +10,8 @@ public class FirstPersonCameraController : MonoBehaviour {
     private InputAction verMovement; // vertical axis, from "Look Vertical" of player input
     private InputAction horMovement; // horizontal axis, from "Look Horizontal" of player input
     float rotX, rotY; // rotations, changed by vertical and horizontal axis's
+
+    private bool rotationLocked;
 
     // Called on first frame,
     // EFFECT: initializes verMovement and horMovement input actions, cursor is locked and hidden
@@ -24,6 +27,11 @@ public class FirstPersonCameraController : MonoBehaviour {
     // Late Update, happens after other updates
     // EFFECT: changes rotation of player, camera, and changes rotX and rotY variables
     void LateUpdate() {
+        if (rotationLocked)
+        {
+            return;
+        }
+        
         this.RotateFromPlayerInput();
         this.UpdateRotation(); // This will rotate the player every frame...
     }
@@ -53,6 +61,17 @@ public class FirstPersonCameraController : MonoBehaviour {
     void UpdateRotation() {
         transform.rotation = Quaternion.Euler(rotX, rotY, 0); // rotates the camera
         this.player.rotation = Quaternion.Euler(0, rotY, 0); // rotates the player
+    }
+
+    // Will freeze rotation of player and camera, so camera can be used in different contexts without being controlled by input.
+    public void Lock()
+    {
+        rotationLocked = true;
+    }
+
+    public void Unlock()
+    {
+        rotationLocked = false;
     }
 
 

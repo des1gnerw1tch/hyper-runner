@@ -11,6 +11,8 @@ public class FirstPersonMovement : MonoBehaviour {
 
     private bool isMoving = false; // is the player in motino? (for footstep audio)
 
+    private bool isLocked = false; // Is movement locked (lock to keep the player in one place
+
     // Called on first frame
     // EFFECT: initializes vertical movement and horizontal movement variables
     private void Start() {
@@ -21,6 +23,11 @@ public class FirstPersonMovement : MonoBehaviour {
     // called every frame (FixedUpdate() is for physics)
     // EFFECT: moves this transform by horizontal axis and vertical axis
     void FixedUpdate() {
+        if (isLocked)
+        {
+            return;
+        }
+        
         float ver = this.verMovement.ReadValue<float>();
         float hor = this.horMovement.ReadValue<float>();
         Vector3 move = this.speed * Time.deltaTime * new Vector3(hor, 0f, ver);
@@ -38,5 +45,17 @@ public class FirstPersonMovement : MonoBehaviour {
                 this.isMoving = false;
             }
         }
+    }
+    
+    public void Lock()
+    {
+        isLocked = true;
+        isMoving = false;
+        FindObjectOfType<AudioManager>().Stop("footstep");
+    }
+
+    public void Unlock()
+    {
+        isLocked = false;
     }
 }
