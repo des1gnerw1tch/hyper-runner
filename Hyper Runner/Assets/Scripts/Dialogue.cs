@@ -11,6 +11,9 @@ public class Dialogue : MonoBehaviour
 
     [SerializeField] private float delayBetweenEachCharacter;
 
+    [SerializeField] private bool startDialogueOnEnable = false;
+    [SerializeField] private bool playSoundOnDialogue = true;
+
     private AudioManager audioManager;
 
     private int interactCount = 0;
@@ -18,6 +21,14 @@ public class Dialogue : MonoBehaviour
     private void Start()
     {
         audioManager = FindObjectOfType<AudioManager>();
+    }
+
+    private void OnEnable()
+    {
+        if (startDialogueOnEnable)
+        {
+            StartDialogue();
+        }
     }
     
     public void StartDialogue()
@@ -42,7 +53,10 @@ public class Dialogue : MonoBehaviour
         if (curChar != 0 && !Char.IsWhiteSpace(_textToDisplay, curChar - 1))
         {
             yield return new WaitForSeconds(delayBetweenEachCharacter);
-            PlayRandomRobotSound();
+            if (playSoundOnDialogue)
+            {
+                PlayRandomRobotSound();
+            }
         }
 
         tmp.text = _textToDisplay.Substring(0, curChar);
