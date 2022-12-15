@@ -49,7 +49,6 @@ public class SittableChair : AInteractableArcadeObject
             cameraHolder.position = Vector3.Lerp(originalCamLoc, sitPos.position, progress);
             cameraHolder.rotation = Quaternion.Lerp(originalCamRot, sitPos.rotation, progress);
             timer += Time.deltaTime;
-            Debug.Log(progress);
             yield return new WaitForEndOfFrame();
         }
         FindObjectOfType<AudioManager>().Play("sitInChair");
@@ -66,7 +65,6 @@ public class SittableChair : AInteractableArcadeObject
             cameraHolder.position = Vector3.Lerp(sitPos.position, originalCamLoc, progress);
             cameraHolder.rotation = Quaternion.Lerp(sitPos.rotation, originalCamRot, progress);
             timer += Time.deltaTime;
-            Debug.Log(progress);
             yield return new WaitForEndOfFrame();
         }
         cameraController.Unlock();
