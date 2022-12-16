@@ -192,7 +192,7 @@ public class CharacterHealth : MonoBehaviour {
     public void OnFastFowardStart() {
         //Debug.Log("Pressed");
         if (!this.isFastFoward) {
-            this.musicSync.changePitch(2f, 100f);
+            this.musicSync.changePitch(6f, 100f);
             this.isFastFoward = true;
         } else {
             this.musicSync.changePitch(1f, 100f);
