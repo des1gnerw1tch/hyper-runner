@@ -185,6 +185,15 @@ public class CharacterHealth : MonoBehaviour {
         if (transform.position.y > MAX_HEIGHT || transform.position.y < MIN_HEIGHT) {
             this.RunIntoObject();
         }
+
+        // TODO: Remove, but this scrubs backwards
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !this.isFastFoward)
+        {
+            this.musicSync.changePitch(-1f, 10000f);
+        } else if (Input.GetKeyUp(KeyCode.LeftShift) && !this.isFastFoward)
+        {
+            this.musicSync.changePitch(1f, 10000f);
+        }
     }
 
     //TODO: Dev feature, remove in actual game
@@ -192,10 +201,10 @@ public class CharacterHealth : MonoBehaviour {
     public void OnFastFowardStart() {
         //Debug.Log("Pressed");
         if (!this.isFastFoward) {
-            this.musicSync.changePitch(6f, 100f);
+            this.musicSync.changePitch(6f, 10000f);
             this.isFastFoward = true;
         } else {
-            this.musicSync.changePitch(1f, 100f);
+            this.musicSync.changePitch(1f, 10000f);
             this.isFastFoward = false;
         }
     }

@@ -19,13 +19,13 @@ public class MusicSync : MonoBehaviour {
     
     private ProgressBar progressBar;
 
-    void Start() {
+    protected virtual void Start() {
         deltaSample = 0f;
         progressBar = ProgressBar.Instance;
     }
 
     // Update is called once per frame
-    void Update() {
+    protected virtual void Update() {
         thisSample = levelMusic.timeSamples;
         deltaSample = (thisSample - lastSample) / 90000;
         lastSample = thisSample;
