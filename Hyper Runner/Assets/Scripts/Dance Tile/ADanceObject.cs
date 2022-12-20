@@ -37,6 +37,10 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     [SerializeField] private float surroundingSpeedMultiplier; // How fast should surroundings move past screen? 
     [SerializeField] private danceTileManager danceManager; // Dance manager script on Player
     [SerializeField] private InterpolateTrigger interpolationTrigger;
+    
+    // Score is 10 - difference (see dance tile objects like holdDanceObject). A score that is less than this will register as a fail. 
+    protected const float FAILING_SCORE = 8.5f;
+    
 
     // Functions called directly from Dance Tile Manager, which uses Player Input (reference unity input system 1.0.2)
     // these functions are called when player does an action that requires action from this dance tile
@@ -101,7 +105,7 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
             SpawnScoreText(goodText); // spawn good text
             FindObjectOfType<AudioManager>().Play("metronome");
             ResultsManager.IncGoodTiles();
-        } else if (_score > 8.5) {
+        } else if (_score > FAILING_SCORE) {
             perfectInARow = 0;
             if (characterHealth.charisma > 50f) {
                 characterHealth.AddCharisma(-5f); // "okay" rating will only penalize if at high-charisma

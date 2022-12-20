@@ -51,7 +51,7 @@ public class holdDanceObject : ADanceObject {
                 score = 0;
 
             EvaluateScore(score);
-            if (score < 9) { // if first press is failure
+            if (score < FAILING_SCORE) { // if first press is failure
                 this.DestroyDanceTile();
             }
 
