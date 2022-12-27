@@ -122,6 +122,7 @@ public class CharacterHealth : MonoBehaviour {
 
         if (checkpointPos.HasValue)
         {
+            checkpointManager.ActivateLakitu();
             PlayerToNextCheckpoint(checkpointPos.Value);
         }
         else
@@ -172,8 +173,10 @@ public class CharacterHealth : MonoBehaviour {
             }
             else
             {
+                // Stop invincibility of player, disable lakitu. 
                 isInvincible = false;
                 rb.isKinematic = false;
+                checkpointManager.DeactivateLakitu();
             }
         
         }

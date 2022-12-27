@@ -1,15 +1,21 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Checkpoints
 {
     /// <summary>
-    /// Holds all of the checkpoints in the scene.
+    /// Holds all of the checkpoints in the scene. Also deals with Lakitu, who helps the player get back on track when player runs into
+    /// object in platforming mode. 
     /// </summary>
     public class CheckpointManager : MonoBehaviour
     {
         [Header("Checkpoints should be a child of this object.")]
         [SerializeField] private List<Transform> activeCheckpoints;
+        [SerializeField] private GameObject myLakitu;
+
+        private Coroutine lakituFollowPlayer;
+        private const float LAKITU_Y_OFFSET_FROM_PLAYER = 1f;
         
         public static CheckpointManager Instance { get; private set; }
 
@@ -31,6 +37,10 @@ namespace Checkpoints
             
             foreach (Transform child in transform)
             {
+                if (child.gameObject == myLakitu)
+                {
+                    continue;
+                }
                 activeCheckpoints.Add(child);
             }
             
@@ -51,6 +61,37 @@ namespace Checkpoints
             }
             
             return null;
+        }
+
+        // Activates Lakitu behavior to follow player, and then leave after the player is set.
+        public void ActivateLakitu()
+        {
+            myLakitu.SetActive(true);
+            Transform player = GameObject.FindWithTag("Player").transform;
+            lakituFollowPlayer = StartCoroutine(FollowPlayer());
+            
+            // Lakitu will follow the player here
+            IEnumerator FollowPlayer()
+            {
+                while (true)
+                {
+                    Vector3 playerPos = player.position;
+                    Vector3 lakituPosition = new Vector3(playerPos.x, playerPos.y + LAKITU_Y_OFFSET_FROM_PLAYER, 0);
+                    myLakitu.transform.position = lakituPosition;
+                    yield return new WaitForEndOfFrame();
+                }
+            }
+        }
+
+        public void DeactivateLakitu()
+        {
+            if (lakituFollowPlayer == null)
+            {
+                Debug.LogError("lakitu follow player coroutine is null. This should not happen.");
+                return;
+            }
+            StopCoroutine(lakituFollowPlayer);
+            myLakitu.SetActive(false);
         }
         
         /// <summary>
