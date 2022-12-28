@@ -15,6 +15,7 @@ public class CharacterHealth : MonoBehaviour {
     [SerializeField] private Rigidbody2D rb;
 
     private CheckpointManager checkpointManager;
+    private MyLakitu myLakitu;
     
     [SerializeField] private MotivationBar motivationBar;
     
@@ -39,6 +40,7 @@ public class CharacterHealth : MonoBehaviour {
         musicSync = FindObjectOfType<MusicSync>();
         
         checkpointManager = CheckpointManager.Instance;
+        myLakitu = MyLakitu.Instance;
     }
 
 
@@ -122,7 +124,7 @@ public class CharacterHealth : MonoBehaviour {
 
         if (checkpointPos.HasValue)
         {
-            checkpointManager.ActivateLakitu();
+            myLakitu.ActivateLakitu();
             PlayerToNextCheckpoint(checkpointPos.Value);
         }
         else
@@ -176,7 +178,7 @@ public class CharacterHealth : MonoBehaviour {
                 // Stop invincibility of player, disable lakitu. 
                 isInvincible = false;
                 rb.isKinematic = false;
-                checkpointManager.DeactivateLakitu();
+                myLakitu.DeactivateLakitu();
             }
         
         }
