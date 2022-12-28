@@ -36,6 +36,7 @@ namespace Checkpoints
         {
             meshObject.SetActive(true);
             fade.SetSpriteAlpha(1);
+            fade.CancelCoroutine();
             flash.StartFlash(Color.white, 3);
             Transform player = GameObject.FindWithTag("Player").transform;
             lakituFollowPlayer = StartCoroutine(FollowPlayer());

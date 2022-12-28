@@ -14,10 +14,7 @@ namespace SpriteVisualEffects
 
         public void Fade(float fadeTime, float finalAlphaValue, bool deactivateAtEnd = false)
         {
-            if (current != null)
-            {
-                StopCoroutine(current);
-            }
+            CancelCoroutine();
             
             current = StartCoroutine(_Fade(fadeTime, finalAlphaValue, deactivateAtEnd));
         } 
@@ -31,6 +28,7 @@ namespace SpriteVisualEffects
             float timeElapsed = 0;
             while (progress < 1)
             {
+                
                 timeElapsed += Time.deltaTime;
                 progress = timeElapsed / fadeTime;
                 float newAlpha = Mathf.Lerp(initialAlpha, finalAlpha, progress);
@@ -40,14 +38,27 @@ namespace SpriteVisualEffects
 
             if (deactivateAtEnd)
             {
+                Debug.Log("GameObject deactivated");
                 this.gameObject.SetActive(false);
             }
+
+            current = null;
         }
         
         public void SetSpriteAlpha(float a)
         {
             Color spriteColor = spriteRenderer.color;
             spriteRenderer.color = new Color(spriteColor.r, spriteColor.g, spriteColor.b, a);
+        }
+
+        public void CancelCoroutine()
+        {
+            if (current != null)
+            {
+                Debug.Log("Canceled Coroutine");
+                StopCoroutine(current);
+                current = null;
+            }
         }
     }
 }
