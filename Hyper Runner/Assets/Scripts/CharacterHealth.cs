@@ -1,5 +1,6 @@
 using System.Collections;
 using Checkpoints;
+using SpriteVisualEffects;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +14,7 @@ public class CharacterHealth : MonoBehaviour {
     [SerializeField] private Color negFlashColor;
     [SerializeField] private float flashSpeed;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private AlphaFade playerFade;
 
     private CheckpointManager checkpointManager;
     private MyLakitu myLakitu;
@@ -21,6 +23,7 @@ public class CharacterHealth : MonoBehaviour {
     
     private const float MIN_HEIGHT = 3.8f;
     private const float MAX_HEIGHT = 14f;
+    private const float FADE_CYCLE_TIME = 0.45f;
     
     private Animator portrait_animator;
     private bool charismaIsHighest; // make sure "yay" sound is played only once
@@ -135,7 +138,8 @@ public class CharacterHealth : MonoBehaviour {
         }
     }
 
-    // Player will be frozen and invincible until they reach the next checkpoint. Player will lerp from their last position to the next checkpoint. 
+    // Player will be frozen and invincible until they reach the next checkpoint. Player will lerp from their last position to the next checkpoint. Player
+    // alpha value will flash, indicating that the player is invincible. 
     private void PlayerToNextCheckpoint(Vector3 checkpointPos)
     {
         Vector3 initialPos = transform.position;
@@ -145,10 +149,13 @@ public class CharacterHealth : MonoBehaviour {
         rb.velocity = Vector2.zero;
         isInvincible = true;
         
+        playerFade.StartCycleFade(FADE_CYCLE_TIME);
+
         StartCoroutine(LerpToYPos());
         StartCoroutine(EnableMovementPastCheckpoint(checkpointPos.x));
         
-        // Local coroutine to lerp character to next checkpoint Y position 
+        
+        // Local coroutine to lerp character to next checkpoint Y position
         IEnumerator LerpToYPos()
         {
             float lerpProgress = (transform.position.x - initialPos.x) / xDistanceForLerp;
@@ -178,6 +185,7 @@ public class CharacterHealth : MonoBehaviour {
                 // Stop invincibility of player, disable lakitu. 
                 isInvincible = false;
                 rb.isKinematic = false;
+                playerFade.StopCycleFade();
                 myLakitu.DeactivateLakitu();
             }
         

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 1424509936}
   - component: {fileID: 4773036393832513061}
   - component: {fileID: 6977629524586620153}
+  - component: {fileID: 3136918802442706988}
   m_Layer: 0
   m_Name: Tracy
   m_TagString: Player
@@ -221,6 +222,7 @@ MonoBehaviour:
   negFlashColor: {r: 1, g: 0, b: 0, a: 1}
   flashSpeed: 3
   rb: {fileID: 752551082774792007}
+  playerFade: {fileID: 3136918802442706988}
   motivationBar: {fileID: 2726664687262472943}
 --- !u!114 &1424509934
 MonoBehaviour:
@@ -333,6 +335,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   marker: {fileID: 2032205274671400553, guid: 4279b92933b9d4c898482c5dd23428e3, type: 3}
+--- !u!114 &3136918802442706988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752551082774792009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3021ab17b9aa946bb984a9fa12d428e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 752551082774792011}
 --- !u!1 &1048126526856131614
 GameObject:
   m_ObjectHideFlags: 0
