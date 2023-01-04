@@ -144,6 +144,8 @@ MonoBehaviour:
   selectedSound: selectCharacter
   highlightSound: scroll
   character: 1
+  lockedCharacterDisplay: {fileID: 7275317571803036185}
+  unlockedCharacterDisplay: {fileID: 9083692337358475885}
   selectedBorder: {fileID: 452256447673145120}
   currentCharacterPanel: {fileID: 0}
 --- !u!1 &7275317571803036185
@@ -157,6 +159,7 @@ GameObject:
   - component: {fileID: 2625117308292542544}
   - component: {fileID: 5970917819068495023}
   - component: {fileID: 5929695316961569616}
+  - component: {fileID: 3010060190653564034}
   m_Layer: 5
   m_Name: CharacterLockedSprite
   m_TagString: Untagged
@@ -221,6 +224,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &3010060190653564034
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7275317571803036185}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9083692337358475885
 GameObject:
   m_ObjectHideFlags: 0
