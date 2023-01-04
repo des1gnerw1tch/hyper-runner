@@ -7,7 +7,7 @@ namespace SelectableUIElements
     /// </summary>
     public abstract class ASelectableElement : MonoBehaviour
     {
-        [SerializeField] private string selectedSound;
+        [SerializeField] protected string selectedSound;
         [SerializeField] private string highlightSound;
         
         // When this UI element is selected with the Select button

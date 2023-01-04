@@ -1,5 +1,6 @@
 using UnityEngine;
 using Characters;
+using SaveFileSystem;
 using UnityEngine.UI;
 
 namespace SelectableUIElements
@@ -11,14 +12,21 @@ namespace SelectableUIElements
     {
         [SerializeField] private PlayableCharacterEnum character;
         [SerializeField] private GameObject selectedBorder;
+        private const string CHARACTER_SELECTED_BUT_NOT_UNLOCKED_SOUND = "characterLocked";
         
         // To change current character sprite and animator.
         [SerializeField] private CurrentCharacterPanel currentCharacterPanel;
+        
 
         public override void Selected()
         {
-            base.Selected();
-            
+            if (!GameDataManager.Instance.IsCharacterUnlocked(character))
+            {
+                FindObjectOfType<AudioManager>().Play(CHARACTER_SELECTED_BUT_NOT_UNLOCKED_SOUND);
+                return;
+            }
+
+            FindObjectOfType<AudioManager>().Play(selectedSound);
             CharacterSelect.Instance.ChangeCurrentCharacter(character);
             currentCharacterPanel.UpdateInformation();
         }
