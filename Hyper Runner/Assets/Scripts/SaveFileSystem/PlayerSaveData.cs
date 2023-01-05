@@ -18,14 +18,18 @@ namespace SaveFileSystem
 
         private Dictionary<PlayableCharacterEnum, bool> charactersUnlockedStatus;
 
+        private PlayableCharacterEnum currentCharacter;
+
         #region Constructors
 
         public PlayerSaveData(AchievementManager achievementManager)
         {
             SetAchievementData(achievementManager.GetAchievementDataList());
 
-            // All characters start locked.
+            // All characters start locked. Start Tracy as current character
             charactersUnlockedStatus = new Dictionary<PlayableCharacterEnum, bool>();
+            currentCharacter = PlayableCharacterEnum.Tracy;
+            
             AddNewCharacters();
         }
 
@@ -76,5 +80,11 @@ namespace SaveFileSystem
                 }
             }
         }
+
+        // Gets current character player is using. 
+        public PlayableCharacterEnum GetCurrentCharacter() => currentCharacter;
+
+        // Gets current character player is using. 
+        public void SetCurrentCharacter(PlayableCharacterEnum currentCharacter) => this.currentCharacter = currentCharacter;
     }
 }

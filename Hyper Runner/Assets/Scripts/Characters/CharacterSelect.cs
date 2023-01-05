@@ -1,3 +1,4 @@
+using SaveFileSystem;
 using ScriptableObjects;
 using UnityEngine;
 
@@ -26,10 +27,12 @@ namespace Characters
             {
                 Destroy(this.gameObject);
             }
-            
-            //TODO: Remove this and have character save on file.
-            ChangeCurrentCharacter(PlayableCharacterEnum.Tracy);
         }
+
+        private void Start()
+        {
+            ChangeCurrentCharacter(GameDataManager.Instance.GetCurrentCharacter());
+        } 
 
         public GameObject GetCharacterPrefab() => currentCharacter;
 
@@ -46,6 +49,8 @@ namespace Characters
             currentCharacter = character;
 
             characterData = characters.GetCharacterDataByEnum(characterEnum);
+            
+            GameDataManager.Instance.SetCurrentCharacter(characterEnum);
         }
 
         public string GetCurrentCharacterName()

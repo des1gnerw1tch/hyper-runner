@@ -24,7 +24,6 @@ namespace SaveFileSystem
             if (Instance != null && Instance != this)
             {
                 Destroy(this.gameObject);
-                Debug.LogError("Two instances found, this one was destroyed");
                 return;
             }
 
@@ -91,6 +90,16 @@ namespace SaveFileSystem
 
         public bool IsCharacterUnlocked(PlayableCharacterEnum character) => currentSaveData.IsCharacterUnlocked(character);
 
+        // Gets current character player is using. 
+        public PlayableCharacterEnum GetCurrentCharacter() => currentSaveData.GetCurrentCharacter();
+
+            // Gets current character player is using. 
+        public void SetCurrentCharacter(PlayableCharacterEnum currentCharacter)
+        {
+            currentSaveData.SetCurrentCharacter(currentCharacter);
+            SaveGame();
+        } 
+        
         private void SaveGame()  => FileSaveManager.SavePlayer(currentSaveData);
     }
 }
