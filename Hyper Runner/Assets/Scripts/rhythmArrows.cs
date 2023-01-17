@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class rhythmArrows : MonoBehaviour {
-    [SerializeField] private ALevelManager levelManager;
     [SerializeField] private float playerFloatingSpeed;
     [SerializeField] private float surroundingSpeedMultiplier;
     [SerializeField] private InterpolateTrigger interpolationTrigger;
     
-    [Header("Auto-get player components")]
+    [Header("Auto-get components")]
+    [SerializeField] private ALevelManager levelManager;
     [SerializeField] private Transform player;
     [SerializeField] private danceTileManager danceManager;
 
     private void Start()
     {
         danceManager = danceTileManager.Instance;
+        levelManager = ALevelManager.Instance;
     }
     
     void OnTriggerEnter2D(Collider2D other) {
