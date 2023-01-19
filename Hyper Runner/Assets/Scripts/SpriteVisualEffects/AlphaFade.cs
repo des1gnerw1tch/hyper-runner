@@ -46,7 +46,6 @@ namespace SpriteVisualEffects
             
             if (deactivateAtEnd)
             {
-                Debug.Log("GameObject deactivated");
                 this.gameObject.SetActive(false);
             }
             
@@ -62,7 +61,6 @@ namespace SpriteVisualEffects
         {
             if (current != null)
             {
-                Debug.Log("Canceled Coroutine");
                 StopCoroutine(current);
                 current = null;
             }
@@ -82,10 +80,11 @@ namespace SpriteVisualEffects
             Fade(periodTime / 2, newAlpha);
         }
 
-        public void StopCycleFade()
+        
+        public void StopCycleFade(bool finalAlphaIs1 = true)
         {
             fadeFinishedEvent.RemoveListener(NextFadeCycle);
-            Fade(periodTime / 2, 1);
+            Fade(periodTime / 2, finalAlphaIs1? 1 : 0);
         }
     }
 }

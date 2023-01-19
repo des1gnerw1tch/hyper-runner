@@ -12,6 +12,7 @@ namespace Checkpoints
         [SerializeField] private GameObject meshObject;
         [SerializeField] private Flash flash;
         [SerializeField] private AlphaFade fade;
+        [SerializeField] private CheckpointIndicator checkpointIndicator;
 
         private Coroutine lakituFollowPlayer;
         private const float LAKITU_Y_OFFSET_FROM_PLAYER = 1f;
@@ -32,8 +33,10 @@ namespace Checkpoints
         }
             
         // Activates Lakitu behavior to follow player, and then leave after the player is set.
-        public void ActivateLakitu()
+        public void ActivateLakitu(Vector3 checkpointPos)
         {
+            checkpointIndicator.Activate(checkpointPos);
+            
             meshObject.SetActive(true);
             fade.SetSpriteAlpha(1);
             fade.CancelCoroutine();
@@ -56,6 +59,8 @@ namespace Checkpoints
 
         public void DeactivateLakitu()
         {
+            checkpointIndicator.Disable();
+            
             if (lakituFollowPlayer == null)
             {
                 Debug.LogError("lakitu follow player coroutine is null. This should not happen.");

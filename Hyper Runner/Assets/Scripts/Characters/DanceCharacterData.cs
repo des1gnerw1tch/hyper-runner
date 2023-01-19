@@ -31,8 +31,6 @@ namespace Characters
         // Prefab that will be spawned in game
         [SerializeField] private GameObject characterPrefab;
 
-        
-
         public PlayableCharacterEnum GetCharacterEnum()
         {
             return character;

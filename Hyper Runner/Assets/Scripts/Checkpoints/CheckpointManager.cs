@@ -11,7 +11,6 @@ namespace Checkpoints
     {
         [Header("Checkpoints should be a child of this object.")]
         [SerializeField] private List<Transform> activeCheckpoints;
-        [SerializeField] private GameObject myLakitu;
 
         public static CheckpointManager Instance { get; private set; }
 
@@ -33,10 +32,6 @@ namespace Checkpoints
             
             foreach (Transform child in transform)
             {
-                if (child.gameObject == myLakitu)
-                {
-                    continue;
-                }
                 activeCheckpoints.Add(child);
             }
             

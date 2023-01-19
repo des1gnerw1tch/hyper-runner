@@ -127,7 +127,7 @@ public class CharacterHealth : MonoBehaviour {
 
         if (checkpointPos.HasValue)
         {
-            myLakitu.ActivateLakitu();
+            myLakitu.ActivateLakitu(checkpointPos.Value);
             PlayerToNextCheckpoint(checkpointPos.Value);
         }
         else
