@@ -16,7 +16,7 @@ namespace Checkpoints
         public void Activate(Vector3 posToSpawnAt)
         {
             transform.position = posToSpawnAt;
-            fade.StartCycleFade(.3f);
+            fade.StartCycleFade(.5f);
         }
 
         public void Disable() => fade.StopCycleFade(false);
