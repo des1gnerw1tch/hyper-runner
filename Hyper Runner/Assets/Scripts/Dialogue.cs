@@ -65,7 +65,7 @@ public class Dialogue : MonoBehaviour
 
     private void DialogueEnded()
     {
-        Debug.Log("Dialogue Ended");
+        //Debug.Log("Dialogue Ended");
     }
 
     private void PlayRandomRobotSound()
