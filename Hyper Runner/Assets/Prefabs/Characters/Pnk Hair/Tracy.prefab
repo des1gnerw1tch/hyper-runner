@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 4773036393832513061}
   - component: {fileID: 6977629524586620153}
   - component: {fileID: 3136918802442706988}
+  - component: {fileID: 3619384320945571887}
   m_Layer: 0
   m_Name: Tracy
   m_TagString: Player
@@ -348,6 +349,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 752551082774792011}
+--- !u!114 &3619384320945571887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752551082774792009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f166ebd83c14445fbf914324b4aec21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1048126526856131614
 GameObject:
   m_ObjectHideFlags: 0

@@ -44,6 +44,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "RestartGame",
+                    "type": "Button",
+                    "id": "d508eb8f-7cb7-4c88-a955-805833824c6d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -200,6 +208,28 @@
                     "action": "PauseGame",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2a712a83-245e-4199-8fda-4e6c23aeef03",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard Control Scheme",
+                    "action": "RestartGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "54b9c69c-b4e0-4d31-a096-2edd4d8c8c56",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad Control Scheme",
+                    "action": "RestartGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -291,6 +321,14 @@
                     "name": "PauseGame",
                     "type": "Button",
                     "id": "d90c9bfb-f7df-4d61-a312-5b699486c171",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RestartGame",
+                    "type": "Button",
+                    "id": "41699389-6ab7-4ca6-ab49-f0684a57a27f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -613,6 +651,28 @@
                     "processors": "",
                     "groups": "Gamepad Control Scheme",
                     "action": "PauseGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d043644a-1e6e-4904-89ef-1ce49456a2eb",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard Control Scheme",
+                    "action": "RestartGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "907f8377-d85d-4cfb-92b1-bf8ff718bc61",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad Control Scheme",
+                    "action": "RestartGame",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

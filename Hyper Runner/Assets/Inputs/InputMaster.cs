@@ -57,6 +57,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""RestartGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""d508eb8f-7cb7-4c88-a955-805833824c6d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -213,6 +221,28 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""PauseGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2a712a83-245e-4199-8fda-4e6c23aeef03"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""RestartGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""54b9c69c-b4e0-4d31-a096-2edd4d8c8c56"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad Control Scheme"",
+                    ""action"": ""RestartGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -304,6 +334,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""name"": ""PauseGame"",
                     ""type"": ""Button"",
                     ""id"": ""d90c9bfb-f7df-4d61-a312-5b699486c171"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""RestartGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""41699389-6ab7-4ca6-ab49-f0684a57a27f"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -626,6 +664,28 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad Control Scheme"",
                     ""action"": ""PauseGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d043644a-1e6e-4904-89ef-1ce49456a2eb"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""RestartGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""907f8377-d85d-4cfb-92b1-bf8ff718bc61"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad Control Scheme"",
+                    ""action"": ""RestartGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1251,6 +1311,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Platformer_FloorUp = m_Platformer.FindAction("FloorUp", throwIfNotFound: true);
         m_Platformer_FastFowardStart = m_Platformer.FindAction("FastFowardStart", throwIfNotFound: true);
         m_Platformer_PauseGame = m_Platformer.FindAction("PauseGame", throwIfNotFound: true);
+        m_Platformer_RestartGame = m_Platformer.FindAction("RestartGame", throwIfNotFound: true);
         // Dancer
         m_Dancer = asset.FindActionMap("Dancer", throwIfNotFound: true);
         m_Dancer_UpDanceKeyPress = m_Dancer.FindAction("UpDanceKeyPress", throwIfNotFound: true);
@@ -1264,6 +1325,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Dancer_AnyDanceKeyPress = m_Dancer.FindAction("AnyDanceKeyPress", throwIfNotFound: true);
         m_Dancer_FastFowardStart = m_Dancer.FindAction("FastFowardStart", throwIfNotFound: true);
         m_Dancer_PauseGame = m_Dancer.FindAction("PauseGame", throwIfNotFound: true);
+        m_Dancer_RestartGame = m_Dancer.FindAction("RestartGame", throwIfNotFound: true);
         // 3D
         m__3D = asset.FindActionMap("3D", throwIfNotFound: true);
         m__3D_WalkVertical = m__3D.FindAction("Walk Vertical", throwIfNotFound: true);
@@ -1335,6 +1397,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_Platformer_FloorUp;
     private readonly InputAction m_Platformer_FastFowardStart;
     private readonly InputAction m_Platformer_PauseGame;
+    private readonly InputAction m_Platformer_RestartGame;
     public struct PlatformerActions
     {
         private @InputMaster m_Wrapper;
@@ -1344,6 +1407,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @FloorUp => m_Wrapper.m_Platformer_FloorUp;
         public InputAction @FastFowardStart => m_Wrapper.m_Platformer_FastFowardStart;
         public InputAction @PauseGame => m_Wrapper.m_Platformer_PauseGame;
+        public InputAction @RestartGame => m_Wrapper.m_Platformer_RestartGame;
         public InputActionMap Get() { return m_Wrapper.m_Platformer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1368,6 +1432,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @PauseGame.started -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnPauseGame;
                 @PauseGame.performed -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnPauseGame;
                 @PauseGame.canceled -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnPauseGame;
+                @RestartGame.started -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnRestartGame;
+                @RestartGame.performed -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnRestartGame;
+                @RestartGame.canceled -= m_Wrapper.m_PlatformerActionsCallbackInterface.OnRestartGame;
             }
             m_Wrapper.m_PlatformerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1387,6 +1454,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @PauseGame.started += instance.OnPauseGame;
                 @PauseGame.performed += instance.OnPauseGame;
                 @PauseGame.canceled += instance.OnPauseGame;
+                @RestartGame.started += instance.OnRestartGame;
+                @RestartGame.performed += instance.OnRestartGame;
+                @RestartGame.canceled += instance.OnRestartGame;
             }
         }
     }
@@ -1406,6 +1476,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_Dancer_AnyDanceKeyPress;
     private readonly InputAction m_Dancer_FastFowardStart;
     private readonly InputAction m_Dancer_PauseGame;
+    private readonly InputAction m_Dancer_RestartGame;
     public struct DancerActions
     {
         private @InputMaster m_Wrapper;
@@ -1421,6 +1492,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @AnyDanceKeyPress => m_Wrapper.m_Dancer_AnyDanceKeyPress;
         public InputAction @FastFowardStart => m_Wrapper.m_Dancer_FastFowardStart;
         public InputAction @PauseGame => m_Wrapper.m_Dancer_PauseGame;
+        public InputAction @RestartGame => m_Wrapper.m_Dancer_RestartGame;
         public InputActionMap Get() { return m_Wrapper.m_Dancer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1463,6 +1535,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @PauseGame.started -= m_Wrapper.m_DancerActionsCallbackInterface.OnPauseGame;
                 @PauseGame.performed -= m_Wrapper.m_DancerActionsCallbackInterface.OnPauseGame;
                 @PauseGame.canceled -= m_Wrapper.m_DancerActionsCallbackInterface.OnPauseGame;
+                @RestartGame.started -= m_Wrapper.m_DancerActionsCallbackInterface.OnRestartGame;
+                @RestartGame.performed -= m_Wrapper.m_DancerActionsCallbackInterface.OnRestartGame;
+                @RestartGame.canceled -= m_Wrapper.m_DancerActionsCallbackInterface.OnRestartGame;
             }
             m_Wrapper.m_DancerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1500,6 +1575,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @PauseGame.started += instance.OnPauseGame;
                 @PauseGame.performed += instance.OnPauseGame;
                 @PauseGame.canceled += instance.OnPauseGame;
+                @RestartGame.started += instance.OnRestartGame;
+                @RestartGame.performed += instance.OnRestartGame;
+                @RestartGame.canceled += instance.OnRestartGame;
             }
         }
     }
@@ -1683,6 +1761,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnFloorUp(InputAction.CallbackContext context);
         void OnFastFowardStart(InputAction.CallbackContext context);
         void OnPauseGame(InputAction.CallbackContext context);
+        void OnRestartGame(InputAction.CallbackContext context);
     }
     public interface IDancerActions
     {
@@ -1697,6 +1776,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnAnyDanceKeyPress(InputAction.CallbackContext context);
         void OnFastFowardStart(InputAction.CallbackContext context);
         void OnPauseGame(InputAction.CallbackContext context);
+        void OnRestartGame(InputAction.CallbackContext context);
     }
     public interface I_3DActions
     {
