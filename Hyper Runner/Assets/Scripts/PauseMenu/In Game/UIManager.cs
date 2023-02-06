@@ -16,6 +16,9 @@ public class UIManager : MonoBehaviour {
     [SerializeField] private GameObject startTransitionPanel;
     [SerializeField] private Animator fadeToResultsScreenPanel;
 
+    // Where Perfect, Good, Ok, and Missed scores are spawned under
+    [SerializeField] private Transform scorePopUpParent;
+
     [Header("Required Prefab in Scene, automatically fetched")]
     [SerializeField] private PlayerInput input;
     [SerializeField] private MusicSync musicSync;
@@ -114,6 +117,8 @@ public class UIManager : MonoBehaviour {
     
     public void PlayEndTransition() => fadeToResultsScreenPanel.SetTrigger("activate");
 
-    
+    public Transform GetScorePopUpParent() => scorePopUpParent;
+
+
 
 }

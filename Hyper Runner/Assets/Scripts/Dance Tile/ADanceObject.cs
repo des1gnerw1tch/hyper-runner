@@ -13,6 +13,7 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     public CharacterHealth characterHealth; // character health of player
     public GameObject canvas; // current scene canvas
     public PerfectStreakTextManager perfectStreakTextManager; // Text holding Streak of Perfects prefab
+    public Transform scorePopUpParent;
 
     [Header("Required Components/Prefabs")]
     public GameObject destroyEffect; // gameobject spawned when dance tile is destroyed
@@ -128,8 +129,7 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
 
     // spawns a score text on the players canvas
     private void SpawnScoreText(GameObject text) {
-        var image = Instantiate(text) as GameObject;
-        image.transform.SetParent(canvas.transform, false);
+        var image = Instantiate(text, scorePopUpParent);
 
         // set the placement of these pop ups a little random
         this.Wobble(image.GetComponent<RectTransform>(), 15);
@@ -180,5 +180,6 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
         this.canvas = GameObject.FindWithTag("ArcadeGameCanvas");
         this.perfectStreakTextManager = FindObjectOfType<PerfectStreakTextManager>();
         this.danceManager = FindObjectOfType<danceTileManager>();
+        scorePopUpParent = UIManager.Instance.GetScorePopUpParent();
     }
 }
