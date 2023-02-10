@@ -42,6 +42,13 @@ namespace SaveFileSystem
                 achievementManager.SetAchievementsFromData(currentSaveData.GetAchievementData());
                 currentSaveData.AddNewCharacters(); // Adds new characters if new characters were added since last update
                 SaveGame();
+                
+                //TODO: Remove
+                Debug.Log("Current level high scores");
+                foreach (string level in currentSaveData.GetLevelDataTable().Keys)
+                {
+                    Debug.Log(level + " "  + currentSaveData.GetLevelDataTable()[level].highScore);
+                }
             }
         }
         
@@ -101,5 +108,13 @@ namespace SaveFileSystem
         } 
         
         private void SaveGame()  => FileSaveManager.SavePlayer(currentSaveData);
+
+
+        public bool ShouldSetLevelHighScore(string levelSceneName, LevelGrade grade)
+        {
+            bool wasHighScoreSet = currentSaveData.ShouldSetLevelHighScore(levelSceneName, grade);
+            SaveGame();
+            return wasHighScoreSet;
+        }
     }
 }

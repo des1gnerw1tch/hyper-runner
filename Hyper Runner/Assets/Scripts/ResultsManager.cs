@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // this class keeps track of the current result of a level. Is used for "ResultsScreen" scene

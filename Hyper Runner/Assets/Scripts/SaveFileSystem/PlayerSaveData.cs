@@ -20,6 +20,8 @@ namespace SaveFileSystem
 
         private PlayableCharacterEnum currentCharacter;
 
+        private Dictionary<string, LevelData> levelDataTable;
+
         #region Constructors
 
         public PlayerSaveData(AchievementManager achievementManager)
@@ -31,6 +33,7 @@ namespace SaveFileSystem
             currentCharacter = PlayableCharacterEnum.Tracy;
             
             AddNewCharacters();
+            levelDataTable = new Dictionary<string, LevelData>();
         }
 
         #endregion
@@ -86,5 +89,29 @@ namespace SaveFileSystem
 
         // Gets current character player is using. 
         public void SetCurrentCharacter(PlayableCharacterEnum currentCharacter) => this.currentCharacter = currentCharacter;
+        
+        // Set high score of level if this grade is the highest. If level not found, add level to Dictionary.
+        public bool ShouldSetLevelHighScore(string levelSceneName, LevelGrade grade)
+        {
+            if (levelDataTable.ContainsKey(levelSceneName))
+            {
+                if (grade >= levelDataTable[levelSceneName].highScore)
+                {
+                    return false;
+                }
+                // High score reached
+                levelDataTable[levelSceneName].highScore = grade;
+                return true;
+            }
+            else
+            {
+                levelDataTable.Add(levelSceneName, new LevelData());
+                levelDataTable[levelSceneName].highScore = grade;
+                return true;
+            }
+        }
+        
+        public Dictionary<string, LevelData> GetLevelDataTable() => new Dictionary<string, LevelData>(levelDataTable);
+
     }
 }

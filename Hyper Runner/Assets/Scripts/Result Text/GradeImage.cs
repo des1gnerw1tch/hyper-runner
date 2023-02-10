@@ -1,4 +1,5 @@
 using System.Collections;
+using SaveFileSystem;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -12,12 +13,10 @@ public class GradeImage : AResultText {
     [SerializeField] private Animator charismaAnimator;
     [SerializeField] private GameObject clickToProceedToMenuText;
     [HideInInspector] public int gradeEarned; // the grade earned by player, calculated with ResultsManager
-    private bool isHighScore; // is grade earned a high score
 
     // called on first frame
     void Start() {
         this.imageComponent.enabled = false;
-        this.isHighScore = true; // TODO: display high score if this is saved as a high score
         clickToProceedToMenuText.SetActive(false);
     }
 
@@ -64,12 +63,8 @@ public class GradeImage : AResultText {
         FindObjectOfType<AudioManager>().Play("Click");
 
         this.imageComponent.sprite = this.grades[this.gradeEarned];
-        int happyRating = (4 - this.gradeEarned);
-        if (happyRating < 0) {
-            this.isHighScore = false;
-        }
 
-        if (this.isHighScore) {
+        if (GameDataManager.Instance.ShouldSetLevelHighScore(LoadArcadeScene.sceneFrom, (LevelGrade) this.gradeEarned)) {
             this.controller.DisplayHighScore();
             FindObjectOfType<AudioManager>().Play("Yay");
         }
