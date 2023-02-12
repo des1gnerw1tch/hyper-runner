@@ -2255,6 +2255,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: tracyYay
+    clip: {fileID: 8300000, guid: dd5c3937eaa5e4743ae48ba89d6d3e3f, type: 3}
+    volume: 0.638
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &606889315
 GameObject:
   m_ObjectHideFlags: 0
@@ -4132,6 +4138,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1027891284}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1044592692 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5315184503680309269, guid: 54ffb9417b4304178b92f1fc5879d122, type: 3}
+  m_PrefabInstance: {fileID: 7061350221893898283}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d4ae22374c34502b9c83b42b731e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1076968068 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7290382693737997023, guid: 77c99427d24c44ec3926515b6f4b5a27, type: 3}
@@ -21772,9 +21789,21 @@ PrefabInstance:
       propertyPath: popUpText
       value: 
       objectReference: {fileID: 479590358}
+    - target: {fileID: 4851250485551298235, guid: 84e688b5b1f744268ae41a3cebe58e85, type: 3}
+      propertyPath: uiContent
+      value: 
+      objectReference: {fileID: 7061350221893898286}
+    - target: {fileID: 4851250485551298235, guid: 84e688b5b1f744268ae41a3cebe58e85, type: 3}
+      propertyPath: characterUnlock
+      value: 
+      objectReference: {fileID: 1044592692}
     - target: {fileID: 6418673535068601952, guid: 84e688b5b1f744268ae41a3cebe58e85, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.053718567
+      value: -0.053717136
+      objectReference: {fileID: 0}
+    - target: {fileID: 6418673535068601952, guid: 84e688b5b1f744268ae41a3cebe58e85, type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 0.2199974
       objectReference: {fileID: 0}
     - target: {fileID: 7772596336055899589, guid: 84e688b5b1f744268ae41a3cebe58e85, type: 3}
       propertyPath: m_Size.x
@@ -22772,6 +22801,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3edaeedc6aec140bd89ea6fc370dfe5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7061350221893898286 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7725569944963606226, guid: 54ffb9417b4304178b92f1fc5879d122, type: 3}
+  m_PrefabInstance: {fileID: 7061350221893898283}
+  m_PrefabAsset: {fileID: 0}
 --- !u!33 &7085715659615165841
 MeshFilter:
   m_ObjectHideFlags: 0

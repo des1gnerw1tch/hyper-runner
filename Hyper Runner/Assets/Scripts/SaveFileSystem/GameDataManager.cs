@@ -100,7 +100,7 @@ namespace SaveFileSystem
         // Gets current character player is using. 
         public PlayableCharacterEnum GetCurrentCharacter() => currentSaveData.GetCurrentCharacter();
 
-            // Gets current character player is using. 
+        // Gets current character player is using. 
         public void SetCurrentCharacter(PlayableCharacterEnum currentCharacter)
         {
             currentSaveData.SetCurrentCharacter(currentCharacter);
@@ -109,7 +109,8 @@ namespace SaveFileSystem
         
         private void SaveGame()  => FileSaveManager.SavePlayer(currentSaveData);
 
-
+        
+        // Set high score of level if this grade is the highest. If level not found, add level to Dictionary.
         public bool ShouldSetLevelHighScore(string levelSceneName, LevelGrade grade)
         {
             bool wasHighScoreSet = currentSaveData.ShouldSetLevelHighScore(levelSceneName, grade);

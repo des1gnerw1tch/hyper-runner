@@ -31,6 +31,9 @@ namespace Characters
         // Prefab that will be spawned in game
         [SerializeField] private GameObject characterPrefab;
 
+        // Sprite shown when character is unlocked in the game
+        [SerializeField] private Sprite characterUnlockSprite;
+
         public PlayableCharacterEnum GetCharacterEnum()
         {
             return character;
@@ -51,8 +54,11 @@ namespace Characters
             return characterPrefab;
         }
 
+        // TODO: Rename this to something about the showcase sprite
         public Sprite GetSprite => characterShowcaseSprite;
 
         public RuntimeAnimatorController GetShowcaseController => characterShowcaseController;
+
+        public Sprite GetUnlockSprite() => characterUnlockSprite;
     }
 }
