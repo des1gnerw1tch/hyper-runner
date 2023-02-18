@@ -62,7 +62,7 @@ public class MusicSync : MonoBehaviour {
         float progress = levelMusic.time / (levelMusic.clip.length * completeLevelFrac);
         progressBar.UpdateProgress(progress);
 
-        if (progress > 1)
+        if (progress >= 1)
         {
             StartCoroutine(ALevelManager.Instance.LevelCompleted());
         }
