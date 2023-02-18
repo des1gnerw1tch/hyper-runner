@@ -43,7 +43,7 @@ namespace SaveFileSystem
                 currentSaveData.AddNewCharacters(); // Adds new characters if new characters were added since last update
                 SaveGame();
                 
-                //TODO: Remove
+                //TODO: Remove, might not even need GetLevelDataTable anymore. This is printed just to ensure that high score feature is working. 
                 Debug.Log("Current level high scores");
                 foreach (string level in currentSaveData.GetLevelDataTable().Keys)
                 {
@@ -58,7 +58,6 @@ namespace SaveFileSystem
             
             if (newValue < 0)
             {
-                Debug.LogError("Insufficient funds");
                 return -1;
             }
 
@@ -105,8 +104,10 @@ namespace SaveFileSystem
         {
             currentSaveData.SetCurrentCharacter(currentCharacter);
             SaveGame();
-        } 
-        
+        }
+
+        public PlayableCharacterEnum? GetRandomLockedCharacter() => currentSaveData.GetRandomLockedCharacter();
+
         private void SaveGame()  => FileSaveManager.SavePlayer(currentSaveData);
 
         

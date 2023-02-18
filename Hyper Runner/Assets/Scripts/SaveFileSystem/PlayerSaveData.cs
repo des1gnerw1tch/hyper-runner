@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Achievements;
 using Characters;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace SaveFileSystem
 {
@@ -89,6 +90,28 @@ namespace SaveFileSystem
 
         // Gets current character player is using. 
         public void SetCurrentCharacter(PlayableCharacterEnum currentCharacter) => this.currentCharacter = currentCharacter;
+
+        // Gets a random locked character from the roster. No rarity system yet, but this would be cool.
+        // Returns null if all characters unlocked
+        public PlayableCharacterEnum? GetRandomLockedCharacter()
+        {
+            List<PlayableCharacterEnum> lockedCharacters = new List<PlayableCharacterEnum>();
+            foreach (PlayableCharacterEnum character in charactersUnlockedStatus.Keys)
+            {
+                if (charactersUnlockedStatus[character] == false)
+                {
+                    lockedCharacters.Add(character);
+                }
+            }
+
+            if (lockedCharacters.Count == 0)
+            {
+                return null;
+            }
+
+            int num = Random.Range(0, lockedCharacters.Count);
+            return lockedCharacters[num];
+        }
         
         // Set high score of level if this grade is the highest. If level not found, add level to Dictionary.
         public bool ShouldSetLevelHighScore(string levelSceneName, LevelGrade grade)
