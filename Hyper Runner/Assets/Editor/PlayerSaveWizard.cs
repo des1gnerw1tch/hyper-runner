@@ -9,6 +9,7 @@ namespace Editor
     public class PlayerSaveWizard : EditorWindow
     {
         private PlayableCharacterEnum characterToUnlock;
+        private int tokensToAdd;
         
         [MenuItem("Custom/Player Save Wizard")]
         public static void ShowWindow() => GetWindow<PlayerSaveWizard>("Player Save Wizard");
@@ -37,6 +38,22 @@ namespace Editor
                     playerData.SetCharacterUnlocked(characterToUnlock, true);
                     FileSaveManager.SavePlayer(playerData);
                     Debug.Log("Successfully unlocked character.");
+                }
+            }
+
+            tokensToAdd = EditorGUILayout.IntField("Number of tokens to give", tokensToAdd);
+            if (GUILayout.Button("Give Tokens"))
+            {
+                playerData = FileSaveManager.LoadPlayer();
+                if (playerData == null)
+                {
+                    Debug.LogError("No save file found to modify. Start the game once and try again.");
+                }
+                else
+                {
+                    playerData.SetPlayTokens(playerData.GetNumTokens() + tokensToAdd);
+                    FileSaveManager.SavePlayer(playerData);
+                    Debug.Log("Successfully added " + tokensToAdd + " tokens to save. Total tokens= " + playerData.GetNumTokens());
                 }
             }
         }
