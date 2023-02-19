@@ -3882,6 +3882,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7061350221101141198}
     m_Modifications:
+    - target: {fileID: 5593021340661983495, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: textToDisplay.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593021340661983495, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: textToDisplay.Array.data[2]
+      value: YB better.
+      objectReference: {fileID: 0}
     - target: {fileID: 8594450153152081454, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
       propertyPath: m_Name
       value: PrizeVendorDialogue
