@@ -1,3 +1,4 @@
+using SaveFileSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +12,10 @@ namespace InteractableArcade
         [SerializeField] private GameObject backlight;
         [SerializeField] private string sceneToLoad;
         [SerializeField] private Transform machineSpawnPosition; // first machine position to spawn player at
+        
+        // This machine is locked until this level is completed with at least a B score.
+        [SerializeField] private string levelThatMustBeCompletedBeforeThisOne;
+        [SerializeField] private bool lockEnabled;
 
         // Loads the scene the arcade game is linked to 
         public void LoadGameScene()
@@ -23,6 +28,22 @@ namespace InteractableArcade
         public override void Interact(InteractArcade player)
         {
             base.Interact(player);
+            if (lockEnabled)
+            {
+                LevelGrade? grade = GameDataManager.Instance.GetLevelHighScore(levelThatMustBeCompletedBeforeThisOne);
+                if (!grade.HasValue)
+                {
+                    Debug.LogError("Grade should not be null. Letting player play level.");
+                } 
+                else if (grade == LevelGrade.NeverCompleted && lockEnabled)
+                {
+                    FindObjectOfType<AudioManager>().Play("characterLocked");
+                    // TODO: Some feedback that this level is locked....... Maybe a dialogue popup?
+                    Debug.Log("TODO: Add some feedback that this level is locked....... Maybe a dialogue popup?");
+                    return;
+                }
+            }
+            
             player.ClearCurrentInteractable();
             // start animation
             playerCam.SetActive(false);

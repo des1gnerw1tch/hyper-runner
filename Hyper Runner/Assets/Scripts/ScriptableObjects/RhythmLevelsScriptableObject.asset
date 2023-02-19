@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 003fa12f94be54d94817b122f032d36e, type: 3}
+  m_Name: RhythmLevelsScriptableObject
+  m_EditorClassIdentifier: 
+  rhythmLevels:
+  - Lvl_Nightlife
+  - Lvl_Cyber
+  - Lvl_Carnival

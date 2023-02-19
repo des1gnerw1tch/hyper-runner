@@ -1,7 +1,10 @@
+using System.Collections.Generic;
 using Achievements;
 using Characters;
+using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 namespace SaveFileSystem
 {
@@ -14,6 +17,7 @@ namespace SaveFileSystem
         private PlayerSaveData currentSaveData;
 
         [SerializeField] private AchievementManager achievementManager;
+        [SerializeField] private RhythmLevelsContainer rhythmLevelsContainer;
         
         public UnityEvent PlayerBalanceChanged { get; } = new UnityEvent();
         
@@ -34,13 +38,14 @@ namespace SaveFileSystem
             if (currentSaveData == null)
             {
                 Debug.Log("Save file not found. Creating new save.");
-                currentSaveData = new PlayerSaveData(achievementManager);
+                currentSaveData = new PlayerSaveData(achievementManager, rhythmLevelsContainer.GetAllRhythmLevelScenes());
                 SaveGame();
             }
             else // save file found
             {
                 achievementManager.SetAchievementsFromData(currentSaveData.GetAchievementData());
                 currentSaveData.AddNewCharacters(); // Adds new characters if new characters were added since last update
+                currentSaveData.AddNewLevels(rhythmLevelsContainer.GetAllRhythmLevelScenes()); // Adds new levels if new levels were added since last update
                 SaveGame();
                 
                 //TODO: Remove, might not even need GetLevelDataTable anymore. This is printed just to ensure that high score feature is working. 
@@ -111,12 +116,16 @@ namespace SaveFileSystem
         private void SaveGame()  => FileSaveManager.SavePlayer(currentSaveData);
 
         
-        // Set high score of level if this grade is the highest. If level not found, add level to Dictionary.
+        // Set high score of level if this grade is the highest. If level not found in dictionary, print error and add level to dictionary
         public bool ShouldSetLevelHighScore(string levelSceneName, LevelGrade grade)
         {
             bool wasHighScoreSet = currentSaveData.ShouldSetLevelHighScore(levelSceneName, grade);
             SaveGame();
             return wasHighScoreSet;
         }
+
+        // Will return null if level is not found in dictionary, which should not happen... 
+        public LevelGrade? GetLevelHighScore(string levelSceneName) => currentSaveData.GetLevelHighScore(levelSceneName);
+        
     }
 }

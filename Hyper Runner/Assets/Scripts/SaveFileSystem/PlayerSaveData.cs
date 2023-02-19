@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Achievements;
 using Characters;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 namespace SaveFileSystem
@@ -21,11 +22,13 @@ namespace SaveFileSystem
 
         private PlayableCharacterEnum currentCharacter;
 
+        // Level scenes MUST start with a certain prefix
         private Dictionary<string, LevelData> levelDataTable;
+        private const string LVL_PREFIX = "Lvl_";
 
         #region Constructors
 
-        public PlayerSaveData(AchievementManager achievementManager)
+        public PlayerSaveData(AchievementManager achievementManager, List<string> allScenesInGame)
         {
             SetAchievementData(achievementManager.GetAchievementDataList());
 
@@ -34,7 +37,10 @@ namespace SaveFileSystem
             currentCharacter = PlayableCharacterEnum.Tracy;
             
             AddNewCharacters();
+            
+            // Add all levels to the dictionary, default is started as not attempted.
             levelDataTable = new Dictionary<string, LevelData>();
+            AddNewLevels(allScenesInGame);
         }
 
         #endregion
@@ -128,13 +134,38 @@ namespace SaveFileSystem
             }
             else
             {
+                Debug.LogError("This scene was not found in dictionary. Probably needs to be added to the RhythmLevelsContainer scriptable object." +
+                               "Scene added to the dictionary for now, but this needs to be fixed or issues will occur.");
                 levelDataTable.Add(levelSceneName, new LevelData());
                 levelDataTable[levelSceneName].highScore = grade;
                 return true;
             }
         }
+
+        public LevelGrade? GetLevelHighScore(string levelSceneName)
+        {
+            if (levelDataTable.ContainsKey(levelSceneName))
+            {
+                return levelDataTable[levelSceneName].highScore;
+            }
+            
+            Debug.LogError("Level not found in dictionary.");
+            return null;
+        }
         
         public Dictionary<string, LevelData> GetLevelDataTable() => new Dictionary<string, LevelData>(levelDataTable);
 
+        // Adds all new levels to level data. Takes in a list of all the rhythm scenes in the current project. 
+        public void AddNewLevels(List<string> allScenes)
+        {
+            foreach (string scene in allScenes)
+            {
+                if (!levelDataTable.ContainsKey(scene))
+                {
+                    Debug.Log("Added level " + scene);
+                    levelDataTable.Add(scene, new LevelData());
+                }
+            }
+        }
     }
 }

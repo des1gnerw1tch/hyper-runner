@@ -6,7 +6,7 @@ namespace ScriptableObjects
     /// <summary>
     /// Holds all of the Dance Characters data in the game! Links all of the related assets to one character together.
     /// </summary>
-    [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/SpawnManagerScriptableObject", order = 1)]
+    [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/CharacterContainerScriptableObject", order = 1)]
     public class CharacterContainer : ScriptableObject
     {
         [SerializeField] private DanceCharacterData[] characters;

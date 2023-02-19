@@ -1293,8 +1293,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1086828118}
     - target: {fileID: 2921348469425030308, guid: 684de9926aabc4380a72d0c7b9599950, type: 3}
+      propertyPath: lockEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921348469425030308, guid: 684de9926aabc4380a72d0c7b9599950, type: 3}
       propertyPath: sceneToLoad
       value: Lvl_Cyber
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921348469425030308, guid: 684de9926aabc4380a72d0c7b9599950, type: 3}
+      propertyPath: levelThatMustBeCompletedBeforeThisOne
+      value: Lvl_Carnival
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 684de9926aabc4380a72d0c7b9599950, type: 3}
@@ -3855,6 +3863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   achievementManager: {fileID: 1825215878}
+  rhythmLevelsContainer: {fileID: 11400000, guid: a7f81af43104e4445b2f6f64ac8b1702, type: 2}
 --- !u!1 &988789556
 GameObject:
   m_ObjectHideFlags: 0
@@ -18401,8 +18410,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1086828118}
     - target: {fileID: 2921348469425030308, guid: 684de9926aabc4380a72d0c7b9599950, type: 3}
+      propertyPath: lockEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921348469425030308, guid: 684de9926aabc4380a72d0c7b9599950, type: 3}
       propertyPath: sceneToLoad
       value: Lvl_Carnival
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921348469425030308, guid: 684de9926aabc4380a72d0c7b9599950, type: 3}
+      propertyPath: levelThatMustBeCompletedBeforeThisOne
+      value: Lvl_Nightlife
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 684de9926aabc4380a72d0c7b9599950, type: 3}

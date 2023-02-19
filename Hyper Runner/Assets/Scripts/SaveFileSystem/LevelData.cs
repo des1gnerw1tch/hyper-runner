@@ -10,7 +10,7 @@ namespace SaveFileSystem
 
         public LevelData()
         {
-            highScore = LevelGrade.NotAttempted;
+            highScore = LevelGrade.NeverCompleted;
         }
     }
 
@@ -21,6 +21,6 @@ namespace SaveFileSystem
         B,
         C,
         F,
-        NotAttempted
+        NeverCompleted
     }
 }
