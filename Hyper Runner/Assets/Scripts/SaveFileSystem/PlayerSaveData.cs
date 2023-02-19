@@ -149,7 +149,8 @@ namespace SaveFileSystem
                 return levelDataTable[levelSceneName].highScore;
             }
             
-            Debug.LogError("Level not found in dictionary.");
+            Debug.LogError("Level " + levelSceneName + " not found in dictionary. Ensure that this level is inside of the " +
+                           "RhythmLevelsScriptableObject.");
             return null;
         }
         
