@@ -721,7 +721,7 @@ RectTransform:
   m_Children:
   - {fileID: 2808592345319224555}
   m_Father: {fileID: 7061350221101141198}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -2021,6 +2021,7 @@ RectTransform:
   - {fileID: 379851538162748519}
   - {fileID: 968064311}
   - {fileID: 3121061617279395479}
+  - {fileID: 3839720414710843067}
   - {fileID: 7411093819996442896}
   - {fileID: 1451518098547000836}
   m_Father: {fileID: 0}
@@ -3312,7 +3313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6029644035970083157, guid: b0d2cca1eeb5842818b89c169a8f8c02, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6029644035970083157, guid: b0d2cca1eeb5842818b89c169a8f8c02, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3392,6 +3393,182 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6029644035970083157, guid: b0d2cca1eeb5842818b89c169a8f8c02, type: 3}
   m_PrefabInstance: {fileID: 3851958520634652741}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5359487949850865951
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7061350221101141198}
+    m_Modifications:
+    - target: {fileID: 1353750665534603188, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_text
+      value: 'Janitor Robot:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593021340661983495, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: startDialogueOnEnable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593021340661983495, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: textToDisplay.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593021340661983495, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: textToDisplay.Array.data[0]
+      value: 'Hey. They haven''t programmed me to do any cleaning yet so for now
+        I was instructed to just give tips. Come to me when you need help. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593021340661983495, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: textToDisplay.Array.data[1]
+      value: Consider me your "tutorial" persay.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593021340661983495, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: textToDisplay.Array.data[2]
+      value: Those arcade machines are the central game in this arcade. That's where
+        the fun is.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593021340661983495, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: textToDisplay.Array.data[3]
+      value: If the arcade machine won't let you play, it's likely that you haven't
+        unlocked that level yet.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593021340661983495, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: textToDisplay.Array.data[4]
+      value: Completing a level, even with an F final grade, will grant you access
+        to the next level.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593021340661983495, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: textToDisplay.Array.data[5]
+      value: Jump with the spacebar or the normal jump button on an Xbox controller.
+        You can jump off of those pink objects as well, that's what a parry is.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593021340661983495, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: textToDisplay.Array.data[6]
+      value: Hmm... I guess another tip is that the Prize Vendor, my good buddy,
+        hasn't gotten the go ahead yet to start selling items. He's useless as of
+        now.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593021340661983495, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: textToDisplay.Array.data[7]
+      value: 'If you want tokens I''d reccommend going to the token machine. The
+        claw machine works now too, if you have the tokens to spend. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593021340661983495, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: textToDisplay.Array.data[8]
+      value: That's all the tips I have for now. Have fun...
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593021340661983495, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: textToDisplay.Array.data[9]
+      value: You can call me Janitor Robot for now. My creator hasn't given me a
+        name yet. My cleaning work should start soon, my creator isn't sure exactly
+        what my role will be yet.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6099316031716531959, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_fontSize
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6099316031716531959, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594450153152081454, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_Name
+      value: CleaningRobotDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594450153152081454, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163088814866904996, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163088814866904996, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163088814866904996, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163088814866904996, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163088814866904996, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163088814866904996, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163088814866904996, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163088814866904996, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 561.5835
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163088814866904996, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 88.9514
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163088814866904996, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163088814866904996, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163088814866904996, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163088814866904996, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163088814866904996, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163088814866904996, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163088814866904996, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163088814866904996, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163088814866904996, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -190
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163088814866904996, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163088814866904996, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163088814866904996, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+--- !u!224 &3839720414710843067 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 9163088814866904996, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+  m_PrefabInstance: {fileID: 5359487949850865951}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6087153363478401331
 PrefabInstance:
