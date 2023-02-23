@@ -1,4 +1,3 @@
-using System;
 using Achievements;
 using UnityEngine;
 
@@ -32,14 +31,6 @@ public abstract class AParryObject : MonoBehaviour {
     public virtual void OnParry()
     {
         ResultsManager.IncPlayerTotalParries();
-        try
-        {
-            FindObjectOfType<TestAchievement2>().AddNumToProgress(1);
-        }
-        catch (NullReferenceException ignored)
-        {
-            Debug.LogWarning("Could not find TestAchievement2! Ignore if debugging");
-        }
-        
+        AchievementManager.Instance.IncrementCountableAchievementWithID("parry200Objects", 1);
     }
 }

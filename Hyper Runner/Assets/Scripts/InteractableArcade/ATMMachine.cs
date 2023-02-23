@@ -7,7 +7,8 @@ namespace InteractableArcade
         public override void Interact(InteractArcade player)
         {
             base.Interact(player);
-            FindObjectOfType<TestAchievement1>().CompleteAchievement();
+            FindObjectOfType<AudioManager>().Play("atm");
+            AchievementManager.Instance.CompleteAchievementWithID("interactWithATM");
         }
     }
 }

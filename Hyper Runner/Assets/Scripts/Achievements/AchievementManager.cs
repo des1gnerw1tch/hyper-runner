@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Achievements
@@ -57,14 +58,7 @@ namespace Achievements
          */
         public void CompleteAchievementWithID(string achievementID)
         {
-            AAchievement achievementToComplete = null;
-            foreach (AAchievement a in achievements)
-            {
-                if (a.GetAchievementData().ID == achievementID)
-                {
-                    achievementToComplete = a;
-                }
-            }
+            AAchievement achievementToComplete = FindAchievementByID(achievementID);
 
             if (achievementToComplete == null)
             {
@@ -73,6 +67,43 @@ namespace Achievements
             }
             
             achievementToComplete.CompleteAchievement();
+        }
+
+        public void IncrementCountableAchievementWithID(string achievementID, int increment)
+        {
+            AAchievement achievementToComplete = FindAchievementByID(achievementID);
+
+            if (achievementToComplete == null)
+            {
+                Debug.LogError("Could not find achievement with ID: " + achievementID);
+                return;
+            }
+
+            if (achievementToComplete is ACountableAchievement)
+            {
+                ((ACountableAchievement)achievementToComplete).AddNumToProgress(increment);
+            }
+            else
+            {
+                Debug.LogError("Achievement with ID " + achievementID + " was not a countable achievement.");
+            }
+        }
+
+        /**
+         * Finds achievement by achievement ID. If cannot find achievement, return null. 
+         */
+        [CanBeNull]
+        private AAchievement FindAchievementByID(string achievementID)
+        {
+            foreach (AAchievement a in achievements)
+            {
+                if (a.GetAchievementData().ID == achievementID)
+                {
+                    return a;
+                }
+            }
+
+            return null;
         }
     }
 }
