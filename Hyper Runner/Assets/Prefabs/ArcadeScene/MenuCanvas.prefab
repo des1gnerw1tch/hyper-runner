@@ -3411,7 +3411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5593021340661983495, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
       propertyPath: textToDisplay.Array.size
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5593021340661983495, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
       propertyPath: textToDisplay.Array.data[0]
@@ -3444,21 +3444,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5593021340661983495, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
       propertyPath: textToDisplay.Array.data[6]
+      value: 'Restart a level automatically with the R key. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593021340661983495, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: textToDisplay.Array.data[7]
+      value: Also.. Fast falling.. Press the s key or down arrow key on keyboard. 
+        On Xbox hold down on the left stick.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593021340661983495, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: textToDisplay.Array.data[8]
+      value: All the other controls are self explanatory.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593021340661983495, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
+      propertyPath: textToDisplay.Array.data[9]
       value: Hmm... I guess another tip is that the Prize Vendor, my good buddy,
         hasn't gotten the go ahead yet to start selling items. He's useless as of
         now.
       objectReference: {fileID: 0}
     - target: {fileID: 5593021340661983495, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
-      propertyPath: textToDisplay.Array.data[7]
+      propertyPath: textToDisplay.Array.data[10]
       value: 'If you want tokens I''d reccommend going to the token machine. The
         claw machine works now too, if you have the tokens to spend. '
       objectReference: {fileID: 0}
     - target: {fileID: 5593021340661983495, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
-      propertyPath: textToDisplay.Array.data[8]
+      propertyPath: textToDisplay.Array.data[11]
       value: That's all the tips I have for now. Have fun...
       objectReference: {fileID: 0}
     - target: {fileID: 5593021340661983495, guid: 30abfd5962843432cb464d8a1e78cf64, type: 3}
-      propertyPath: textToDisplay.Array.data[9]
+      propertyPath: textToDisplay.Array.data[12]
       value: You can call me Janitor Robot for now. My creator hasn't given me a
         name yet. My cleaning work should start soon, my creator isn't sure exactly
         what my role will be yet.
