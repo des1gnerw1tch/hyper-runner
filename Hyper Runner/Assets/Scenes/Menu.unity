@@ -2051,56 +2051,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545133876}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &580544142
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 580544143}
-  - component: {fileID: 580544144}
-  m_Layer: 0
-  m_Name: TestAchievement2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &580544143
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580544142}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1825215877}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &580544144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580544142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 027636efffc34467a83278c958d6aab2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  achievement:
-    ID: parry200Objects
-    completed: 0
-    tokensToEarn: 3
-    rewardCollected: 0
-    currentProgress: 0
-    numToReach: 200
 --- !u!1 &597639787
 GameObject:
   m_ObjectHideFlags: 0
@@ -4799,56 +4749,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266139714}
   m_Mesh: {fileID: -613200878065603006, guid: 79116f42670fb40b38342d2f64a2bf79, type: 3}
---- !u!1 &1269470377
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1269470378}
-  - component: {fileID: 1269470379}
-  m_Layer: 0
-  m_Name: TestAchievement1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1269470378
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1269470377}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1825215877}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1269470379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1269470377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b0c5bce546f94224ad44a493698a4ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  achievement:
-    ID: interactWithATM
-    completed: 0
-    tokensToEarn: 3
-    rewardCollected: 0
-    currentProgress: 0
-    numToReach: 0
 --- !u!1 &1303476602
 GameObject:
   m_ObjectHideFlags: 0
@@ -18488,54 +18388,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 337957039730075402, guid: 684de9926aabc4380a72d0c7b9599950, type: 3}
   m_PrefabInstance: {fileID: 1813567158}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1825215876
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1825215877}
-  - component: {fileID: 1825215878}
-  m_Layer: 0
-  m_Name: AchievementManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1825215877
+--- !u!4 &1825215877 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8154395462910664321, guid: 46ea5baf42a044882ab06c1bd0fd9bed, type: 3}
+  m_PrefabInstance: {fileID: 8154395463233194756}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825215876}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1269470378}
-  - {fileID: 580544143}
-  m_Father: {fileID: 1453137443}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1825215878
+--- !u!114 &1825215878 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8154395462910664322, guid: 46ea5baf42a044882ab06c1bd0fd9bed, type: 3}
+  m_PrefabInstance: {fileID: 8154395463233194756}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825215876}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 025beac8dbb884d2383ddc44a1f18ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  achievements:
-  - {fileID: 1269470379}
-  - {fileID: 580544144}
 --- !u!1 &1836508619
 GameObject:
   m_ObjectHideFlags: 0
@@ -23369,6 +23237,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822431092152908584}
   m_Mesh: {fileID: -5684858561736888492, guid: b2c83df0ed2a34e80aad3754ea50d239, type: 3}
+--- !u!1001 &8154395463233194756
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1453137443}
+    m_Modifications:
+    - target: {fileID: 8154395462910664320, guid: 46ea5baf42a044882ab06c1bd0fd9bed, type: 3}
+      propertyPath: m_Name
+      value: AchievementManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8154395462910664321, guid: 46ea5baf42a044882ab06c1bd0fd9bed, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8154395462910664321, guid: 46ea5baf42a044882ab06c1bd0fd9bed, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8154395462910664321, guid: 46ea5baf42a044882ab06c1bd0fd9bed, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8154395462910664321, guid: 46ea5baf42a044882ab06c1bd0fd9bed, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8154395462910664321, guid: 46ea5baf42a044882ab06c1bd0fd9bed, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8154395462910664321, guid: 46ea5baf42a044882ab06c1bd0fd9bed, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8154395462910664321, guid: 46ea5baf42a044882ab06c1bd0fd9bed, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8154395462910664321, guid: 46ea5baf42a044882ab06c1bd0fd9bed, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8154395462910664321, guid: 46ea5baf42a044882ab06c1bd0fd9bed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8154395462910664321, guid: 46ea5baf42a044882ab06c1bd0fd9bed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8154395462910664321, guid: 46ea5baf42a044882ab06c1bd0fd9bed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 46ea5baf42a044882ab06c1bd0fd9bed, type: 3}
 --- !u!1 &8240643167429681249
 GameObject:
   m_ObjectHideFlags: 0

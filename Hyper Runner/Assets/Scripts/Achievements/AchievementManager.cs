@@ -50,5 +50,29 @@ namespace Achievements
                 }
             }
         }
+
+        /**
+         * An easy way to complete an achievement. This is not the only way of completing achievements. Many achievements of type AAchievement will
+         * have their own listeners for criteria for an achievement, and will complete themselves. 
+         */
+        public void CompleteAchievementWithID(string achievementID)
+        {
+            AAchievement achievementToComplete = null;
+            foreach (AAchievement a in achievements)
+            {
+                if (a.GetAchievementData().ID == achievementID)
+                {
+                    achievementToComplete = a;
+                }
+            }
+
+            if (achievementToComplete == null)
+            {
+                Debug.LogError("Could not find achievement with ID: " + achievementID);
+                return;
+            }
+            
+            achievementToComplete.CompleteAchievement();
+        }
     }
 }
