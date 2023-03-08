@@ -28,12 +28,6 @@ public class holdDanceObject : ADanceObject {
         bool missedEntry = (player.position.x - transform.position.x) >= distanceUntilDestroy;
         bool missedExit = (player.position.x - endNode.position.x) >= distanceUntilDestroy;
         if ((missedEntry && firstPress) || missedExit) {
-            try {
-                FindObjectOfType<danceTileManager>().ActivateNextFowardKey();
-            }
-            catch (Exception e) {
-                Debug.Log("tried to access dance tile manager when it was deactivated");
-            }
             this.EvaluateScore(0);
             this.DestroyDanceTile();
         }
@@ -68,13 +62,12 @@ public class holdDanceObject : ADanceObject {
         float endScore = 10 - difference;
         if (endScore < 0)
             endScore = 0;
-
-        FindObjectOfType<danceTileManager>().ActivateNextFowardKey();
+        
         EvaluateScore(endScore);
         Instantiate(destroyEffect, endNode.position, Quaternion.identity);
         FindObjectOfType<CameraShake>().Begin(camRumbleIntensity, camRumbleSpeed, .1f); // to cancel rumble
         Destroy(this.endNode.gameObject);
-        Destroy(gameObject);
+        DestroyDanceTile();
     }
 
     protected override void KeyPressedCorrectly() => this.isPressing = true;

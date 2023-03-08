@@ -7,12 +7,6 @@ public class danceObject : ADanceObject {
     void Update() {
         // despawn object if missed
         if ((player.position.x - transform.position.x) >= distanceUntilDestroy) {
-            try {
-                FindObjectOfType<danceTileManager>().ActivateNextFowardKey();
-            }
-            catch (Exception e) {
-                Debug.Log("tried to access dance tile manager when it was deactivated");
-            }
             this.EvaluateScore(0);
 
             if (this.isLastTileInSequence) {

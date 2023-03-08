@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class rhythmArrows : MonoBehaviour {
@@ -9,12 +7,9 @@ public class rhythmArrows : MonoBehaviour {
     
     [Header("Auto-get components")]
     [SerializeField] private ALevelManager levelManager;
-    [SerializeField] private Transform player;
-    [SerializeField] private danceTileManager danceManager;
 
     private void Start()
     {
-        danceManager = danceTileManager.Instance;
         levelManager = ALevelManager.Instance;
     }
     
@@ -24,8 +19,7 @@ public class rhythmArrows : MonoBehaviour {
             levelManager.playerCamMoveSpeed = playerFloatingSpeed;
             Parallax.multiplier = surroundingSpeedMultiplier;
             levelManager.UpdateSpeeds();
-            danceManager.enabled = true;
-            danceManager.UpdateValidDanceKeys();
+
             if (interpolationTrigger != null) {
                 this.interpolationTrigger.StartInterpolateObjects();
 

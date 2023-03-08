@@ -1,6 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils.List;
 
 namespace Checkpoints
 {
@@ -53,25 +53,6 @@ namespace Checkpoints
             
             return null;
         }
-
-        /// <summary>
-        /// Transform position X axis comparer.
-        /// </summary>
-        private class TransformXComparer : IComparer<Transform>
-        {
-            public int Compare(Transform t1, Transform t2)
-            {
-                if (t1.position.x <= t2.position.x)
-                {
-                    return -1;
-                }
-                else
-                {
-                    return 1;
-                }
-            }
-        }
-
     }
 
     

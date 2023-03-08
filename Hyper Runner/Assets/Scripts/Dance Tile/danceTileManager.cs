@@ -1,70 +1,68 @@
+using System.Collections.Generic;
 using UnityEngine;
+using Utils.List;
 
-// handles activating dance tiles, the once closest to the player
+// Handles activating dance tiles for the user to interact with during Dance mode.
 public class danceTileManager : MonoBehaviour {
-    [SerializeField] private Transform player;
-    [SerializeField] private IDanceObject activeDanceObj; // is mutated on by dance key movement on player
+    private IDanceObject activeDanceObj;
     [SerializeField] private RhythmMovement rhythmMovement;
+
+    private Queue<ADanceObject> danceTileQueue;
 
     public static danceTileManager Instance { get; private set; }
 
-    void Awake()
+    private void Awake()
     {
         Instance = this;
     }
+
+    private void Start()
+    {
+        AddDanceTilesInSceneToQueue();
+        EnableNextDanceKey(teleportToNextDanceKey: false);
+    }
+
+    private void AddDanceTilesInSceneToQueue()
+    {
+        GameObject[] danceGameObjs = GameObject.FindGameObjectsWithTag("DanceTile");
+        List<Transform> danceTransforms = new List<Transform>();
+        foreach (GameObject obj in danceGameObjs)
+        {
+            danceTransforms.Add(obj.transform);
+        }
+        
+        danceTransforms.Sort(new TransformXComparer());
+        danceTileQueue = new Queue<ADanceObject>();
+        foreach (Transform obj in danceTransforms)
+        {
+            danceTileQueue.Enqueue(obj.GetComponent<ADanceObject>());
+        }
+    }
     
-    //Makes sure that only 1 dance key is okay to press at one time
-    // finds dance key with smallest X position and activates it...
-    public void UpdateValidDanceKeys() {
-        //finding closest active DanceTile object
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("DanceTile");
-        if (objs.Length != 0) {
-            GameObject closest = objs[0];
-            foreach (GameObject obj in objs) {
-                if (obj.gameObject.GetComponent<Transform>().position.x < closest.GetComponent<Transform>().position.x) {
-                    closest = obj;
-                }
-            }
-            // Makes closest DanceTile object active
-            enableDanceKey(closest);
+    // Enables next dance key in queue to receive input. 
+    public void EnableNextDanceKey(bool teleportToNextDanceKey = true) {
+        if (danceTileQueue.Count < 1)
+        {
+            Debug.Log("No more dance keys, this should mean this was the last dance key in the level!");
+            return;
         }
-    }
-
-    //this function will activate the closest dance key in the list that is
-    // IN FRONT of the player
-    public void ActivateNextFowardKey() {
-        //finding closest active DanceTile object
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("DanceTile");
-        if (objs.Length != 0) {
-            GameObject closest = objs[0];
-            foreach (GameObject obj in objs) {
-                float keyPos = obj.gameObject.GetComponent<Transform>().position.x;
-                float playerPos = player.position.x;
-                if (keyPos > playerPos && closest.transform.position.x < playerPos) {
-                    closest = obj; // case where current closest is behind player
-                } else if (keyPos > playerPos && keyPos < closest.transform.position.x) {
-                    closest = obj;
-                }
-            }
-            // Makes closest DanceTile object active
-            enableDanceKey(closest);
-
+        
+        if (teleportToNextDanceKey)
+        {
+            rhythmMovement.StartVerticalMovement(danceTileQueue.Peek().transform.position);
         }
+        activeDanceObj = danceTileQueue.Peek();
+        danceTileQueue.Dequeue();
     }
 
-    // enables a dance key to receive input
-    void enableDanceKey(GameObject obj) {
-        this.activeDanceObj = obj.GetComponent<IDanceObject>();
-        rhythmMovement.StartVerticalMovement(obj.transform.position);
-    }
+    public Vector3 GetNextDanceKeyPosition() => danceTileQueue.Peek().transform.position;
 
-    // INPUTS
+    // INPUT DELEGATION TO DANCE TILE
     public void OnUpDanceKeyPress() {
         activeDanceObj.OnUpDanceKeyPress();
     }
 
     public void OnUpDanceKeyRelease() {
-        UpdateValidDanceKeys();
         activeDanceObj.OnUpDanceKeyRelease();
     }
 
@@ -73,7 +71,6 @@ public class danceTileManager : MonoBehaviour {
     }
 
     public void OnDownDanceKeyRelease() {
-        UpdateValidDanceKeys();
         activeDanceObj.OnDownDanceKeyRelease();
     }
 
@@ -82,7 +79,6 @@ public class danceTileManager : MonoBehaviour {
     }
 
     public void OnLeftDanceKeyRelease() {
-        UpdateValidDanceKeys();
         activeDanceObj.OnLeftDanceKeyRelease();
     }
 
@@ -91,7 +87,6 @@ public class danceTileManager : MonoBehaviour {
     }
 
     public void OnRightDanceKeyRelease() {
-        UpdateValidDanceKeys();
         activeDanceObj.OnRightDanceKeyRelease();
     }
 

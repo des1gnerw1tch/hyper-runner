@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlatformArrows : MonoBehaviour {
@@ -7,22 +5,13 @@ public class PlatformArrows : MonoBehaviour {
     [SerializeField] private float playerRunningSpeed;
     [SerializeField] private float surroundingSpeedMultiplier;
     [SerializeField] private InterpolateTrigger interpolationTrigger;
-    
-    [Header("Auto-get singleton")]
-    [SerializeField] private danceTileManager danceManager;
 
-    private void Start()
-    {
-        danceManager = danceTileManager.Instance;
-    }
-    
     void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             levelManager.SetPlayerMode("Platformer");
             levelManager.playerCamMoveSpeed = playerRunningSpeed;
             Parallax.multiplier = surroundingSpeedMultiplier;
             levelManager.UpdateSpeeds();
-            danceManager.enabled = false;
 
             if (interpolationTrigger != null) {
                 this.interpolationTrigger.StartInterpolateObjects();

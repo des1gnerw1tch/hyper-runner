@@ -58,6 +58,7 @@ public class RhythmMovement : MonoBehaviour {
         flyingParticles.SetActive(true);
         isLaunchingFromRhythmArrows = true;
         verticalLaunchSpeed = teleSpeed;
+        StartVerticalMovement(danceTileManager.Instance.GetNextDanceKeyPosition());
     }
 
     public void DeactivateFlyingParticles()

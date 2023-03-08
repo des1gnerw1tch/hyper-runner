@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 // a dance tile object
 public abstract class ADanceObject : MonoBehaviour, IDanceObject {
@@ -149,10 +146,11 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
         rt.Translate(new Vector3(difX, difY, 0), Space.World);
     }
 
-    // destroys dance tile, spawns effects
+    // Destroys dance tile, spawns effects, enables next dance tile to receive input if one exists
     protected void DestroyDanceTile() {
         Instantiate(this.destroyEffect, this.transform.position, Quaternion.identity);
         FindObjectOfType<CameraShake>().Begin(this.camRumbleIntensity, this.camRumbleSpeed, this.camRumbleDuration);
+        danceManager.EnableNextDanceKey();
         Destroy(this.gameObject);
     }
 
