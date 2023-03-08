@@ -4,11 +4,10 @@ using UnityEngine;
 public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     [HideInInspector] public Transform player; // player transform 
     [HideInInspector] public float score; // score earned for this dance tile
-    public static int perfectInARow; // how many perfects in a row one as got
+    private static int perfectInARow; // how many perfects in a row one as got
 
     [Header("Required Components/Prefabs (Auto)")]
     public CharacterHealth characterHealth; // character health of player
-    public GameObject canvas; // current scene canvas
     public PerfectStreakTextManager perfectStreakTextManager; // Text holding Streak of Perfects prefab
     public Transform scorePopUpParent;
 
@@ -175,7 +174,6 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
         perfectInARow = 0;
         this.player = GameObject.FindWithTag("Player").GetComponent<Transform>();
         this.characterHealth = FindObjectOfType<CharacterHealth>();
-        this.canvas = GameObject.FindWithTag("ArcadeGameCanvas");
         this.perfectStreakTextManager = FindObjectOfType<PerfectStreakTextManager>();
         this.danceManager = FindObjectOfType<danceTileManager>();
         scorePopUpParent = UIManager.Instance.GetScorePopUpParent();
