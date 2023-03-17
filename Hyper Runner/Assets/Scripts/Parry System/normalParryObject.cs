@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class normalParryObject : AParryObject
+namespace Parry_System
 {
-    // this is a normal parry object, do nothing!
+    public class normalParryObject : AParryObject
+    {
+        // this is a normal parry object, do nothing!
+    }
 }
