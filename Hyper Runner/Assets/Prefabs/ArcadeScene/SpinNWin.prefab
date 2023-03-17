@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5608398794423754028}
+  - component: {fileID: 3556414141243174768}
+  - component: {fileID: 2272008430907968967}
   m_Layer: 0
   m_Name: SpinNWin
   m_TagString: Untagged
@@ -31,6 +33,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3556414141243174768
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608398794423754029}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.538252, y: 2.8309548, z: 1.5255523}
+  m_Center: {x: 0, y: -0.01695335, z: -1.7716163}
+--- !u!114 &2272008430907968967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608398794423754029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8af5c545cceb490fb94c630ad1097d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUpText: {fileID: 0}
+  uiContent: {fileID: 0}
+  spinner: {fileID: 9092230065529101751}
 --- !u!1001 &5608398794061078841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82,6 +112,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 44ff02bcb62cd4e12aefbf3f16344952, type: 3}
+      propertyPath: m_Name
+      value: SpinnerPointer
+      objectReference: {fileID: 0}
     - target: {fileID: -4683669308469848369, guid: 44ff02bcb62cd4e12aefbf3f16344952, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -95,5 +129,10 @@ PrefabInstance:
 --- !u!4 &5359197246652942034 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 44ff02bcb62cd4e12aefbf3f16344952, type: 3}
+  m_PrefabInstance: {fileID: 5608398794061078841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9092230065529101751 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -5477749408508380018, guid: 44ff02bcb62cd4e12aefbf3f16344952, type: 3}
   m_PrefabInstance: {fileID: 5608398794061078841}
   m_PrefabAsset: {fileID: 0}

@@ -31,7 +31,7 @@ namespace InteractableArcade
         } 
         
         // Player disengages with this arcade object
-        protected virtual void Close()
+        protected void Close()
         {
             if (isInteracting)
             {
