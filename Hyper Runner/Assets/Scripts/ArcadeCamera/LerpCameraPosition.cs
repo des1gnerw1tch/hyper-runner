@@ -35,7 +35,7 @@ namespace ArcadeCamera
             }
         }
 
-        public void LerpToDest(Transform dest, float lerpTime)
+        private void LerpToDest(Transform dest, float lerpTime)
         {
             if (isFocused || isLerping)
             {
@@ -74,7 +74,7 @@ namespace ArcadeCamera
             isLerping = false;
         }
 
-        public void LerpToOriginalPos()
+        private void LerpToOriginalPos()
         {
             if (!isLerping && isFocused)
             {
@@ -101,6 +101,19 @@ namespace ArcadeCamera
             playerMovement.Unlock();
             isFocused = false;
             isLerping = false;
+        }
+
+        // Will lerp to destination or lerp to original position based on current state
+        public void ToggleLerp(Transform dest, float lerpTime)
+        {
+            if (isFocused)
+            {
+                LerpToOriginalPos();
+            }
+            else
+            {
+                LerpToDest(dest, lerpTime);
+            }
         }
     }
 }

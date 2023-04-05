@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using ArcadeCamera;
 
 namespace InteractableArcade
 {
@@ -14,10 +15,13 @@ namespace InteractableArcade
         private Coroutine rotateRoutine;
 
         [SerializeField] private Transform cameraViewingPos;
+        [SerializeField] private float camLerpTime;
 
         public override void Interact(InteractArcade player)
         {
             base.Interact(player);
+            LerpCameraPosition.Instance.ToggleLerp(cameraViewingPos, camLerpTime);
+            
             if (rotateRoutine != null)
             {
                 return;

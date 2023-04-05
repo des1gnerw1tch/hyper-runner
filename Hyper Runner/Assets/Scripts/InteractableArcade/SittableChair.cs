@@ -16,17 +16,7 @@ namespace InteractableArcade
         public override void Interact(InteractArcade player)
         {
             base.Interact(player);
-
-            if (isInteracting)
-            {
-                LerpCameraPosition.Instance.LerpToOriginalPos();
-                isInteracting = false;
-            }
-            else
-            {
-                LerpCameraPosition.Instance.LerpToDest(sittingCameraPosition, lerpTime);
-                isInteracting = true;
-            }
+            LerpCameraPosition.Instance.ToggleLerp(sittingCameraPosition, lerpTime);
         }
     }
 }
