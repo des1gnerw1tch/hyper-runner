@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using ArcadeCamera;
 
 namespace InteractableArcade
 {

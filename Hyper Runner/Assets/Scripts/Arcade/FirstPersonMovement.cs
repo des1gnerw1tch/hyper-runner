@@ -1,3 +1,4 @@
+using ArcadeCamera;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

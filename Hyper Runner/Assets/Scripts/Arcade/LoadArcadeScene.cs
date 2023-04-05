@@ -1,3 +1,4 @@
+using ArcadeCamera;
 using InteractableArcade;
 using UnityEngine;
 
