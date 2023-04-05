@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7290382693737997016}
   - component: {fileID: 7290382693737997023}
+  - component: {fileID: 6523841731875510273}
   m_Layer: 0
   m_Name: Camera Holder
   m_TagString: Untagged
@@ -47,6 +48,20 @@ MonoBehaviour:
   RotationSpeed: 3
   player: {fileID: 7290382693966148793}
   playerInput: {fileID: 7290382693966148798}
+--- !u!114 &6523841731875510273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7290382693737997017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d98bd003c625b4df7aef26d748e3a989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraController: {fileID: 7290382693737997023}
+  playerMovement: {fileID: 7290382693966148792}
 --- !u!1 &7290382693966148741
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,7 +93,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7290382693966148741}
-  m_LocalRotation: {x: -0, y: 0.7792845, z: -0, w: 0.62667036}
+  m_LocalRotation: {x: 0, y: 0.7792832, z: 0, w: 0.6266719}
   m_LocalPosition: {x: -0.44, y: 1.66, z: -36.96}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_Children:
@@ -299,7 +314,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 119
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -341,7 +356,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0

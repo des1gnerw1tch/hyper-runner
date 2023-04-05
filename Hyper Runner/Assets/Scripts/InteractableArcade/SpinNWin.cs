@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -9,10 +8,12 @@ namespace InteractableArcade
     /// <summary>
     /// The SpinNWin machine in the arcade! :)
     /// </summary>
-    public class SpinNWin : InteractableArcadeObjectUI
+    public class SpinNWin : AInteractableArcadeObject
     {
         [SerializeField] private Transform spinner;
         private Coroutine rotateRoutine;
+
+        [SerializeField] private Transform cameraViewingPos;
 
         public override void Interact(InteractArcade player)
         {
