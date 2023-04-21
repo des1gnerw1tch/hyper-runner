@@ -3,6 +3,8 @@ using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using ArcadeCamera;
+using SaveFileSystem;
+using ScriptableObjects;
 
 namespace InteractableArcade
 {
@@ -12,10 +14,14 @@ namespace InteractableArcade
     public class SpinNWin : AInteractableArcadeObject
     {
         [SerializeField] private Transform spinner;
+        [SerializeField] private Transform raycastEmitter;
+        
         private Coroutine rotateRoutine;
 
         [SerializeField] private Transform cameraViewingPos;
         [SerializeField] private float camLerpTime;
+
+        [SerializeField] private SpinNWinMaterialToReward materialToRewardCollection;
 
         public override void Interact(InteractArcade player)
         {
@@ -27,7 +33,7 @@ namespace InteractableArcade
                 return;
             }
             
-            float spinSpeed = Random.Range(2000, 4000);
+            float spinSpeed = Random.Range(1000, 2000);
             rotateRoutine = StartCoroutine(RotateSpinner(spinSpeed));
         }
 
@@ -40,7 +46,32 @@ namespace InteractableArcade
                 yield return new WaitForEndOfFrame();
             }
 
+            int? reward = GetRewardMultiplierWithRaycast();
+            
+            if (reward.HasValue)
+            {
+                GameDataManager.Instance.AddTokens(reward.Value);
+            }
+            else
+            {
+                Debug.LogError("Reward should not be null.");
+            }
+            
             rotateRoutine = null;
+            
+        }
+
+        private int? GetRewardMultiplierWithRaycast()
+        {
+            RaycastHit hit;
+            Debug.DrawRay(raycastEmitter.position, raycastEmitter.forward, Color.cyan, 20000);
+            if (Physics.Raycast(raycastEmitter.position, raycastEmitter.forward, out hit))
+            {
+                Material hitMaterial = hit.transform.gameObject.GetComponent<Renderer>().material;
+                return materialToRewardCollection.GetMultiplierFromMaterial(hitMaterial);
+            }
+
+            return null;
         }
     }
 }
