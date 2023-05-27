@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 083b8d452b981423badcbff60f0ebf2f, type: 3}
+  m_Name: SpinNWinMaterialContainer
+  m_EditorClassIdentifier: 
+  materialsToReward:
+  - mat: {fileID: 2100000, guid: 5e3f6b2625a5148449cc69f657b63c12, type: 2}
+    tokenMultiplier: 4
+  - mat: {fileID: 2100000, guid: 90dc1f22626794f4881085ebfc16fc7f, type: 2}
+    tokenMultiplier: 2
+  - mat: {fileID: 2100000, guid: fcf239098f4f54447a86ae29b1813da8, type: 2}
+    tokenMultiplier: 1
+  - mat: {fileID: 2100000, guid: 0d22d0284254b4ad09c232dc93c3cac4, type: 2}
+    tokenMultiplier: 0
