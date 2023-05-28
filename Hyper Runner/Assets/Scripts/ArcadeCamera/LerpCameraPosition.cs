@@ -115,5 +115,13 @@ namespace ArcadeCamera
                 LerpToDest(dest, lerpTime);
             }
         }
+
+        public void TryLerpOriginalPosition()
+        {
+            if (isFocused)
+            {
+                LerpToOriginalPos();
+            }
+        }
     }
 }

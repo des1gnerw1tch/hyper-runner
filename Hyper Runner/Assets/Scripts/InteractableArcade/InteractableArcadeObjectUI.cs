@@ -15,16 +15,13 @@ namespace InteractableArcade
 
         private bool isInteracting = false;
         
-        private void Start()
-        {
-            UIInputHandler.Instance.OnPause.AddListener(Close);
-            UIInputHandler.Instance.OnBackButton.AddListener(Close);
-            playerInput = UIInputHandler.Instance.PlayerInputComponent;
-        }
+        private void Start() =>  playerInput = UIInputHandler.Instance.PlayerInputComponent;
 
         public override void Interact(InteractArcade player)
         {
             base.Interact(player);
+            UIInputHandler.Instance.OnPause.AddListener(Close);
+            UIInputHandler.Instance.OnBackButton.AddListener(Close);
             playerInput.SwitchCurrentActionMap("UI");
             isInteracting = true;
             uiContent.SetActive(true);
@@ -38,8 +35,9 @@ namespace InteractableArcade
                 playerInput.SwitchCurrentActionMap("3D");
                 isInteracting = false;
                 uiContent.SetActive(false);
+                UIInputHandler.Instance.OnPause.RemoveListener(Close);
+                UIInputHandler.Instance.OnBackButton.RemoveListener(Close);
             }
         }
-        
     }
 }

@@ -5,6 +5,8 @@ using Random = UnityEngine.Random;
 using ArcadeCamera;
 using SaveFileSystem;
 using ScriptableObjects;
+using TMPro;
+using UnityEngine.InputSystem;
 
 namespace InteractableArcade
 {
@@ -13,28 +15,96 @@ namespace InteractableArcade
     /// </summary>
     public class SpinNWin : AInteractableArcadeObject
     {
+        [SerializeField] private GameObject uiContent;
+        private PlayerInput playerInput;
+        private bool isInteracting = false;
+        
         [SerializeField] private Transform spinner;
         [SerializeField] private Transform raycastEmitter;
-        
-        private Coroutine rotateRoutine;
 
         [SerializeField] private Transform cameraViewingPos;
         [SerializeField] private float camLerpTime;
 
         [SerializeField] private SpinNWinMaterialToReward materialToRewardCollection;
 
+        [SerializeField] private TextMeshProUGUI wagerText;
+        private int wager = 0;
+
+        private bool spinnerSpinning = false;
+
+        public void Start() => playerInput = UIInputHandler.Instance.PlayerInputComponent;
+        
         public override void Interact(InteractArcade player)
         {
-            base.Interact(player);
-            LerpCameraPosition.Instance.ToggleLerp(cameraViewingPos, camLerpTime);
-            
-            if (rotateRoutine != null)
+            if (!isInteracting)
+            {
+                base.Interact(player);
+                playerInput.SwitchCurrentActionMap("UI");
+                uiContent.SetActive(true);
+                wager = 0;
+                UpdateWagerText();
+                UIInputHandler.Instance.OnScrollUp.AddListener(IncWager);
+                UIInputHandler.Instance.OnScrollDown.AddListener(DecWager);
+                UIInputHandler.Instance.OnSelectOption.AddListener(StartSpinner);
+                UIInputHandler.Instance.OnPause.AddListener(Close);
+                UIInputHandler.Instance.OnBackButton.AddListener(Close);
+                isInteracting = true;
+            }
+            else
+            {
+               Close();
+            }
+        }
+
+        private void IncWager()
+        {
+            int tokensAvailable = GameDataManager.Instance.GetNumTokens();
+            Debug.Log("Tried to inc wager, tokens available: " + tokensAvailable);
+            if (wager < tokensAvailable)
+            {
+                wager++;
+                Debug.Log("Wager: " + wager);
+                UpdateWagerText();
+            }
+            else
+            {
+                FindObjectOfType<AudioManager>().Play("characterLocked");
+            }
+        }
+
+        private void DecWager()
+        {
+            if (wager > 0)
+            {
+                wager--;
+                UpdateWagerText();
+            }
+            else
+            {
+                FindObjectOfType<AudioManager>().Play("characterLocked");
+            }
+        }
+
+        private void UpdateWagerText()
+        {
+            wagerText.text = wager + "";
+        }
+
+        private void StartSpinner()
+        {
+            if (wager == 0)
             {
                 return;
             }
+
+            spinnerSpinning = true;
+            UIInputHandler.Instance.OnScrollUp.RemoveListener(IncWager);
+            UIInputHandler.Instance.OnScrollDown.RemoveListener(DecWager);
+            UIInputHandler.Instance.OnSelectOption.RemoveListener(StartSpinner);
             
+            LerpCameraPosition.Instance.ToggleLerp(cameraViewingPos, camLerpTime);
             float spinSpeed = Random.Range(1000, 2000);
-            rotateRoutine = StartCoroutine(RotateSpinner(spinSpeed));
+            StartCoroutine(RotateSpinner(spinSpeed));
         }
 
         private IEnumerator RotateSpinner(float spinSpeed)
@@ -56,9 +126,9 @@ namespace InteractableArcade
             {
                 Debug.LogError("Reward should not be null.");
             }
-            
-            rotateRoutine = null;
-            
+
+            spinnerSpinning = false;
+            Close();
         }
 
         private int? GetRewardMultiplierWithRaycast()
@@ -72,6 +142,25 @@ namespace InteractableArcade
             }
 
             return null;
+        }
+        
+        // Returns player to regular position, deactivates UI objects and remove UI listeners
+        private void Close()
+        {
+            if (spinnerSpinning)
+            {
+                return;
+            }
+            
+            uiContent.SetActive(false);
+            LerpCameraPosition.Instance.TryLerpOriginalPosition();
+            UIInputHandler.Instance.OnScrollUp.RemoveListener(IncWager);
+            UIInputHandler.Instance.OnScrollDown.RemoveListener(DecWager);
+            UIInputHandler.Instance.OnSelectOption.RemoveListener(StartSpinner);
+            UIInputHandler.Instance.OnPause.RemoveListener(Close);
+            UIInputHandler.Instance.OnBackButton.RemoveListener(Close);
+            playerInput.SwitchCurrentActionMap("3D");
+            isInteracting = false;
         }
     }
 }
