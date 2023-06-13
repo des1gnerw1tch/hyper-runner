@@ -65,6 +65,7 @@ namespace InteractableArcade
                 wager++;
                 Debug.Log("Wager: " + wager);
                 UpdateWagerText();
+                FindObjectOfType<AudioManager>().Play("scroll");
             }
             else
             {
@@ -78,6 +79,7 @@ namespace InteractableArcade
             {
                 wager--;
                 UpdateWagerText();
+                FindObjectOfType<AudioManager>().Play("scroll");
             }
             else
             {
@@ -96,11 +98,13 @@ namespace InteractableArcade
             {
                 return;
             }
-
+            
+            GameDataManager.Instance.AddTokens(-wager);
             spinnerSpinning = true;
             UIInputHandler.Instance.OnScrollUp.RemoveListener(IncWager);
             UIInputHandler.Instance.OnScrollDown.RemoveListener(DecWager);
             UIInputHandler.Instance.OnSelectOption.RemoveListener(StartSpinner);
+            FindObjectOfType<AudioManager>().Play("spinNWinStart");
             
             LerpCameraPosition.Instance.ToggleLerp(cameraViewingPos, camLerpTime);
             float spinSpeed = Random.Range(1000, 2000);
@@ -116,11 +120,19 @@ namespace InteractableArcade
                 yield return new WaitForEndOfFrame();
             }
 
-            int? reward = GetRewardMultiplierWithRaycast();
+            int? multiplier = GetRewardMultiplierWithRaycast();
             
-            if (reward.HasValue)
+            if (multiplier.HasValue)
             {
-                GameDataManager.Instance.AddTokens(reward.Value);
+                if (multiplier > 0)
+                {
+                    FindObjectOfType<AudioManager>().Play("tracyYay");
+                }
+                else
+                {
+                    FindObjectOfType<AudioManager>().Play("spinNWinFail");
+                }
+                GameDataManager.Instance.AddTokens(wager * multiplier.Value);
             }
             else
             {
