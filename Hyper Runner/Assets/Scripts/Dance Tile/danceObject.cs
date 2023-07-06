@@ -1,5 +1,4 @@
 using UnityEngine;
-using System;
 
 // Normal Dance Tile, press a key to interact
 public class danceObject : ADanceObject {

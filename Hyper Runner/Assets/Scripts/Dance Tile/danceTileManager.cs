@@ -11,10 +11,10 @@ public class danceTileManager : MonoBehaviour {
 
     public static danceTileManager Instance { get; private set; }
 
-    private void Awake()
-    {
-        Instance = this;
-    }
+    // The starting dance tile positions. These are saved at the start so player can "bounce" to other dance tiles, even if the dance tiles are moving. 
+    private readonly Dictionary<GameObject, Vector3> tileStartingPositions = new Dictionary<GameObject, Vector3>();
+    
+    private void Awake() => Instance = this;
 
     private void Start()
     {
@@ -36,6 +36,7 @@ public class danceTileManager : MonoBehaviour {
         foreach (Transform obj in danceTransforms)
         {
             danceTileQueue.Enqueue(obj.GetComponent<ADanceObject>());
+            tileStartingPositions.Add(obj.gameObject, obj.position);
         }
     }
     
@@ -49,7 +50,9 @@ public class danceTileManager : MonoBehaviour {
         
         if (teleportToNextDanceKey)
         {
-            rhythmMovement.StartVerticalMovement(danceTileQueue.Peek().transform.position);
+            GameObject nextTile = danceTileQueue.Peek().gameObject;
+            Vector3 teleportPos = tileStartingPositions[nextTile];
+            rhythmMovement.StartVerticalMovement(teleportPos);
         }
         activeDanceObj = danceTileQueue.Peek();
         danceTileQueue.Dequeue();

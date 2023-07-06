@@ -1,3 +1,4 @@
+using System;
 using Achievements;
 using UnityEngine;
 
@@ -41,7 +42,14 @@ namespace Parry_System
         public virtual void OnParry()
         {
             ResultsManager.IncPlayerTotalParries();
-            AchievementManager.Instance.IncrementCountableAchievementWithID("parry200Objects", 1);
+            try
+            {
+                AchievementManager.Instance.IncrementCountableAchievementWithID("parry200Objects", 1);
+            }
+            catch (NullReferenceException e)
+            {
+                Debug.Log("Parry achievement failed to increment, ignore if started game straight from a level scene");
+            }
         }
     }
 }
