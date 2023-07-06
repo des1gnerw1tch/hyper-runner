@@ -61,7 +61,6 @@ public class SwapDanceTilesObject : MonoBehaviour
         {
             float normalized = Mathf.Clamp(1 - ((distAway - distanceFinishUnwind) / (distanceStartUnwind - distanceFinishUnwind)), 0, 1);
             float angle = Mathf.Lerp(STARTING_Z_ROTATION, ENDING_Z_ROTATION, normalized);
-            print(this.gameObject.GetInstanceID() + "ANGLE: " + angle);
             pivot.eulerAngles = new Vector3(0, 0, angle);
 
         }
