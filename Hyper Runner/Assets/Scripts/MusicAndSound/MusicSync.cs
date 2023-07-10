@@ -18,7 +18,22 @@ public class MusicSync : MonoBehaviour {
     [Range(0, 1)] private float completeLevelFrac = .99f;
     
     private ProgressBar progressBar;
+    
+    public static MusicSync Instance { get; private set; }
 
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+            Debug.LogError("Two instances of MusicSync, something is wrong.");
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+    
     protected virtual void Start() {
         deltaSample = 0f;
         progressBar = ProgressBar.Instance;
@@ -34,9 +49,15 @@ public class MusicSync : MonoBehaviour {
     }
 
     // changes pitch for # of seconds
-    public void changePitch(float pitch, float duration) {
+    public void changePitch(float pitch, float? duration = null) {
+        if (duration == null)
+        {
+            levelMusic.pitch = pitch;
+            return;
+        }
+        
         this.pitch = pitch;
-        this.duration = duration;
+        this.duration = duration.Value;
         StartCoroutine("pitchChange");
     }
 
