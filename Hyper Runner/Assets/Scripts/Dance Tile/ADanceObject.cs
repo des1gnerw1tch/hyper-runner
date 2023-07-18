@@ -5,6 +5,7 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     [HideInInspector] public Transform player; // player transform 
     [HideInInspector] public float score; // score earned for this dance tile
     private static int perfectInARow; // how many perfects in a row one as got
+    private Camera mainCamera;
 
     [Header("Required Components/Prefabs (Auto)")]
     public CharacterHealth characterHealth; // character health of player
@@ -124,18 +125,27 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     }
 
     // spawns a score text on the players canvas
-    private void SpawnScoreText(GameObject text) {
-        var image = Instantiate(text, scorePopUpParent);
+    private void SpawnScoreText(GameObject text)
+    {
+        Vector3 playerScreenPoint = GetPlayerScreenPoint();
+        Vector3 screenPosToSpawn = new Vector3(playerScreenPoint.x - 50, playerScreenPoint.y + 250, playerScreenPoint.z);
+        GameObject image = Instantiate(text, scorePopUpParent);
+
+        image.transform.position = screenPosToSpawn;
 
         // set the placement of these pop ups a little random
-        this.Wobble(image.GetComponent<RectTransform>(), 15);
+        this.Wobble(image.GetComponent<RectTransform>(), 60);
     }
+
+    private Vector3 GetPlayerScreenPoint() => mainCamera.WorldToScreenPoint(player.position);
 
     // spawns the text for how many perfects you got in a row
     private void SpawnPerfectMultiplierText() {
-        GameObject instance = this.perfectStreakTextManager.SpawnPerfectStreakText(perfectInARow); // Spawns a perfect streak text
+        Vector3 playerScreenPoint = GetPlayerScreenPoint();
+        Vector3 screenPosToSpawn = new Vector3(playerScreenPoint.x, playerScreenPoint.y , playerScreenPoint.z);
+        GameObject instance = this.perfectStreakTextManager.SpawnPerfectStreakText(perfectInARow, screenPosToSpawn); // Spawns a perfect streak text
         // set the placement of these pop ups a little random
-        this.Wobble(instance.GetComponent<RectTransform>(), 100);
+        this.Wobble(instance.GetComponent<RectTransform>(), 200);
     }
 
     // Makes UI element have slight X and Y shift, magnitude depending on wobble
@@ -176,6 +186,7 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
         this.characterHealth = FindObjectOfType<CharacterHealth>();
         this.perfectStreakTextManager = FindObjectOfType<PerfectStreakTextManager>();
         this.danceManager = FindObjectOfType<danceTileManager>();
+        this.mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
         scorePopUpParent = UIManager.Instance.GetScorePopUpParent();
     }
 }
