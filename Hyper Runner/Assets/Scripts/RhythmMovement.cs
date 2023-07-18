@@ -59,7 +59,6 @@ public class RhythmMovement : MonoBehaviour {
         isLaunchingFromRhythmArrows = true;
         verticalLaunchSpeed = teleSpeed;
         Vector3 tile = danceTileManager.Instance.GetActiveDanceKeyPosition();
-        print("Tile position launching to: " + tile);
         StartVerticalMovement(tile);
     }
 
