@@ -169,8 +169,7 @@ public class PlayerMovement : MonoBehaviour {
         // this flips gravity, same magnitude negative direction
         this.rb.velocity = Vector3.zero; // resets velocity of player
         Physics2D.gravity = new Vector2(0, Mathf.Abs(Physics2D.gravity.y));
-        this.transform.rotation = Quaternion.Euler(Vector3.forward * 180);
-        this.sprite.flipX = true;
+        this.transform.rotation = Quaternion.Euler(Vector3.right * 180);
         flashObject.StartFlash(flashColor, flashSpeed);
         this.jumpsLeft -= 1;
     }
@@ -179,8 +178,7 @@ public class PlayerMovement : MonoBehaviour {
     public void ActivateNormalGravity(Color flashColor, float flashSpeed) {
         this.rb.velocity = Vector3.zero; // resets velocity of player 
         Physics2D.gravity = new Vector2(0, -Mathf.Abs(Physics2D.gravity.y));
-        this.transform.rotation = Quaternion.Euler(Vector3.forward * 0);
-        this.sprite.flipX = false;
+        this.transform.rotation = Quaternion.Euler(Vector3.zero);
         flashObject.StartFlash(flashColor, flashSpeed);
         this.jumpsLeft -= 1;
     }
