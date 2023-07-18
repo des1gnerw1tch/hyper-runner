@@ -5,6 +5,7 @@ using Utils.List;
 // Handles activating dance tiles for the user to interact with during Dance mode.
 public class danceTileManager : MonoBehaviour {
     private IDanceObject activeDanceObj;
+    private Vector3 activeDanceObjPos;
     [SerializeField] private RhythmMovement rhythmMovement;
 
     private Queue<ADanceObject> danceTileQueue;
@@ -55,10 +56,11 @@ public class danceTileManager : MonoBehaviour {
             rhythmMovement.StartVerticalMovement(teleportPos);
         }
         activeDanceObj = danceTileQueue.Peek();
+        activeDanceObjPos = danceTileQueue.Peek().transform.position;
         danceTileQueue.Dequeue();
     }
 
-    public Vector3 GetNextDanceKeyPosition() => danceTileQueue.Peek().transform.position;
+    public Vector3 GetActiveDanceKeyPosition() => activeDanceObjPos;
 
     // INPUT DELEGATION TO DANCE TILE
     public void OnUpDanceKeyPress() {

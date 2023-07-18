@@ -58,7 +58,9 @@ public class RhythmMovement : MonoBehaviour {
         flyingParticles.SetActive(true);
         isLaunchingFromRhythmArrows = true;
         verticalLaunchSpeed = teleSpeed;
-        StartVerticalMovement(danceTileManager.Instance.GetNextDanceKeyPosition());
+        Vector3 tile = danceTileManager.Instance.GetActiveDanceKeyPosition();
+        print("Tile position launching to: " + tile);
+        StartVerticalMovement(tile);
     }
 
     public void DeactivateFlyingParticles()
