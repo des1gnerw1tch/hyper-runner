@@ -1,10 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour {
-	[SerializeField] private Text scoreText; // the score text objet
+	[SerializeField] private TextMeshProUGUI scoreNumberText; // the score text objet
 	private int score; // the score of the game so far
 	[SerializeField] private GameObject meter; // the meter game object
 	[SerializeField] private float minWaitTime; // min wait time for next fish
@@ -19,7 +18,7 @@ public class ScoreManager : MonoBehaviour {
 
 	// updates score text, TODO: maybe add animation when score goes up? 
 	void UpdateScore () {
-		this.scoreText.text = this.score + "";
+		this.scoreNumberText.text = this.score + "";
 	}
 
 	// called when person caught fish, adds to score
