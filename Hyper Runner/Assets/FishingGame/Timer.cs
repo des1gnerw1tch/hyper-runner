@@ -1,14 +1,13 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class Timer : MonoBehaviour {
 	[SerializeField] private float timeLeft;
 	[SerializeField] private TextMeshProUGUI textObj;
 	[SerializeField] private GameObject gameOver;
-	[SerializeField] private Text gameOverScore;
-	[SerializeField] private Text score;
+	[SerializeField] private TextMeshProUGUI gameOverScoreText;
+	[SerializeField] private TextMeshProUGUI score;
 	private bool gameEnded;
 	private void Start() => gameEnded = false;
 
@@ -22,7 +21,7 @@ public class Timer : MonoBehaviour {
 			Debug.Log ("GAME ENDED");
 			this.gameOver.SetActive (true);
 			Time.timeScale = 0;
-			this.gameOverScore.text = this.score.text;
+			this.gameOverScoreText.text = "Score: " +  this.score.text;
 
 		}
 
