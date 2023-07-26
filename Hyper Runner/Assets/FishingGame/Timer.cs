@@ -27,7 +27,7 @@ public class Timer : MonoBehaviour {
 
 		if (gameEnded) {
 			if (Input.GetKeyDown ("space")) {
-				SceneManager.LoadScene ("Main");
+				SceneManager.LoadScene ("Mini_Fishing");
 				Time.timeScale = 1f;
 			}
 		}
