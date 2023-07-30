@@ -1272,6 +1272,137 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Fishing"",
+            ""id"": ""13b64bc2-162c-4550-be35-8c02c547570d"",
+            ""actions"": [
+                {
+                    ""name"": ""Reel"",
+                    ""type"": ""Button"",
+                    ""id"": ""4cff5aa4-ed7b-457c-bfc8-4cfa33a5dadb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ExitGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""1a25f478-d144-4570-8b03-8c96c30ba30d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold(duration=2)""
+                },
+                {
+                    ""name"": ""StartExitGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""381f2fb4-22b8-4387-ab6d-8035cde1d9ec"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""2b941afb-f1c5-4d0d-b689-15ddb4d6c766"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""Reel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""456ed350-2c34-4cf1-a689-e09665a7b3d1"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad Control Scheme"",
+                    ""action"": ""Reel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f8c35e81-e932-42e5-b5f8-7664f00d1265"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad Control Scheme"",
+                    ""action"": ""Reel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d207e56a-d9f2-4f99-aaeb-e63965be3e6f"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad Control Scheme"",
+                    ""action"": ""Reel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b39e1e53-f376-481b-920c-77f8dc6896bf"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad Control Scheme"",
+                    ""action"": ""Reel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5e52fd61-8445-45b0-a3dc-28fada3d6487"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""ExitGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6fca379d-4455-42ca-af46-167a9b6fe467"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad Control Scheme"",
+                    ""action"": ""ExitGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""313cafc8-f276-4bfb-92c2-f5a64d4b929c"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""StartExitGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a01c635f-1b5d-41c7-a8c5-7452a4523462"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad Control Scheme"",
+                    ""action"": ""StartExitGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -1343,6 +1474,11 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_UI_Select = m_UI.FindAction("Select", throwIfNotFound: true);
         m_UI_PauseGame = m_UI.FindAction("PauseGame", throwIfNotFound: true);
         m_UI_Back = m_UI.FindAction("Back", throwIfNotFound: true);
+        // Fishing
+        m_Fishing = asset.FindActionMap("Fishing", throwIfNotFound: true);
+        m_Fishing_Reel = m_Fishing.FindAction("Reel", throwIfNotFound: true);
+        m_Fishing_ExitGame = m_Fishing.FindAction("ExitGame", throwIfNotFound: true);
+        m_Fishing_StartExitGame = m_Fishing.FindAction("StartExitGame", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1736,6 +1872,55 @@ public class @InputMaster : IInputActionCollection, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // Fishing
+    private readonly InputActionMap m_Fishing;
+    private IFishingActions m_FishingActionsCallbackInterface;
+    private readonly InputAction m_Fishing_Reel;
+    private readonly InputAction m_Fishing_ExitGame;
+    private readonly InputAction m_Fishing_StartExitGame;
+    public struct FishingActions
+    {
+        private @InputMaster m_Wrapper;
+        public FishingActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Reel => m_Wrapper.m_Fishing_Reel;
+        public InputAction @ExitGame => m_Wrapper.m_Fishing_ExitGame;
+        public InputAction @StartExitGame => m_Wrapper.m_Fishing_StartExitGame;
+        public InputActionMap Get() { return m_Wrapper.m_Fishing; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(FishingActions set) { return set.Get(); }
+        public void SetCallbacks(IFishingActions instance)
+        {
+            if (m_Wrapper.m_FishingActionsCallbackInterface != null)
+            {
+                @Reel.started -= m_Wrapper.m_FishingActionsCallbackInterface.OnReel;
+                @Reel.performed -= m_Wrapper.m_FishingActionsCallbackInterface.OnReel;
+                @Reel.canceled -= m_Wrapper.m_FishingActionsCallbackInterface.OnReel;
+                @ExitGame.started -= m_Wrapper.m_FishingActionsCallbackInterface.OnExitGame;
+                @ExitGame.performed -= m_Wrapper.m_FishingActionsCallbackInterface.OnExitGame;
+                @ExitGame.canceled -= m_Wrapper.m_FishingActionsCallbackInterface.OnExitGame;
+                @StartExitGame.started -= m_Wrapper.m_FishingActionsCallbackInterface.OnStartExitGame;
+                @StartExitGame.performed -= m_Wrapper.m_FishingActionsCallbackInterface.OnStartExitGame;
+                @StartExitGame.canceled -= m_Wrapper.m_FishingActionsCallbackInterface.OnStartExitGame;
+            }
+            m_Wrapper.m_FishingActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Reel.started += instance.OnReel;
+                @Reel.performed += instance.OnReel;
+                @Reel.canceled += instance.OnReel;
+                @ExitGame.started += instance.OnExitGame;
+                @ExitGame.performed += instance.OnExitGame;
+                @ExitGame.canceled += instance.OnExitGame;
+                @StartExitGame.started += instance.OnStartExitGame;
+                @StartExitGame.performed += instance.OnStartExitGame;
+                @StartExitGame.canceled += instance.OnStartExitGame;
+            }
+        }
+    }
+    public FishingActions @Fishing => new FishingActions(this);
     private int m_GamepadControlSchemeSchemeIndex = -1;
     public InputControlScheme GamepadControlSchemeScheme
     {
@@ -1796,5 +1981,11 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnSelect(InputAction.CallbackContext context);
         void OnPauseGame(InputAction.CallbackContext context);
         void OnBack(InputAction.CallbackContext context);
+    }
+    public interface IFishingActions
+    {
+        void OnReel(InputAction.CallbackContext context);
+        void OnExitGame(InputAction.CallbackContext context);
+        void OnStartExitGame(InputAction.CallbackContext context);
     }
 }
