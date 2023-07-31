@@ -182,8 +182,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d7f0a7d8b9c5446a484b0b48e66959b2, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: d7f0a7d8b9c5446a484b0b48e66959b2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e6977443027aa403f8e22bf4b66cf014, type: 2}
+  m_sharedMaterial: {fileID: 6501055391784093591, guid: e6977443027aa403f8e22bf4b66cf014, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -257,6 +257,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 23878102}
   m_CullTransparentMesh: 1
+--- !u!224 &41834298 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2803757234133349147, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
+  m_PrefabInstance: {fileID: 2803757234160231457}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &155815572
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,112 +629,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!1001 &534536644
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1962548258}
-    m_Modifications:
-    - target: {fileID: 334122968334937624, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-      propertyPath: m_Name
-      value: Pause Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 334122968334937624, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 334122968334937627, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 334122968334937627, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 334122968334937627, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 334122968334937627, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 334122968334937627, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 334122968334937627, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 334122968334937627, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 334122968334937627, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 32.5067
-      objectReference: {fileID: 0}
-    - target: {fileID: 334122968334937627, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 20.3144
-      objectReference: {fileID: 0}
-    - target: {fileID: 334122968334937627, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 334122968334937627, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 334122968334937627, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 334122968334937627, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 334122968334937627, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 334122968334937627, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 334122968334937627, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 334122968334937627, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 334122968334937627, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 334122968334937627, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 334122968334937627, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 334122968334937627, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
---- !u!224 &534536645 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 334122968334937627, guid: 2b6f766c13d3a454b9f575dc7a0a21af, type: 3}
-  m_PrefabInstance: {fileID: 534536644}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &619629290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,215 +954,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &866589960
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 866589963}
-  - component: {fileID: 866589962}
-  - component: {fileID: 866589961}
-  m_Layer: 0
-  m_Name: InputManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &866589961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866589960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd1ebc8bc7655440eac628bcfaadb9ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnStartExitFishingGame:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &866589962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866589960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 2b97dca451a704ba799e31fd7e60134e, type: 3}
-  m_NotificationBehavior: 1
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 8ddda6ed-cb3c-40c2-bd75-133ba3008deb
-    m_ActionName: Platformer/Jump[/XboxOneGampadMacOSWireless/buttonSouth,/Keyboard/w,/Keyboard/upArrow,/Keyboard/space]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 92636550-eaad-49fc-83ae-4d641b28e354
-    m_ActionName: Platformer/FloorDown[/XboxOneGampadMacOSWireless/leftStick/down,/Keyboard/s,/Keyboard/downArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 64afec85-3f8a-44ea-92bc-3ba5b2e31749
-    m_ActionName: Platformer/FloorUp[/XboxOneGampadMacOSWireless/leftStick/down,/Keyboard/s,/Keyboard/downArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 2ca580a0-a8ce-4856-abac-b4acdc9457c7
-    m_ActionName: Platformer/FastFowardStart[/Keyboard/z,/XboxOneGampadMacOSWireless/rightShoulder]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 04ff4765-a800-4512-ab9e-f3ab33d4bc3b
-    m_ActionName: Platformer/PauseGame[/Keyboard/escape,/XboxOneGampadMacOSWireless/start]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: d508eb8f-7cb7-4c88-a955-805833824c6d
-    m_ActionName: Platformer/RestartGame[/Keyboard/r,/XboxOneGampadMacOSWireless/leftTrigger]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 163e3bc8-38e7-4bc2-9960-cac3c857ccb3
-    m_ActionName: Dancer/UpDanceKeyPress[/XboxOneGampadMacOSWireless/buttonNorth,/Keyboard/w,/Keyboard/upArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: aaf918d7-51b2-48ff-bf71-5a9fd6a8b0b9
-    m_ActionName: Dancer/UpDanceKeyRelease[/XboxOneGampadMacOSWireless/buttonNorth,/Keyboard/w,/Keyboard/upArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 4596c6a7-b2cb-4e69-8414-6987309753c8
-    m_ActionName: Dancer/DownDanceKeyPress[/XboxOneGampadMacOSWireless/buttonSouth,/Keyboard/s,/Keyboard/downArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f889207c-b3f6-4fd8-b789-175820196179
-    m_ActionName: Dancer/DownDanceKeyRelease[/XboxOneGampadMacOSWireless/buttonSouth,/Keyboard/s,/Keyboard/downArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f45c7248-1235-474a-82ee-73a3e9b9c7de
-    m_ActionName: Dancer/LeftDanceKeyPress[/XboxOneGampadMacOSWireless/buttonWest,/Keyboard/a,/Keyboard/leftArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 908ec07a-b98e-4857-9cf0-c60fc1f3810e
-    m_ActionName: Dancer/LeftDanceKeyRelease[/XboxOneGampadMacOSWireless/buttonWest,/Keyboard/a,/Keyboard/leftArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 644359ec-a7ab-4f74-b40e-40464d5287af
-    m_ActionName: Dancer/RightDanceKeyPress[/XboxOneGampadMacOSWireless/buttonEast,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 9779c74c-f565-4b80-bdca-5791c5a5908d
-    m_ActionName: Dancer/RightDanceKeyRelease[/XboxOneGampadMacOSWireless/buttonEast,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 1e0c36ad-9a79-4dba-a304-08c537101030
-    m_ActionName: Dancer/AnyDanceKeyPress[/Keyboard/anyKey]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f7994f71-2ab6-4562-8686-4b0a7d73dcbf
-    m_ActionName: Dancer/FastFowardStart[/Keyboard/z,/XboxOneGampadMacOSWireless/rightShoulder]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: d90c9bfb-f7df-4d61-a312-5b699486c171
-    m_ActionName: Dancer/PauseGame[/Keyboard/escape,/XboxOneGampadMacOSWireless/start]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 41699389-6ab7-4ca6-ab49-f0684a57a27f
-    m_ActionName: Dancer/RestartGame[/Keyboard/r,/XboxOneGampadMacOSWireless/leftTrigger]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 78ecc4e5-94a8-436b-b96b-a7b57893f56a
-    m_ActionName: 3D/Walk Vertical[/XboxOneGampadMacOSWireless/leftStick/down,/XboxOneGampadMacOSWireless/leftStick/up,/Keyboard/s,/Keyboard/w]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 166f2c9a-026d-48e7-8263-987df4aba04e
-    m_ActionName: 3D/Walk Horizontal[/XboxOneGampadMacOSWireless/leftStick/left,/XboxOneGampadMacOSWireless/leftStick/right,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 2f06be00-3656-41a9-9adb-3a660e3c7d4a
-    m_ActionName: 3D/Look Vertical[/XboxOneGampadMacOSWireless/rightStick/down,/XboxOneGampadMacOSWireless/rightStick/up,/Mouse/delta/y]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 64f4a115-e413-4405-a7e4-18870ec0b57d
-    m_ActionName: 3D/Look Horizontal[/Mouse/delta/x,/XboxOneGampadMacOSWireless/rightStick/right,/XboxOneGampadMacOSWireless/rightStick/left]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 5c21af16-f2a5-4fb9-a004-cd83fa2ac40a
-    m_ActionName: 3D/Interact[/XboxOneGampadMacOSWireless/buttonSouth,/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f8418090-c908-4d71-86d6-239bd0e715f3
-    m_ActionName: 3D/PauseGame[/Keyboard/escape,/XboxOneGampadMacOSWireless/start]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 496fc090-348e-4cc5-9377-a145146447fd
-    m_ActionName: UI/Up[/XboxOneGampadMacOSWireless/leftStick/up,/Keyboard/upArrow,/Keyboard/w]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 4c7f5601-6240-45cf-a9a6-710b66602e15
-    m_ActionName: UI/Down[/XboxOneGampadMacOSWireless/leftStick/down,/Keyboard/downArrow,/Keyboard/s]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e7bef0e3-7ca3-4b1b-9afb-d53a81d0dbc4
-    m_ActionName: UI/Left[/XboxOneGampadMacOSWireless/leftStick/left,/Keyboard/leftArrow,/Keyboard/a]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 43ef0b62-b476-445d-b940-ae8cdf210a31
-    m_ActionName: UI/Right[/XboxOneGampadMacOSWireless/leftStick/right,/Keyboard/rightArrow,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: c70d7263-a1fd-42b3-8653-280c1e1e37da
-    m_ActionName: UI/Select[/XboxOneGampadMacOSWireless/buttonSouth,/Keyboard/enter]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: cf27eab8-e7bf-4b20-9d09-ec6401dec2e1
-    m_ActionName: UI/PauseGame[/Keyboard/escape,/XboxOneGampadMacOSWireless/start]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 9cb710d7-5cf9-4f40-b61d-9ba67817962d
-    m_ActionName: UI/Back[/XboxOneGampadMacOSWireless/buttonEast,/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 4cff5aa4-ed7b-457c-bfc8-4cfa33a5dadb
-    m_ActionName: Fishing/Reel[/Keyboard/space,/XboxOneGampadMacOSWireless/buttonEast,/XboxOneGampadMacOSWireless/buttonNorth,/XboxOneGampadMacOSWireless/buttonWest,/XboxOneGampadMacOSWireless/buttonSouth]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 1a25f478-d144-4570-8b03-8c96c30ba30d
-    m_ActionName: Fishing/ExitGame[/Keyboard/escape,/XboxOneGampadMacOSWireless/start]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Fishing
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!4 &866589963
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866589960}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5082808, y: 1.1358784, z: -10.29069}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &908843955 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7405652514776184921, guid: 428d6f715c8f74814ac01d0dc852e8f2, type: 3}
@@ -1456,8 +1146,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 60
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d7f0a7d8b9c5446a484b0b48e66959b2, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: d7f0a7d8b9c5446a484b0b48e66959b2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e6977443027aa403f8e22bf4b66cf014, type: 2}
+  m_sharedMaterial: {fileID: 6501055391784093591, guid: e6977443027aa403f8e22bf4b66cf014, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2051,8 +1741,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d7f0a7d8b9c5446a484b0b48e66959b2, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: d7f0a7d8b9c5446a484b0b48e66959b2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e6977443027aa403f8e22bf4b66cf014, type: 2}
+  m_sharedMaterial: {fileID: 6501055391784093591, guid: e6977443027aa403f8e22bf4b66cf014, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2903,7 +2593,7 @@ RectTransform:
   - {fileID: 517644809}
   - {fileID: 1170361525}
   - {fileID: 619629291}
-  - {fileID: 534536645}
+  - {fileID: 41834298}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5200,6 +4890,103 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047013961}
   m_CullTransparentMesh: 1
+--- !u!1001 &2803757234160231457
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1962548258}
+    m_Modifications:
+    - target: {fileID: 2803757234133349144, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
+      propertyPath: m_Name
+      value: ExitMinigameMachine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803757234133349147, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803757234133349147, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803757234133349147, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803757234133349147, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803757234133349147, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803757234133349147, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803757234133349147, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803757234133349147, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803757234133349147, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803757234133349147, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803757234133349147, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803757234133349147, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803757234133349147, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803757234133349147, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803757234133349147, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803757234133349147, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803757234133349147, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803757234133349147, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803757234133349147, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803757234133349147, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803757234133349147, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1d3063316acdd4c3c8b99a65ec859486, type: 3}
 --- !u!1001 &3992898667511622072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5257,6 +5044,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed6492100638d413983ab02df13e261f, type: 3}
+--- !u!1001 &5690280111019479274
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5690280111298727393, guid: b934f2e32918348e4bfef464a29987f6, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690280111298727393, guid: b934f2e32918348e4bfef464a29987f6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5082808
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690280111298727393, guid: b934f2e32918348e4bfef464a29987f6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1358784
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690280111298727393, guid: b934f2e32918348e4bfef464a29987f6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.29069
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690280111298727393, guid: b934f2e32918348e4bfef464a29987f6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690280111298727393, guid: b934f2e32918348e4bfef464a29987f6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690280111298727393, guid: b934f2e32918348e4bfef464a29987f6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690280111298727393, guid: b934f2e32918348e4bfef464a29987f6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690280111298727393, guid: b934f2e32918348e4bfef464a29987f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690280111298727393, guid: b934f2e32918348e4bfef464a29987f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690280111298727393, guid: b934f2e32918348e4bfef464a29987f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690280111298727394, guid: b934f2e32918348e4bfef464a29987f6, type: 3}
+      propertyPath: m_Name
+      value: MiniGameInputManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b934f2e32918348e4bfef464a29987f6, type: 3}
 --- !u!1001 &7576565532396279160
 PrefabInstance:
   m_ObjectHideFlags: 0

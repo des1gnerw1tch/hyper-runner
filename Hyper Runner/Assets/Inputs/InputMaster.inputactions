@@ -1261,7 +1261,7 @@
             ]
         },
         {
-            "name": "Fishing",
+            "name": "Minigame",
             "id": "13b64bc2-162c-4550-be35-8c02c547570d",
             "actions": [
                 {
@@ -1278,7 +1278,7 @@
                     "id": "1a25f478-d144-4570-8b03-8c96c30ba30d",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold(duration=2)"
+                    "interactions": "Hold(duration=1)"
                 },
                 {
                     "name": "StartExitGame",
@@ -1287,6 +1287,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "ReleaseExit",
+                    "type": "Button",
+                    "id": "6184102d-f4ae-494b-bb77-c339334717b9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)"
                 }
             ],
             "bindings": [
@@ -1386,6 +1394,28 @@
                     "processors": "",
                     "groups": "Gamepad Control Scheme",
                     "action": "StartExitGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e4bc7319-a629-4582-acf8-625952827cf6",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard Control Scheme",
+                    "action": "ReleaseExit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6bf2d974-e216-42f1-9994-330cbbe217ec",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad Control Scheme",
+                    "action": "ReleaseExit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

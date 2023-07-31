@@ -1,3 +1,4 @@
+using MiniGames;
 using UnityEngine;
 
 namespace FishingGame.Scripts
@@ -11,7 +12,7 @@ namespace FishingGame.Scripts
 		[SerializeField] private FishingMeter meter;
 		[SerializeField] private ScoreManager scoreManager;
 
-		private void Start() => FishingInputManager.Instance.OnReelRod.AddListener(ReelRod);
+		private void Start() => MiniGameInputManager.Instance.OnReelRod.AddListener(ReelRod);
 
 		// Update is called once per frame
 		private void Update()

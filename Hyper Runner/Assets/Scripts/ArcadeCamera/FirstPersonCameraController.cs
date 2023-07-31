@@ -60,7 +60,7 @@ namespace ArcadeCamera
         // Rotates player to rotation of a existing transform
         public void RotatePlayer(Transform obj)
         {
-            this.RotatePlayer(obj.transform.localRotation.eulerAngles.x, obj.transform.localRotation.eulerAngles.y);
+            this.RotatePlayer(obj.transform.eulerAngles.x, obj.transform.eulerAngles.y);
 
         }
 

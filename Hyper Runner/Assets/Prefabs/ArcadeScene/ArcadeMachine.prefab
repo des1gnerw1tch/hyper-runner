@@ -289,13 +289,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2c25a597204d44b8c97f9ffaef233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popUpText: {fileID: 0}
   playerCam: {fileID: 0}
   animCam: {fileID: 337957039712412303}
   animCamAnimator: {fileID: 337957039712412290}
   backlight: {fileID: 337957041325354655}
-  popUpText: {fileID: 0}
   sceneToLoad: Lvl_Nightlife
   machineSpawnPosition: {fileID: 337957040462283901}
+  levelThatMustBeCompletedBeforeThisOne: 
+  lockEnabled: 0
 --- !u!1 &337957040029999481
 GameObject:
   m_ObjectHideFlags: 0

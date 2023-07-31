@@ -1274,7 +1274,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
             ]
         },
         {
-            ""name"": ""Fishing"",
+            ""name"": ""Minigame"",
             ""id"": ""13b64bc2-162c-4550-be35-8c02c547570d"",
             ""actions"": [
                 {
@@ -1291,7 +1291,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""id"": ""1a25f478-d144-4570-8b03-8c96c30ba30d"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Hold(duration=2)""
+                    ""interactions"": ""Hold(duration=1)""
                 },
                 {
                     ""name"": ""StartExitGame"",
@@ -1300,6 +1300,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ReleaseExit"",
+                    ""type"": ""Button"",
+                    ""id"": ""6184102d-f4ae-494b-bb77-c339334717b9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=1)""
                 }
             ],
             ""bindings"": [
@@ -1401,6 +1409,28 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""StartExitGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e4bc7319-a629-4582-acf8-625952827cf6"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Control Scheme"",
+                    ""action"": ""ReleaseExit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6bf2d974-e216-42f1-9994-330cbbe217ec"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad Control Scheme"",
+                    ""action"": ""ReleaseExit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1474,11 +1504,12 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_UI_Select = m_UI.FindAction("Select", throwIfNotFound: true);
         m_UI_PauseGame = m_UI.FindAction("PauseGame", throwIfNotFound: true);
         m_UI_Back = m_UI.FindAction("Back", throwIfNotFound: true);
-        // Fishing
-        m_Fishing = asset.FindActionMap("Fishing", throwIfNotFound: true);
-        m_Fishing_Reel = m_Fishing.FindAction("Reel", throwIfNotFound: true);
-        m_Fishing_ExitGame = m_Fishing.FindAction("ExitGame", throwIfNotFound: true);
-        m_Fishing_StartExitGame = m_Fishing.FindAction("StartExitGame", throwIfNotFound: true);
+        // Minigame
+        m_Minigame = asset.FindActionMap("Minigame", throwIfNotFound: true);
+        m_Minigame_Reel = m_Minigame.FindAction("Reel", throwIfNotFound: true);
+        m_Minigame_ExitGame = m_Minigame.FindAction("ExitGame", throwIfNotFound: true);
+        m_Minigame_StartExitGame = m_Minigame.FindAction("StartExitGame", throwIfNotFound: true);
+        m_Minigame_ReleaseExit = m_Minigame.FindAction("ReleaseExit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1873,39 +1904,44 @@ public class @InputMaster : IInputActionCollection, IDisposable
     }
     public UIActions @UI => new UIActions(this);
 
-    // Fishing
-    private readonly InputActionMap m_Fishing;
-    private IFishingActions m_FishingActionsCallbackInterface;
-    private readonly InputAction m_Fishing_Reel;
-    private readonly InputAction m_Fishing_ExitGame;
-    private readonly InputAction m_Fishing_StartExitGame;
-    public struct FishingActions
+    // Minigame
+    private readonly InputActionMap m_Minigame;
+    private IMinigameActions m_MinigameActionsCallbackInterface;
+    private readonly InputAction m_Minigame_Reel;
+    private readonly InputAction m_Minigame_ExitGame;
+    private readonly InputAction m_Minigame_StartExitGame;
+    private readonly InputAction m_Minigame_ReleaseExit;
+    public struct MinigameActions
     {
         private @InputMaster m_Wrapper;
-        public FishingActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Reel => m_Wrapper.m_Fishing_Reel;
-        public InputAction @ExitGame => m_Wrapper.m_Fishing_ExitGame;
-        public InputAction @StartExitGame => m_Wrapper.m_Fishing_StartExitGame;
-        public InputActionMap Get() { return m_Wrapper.m_Fishing; }
+        public MinigameActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Reel => m_Wrapper.m_Minigame_Reel;
+        public InputAction @ExitGame => m_Wrapper.m_Minigame_ExitGame;
+        public InputAction @StartExitGame => m_Wrapper.m_Minigame_StartExitGame;
+        public InputAction @ReleaseExit => m_Wrapper.m_Minigame_ReleaseExit;
+        public InputActionMap Get() { return m_Wrapper.m_Minigame; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(FishingActions set) { return set.Get(); }
-        public void SetCallbacks(IFishingActions instance)
+        public static implicit operator InputActionMap(MinigameActions set) { return set.Get(); }
+        public void SetCallbacks(IMinigameActions instance)
         {
-            if (m_Wrapper.m_FishingActionsCallbackInterface != null)
+            if (m_Wrapper.m_MinigameActionsCallbackInterface != null)
             {
-                @Reel.started -= m_Wrapper.m_FishingActionsCallbackInterface.OnReel;
-                @Reel.performed -= m_Wrapper.m_FishingActionsCallbackInterface.OnReel;
-                @Reel.canceled -= m_Wrapper.m_FishingActionsCallbackInterface.OnReel;
-                @ExitGame.started -= m_Wrapper.m_FishingActionsCallbackInterface.OnExitGame;
-                @ExitGame.performed -= m_Wrapper.m_FishingActionsCallbackInterface.OnExitGame;
-                @ExitGame.canceled -= m_Wrapper.m_FishingActionsCallbackInterface.OnExitGame;
-                @StartExitGame.started -= m_Wrapper.m_FishingActionsCallbackInterface.OnStartExitGame;
-                @StartExitGame.performed -= m_Wrapper.m_FishingActionsCallbackInterface.OnStartExitGame;
-                @StartExitGame.canceled -= m_Wrapper.m_FishingActionsCallbackInterface.OnStartExitGame;
+                @Reel.started -= m_Wrapper.m_MinigameActionsCallbackInterface.OnReel;
+                @Reel.performed -= m_Wrapper.m_MinigameActionsCallbackInterface.OnReel;
+                @Reel.canceled -= m_Wrapper.m_MinigameActionsCallbackInterface.OnReel;
+                @ExitGame.started -= m_Wrapper.m_MinigameActionsCallbackInterface.OnExitGame;
+                @ExitGame.performed -= m_Wrapper.m_MinigameActionsCallbackInterface.OnExitGame;
+                @ExitGame.canceled -= m_Wrapper.m_MinigameActionsCallbackInterface.OnExitGame;
+                @StartExitGame.started -= m_Wrapper.m_MinigameActionsCallbackInterface.OnStartExitGame;
+                @StartExitGame.performed -= m_Wrapper.m_MinigameActionsCallbackInterface.OnStartExitGame;
+                @StartExitGame.canceled -= m_Wrapper.m_MinigameActionsCallbackInterface.OnStartExitGame;
+                @ReleaseExit.started -= m_Wrapper.m_MinigameActionsCallbackInterface.OnReleaseExit;
+                @ReleaseExit.performed -= m_Wrapper.m_MinigameActionsCallbackInterface.OnReleaseExit;
+                @ReleaseExit.canceled -= m_Wrapper.m_MinigameActionsCallbackInterface.OnReleaseExit;
             }
-            m_Wrapper.m_FishingActionsCallbackInterface = instance;
+            m_Wrapper.m_MinigameActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @Reel.started += instance.OnReel;
@@ -1917,10 +1953,13 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @StartExitGame.started += instance.OnStartExitGame;
                 @StartExitGame.performed += instance.OnStartExitGame;
                 @StartExitGame.canceled += instance.OnStartExitGame;
+                @ReleaseExit.started += instance.OnReleaseExit;
+                @ReleaseExit.performed += instance.OnReleaseExit;
+                @ReleaseExit.canceled += instance.OnReleaseExit;
             }
         }
     }
-    public FishingActions @Fishing => new FishingActions(this);
+    public MinigameActions @Minigame => new MinigameActions(this);
     private int m_GamepadControlSchemeSchemeIndex = -1;
     public InputControlScheme GamepadControlSchemeScheme
     {
@@ -1982,10 +2021,11 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnPauseGame(InputAction.CallbackContext context);
         void OnBack(InputAction.CallbackContext context);
     }
-    public interface IFishingActions
+    public interface IMinigameActions
     {
         void OnReel(InputAction.CallbackContext context);
         void OnExitGame(InputAction.CallbackContext context);
         void OnStartExitGame(InputAction.CallbackContext context);
+        void OnReleaseExit(InputAction.CallbackContext context);
     }
 }
