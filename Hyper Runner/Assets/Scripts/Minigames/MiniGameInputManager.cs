@@ -6,24 +6,28 @@ namespace MiniGames
 {
     public class MiniGameInputManager : MonoBehaviour
     {
-        public UnityEvent OnReelRod { get; } = new UnityEvent();
         
-        // Finished exiting the fishing game by holding the exit key
+        // Finished exiting the mini game by holding the exit key
         public UnityEvent OnExitGameInput { get; } = new UnityEvent();
     
-        // Starting to exit the fishing game by tapping the exit key
+        // Starting to exit the mini game by tapping the exit key
         public UnityEvent OnStartExitGameInput { get; }= new UnityEvent();
         
         // Exit game input is released.
         public UnityEvent OnStopExitGame { get; }= new UnityEvent();
         
+        // Fishing Game Events
+        public UnityEvent OnReelRod { get; } = new UnityEvent();
+        
+        // Add more games down here
+
         public static MiniGameInputManager Instance { get; private set; }
 
         private void Awake()
         {
             if (Instance != null && Instance != this)
             {
-                Debug.LogError("Two FishingInputManagers, destroying one.");
+                Debug.LogError("Two MiniGameInputManagers, destroying one.");
                 Destroy(this.gameObject);
             }
             else
