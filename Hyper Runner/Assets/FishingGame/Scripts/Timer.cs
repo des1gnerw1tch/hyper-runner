@@ -1,3 +1,4 @@
+using MiniGames;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,7 +13,13 @@ namespace FishingGame.Scripts
 		[SerializeField] private TextMeshProUGUI gameOverScoreText;
 		[SerializeField] private TextMeshProUGUI score;
 		private bool gameEnded;
-		private void Start() => gameEnded = false;
+
+		private void Start()
+		{
+			gameEnded = false;
+			MiniGameInputManager.Instance.OnStartExitGameInput.AddListener(ExitGameIfGameEnded);
+			MiniGameInputManager.Instance.OnReelRod.AddListener(ExitGameIfGameEnded);
+		}
 
 		// Update is called once per frame
 		void Update()
@@ -29,15 +36,17 @@ namespace FishingGame.Scripts
 				this.gameOverScoreText.text = "Score: " + this.score.text;
 
 			}
+		}
 
+		private void ExitGameIfGameEnded()
+		{
 			if (gameEnded)
 			{
-				if (Input.GetKeyDown("space"))
-				{
-					SceneManager.LoadScene("Mini_Fishing");
-					Time.timeScale = 1f;
-				}
+				SceneManager.LoadScene("Menu");
+				Time.timeScale = 1f;
 			}
 		}
+
+		public bool IsGameOver() => gameEnded;
 	}
 }

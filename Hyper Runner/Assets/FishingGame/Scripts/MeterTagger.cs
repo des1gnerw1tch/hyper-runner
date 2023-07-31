@@ -12,6 +12,7 @@ namespace FishingGame.Scripts
 		[SerializeField] private FishingMeter meter;
 		[SerializeField] private ScoreManager scoreManager;
 		[SerializeField] private Animator fisherAnimator;
+		[SerializeField] private Timer timer;
 
 		private void Start() => MiniGameInputManager.Instance.OnReelRod.AddListener(ReelRod);
 
@@ -27,15 +28,16 @@ namespace FishingGame.Scripts
 		{
 			if (this.catchable)
 			{
-				Debug.Log("Strike!");
 				this.meter.ItemCaught();
 			}
 			else
 			{
-				Debug.Log("Missed");
-				FindObjectOfType<AudioManager>().Play("nuetral");
 				this.scoreManager.HideMeter();
-				fisherAnimator.SetTrigger("catchFishNeutral");
+				if (!timer.IsGameOver())
+				{
+					FindObjectOfType<AudioManager>().Play("nuetral");
+					fisherAnimator.SetTrigger("catchFishNeutral");
+				}
 			}
 		}
 

@@ -17,7 +17,7 @@ namespace MiniGames
             MiniGameInputManager.Instance.OnStopExitGame.AddListener(HideQuittingGameText);
         }
 
-        private void ExitFishingGame() => SceneManager.LoadScene("Menu");
+        public void ExitFishingGame() => SceneManager.LoadScene("Menu");
         private void ShowQuittingGameText() => quittingGameText.SetActive(true);
         private void HideQuittingGameText() => quittingGameText.SetActive(false);
     }

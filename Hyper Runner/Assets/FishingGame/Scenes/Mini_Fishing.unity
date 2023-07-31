@@ -319,12 +319,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Press Space to Play Again!
+  m_text: 'Press Button to Exit
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d7f0a7d8b9c5446a484b0b48e66959b2, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: d7f0a7d8b9c5446a484b0b48e66959b2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e6977443027aa403f8e22bf4b66cf014, type: 2}
+  m_sharedMaterial: {fileID: 6501055391784093591, guid: e6977443027aa403f8e22bf4b66cf014, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -690,8 +690,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Great Fishing!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d7f0a7d8b9c5446a484b0b48e66959b2, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: d7f0a7d8b9c5446a484b0b48e66959b2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e6977443027aa403f8e22bf4b66cf014, type: 2}
+  m_sharedMaterial: {fileID: 6501055391784093591, guid: e6977443027aa403f8e22bf4b66cf014, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4815,8 +4815,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d7f0a7d8b9c5446a484b0b48e66959b2, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: d7f0a7d8b9c5446a484b0b48e66959b2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e6977443027aa403f8e22bf4b66cf014, type: 2}
+  m_sharedMaterial: {fileID: 6501055391784093591, guid: e6977443027aa403f8e22bf4b66cf014, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5165,6 +5165,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2295339144297511482, guid: 428d6f715c8f74814ac01d0dc852e8f2, type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 1170361528}
     - target: {fileID: 2295339144297511482, guid: 428d6f715c8f74814ac01d0dc852e8f2, type: 3}
       propertyPath: speedMax
       value: 6
