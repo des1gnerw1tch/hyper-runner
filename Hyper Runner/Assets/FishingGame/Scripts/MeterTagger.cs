@@ -11,6 +11,7 @@ namespace FishingGame.Scripts
 		private bool catchable; // is this item catchable
 		[SerializeField] private FishingMeter meter;
 		[SerializeField] private ScoreManager scoreManager;
+		[SerializeField] private Animator fisherAnimator;
 
 		private void Start() => MiniGameInputManager.Instance.OnReelRod.AddListener(ReelRod);
 
@@ -34,6 +35,7 @@ namespace FishingGame.Scripts
 				Debug.Log("Missed");
 				FindObjectOfType<AudioManager>().Play("nuetral");
 				this.scoreManager.HideMeter();
+				fisherAnimator.SetTrigger("catchFishNeutral");
 			}
 		}
 

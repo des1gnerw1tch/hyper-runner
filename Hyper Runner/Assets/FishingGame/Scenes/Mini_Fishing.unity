@@ -782,7 +782,7 @@ GameObject:
   - component: {fileID: 780783975}
   - component: {fileID: 780783974}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Fisher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -852,7 +852,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.5, y: 0.8125}
+  m_Size: {x: 0.5, y: 0.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5177,6 +5177,10 @@ PrefabInstance:
       propertyPath: scoreManager
       value: 
       objectReference: {fileID: 1693202981}
+    - target: {fileID: 2295339144297511482, guid: 428d6f715c8f74814ac01d0dc852e8f2, type: 3}
+      propertyPath: fisherAnimator
+      value: 
+      objectReference: {fileID: 780783974}
     - target: {fileID: 2322301573544026657, guid: 428d6f715c8f74814ac01d0dc852e8f2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.579
@@ -5289,5 +5293,9 @@ PrefabInstance:
       propertyPath: catchAnimator
       value: 
       objectReference: {fileID: 1211320726}
+    - target: {fileID: 7831162019205795102, guid: 428d6f715c8f74814ac01d0dc852e8f2, type: 3}
+      propertyPath: fisherAnimator
+      value: 
+      objectReference: {fileID: 780783974}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 428d6f715c8f74814ac01d0dc852e8f2, type: 3}
