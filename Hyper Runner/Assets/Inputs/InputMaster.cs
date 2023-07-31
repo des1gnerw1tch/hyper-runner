@@ -1291,7 +1291,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""id"": ""1a25f478-d144-4570-8b03-8c96c30ba30d"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Hold(duration=1)""
+                    ""interactions"": ""Hold(duration=1.5)""
                 },
                 {
                     ""name"": ""StartExitGame"",
