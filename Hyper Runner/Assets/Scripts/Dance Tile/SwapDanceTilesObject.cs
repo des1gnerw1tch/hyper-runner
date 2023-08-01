@@ -32,11 +32,7 @@ public class SwapDanceTilesObject : MonoBehaviour
         player = GameObject.FindWithTag("Player").transform;
     }
 
-    private void WindRhythmTiles()
-    {
-        Debug.Log("Rotated!");
-        pivot.eulerAngles = new Vector3(0, 0, STARTING_Z_ROTATION);
-    } 
+    private void WindRhythmTiles() => pivot.eulerAngles = new Vector3(0, 0, STARTING_Z_ROTATION);
 
     private void Update()
     {
