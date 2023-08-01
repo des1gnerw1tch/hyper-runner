@@ -1,3 +1,4 @@
+using Achievements;
 using UnityEngine;
 
 namespace FishingGame.Scripts
@@ -56,6 +57,7 @@ namespace FishingGame.Scripts
 				this.catchAnimator.SetTrigger("pop");
 				this.scoreManager.CaughtFish();
 				this.fisherAnimator.SetTrigger("catchFish");
+				AchievementManager.Instance.IncrementCountableAchievementWithID("catch3Fish", 1);
 			}
 			else
 			{
