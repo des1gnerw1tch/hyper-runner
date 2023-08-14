@@ -119,7 +119,9 @@ namespace SaveFileSystem
             return lockedCharacters[num];
         }
         
-        // Set high score of level if this grade is the highest. If level not found, add level to Dictionary.
+        /**
+         * Set high score of level if this grade is the highest. If level not found, add level to Dictionary.
+         */
         public bool ShouldSetLevelHighScore(string levelSceneName, LevelGrade grade)
         {
             if (levelDataTable.ContainsKey(levelSceneName))
@@ -139,6 +141,21 @@ namespace SaveFileSystem
                 levelDataTable.Add(levelSceneName, new LevelData());
                 levelDataTable[levelSceneName].highScore = grade;
                 return true;
+            }
+        }
+
+        public void ForceSetLevelHighScore(string levelSceneName, LevelGrade grade)
+        {
+            if (levelDataTable.ContainsKey(levelSceneName))
+            {
+                levelDataTable[levelSceneName].highScore = grade;
+            }
+            else
+            {
+                Debug.LogError("This scene was not found in dictionary. Probably needs to be added to the RhythmLevelsContainer scriptable object." +
+                               "Scene added to the dictionary for now, but this needs to be fixed or issues will occur.");
+                levelDataTable.Add(levelSceneName, new LevelData());
+                levelDataTable[levelSceneName].highScore = grade;
             }
         }
 

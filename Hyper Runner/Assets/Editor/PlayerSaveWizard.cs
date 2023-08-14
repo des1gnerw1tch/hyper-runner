@@ -1,5 +1,6 @@
 using Characters;
 using SaveFileSystem;
+using ScriptableObjects;
 using UnityEditor;
 using UnityEngine;
 
@@ -9,12 +10,15 @@ namespace Editor
     public class PlayerSaveWizard : EditorWindow
     {
         private PlayableCharacterEnum characterToUnlock;
+        private LevelGrade gradeToSet;
         private int tokensToAdd;
         
         [MenuItem("Custom/Player Save Wizard")]
         public static void ShowWindow() => GetWindow<PlayerSaveWizard>("Player Save Wizard");
 
         private PlayerSaveData playerData;
+
+        [SerializeField] private RhythmLevelsContainer levels;
 
         // Code for the window
         private void OnGUI()
@@ -54,6 +58,25 @@ namespace Editor
                     playerData.SetPlayTokens(playerData.GetNumTokens() + tokensToAdd);
                     FileSaveManager.SavePlayer(playerData);
                     Debug.Log("Successfully added " + tokensToAdd + " tokens to save. Total tokens= " + playerData.GetNumTokens());
+                }
+            }
+
+            gradeToSet = (LevelGrade) EditorGUILayout.EnumPopup("Grade to set levels to", gradeToSet);
+            if (GUILayout.Button("Set all levels to grade"))
+            {
+                playerData = FileSaveManager.LoadPlayer();
+                if (playerData == null)
+                {
+                    Debug.LogError("No save file found to modify. Start the game once and try again.");
+                }
+                else
+                {
+                    foreach (string lvl in levels.GetAllRhythmLevelScenes())
+                    {
+                        playerData.ForceSetLevelHighScore(lvl, gradeToSet);
+                        Debug.Log("Successfully set high score for " + lvl + " to " + gradeToSet);
+                    }
+                    FileSaveManager.SavePlayer(playerData);
                 }
             }
         }
