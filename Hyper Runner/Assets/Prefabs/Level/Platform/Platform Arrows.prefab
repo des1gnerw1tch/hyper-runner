@@ -100,7 +100,6 @@ MonoBehaviour:
   levelManager: {fileID: 0}
   playerRunningSpeed: 0
   surroundingSpeedMultiplier: 0
-  danceManager: {fileID: 0}
   interpolationTrigger: {fileID: 8077507342958484171}
 --- !u!61 &7244437399976796143
 BoxCollider2D:
@@ -126,7 +125,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.1166075}
+  m_Size: {x: 11.924883, y: 0.1166075}
   m_EdgeRadius: 0
 --- !u!114 &8077507342958484171
 MonoBehaviour:
@@ -141,6 +140,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectsToInterpolate: []
-  colorsToInterpolate: []
   speedToInterpolate: 0
+  shouldActivateOnCollideWithPlayer: 0
+  colorsToInterpolate: []
   shouldRainbowMash: 0
+  colorsToRainbowMash: []
