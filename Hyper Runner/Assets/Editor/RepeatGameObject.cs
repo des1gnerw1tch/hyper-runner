@@ -1,5 +1,7 @@
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Editor
 {
@@ -59,7 +61,8 @@ namespace Editor
                     GameObject newObj = Instantiate(objToRepeat, pos, Quaternion.identity);
                     newObj.name = objToRepeat.name + "(" + (i + 1) + ")";
                 }
-                Debug.Log("Objects generated.");
+                EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
+                Debug.Log("Objects generated. Scene marked dirty");
             }
         }
     }
