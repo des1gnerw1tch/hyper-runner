@@ -519,6 +519,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 88127002}
+  - component: {fileID: 88127004}
+  - component: {fileID: 88127003}
   m_Layer: 0
   m_Name: PhoneTable
   m_TagString: Untagged
@@ -541,6 +543,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: -96.97, z: 0}
+--- !u!114 &88127003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88127001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f144dc553bd4ffd9ed5ea62887c7ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUpText: {fileID: 1086828118}
+  uiContent: {fileID: 7061350221893898290}
+--- !u!65 &88127004
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88127001}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6755381, y: 1.8926513, z: 1.2703382}
+  m_Center: {x: -3.6898307e-10, y: -0.27819312, z: 0.5497546}
 --- !u!1001 &119012665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23967,6 +23996,11 @@ MonoBehaviour:
 --- !u!1 &7061350221893898289 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3626928207817304604, guid: 54ffb9417b4304178b92f1fc5879d122, type: 3}
+  m_PrefabInstance: {fileID: 7061350221893898283}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7061350221893898290 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7279019898184246773, guid: 54ffb9417b4304178b92f1fc5879d122, type: 3}
   m_PrefabInstance: {fileID: 7061350221893898283}
   m_PrefabAsset: {fileID: 0}
 --- !u!33 &7085715659615165841
