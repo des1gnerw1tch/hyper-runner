@@ -708,6 +708,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedSound: selectCharacter
   highlightSound: scroll
+  telephoneDial: {fileID: 556368071439796605}
+  number: 0
 --- !u!1 &1778530175730369965
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +993,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedSound: selectCharacter
   highlightSound: scroll
+  telephoneDial: {fileID: 556368071439796605}
+  number: 7
 --- !u!1 &2148065844973591567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,6 +1278,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedSound: selectCharacter
   highlightSound: scroll
+  telephoneDial: {fileID: 556368071439796605}
+  number: 2
 --- !u!1 &2267483640123383353
 GameObject:
   m_ObjectHideFlags: 0
@@ -2104,6 +2110,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedSound: selectCharacter
   highlightSound: scroll
+  telephoneDial: {fileID: 556368071439796605}
+  number: 3
 --- !u!1 &3472720048356915473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2253,6 +2261,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedSound: selectCharacter
   highlightSound: scroll
+  telephoneDial: {fileID: 556368071439796605}
+  number: 8
 --- !u!1 &3544892436895751012
 GameObject:
   m_ObjectHideFlags: 0
@@ -2961,6 +2971,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedSound: selectCharacter
   highlightSound: scroll
+  telephoneDial: {fileID: 556368071439796605}
+  number: 6
 --- !u!1 &5438729287283102001
 GameObject:
   m_ObjectHideFlags: 0
@@ -3110,6 +3122,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedSound: selectCharacter
   highlightSound: scroll
+  telephoneDial: {fileID: 556368071439796605}
+  number: 4
 --- !u!1 &5666576036881984311
 GameObject:
   m_ObjectHideFlags: 0
@@ -3563,6 +3577,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedSound: selectCharacter
   highlightSound: scroll
+  telephoneDial: {fileID: 556368071439796605}
+  number: 5
 --- !u!1 &6899263338577644578
 GameObject:
   m_ObjectHideFlags: 0
@@ -3712,6 +3728,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedSound: selectCharacter
   highlightSound: scroll
+  telephoneDial: {fileID: 556368071439796605}
+  number: 9
 --- !u!1 &7061350221101141194
 GameObject:
   m_ObjectHideFlags: 0
@@ -3997,6 +4015,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6889919721088051367}
+  - component: {fileID: 556368071439796605}
   m_Layer: 5
   m_Name: TelephonePanel
   m_TagString: Untagged
@@ -4025,6 +4044,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 348.5687, y: 262.9986}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &556368071439796605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7279019898184246773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff9fdad5c62104facbdf4da52c30ab69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentNumberDialed: 
+  correctNumber: 02000000000000000200000001000000010000000100000004000000030000000400000003000000
+  wrongNumberSound: characterLocked
+  correctNumberSound: tracyYay
 --- !u!1 &7725569944963606226
 GameObject:
   m_ObjectHideFlags: 0
@@ -4248,6 +4283,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedSound: selectCharacter
   highlightSound: scroll
+  telephoneDial: {fileID: 556368071439796605}
+  number: 1
 --- !u!1 &8603788062272784967
 GameObject:
   m_ObjectHideFlags: 0
@@ -5055,6 +5092,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6173359d7018e47568df44c3225ccd30, type: 3}
+--- !u!224 &9202777966501848116 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8024584563224629797, guid: 6173359d7018e47568df44c3225ccd30, type: 3}
+  m_PrefabInstance: {fileID: 1219306622345819665}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8105287432173977278 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6958091181500582063, guid: 6173359d7018e47568df44c3225ccd30, type: 3}
@@ -5066,11 +5108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb7b6279334141369e46ab0b052dba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &9202777966501848116 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8024584563224629797, guid: 6173359d7018e47568df44c3225ccd30, type: 3}
-  m_PrefabInstance: {fileID: 1219306622345819665}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2577387365172639820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5362,11 +5399,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cb5c0ccb40e14d98a09df8429336ef2, type: 3}
---- !u!224 &5386660362829838311 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8024584563224629797, guid: 2cb5c0ccb40e14d98a09df8429336ef2, type: 3}
-  m_PrefabInstance: {fileID: 2710127024595297730}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4975445404006919533 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6958091181500582063, guid: 2cb5c0ccb40e14d98a09df8429336ef2, type: 3}
@@ -5378,6 +5410,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb7b6279334141369e46ab0b052dba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &5386660362829838311 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8024584563224629797, guid: 2cb5c0ccb40e14d98a09df8429336ef2, type: 3}
+  m_PrefabInstance: {fileID: 2710127024595297730}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3851958520634652741
 PrefabInstance:
   m_ObjectHideFlags: 0
