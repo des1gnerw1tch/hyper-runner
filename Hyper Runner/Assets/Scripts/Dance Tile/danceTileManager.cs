@@ -7,6 +7,7 @@ public class danceTileManager : MonoBehaviour {
     private IDanceObject activeDanceObj;
     private Vector3 activeDanceObjPos;
     [SerializeField] private RhythmMovement rhythmMovement;
+    private bool hasLastTileBeenDestroyed = false;
 
     private Queue<ADanceObject> danceTileQueue;
 
@@ -45,6 +46,7 @@ public class danceTileManager : MonoBehaviour {
     public void EnableNextDanceKey(bool teleportToNextDanceKey = true) {
         if (danceTileQueue.Count < 1)
         {
+            hasLastTileBeenDestroyed = true;
             Debug.Log("No more dance keys, this should mean this was the last dance key in the level!");
             return;
         }
@@ -64,38 +66,75 @@ public class danceTileManager : MonoBehaviour {
 
     // INPUT DELEGATION TO DANCE TILE
     public void OnUpDanceKeyPress() {
+        if (hasLastTileBeenDestroyed)
+        {
+            return;
+        }
         activeDanceObj.OnUpDanceKeyPress();
     }
 
     public void OnUpDanceKeyRelease() {
+        if (hasLastTileBeenDestroyed)
+        {
+            return;
+        }
         activeDanceObj.OnUpDanceKeyRelease();
     }
 
     public void OnDownDanceKeyPress() {
+        if (hasLastTileBeenDestroyed)
+        {
+            return;
+        }
+        
         activeDanceObj.OnDownDanceKeyPress();
     }
 
     public void OnDownDanceKeyRelease() {
+        if (hasLastTileBeenDestroyed)
+        {
+            return;
+        }
         activeDanceObj.OnDownDanceKeyRelease();
     }
 
     public void OnLeftDanceKeyPress() {
+        if (hasLastTileBeenDestroyed)
+        {
+            return;
+        }
         activeDanceObj.OnLeftDanceKeyPress();
     }
 
     public void OnLeftDanceKeyRelease() {
+        if (hasLastTileBeenDestroyed)
+        {
+            return;
+        }
         activeDanceObj.OnLeftDanceKeyRelease();
     }
 
     public void OnRightDanceKeyPress() {
+        if (hasLastTileBeenDestroyed)
+        {
+            return;
+        }
         activeDanceObj.OnRightDanceKeyPress();
     }
 
     public void OnRightDanceKeyRelease() {
+        if (hasLastTileBeenDestroyed)
+        {
+            return;
+        }
         activeDanceObj.OnRightDanceKeyRelease();
     }
 
     public void OnAnyDanceKeyPress() {
+        if (hasLastTileBeenDestroyed)
+        {
+            return;
+        }
         activeDanceObj.OnAnyDanceKeyPress();
     }
 
