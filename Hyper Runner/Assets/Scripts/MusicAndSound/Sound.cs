@@ -17,4 +17,14 @@ public class Sound  {
 
     [HideInInspector]
     public AudioSource source;
+    
+    public bool playOnAwake = false;
+
+    [Header("Optionally attach AudioSource to game object for 3D sounds.")]
+    public GameObject objectToAttachSourceTo;
+    public float spatialBlend3D = 0;
+    public float minDistance = 1;
+    public float maxDistance = 20;
+
+    public float GetLength() => clip.length;
 }

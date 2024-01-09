@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace InteractableArcade
@@ -14,14 +15,28 @@ namespace InteractableArcade
         private PlayerInput playerInput;
 
         private bool isInteracting = false;
+
+        /// Trigger close of all interactable arcade UI objects artificially, without user input
+        public static readonly UnityEvent OnTriggerCloseEvent = new UnityEvent();
+
+        private bool interactionsDisabled = false;
+        [SerializeField] private string interactWhileDisabledSound = "spinNWinFail";
         
         private void Start() =>  playerInput = UIInputHandler.Instance.PlayerInputComponent;
-
+        
         public override void Interact(InteractArcade player)
         {
             base.Interact(player);
+            
+            if (interactionsDisabled)
+            {
+                FindObjectOfType<AudioManager>().Play(interactWhileDisabledSound);
+                return;
+            }
+            
             UIInputHandler.Instance.OnPause.AddListener(Close);
             UIInputHandler.Instance.OnBackButton.AddListener(Close);
+            OnTriggerCloseEvent.AddListener(Close);
             playerInput.SwitchCurrentActionMap("UI");
             isInteracting = true;
             uiContent.SetActive(true);
@@ -39,5 +54,8 @@ namespace InteractableArcade
                 UIInputHandler.Instance.OnBackButton.RemoveListener(Close);
             }
         }
+
+        public void DisableInteractions() => interactionsDisabled = true;
+        public void EnableInteractions() => interactionsDisabled = false;
     }
 }
