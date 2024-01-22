@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Achievements;
 using InteractableArcade;
 using TMPro;
 using UnityEngine;
@@ -80,6 +81,7 @@ public class TelephoneDial : MonoBehaviour
 
     private void StartEasterEgg()
     {
+        FindObjectOfType<AchievementManager>().CompleteAchievementWithID("firstCallShrunk");
         FindObjectOfType<AudioManager>().Play(correctNumberSound);
         // Close telephone UI panel and don't allow interaction with telephone until cutscene is over
         InteractableArcadeObjectUI.OnTriggerCloseEvent.Invoke();

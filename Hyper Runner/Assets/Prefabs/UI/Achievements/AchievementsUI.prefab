@@ -442,6 +442,7 @@ RectTransform:
   - {fileID: 6134234237733168415}
   - {fileID: 1109809977384934917}
   - {fileID: 785881783637710033}
+  - {fileID: 3489774594536746884}
   m_Father: {fileID: 2633855332373079449}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1071,6 +1072,128 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5843867281486419064, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
   m_PrefabInstance: {fileID: 6809231666946509437}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7023290869084929020
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7186797259718976640}
+    m_Modifications:
+    - target: {fileID: 1742082849867742048, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_text
+      value: Extrovert
+      objectReference: {fileID: 0}
+    - target: {fileID: 2386109085391689993, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_Name
+      value: ShrunkFirstCallAchievementUIElement
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843867281486419064, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843867281486419064, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843867281486419064, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843867281486419064, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843867281486419064, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843867281486419064, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843867281486419064, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843867281486419064, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843867281486419064, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843867281486419064, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843867281486419064, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843867281486419064, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843867281486419064, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843867281486419064, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843867281486419064, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843867281486419064, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843867281486419064, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843867281486419064, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843867281486419064, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843867281486419064, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843867281486419064, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398342137605167096, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_text
+      value: Talk to someone on the phone
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398342137605167096, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_fontSize
+      value: 13.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398342137605167096, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 13.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 7365006126087377262, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+      propertyPath: achievementID
+      value: firstCallShrunk
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+--- !u!224 &3489774594536746884 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5843867281486419064, guid: d89ed2d88bfe74c34b08581849ff187e, type: 3}
+  m_PrefabInstance: {fileID: 7023290869084929020}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8620047551534470368
 PrefabInstance:
