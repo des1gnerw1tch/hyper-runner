@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using InteractableArcade;
+using TMPro;
 using UnityEngine;
 
 public class TelephoneDial : MonoBehaviour
 {
     [SerializeField] private List<int> currentNumberDialed;
+    [SerializeField] private TextMeshProUGUI currentNumber;
     [SerializeField] private List<int> correctNumber;
     [SerializeField] private string wrongNumberSound;
     [SerializeField] private string correctNumberSound;
@@ -14,19 +16,31 @@ public class TelephoneDial : MonoBehaviour
     [SerializeField] private string radioMusicSound;
     [SerializeField] private float volumeOfRadioMusicWhileTalkingOnPhone;
     [SerializeField] private InteractableArcadeObjectUI phoneTableInteractable;
-    
-    public void ClearPhoneNumber() => currentNumberDialed.Clear();
 
+    private bool clearingNumberFromUI = false;
+    
     /// <summary>
     /// A button press of one number. 
     /// </summary>
     public void PressNumber(int num)
     {
+        if (clearingNumberFromUI)
+        {
+            return;
+        }
+        
+        if (currentNumber.text.Length == 3 || currentNumber.text.Length == 7)
+        {
+            currentNumber.text += "-";
+        }
+        currentNumber.text += num;
+        
         currentNumberDialed.Add(num);
         if (currentNumberDialed.Count >= correctNumber.Count)
         {
             bool correct = CheckCorrectNumber();
             currentNumberDialed.Clear();
+            StartCoroutine(ClearNumberFromUIDelayed());
             if (correct)
             {
                 StartEasterEgg();
@@ -36,6 +50,20 @@ public class TelephoneDial : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play(wrongNumberSound);
             }
         }
+    }
+
+    public void ClearPhoneNumber()
+    {
+        currentNumberDialed.Clear();
+        currentNumber.text = "";
+    } 
+
+    private IEnumerator ClearNumberFromUIDelayed()
+    {
+        clearingNumberFromUI = true;
+        yield return new WaitForSeconds(1f);
+        currentNumber.text = "";
+        clearingNumberFromUI = false;
     }
 
     private bool CheckCorrectNumber()
