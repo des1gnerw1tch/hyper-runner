@@ -6,7 +6,8 @@ namespace ArcadeCamera
 // Deals with Player and Camera synchronized rotation
     public class FirstPersonCameraController : MonoBehaviour
     {
-        [SerializeField] private float RotationSpeed;
+        [SerializeField] private float rotationSpeedVer;
+        [SerializeField] private float rotationSpeedHor;
         [SerializeField] private Transform player;
         [SerializeField] PlayerInput playerInput; // player input component
         private InputAction verMovement; // vertical axis, from "Look Vertical" of player input
@@ -29,7 +30,7 @@ namespace ArcadeCamera
 
         // Late Update, happens after other updates
         // EFFECT: changes rotation of player, camera, and changes rotX and rotY variables
-        void LateUpdate()
+        void Update()
         {
             if (rotationLocked)
             {
@@ -43,8 +44,9 @@ namespace ArcadeCamera
         // rotates player from player input
         void RotateFromPlayerInput()
         {
-            this.rotY += this.RotationSpeed * horMovement.ReadValue<float>();
-            this.rotX += this.RotationSpeed * verMovement.ReadValue<float>();
+            Debug.Log(horMovement.ReadValue<float>());
+            this.rotY += this.rotationSpeedHor * horMovement.ReadValue<float>();
+            this.rotX += this.rotationSpeedVer * verMovement.ReadValue<float>();
 
             this.rotX = Mathf.Clamp(rotX, -60, 60);
         }
