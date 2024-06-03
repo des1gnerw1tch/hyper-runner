@@ -1433,6 +1433,71 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""BossFlying"",
+            ""id"": ""569ece89-9179-4409-be94-b6d4f3b7824c"",
+            ""actions"": [
+                {
+                    ""name"": ""MoveUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""7a0688b8-3a34-45cb-87cd-1432367ea570"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""MoveDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""fbd0cd05-716c-4b3d-8113-2609f0e14284"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""PhaseOut"",
+                    ""type"": ""Button"",
+                    ""id"": ""2228b136-c7c5-4adf-b761-ffb7b1ad9f4f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""ff35ee5d-8be7-482f-af6c-7d17c83e922f"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""15d6023f-f793-4e90-af2a-8a8fe8cad985"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""69fbbe89-00b5-49c1-8f42-4dedffcced92"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PhaseOut"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -1510,6 +1575,11 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Minigame_ExitGame = m_Minigame.FindAction("ExitGame", throwIfNotFound: true);
         m_Minigame_StartExitGame = m_Minigame.FindAction("StartExitGame", throwIfNotFound: true);
         m_Minigame_ReleaseExit = m_Minigame.FindAction("ReleaseExit", throwIfNotFound: true);
+        // BossFlying
+        m_BossFlying = asset.FindActionMap("BossFlying", throwIfNotFound: true);
+        m_BossFlying_MoveUp = m_BossFlying.FindAction("MoveUp", throwIfNotFound: true);
+        m_BossFlying_MoveDown = m_BossFlying.FindAction("MoveDown", throwIfNotFound: true);
+        m_BossFlying_PhaseOut = m_BossFlying.FindAction("PhaseOut", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1960,6 +2030,55 @@ public class @InputMaster : IInputActionCollection, IDisposable
         }
     }
     public MinigameActions @Minigame => new MinigameActions(this);
+
+    // BossFlying
+    private readonly InputActionMap m_BossFlying;
+    private IBossFlyingActions m_BossFlyingActionsCallbackInterface;
+    private readonly InputAction m_BossFlying_MoveUp;
+    private readonly InputAction m_BossFlying_MoveDown;
+    private readonly InputAction m_BossFlying_PhaseOut;
+    public struct BossFlyingActions
+    {
+        private @InputMaster m_Wrapper;
+        public BossFlyingActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
+        public InputAction @MoveUp => m_Wrapper.m_BossFlying_MoveUp;
+        public InputAction @MoveDown => m_Wrapper.m_BossFlying_MoveDown;
+        public InputAction @PhaseOut => m_Wrapper.m_BossFlying_PhaseOut;
+        public InputActionMap Get() { return m_Wrapper.m_BossFlying; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(BossFlyingActions set) { return set.Get(); }
+        public void SetCallbacks(IBossFlyingActions instance)
+        {
+            if (m_Wrapper.m_BossFlyingActionsCallbackInterface != null)
+            {
+                @MoveUp.started -= m_Wrapper.m_BossFlyingActionsCallbackInterface.OnMoveUp;
+                @MoveUp.performed -= m_Wrapper.m_BossFlyingActionsCallbackInterface.OnMoveUp;
+                @MoveUp.canceled -= m_Wrapper.m_BossFlyingActionsCallbackInterface.OnMoveUp;
+                @MoveDown.started -= m_Wrapper.m_BossFlyingActionsCallbackInterface.OnMoveDown;
+                @MoveDown.performed -= m_Wrapper.m_BossFlyingActionsCallbackInterface.OnMoveDown;
+                @MoveDown.canceled -= m_Wrapper.m_BossFlyingActionsCallbackInterface.OnMoveDown;
+                @PhaseOut.started -= m_Wrapper.m_BossFlyingActionsCallbackInterface.OnPhaseOut;
+                @PhaseOut.performed -= m_Wrapper.m_BossFlyingActionsCallbackInterface.OnPhaseOut;
+                @PhaseOut.canceled -= m_Wrapper.m_BossFlyingActionsCallbackInterface.OnPhaseOut;
+            }
+            m_Wrapper.m_BossFlyingActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @MoveUp.started += instance.OnMoveUp;
+                @MoveUp.performed += instance.OnMoveUp;
+                @MoveUp.canceled += instance.OnMoveUp;
+                @MoveDown.started += instance.OnMoveDown;
+                @MoveDown.performed += instance.OnMoveDown;
+                @MoveDown.canceled += instance.OnMoveDown;
+                @PhaseOut.started += instance.OnPhaseOut;
+                @PhaseOut.performed += instance.OnPhaseOut;
+                @PhaseOut.canceled += instance.OnPhaseOut;
+            }
+        }
+    }
+    public BossFlyingActions @BossFlying => new BossFlyingActions(this);
     private int m_GamepadControlSchemeSchemeIndex = -1;
     public InputControlScheme GamepadControlSchemeScheme
     {
@@ -2027,5 +2146,11 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnExitGame(InputAction.CallbackContext context);
         void OnStartExitGame(InputAction.CallbackContext context);
         void OnReleaseExit(InputAction.CallbackContext context);
+    }
+    public interface IBossFlyingActions
+    {
+        void OnMoveUp(InputAction.CallbackContext context);
+        void OnMoveDown(InputAction.CallbackContext context);
+        void OnPhaseOut(InputAction.CallbackContext context);
     }
 }
