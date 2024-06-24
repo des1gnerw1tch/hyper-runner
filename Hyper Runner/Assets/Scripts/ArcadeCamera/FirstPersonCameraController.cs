@@ -44,9 +44,8 @@ namespace ArcadeCamera
         // rotates player from player input
         void RotateFromPlayerInput()
         {
-            Debug.Log(horMovement.ReadValue<float>());
-            this.rotY += this.rotationSpeedHor * horMovement.ReadValue<float>();
-            this.rotX += this.rotationSpeedVer * verMovement.ReadValue<float>();
+            this.rotY += this.rotationSpeedHor * horMovement.ReadValue<float>() * Time.deltaTime;
+            this.rotX += this.rotationSpeedVer * verMovement.ReadValue<float>() * Time.deltaTime;
 
             this.rotX = Mathf.Clamp(rotX, -60, 60);
         }
@@ -69,7 +68,7 @@ namespace ArcadeCamera
         // rotates the player and camera based on current rotX and rotY fields
         void UpdateRotation()
         {
-            transform.rotation = Quaternion.Euler(rotX, rotY, 0); // rotates the camera
+            transform.localRotation = Quaternion.Euler(rotX, 0, 0); // rotates the camera
             this.player.rotation = Quaternion.Euler(0, rotY, 0); // rotates the player
         }
 
