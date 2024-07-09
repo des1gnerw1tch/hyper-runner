@@ -88,4 +88,10 @@ public class MusicSync : MonoBehaviour {
             StartCoroutine(ALevelManager.Instance.LevelCompleted());
         }
     }
+
+    public void ChangeMusicVolume(float vol)
+    {
+        Mathf.Clamp(vol, 0f, 1f);
+        this.levelMusic.volume = vol;
+    }
 }

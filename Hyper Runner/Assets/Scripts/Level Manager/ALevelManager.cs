@@ -18,6 +18,10 @@ public abstract class ALevelManager : MonoBehaviour, ILevelManager {
     public RhythmMovement rhythmMovement;
     public Rigidbody2D player_rb;
     public PlayerInput input;
+
+    private bool isPlayerAlive = true;
+    private const float LEVEL_FAIL_GRAYSCALE_FADE_SPEED = 5f;
+    private const float LEVEL_FAIL_RESTART_SCENE_DELAY = 1f;
     
     public static ALevelManager Instance { get; private set; }
 
@@ -84,8 +88,32 @@ public abstract class ALevelManager : MonoBehaviour, ILevelManager {
     // Ends the game, goes to results screen
     public IEnumerator LevelCompleted()
     {
-        UIManager.Instance.PlayEndTransition();
-        yield return new WaitForSeconds(TRANSITION_TO_RESULTS_WAIT_TIME);
-        SceneManager.LoadScene("ResultsScreen");
+        if (isPlayerAlive)
+        {
+            UIManager.Instance.PlayEndTransition();
+            yield return new WaitForSeconds(TRANSITION_TO_RESULTS_WAIT_TIME);
+            SceneManager.LoadScene("ResultsScreen");
+        }
     }
+
+    public void LevelFailed()
+    {
+        if (!isPlayerAlive)
+        {
+            return;
+        }
+        isPlayerAlive = false;
+        MusicSync.Instance.ChangeMusicVolume(0f);
+        FindObjectOfType<AudioManager>().Play("gameOver");
+        InterpolateCameraGrayscale.Instance.FadeToGrayscale(LEVEL_FAIL_GRAYSCALE_FADE_SPEED);
+        StartCoroutine(RestartScene());
+    }
+
+    private IEnumerator RestartScene()
+    {
+        yield return new WaitForSeconds(LEVEL_FAIL_RESTART_SCENE_DELAY);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+    }
+    
+    
 }

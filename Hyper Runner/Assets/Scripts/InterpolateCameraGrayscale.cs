@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -7,24 +8,31 @@ public class InterpolateCameraGrayscale : MonoBehaviour
 {
     [SerializeField] private Volume volume;
     private ColorAdjustments colorAdjustments;
-
-    private void Start()
-    {
-        volume.profile.TryGet<ColorAdjustments>(out colorAdjustments);
-    }
     
-    public void FadeToGrayscale(float fadeTime)
+    public static InterpolateCameraGrayscale Instance { get; private set; }
+
+    private void Awake()
     {
-        StartCoroutine(_FadeToGrayscale(fadeTime));
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
 
-    private IEnumerator _FadeToGrayscale(float fadeTime)
+    private void Start() => volume.profile.TryGet<ColorAdjustments>(out colorAdjustments);
+
+    public void FadeToGrayscale(float fadeSpeed) => StartCoroutine(_FadeToGrayscale(fadeSpeed));
+
+    private IEnumerator _FadeToGrayscale(float fadeSpeed)
     {
-        yield return new WaitForSeconds(30f);
         float saturation = colorAdjustments.saturation.value;
         while (saturation >= -100f)
         {
-            colorAdjustments.saturation.value -= 1f * fadeTime;
+            colorAdjustments.saturation.value -= 1f * fadeSpeed;
             yield return new WaitForEndOfFrame();
         }
     }

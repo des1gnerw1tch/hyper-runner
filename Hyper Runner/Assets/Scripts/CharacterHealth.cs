@@ -64,11 +64,9 @@ public class CharacterHealth : MonoBehaviour {
         }
     }
 
-    private void Die() {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
-    }
+    private void Die() => ALevelManager.Instance.LevelFailed();
 
-    // Charisma
+        // Charisma
     public void AddCharisma(float value)
     {
         float oldCharisma = charisma;

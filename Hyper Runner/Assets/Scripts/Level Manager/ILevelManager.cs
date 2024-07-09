@@ -11,5 +11,5 @@ public interface ILevelManager
     // to switch mode of game
     void SetPlayerMode(string mode);
 
-
+    void LevelFailed();
 }
