@@ -29,8 +29,7 @@ public class InterpolateCameraGrayscale : MonoBehaviour
 
     private IEnumerator _FadeToGrayscale(float fadeSpeed)
     {
-        float saturation = colorAdjustments.saturation.value;
-        while (saturation >= -100f)
+        while (colorAdjustments.saturation.value >= -100f)
         {
             colorAdjustments.saturation.value -= 1f * fadeSpeed;
             yield return new WaitForEndOfFrame();
