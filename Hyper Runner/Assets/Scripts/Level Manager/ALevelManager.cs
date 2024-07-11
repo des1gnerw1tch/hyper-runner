@@ -108,6 +108,7 @@ public abstract class ALevelManager : MonoBehaviour, ILevelManager {
         isPlayerAlive = false;
         DeathVisualEffects.Instance.ActivateDeathParticles();
         DeathVisualEffects.Instance.HideCharacterSprite();
+        DeathVisualEffects.Instance.DisableMotivationBar();
         InterpolateCameraGrayscale.Instance.FadeToGrayscale(LEVEL_FAIL_GRAYSCALE_FADE_SPEED);
         StartCoroutine(RampDownPlayerCamMoveSpeed(LEVEL_FAIL_MOVEMENT_RAMP_TIME));
         StartCoroutine(RestartScene());

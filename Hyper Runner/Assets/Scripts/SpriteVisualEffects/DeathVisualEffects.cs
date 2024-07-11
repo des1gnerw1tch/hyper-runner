@@ -6,6 +6,8 @@ namespace SpriteVisualEffects
     {
         [SerializeField] private GameObject deathParticles;
         [SerializeField] private SpriteRenderer characterSpriteRenderer;
+        [SerializeField] private GameObject motivationBar;
+        
         public static DeathVisualEffects Instance { get; private set; }
 
         private void Awake()
@@ -22,5 +24,6 @@ namespace SpriteVisualEffects
 
         public void HideCharacterSprite() => characterSpriteRenderer.enabled = false;
         public void ActivateDeathParticles() => deathParticles.SetActive(true);
+        public void DisableMotivationBar() => motivationBar.SetActive(false);
     }
 }
