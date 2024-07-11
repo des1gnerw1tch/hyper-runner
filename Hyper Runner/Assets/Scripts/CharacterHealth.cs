@@ -112,11 +112,11 @@ public class CharacterHealth : MonoBehaviour {
     // When the player runs into an object.
     private void RunIntoObject() 
     {
-        if (isInvincible)
+        if (isInvincible || !ALevelManager.Instance.IsPlayerAlive())
         {
             return;
         }
-        
+
         AddCharisma(-10f);
         FindObjectOfType<AudioManager>().Play("negative");
         ResultsManager.IncPlayerCrash();

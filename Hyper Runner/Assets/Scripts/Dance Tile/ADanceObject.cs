@@ -84,7 +84,11 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     // spawns rating texts and adds to charisma when player presses a dance key
     // EFFECT: adds to characterHealth charisma, changes ResultsManager fields
     protected void EvaluateScore(float _score) {
-
+        if (!ALevelManager.Instance.IsPlayerAlive())
+        {
+            return;
+        }
+        
         ResultsManager.IncTotalDanceTiles();
         if (_score > 9.2) {
             SpawnScoreText(perfectText); // spawn perfect text

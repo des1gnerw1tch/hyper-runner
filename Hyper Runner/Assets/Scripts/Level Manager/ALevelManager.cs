@@ -133,5 +133,7 @@ public abstract class ALevelManager : MonoBehaviour, ILevelManager {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
     }
 
+    public bool IsPlayerAlive() => isPlayerAlive;
+
 
 }
