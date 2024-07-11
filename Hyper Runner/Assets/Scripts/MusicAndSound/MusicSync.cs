@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 /*
@@ -67,6 +68,8 @@ public class MusicSync : MonoBehaviour {
         yield return new WaitForSeconds(duration);
         levelMusic.pitch = originalPitch;
     }
+
+    public float GetPitch() => levelMusic.pitch;
 
     // Pauses the music that is being played
     public void PauseMusic() {

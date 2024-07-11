@@ -108,8 +108,6 @@ public abstract class ALevelManager : MonoBehaviour, ILevelManager {
         isPlayerAlive = false;
         DeathVisualEffects.Instance.ActivateDeathParticles();
         DeathVisualEffects.Instance.HideCharacterSprite();
-        MusicSync.Instance.ChangeMusicVolume(0f);
-        FindObjectOfType<AudioManager>().Play("gameOver");
         InterpolateCameraGrayscale.Instance.FadeToGrayscale(LEVEL_FAIL_GRAYSCALE_FADE_SPEED);
         StartCoroutine(RampDownPlayerCamMoveSpeed(LEVEL_FAIL_MOVEMENT_RAMP_TIME));
         StartCoroutine(RestartScene());
@@ -118,13 +116,11 @@ public abstract class ALevelManager : MonoBehaviour, ILevelManager {
     private IEnumerator RampDownPlayerCamMoveSpeed(float timeToRamp)
     {
         float timeElapsed = 0f;
-        float initialPlayerCamSpeed = playerCamMoveSpeed;
-        float initialParallaxMultiplier = Parallax.multiplier;
-        while (playerCamMoveSpeed > 0 || Parallax.multiplier > 0)
+        MusicSync musicSync = MusicSync.Instance;
+        float initialMusicPitch = musicSync.GetPitch();
+        while (musicSync.GetPitch() > 0)
         {
-            playerCamMoveSpeed = Mathf.Lerp(initialPlayerCamSpeed, 0, timeElapsed / timeToRamp);
-            Parallax.multiplier = Mathf.Lerp(initialParallaxMultiplier, 0, timeElapsed / timeToRamp);
-            UpdateSpeeds();
+            musicSync.changePitch(Mathf.Lerp(initialMusicPitch, 0, timeElapsed / timeToRamp));
             yield return new WaitForEndOfFrame();
             timeElapsed += Time.deltaTime;
         }
