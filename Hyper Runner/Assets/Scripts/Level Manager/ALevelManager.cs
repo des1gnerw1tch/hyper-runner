@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using SpriteVisualEffects;
 using UnityEngine;
@@ -23,6 +24,7 @@ public abstract class ALevelManager : MonoBehaviour, ILevelManager {
     private bool isPlayerAlive = true;
     private const float LEVEL_FAIL_GRAYSCALE_FADE_SPEED = 5f;
     private const float LEVEL_FAIL_RESTART_SCENE_DELAY = 1f;
+    private const float LEVEL_FAIL_MOVEMENT_RAMP_TIME = 0.8f;
     
     public static ALevelManager Instance { get; private set; }
 
@@ -109,14 +111,30 @@ public abstract class ALevelManager : MonoBehaviour, ILevelManager {
         MusicSync.Instance.ChangeMusicVolume(0f);
         FindObjectOfType<AudioManager>().Play("gameOver");
         InterpolateCameraGrayscale.Instance.FadeToGrayscale(LEVEL_FAIL_GRAYSCALE_FADE_SPEED);
+        StartCoroutine(RampDownPlayerCamMoveSpeed(LEVEL_FAIL_MOVEMENT_RAMP_TIME));
         StartCoroutine(RestartScene());
     }
-
+    
+    private IEnumerator RampDownPlayerCamMoveSpeed(float timeToRamp)
+    {
+        float timeElapsed = 0f;
+        float initialPlayerCamSpeed = playerCamMoveSpeed;
+        float initialParallaxMultiplier = Parallax.multiplier;
+        while (playerCamMoveSpeed > 0 || Parallax.multiplier > 0)
+        {
+            playerCamMoveSpeed = Mathf.Lerp(initialPlayerCamSpeed, 0, timeElapsed / timeToRamp);
+            Parallax.multiplier = Mathf.Lerp(initialParallaxMultiplier, 0, timeElapsed / timeToRamp);
+            UpdateSpeeds();
+            yield return new WaitForEndOfFrame();
+            timeElapsed += Time.deltaTime;
+        }
+    }
+    
     private IEnumerator RestartScene()
     {
         yield return new WaitForSeconds(LEVEL_FAIL_RESTART_SCENE_DELAY);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
     }
-    
-    
+
+
 }
