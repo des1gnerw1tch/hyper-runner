@@ -6,7 +6,7 @@ namespace Parry_System
     {
         // Start is called before the first frame update
         [Header("Mirror Camera Object Required Components (Auto)")] [SerializeField]
-        private CameraOrientation cameraOrientation;
+        private CameraOrientation[] cameraOrientations;
 
         [SerializeField] private FlashPanel flashPanel;
 
@@ -17,15 +17,17 @@ namespace Parry_System
         public override void Start()
         {
             base.Start();
-            this.cameraOrientation = FindObjectOfType<CameraOrientation>();
+            this.cameraOrientations = FindObjectsOfType<CameraOrientation>();
             this.flashPanel = FindObjectOfType<FlashPanel>();
         }
 
         // when parry object is parried off of
         public override void OnParry()
         {
-            base.OnParry();
-            this.cameraOrientation.Mirror();
+            foreach (var o in cameraOrientations)
+            {
+                o.Mirror();
+            }
             this.flashPanel.Flash(this.colorToFlash);
             base.OnParry();
         }

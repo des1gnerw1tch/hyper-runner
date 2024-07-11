@@ -1,4 +1,5 @@
 using System.Collections;
+using SpriteVisualEffects;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -103,6 +104,8 @@ public abstract class ALevelManager : MonoBehaviour, ILevelManager {
             return;
         }
         isPlayerAlive = false;
+        DeathVisualEffects.Instance.ActivateDeathParticles();
+        DeathVisualEffects.Instance.HideCharacterSprite();
         MusicSync.Instance.ChangeMusicVolume(0f);
         FindObjectOfType<AudioManager>().Play("gameOver");
         InterpolateCameraGrayscale.Instance.FadeToGrayscale(LEVEL_FAIL_GRAYSCALE_FADE_SPEED);
