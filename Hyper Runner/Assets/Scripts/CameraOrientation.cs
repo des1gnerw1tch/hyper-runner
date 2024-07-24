@@ -6,7 +6,7 @@ public class CameraOrientation : MonoBehaviour
 
     [SerializeField] private Camera cameraToFlip;
     [SerializeField] private bool isCameraStartYFlipped; // if the camera starts flipped in level
-    public static bool isYFlipped; // if the camera is currently flipped over Y axis
+    public bool isYFlipped; // if the camera is currently flipped over Y axis
 
     // called on first frame
     private void Start() {

@@ -6,6 +6,7 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     [HideInInspector] public float score; // score earned for this dance tile
     private static int perfectInARow; // how many perfects in a row one as got
     private Camera mainCamera;
+    private CameraOrientation cameraOrientation;
 
     [Header("Required Components/Prefabs (Auto)")]
     public CharacterHealth characterHealth; // character health of player
@@ -47,17 +48,17 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
     public virtual void OnDownDanceKeyPress() { this.KeyPressed("down"); }
 
     // left and right dance keys have to swap input when Cam is flipped over Y
-    public virtual void OnLeftDanceKeyPress() { this.KeyPressed(CameraOrientation.isYFlipped ? "right" : "left"); }
+    public virtual void OnLeftDanceKeyPress() { this.KeyPressed(cameraOrientation.isYFlipped ? "right" : "left"); }
 
-    public virtual void OnRightDanceKeyPress() { this.KeyPressed(CameraOrientation.isYFlipped ? "left" : "right"); }
+    public virtual void OnRightDanceKeyPress() { this.KeyPressed(cameraOrientation.isYFlipped ? "left" : "right"); }
 
     public virtual void OnUpDanceKeyRelease() { this.Released("up"); }
 
     public virtual void OnDownDanceKeyRelease() { this.Released("down"); }
 
-    public virtual void OnLeftDanceKeyRelease() { this.Released(CameraOrientation.isYFlipped ? "right" : "left"); }
+    public virtual void OnLeftDanceKeyRelease() { this.Released(cameraOrientation.isYFlipped ? "right" : "left"); }
 
-    public virtual void OnRightDanceKeyRelease() { this.Released(CameraOrientation.isYFlipped ? "left" : "right"); }
+    public virtual void OnRightDanceKeyRelease() { this.Released(cameraOrientation.isYFlipped ? "left" : "right"); }
 
     public virtual void OnAnyDanceKeyPress() { }
 
@@ -191,6 +192,7 @@ public abstract class ADanceObject : MonoBehaviour, IDanceObject {
         this.perfectStreakTextManager = FindObjectOfType<PerfectStreakTextManager>();
         this.danceManager = FindObjectOfType<danceTileManager>();
         this.mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+        this.cameraOrientation = mainCamera.GetComponent<CameraOrientation>();
         scorePopUpParent = UIManager.Instance.GetScorePopUpParent();
     }
 }
