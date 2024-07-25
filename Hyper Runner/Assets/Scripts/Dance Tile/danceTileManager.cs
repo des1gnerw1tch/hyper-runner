@@ -16,7 +16,17 @@ public class danceTileManager : MonoBehaviour {
     // The starting dance tile positions. These are saved at the start so player can "bounce" to other dance tiles, even if the dance tiles are moving. 
     private readonly Dictionary<GameObject, Vector3> tileStartingPositions = new Dictionary<GameObject, Vector3>();
     
-    private void Awake() => Instance = this;
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     private void Start()
     {
