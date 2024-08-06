@@ -1,18 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCDriver : MonoBehaviour
+namespace BossFight.Cyber
 {
-    // Start is called before the first frame update
-    void Start()
+    public class NPCDriver : MonoBehaviour
     {
-        
-    }
+        [SerializeField] private float velocity;
+        [SerializeField] private float meshWidth;
 
-    // Update is called once per frame
-    void Update()
-    {
+        private void Update() => this.transform.Translate(Vector3.back * velocity *  Time.deltaTime);
         
+        public float GetMeshWidth() => meshWidth;
+        
+        public void OnDrawGizmosSelected()
+        {
+            // Draw a yellow cube at the transform position
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireCube(this.transform.position, new Vector3(meshWidth, 1, 1));
+        }
+
+        public void SetVelocity(float v) => velocity = v;
     }
 }
