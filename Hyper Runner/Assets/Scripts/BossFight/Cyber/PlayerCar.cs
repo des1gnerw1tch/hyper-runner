@@ -10,6 +10,8 @@ namespace BossFight.Cyber
         
         [SerializeField] private Transform playerCam;
         [SerializeField] private float camTiltAngleWhileTurn;
+        
+        [SerializeField]
         private float velocity = 0;
 
         private void Update()
@@ -35,12 +37,13 @@ namespace BossFight.Cyber
             }
             if (turningLeft)
             {
-                this.transform.Translate(Vector3.right * turnSpeed * Time.deltaTime);
+                // Turning speed should be linear to velocity of player
+                this.transform.Translate(Vector3.right * turnSpeed * velocity * (1f / 100f) * Time.deltaTime);
                 playerCam.rotation = Quaternion.Euler(camEulerAngles.x, camEulerAngles.y, -camTiltAngleWhileTurn);
             }
             if (turningRight)
             {
-                this.transform.Translate(Vector3.left * turnSpeed * Time.deltaTime);
+                this.transform.Translate(Vector3.left * turnSpeed * velocity * (1f / 100f) * Time.deltaTime);
                 playerCam.rotation = Quaternion.Euler(camEulerAngles.x, camEulerAngles.y, camTiltAngleWhileTurn);
             }
         }
