@@ -13,7 +13,6 @@ namespace BossFight.Cyber
         
         public void OnDrawGizmosSelected()
         {
-            // Draw a yellow cube at the transform position
             Gizmos.color = Color.magenta;
             Gizmos.DrawWireCube(this.transform.position, new Vector3(meshWidth, 1, 1));
         }
