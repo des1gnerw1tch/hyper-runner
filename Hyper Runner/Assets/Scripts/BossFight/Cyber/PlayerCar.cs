@@ -41,7 +41,6 @@ namespace BossFight.Cyber
 
         private void HandlePlayerTurning()
         {
-            Vector3 camEulerAngles = playerCam.eulerAngles;
             bool turningLeft = Input.GetKey("a");
             bool turningRight = Input.GetKey("d");
 
