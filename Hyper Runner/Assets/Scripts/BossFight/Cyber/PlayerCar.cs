@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace BossFight.Cyber
 {
-    public class PlayerCar : MonoBehaviour
+    public class PlayerCar : AObjectWithMeshWidth
     {
         [SerializeField] private float acceleration;
         [SerializeField] private float brakeAcceleration;
@@ -46,6 +46,13 @@ namespace BossFight.Cyber
                 this.transform.Translate(Vector3.left * turnSpeed * velocity * (1f / 100f) * Time.deltaTime);
                 playerCam.rotation = Quaternion.Euler(camEulerAngles.x, camEulerAngles.y, camTiltAngleWhileTurn);
             }
+        }
+
+        private void OnTriggerEnter(Collider other) => BumpedIntoObject();
+
+        private void BumpedIntoObject()
+        {
+            Debug.Log("Bumped into Object");
         }
     }
 }
