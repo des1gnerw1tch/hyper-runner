@@ -10,6 +10,7 @@ namespace BossFight.Cyber
         
         [SerializeField] private Transform playerCam;
         [SerializeField] private float camTiltAngleWhileTurn;
+        [SerializeField] private StreetBounds streetBounds;
         
         [SerializeField]
         private float velocity = 0;
@@ -35,17 +36,33 @@ namespace BossFight.Cyber
                 playerCam.rotation = Quaternion.Euler(camEulerAngles.x, camEulerAngles.y, 0);
                 return;
             }
+            
+            Vector3 cur = transform.position;
             if (turningLeft)
             {
                 // Turning speed should be linear to velocity of player
-                this.transform.Translate(Vector3.right * turnSpeed * velocity * (1f / 100f) * Time.deltaTime);
+                Vector3 newPos = new Vector3(cur.x + turnSpeed * velocity * (1f / 100f) * Time.deltaTime,
+                                             cur.y,
+                                             cur.z);
+                this.transform.position = ClampPlayerX(newPos);
                 playerCam.rotation = Quaternion.Euler(camEulerAngles.x, camEulerAngles.y, -camTiltAngleWhileTurn);
             }
             if (turningRight)
             {
-                this.transform.Translate(Vector3.left * turnSpeed * velocity * (1f / 100f) * Time.deltaTime);
+                Vector3 newPos = new Vector3(cur.x - turnSpeed * velocity * (1f / 100f) * Time.deltaTime, 
+                                               cur.y,
+                                               cur.z);
+                this.transform.position = ClampPlayerX(newPos);
                 playerCam.rotation = Quaternion.Euler(camEulerAngles.x, camEulerAngles.y, camTiltAngleWhileTurn);
             }
+        }
+
+        private Vector3 ClampPlayerX(Vector3 pos)
+        {
+            float clampedX = Mathf.Clamp(pos.x,
+                                    streetBounds.GetMinX() + (GetMeshWidth() / 2), 
+                                    streetBounds.GetMaxX() - (GetMeshWidth() / 2));
+            return new Vector3(clampedX, pos.y, pos.z);
         }
 
         private void OnTriggerEnter(Collider other) => BumpedIntoObject();
