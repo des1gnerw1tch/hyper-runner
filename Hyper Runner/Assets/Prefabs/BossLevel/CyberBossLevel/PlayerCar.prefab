@@ -116,6 +116,9 @@ MonoBehaviour:
   turnSpeed: 30
   playerCam: {fileID: 4551853702917647646}
   camTiltAngleWhileTurn: 4
+  streetBounds: {fileID: 0}
+  crashStunTime: 2
+  velocityAfterCrash: 20
   velocity: 0
 --- !u!54 &4551853702861872418
 Rigidbody:
