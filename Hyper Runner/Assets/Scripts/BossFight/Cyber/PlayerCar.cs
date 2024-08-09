@@ -4,9 +4,6 @@ namespace BossFight.Cyber
 {
     public class PlayerCar : ARacingCar
     {
-        [SerializeField] private float acceleration;
-        [SerializeField] private float brakeAcceleration;
-        
         [SerializeField] private Transform playerCam;
         [SerializeField] private float camTiltAngleWhileTurn;
 
@@ -34,16 +31,17 @@ namespace BossFight.Cyber
             ResetCamTilt();
         }
 
-        protected override void HandlePlayerSpeedInput()
+        protected override GasPedalState GetPlayerGasInput()
         {
             if (Input.GetKey("w"))
             {
-                velocity += acceleration;
+                return GasPedalState.Gas;
             }
             if (Input.GetKey("s"))
             {
-                velocity -= brakeAcceleration;
+                return GasPedalState.Brake;
             }
+            return GasPedalState.Neutral;
         }
 
         private void ResetCamTilt()

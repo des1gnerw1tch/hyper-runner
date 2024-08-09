@@ -5,6 +5,8 @@ namespace BossFight.Cyber
 {
     public abstract class ARacingCar : AObjectWithMeshWidth
     {
+        [SerializeField] private float acceleration;
+        [SerializeField] private float brakeAcceleration;
         [SerializeField] private float turnSpeed;
         
         [SerializeField] private StreetBounds streetBounds;
@@ -15,10 +17,17 @@ namespace BossFight.Cyber
         [SerializeField] private float timeToSpinAfterCrashAnim;
         
         [SerializeField]
-        protected float velocity = 0;
+        private float velocity = 0;
 
         private bool playerStunned = false;
 
+        protected enum GasPedalState
+        {
+            Gas,
+            Brake,
+            Neutral
+        }
+        
         protected enum TurningDirection
         {
             Left,
@@ -30,18 +39,32 @@ namespace BossFight.Cyber
         {
             if (!playerStunned)
             {
-                HandlePlayerSpeedInput();
+                HandlePlayerGas();
             }
-            velocity = Mathf.Clamp(velocity, 0, Mathf.Infinity);
+            
             this.transform.Translate(Vector3.back * velocity *  Time.deltaTime);
             if (!playerStunned)
             {
                 HandlePlayerTurning();
             }
         }
+        
+        private void HandlePlayerGas()
+        {
+            GasPedalState state = GetPlayerGasInput();
+            if (state == GasPedalState.Gas)
+            {
+                velocity += acceleration;
+            }
+            else if (state == GasPedalState.Brake)
+            {
+                velocity -= brakeAcceleration;
+            }
+            velocity = Mathf.Clamp(velocity, 0, Mathf.Infinity);
+        }
 
-        protected abstract void HandlePlayerSpeedInput();
-
+        protected abstract GasPedalState GetPlayerGasInput();
+        
         private void HandlePlayerTurning()
         {
             TurningDirection direction = GetTurningDirectionInput();
