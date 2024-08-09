@@ -14,6 +14,9 @@ namespace BossFight.Cyber
         [SerializeField] private StreetBounds streetBounds;
         [SerializeField] private float crashStunTime;
         [SerializeField] private float velocityAfterCrash;
+
+        [SerializeField] private GameObject mesh;
+        [SerializeField] private float timeToSpinAfterCrashAnim;
         
         [SerializeField]
         private float velocity = 0;
@@ -108,12 +111,26 @@ namespace BossFight.Cyber
             ResetCamTilt();
             velocity = velocityAfterCrash;
             StartCoroutine(EndPlayerStun());
+            StartCoroutine(StartSpinAnim());
         }
 
         private IEnumerator EndPlayerStun()
         {
             yield return new WaitForSeconds(this.crashStunTime);
             playerStunned = false;
+        }
+
+        private IEnumerator StartSpinAnim()
+        {
+            float timeElapsed = 0f;
+            float progress = timeElapsed / timeToSpinAfterCrashAnim;
+            while (progress <= 1f)
+            {
+                this.mesh.transform.localRotation = Quaternion.AngleAxis(Mathf.Lerp(0, 360, timeElapsed / timeToSpinAfterCrashAnim), Vector3.up);
+                timeElapsed += Time.deltaTime;
+                yield return new WaitForEndOfFrame();
+            }
+            mesh.transform.localRotation = Quaternion.AngleAxis(0, Vector3.up);
         }
     }
 }
