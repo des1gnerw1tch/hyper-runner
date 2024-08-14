@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8387546483389516764, guid: a04ed267dddbc4431a962d31218b0e61, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.1637983
+      value: 6.26
       objectReference: {fileID: 0}
     - target: {fileID: 8387546483389516764, guid: a04ed267dddbc4431a962d31218b0e61, type: 3}
       propertyPath: m_LocalPosition.y
@@ -148,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8387546483389516764, guid: a04ed267dddbc4431a962d31218b0e61, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -17.39615
+      value: -19.42
       objectReference: {fileID: 0}
     - target: {fileID: 8387546483389516764, guid: a04ed267dddbc4431a962d31218b0e61, type: 3}
       propertyPath: m_LocalRotation.w
@@ -275,6 +275,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &185276523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 185276525}
+  - component: {fileID: 185276524}
+  m_Layer: 0
+  m_Name: CurbCollider (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &185276524
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185276523}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3, z: 15465.5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &185276525
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185276523}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.8, y: 0, z: -5335}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &332413976
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,7 +348,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &332413978
 MonoBehaviour:
@@ -318,12 +362,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afcbbc7b4b8e740cf931bdd58b419db7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberNPCToSpawn: 100
+  numberNPCToSpawn: 1000
   minNPCVelocity: 10
   maxNPCVelocity: 100
   streetBounds: {fileID: 867538136}
   npcDriverPrefab: {fileID: 8387546483389516752, guid: a04ed267dddbc4431a962d31218b0e61, type: 3}
   npcDriverPrefabScript: {fileID: 8387546483389516767, guid: a04ed267dddbc4431a962d31218b0e61, type: 3}
+--- !u!1 &708101330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 708101332}
+  - component: {fileID: 708101331}
+  m_Layer: 0
+  m_Name: CurbCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &708101331
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708101330}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3, z: 15465.5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &708101332
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708101330}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15.9, y: 0, z: -5335}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &812705542 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4551853702917647646, guid: 20b0c683b5daa4e928a63e29e8bbc795, type: 3}
@@ -824,6 +912,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4124225510606997441, guid: d62ea1cc285f449ba9ddc51fc77b5315, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4551853702861872416, guid: d62ea1cc285f449ba9ddc51fc77b5315, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -872,14 +964,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossCar
       objectReference: {fileID: 0}
+    - target: {fileID: 4551853702861872428, guid: d62ea1cc285f449ba9ddc51fc77b5315, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4669600626436130682, guid: d62ea1cc285f449ba9ddc51fc77b5315, type: 3}
-      propertyPath: velocity
-      value: 30
+      propertyPath: acceleration
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4669600626436130682, guid: d62ea1cc285f449ba9ddc51fc77b5315, type: 3}
       propertyPath: streetBounds
       value: 
       objectReference: {fileID: 867538136}
+    - target: {fileID: 4669600626436130682, guid: d62ea1cc285f449ba9ddc51fc77b5315, type: 3}
+      propertyPath: minHorizontalDistanceBetweenObjects
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d62ea1cc285f449ba9ddc51fc77b5315, type: 3}
 --- !u!1001 &4551853702104943128
@@ -934,12 +1034,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4551853702861872417, guid: 20b0c683b5daa4e928a63e29e8bbc795, type: 3}
+      propertyPath: acceleration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551853702861872417, guid: 20b0c683b5daa4e928a63e29e8bbc795, type: 3}
       propertyPath: streetBounds
       value: 
       objectReference: {fileID: 867538136}
     - target: {fileID: 4551853702861872428, guid: 20b0c683b5daa4e928a63e29e8bbc795, type: 3}
       propertyPath: m_Name
       value: PlayerCar
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551853702917647643, guid: 20b0c683b5daa4e928a63e29e8bbc795, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20b0c683b5daa4e928a63e29e8bbc795, type: 3}

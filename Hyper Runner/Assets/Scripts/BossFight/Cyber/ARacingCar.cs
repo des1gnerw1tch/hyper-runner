@@ -35,7 +35,7 @@ namespace BossFight.Cyber
             None
         }
         
-        private void Update()
+        protected virtual void Update()
         {
             if (!playerStunned)
             {
