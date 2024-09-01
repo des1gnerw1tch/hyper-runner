@@ -7,10 +7,13 @@ namespace BossFight.Cyber
         [SerializeField] private Transform raycastOriginMiddle;
         [SerializeField] private Transform raycastOriginRight;
         [SerializeField] private Transform raycastOriginLeft;
+        [SerializeField] private BoxCollider carCollider;
         [SerializeField] private bool showDebugRaycasts;
         [SerializeField] private float minDistanceFromNearestVehicleToAccelerate;
         [SerializeField] private float maxDistanceFromNearestVehicleToBrake;
         [SerializeField] private float minHorizontalDistanceBetweenObjects;
+
+        [SerializeField] private Transform playerCar;
         
         private float distanceFrom0Middle;
         private float distanceFrom45;
@@ -22,8 +25,14 @@ namespace BossFight.Cyber
 
         protected override void Update()
         {
+            carCollider.enabled = !LosingRace();
             UpdateVisionData();
             base.Update();
+        }
+
+        private bool LosingRace()
+        {
+            return transform.position.z > playerCar.position.z;
         }
         
         private void UpdateVisionData()

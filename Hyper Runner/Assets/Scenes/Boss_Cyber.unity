@@ -319,6 +319,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &273786188 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4551853702861872416, guid: 20b0c683b5daa4e928a63e29e8bbc795, type: 3}
+  m_PrefabInstance: {fileID: 4551853702104943128}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &332413976
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,7 +919,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4124225510606997441, guid: d62ea1cc285f449ba9ddc51fc77b5315, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4551853702861872416, guid: d62ea1cc285f449ba9ddc51fc77b5315, type: 3}
       propertyPath: m_RootOrder
@@ -964,6 +969,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossCar
       objectReference: {fileID: 0}
+    - target: {fileID: 4669600626436130682, guid: d62ea1cc285f449ba9ddc51fc77b5315, type: 3}
+      propertyPath: playerCar
+      value: 
+      objectReference: {fileID: 273786188}
     - target: {fileID: 4669600626436130682, guid: d62ea1cc285f449ba9ddc51fc77b5315, type: 3}
       propertyPath: streetBounds
       value: 
@@ -1035,7 +1044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4551853702917647643, guid: 20b0c683b5daa4e928a63e29e8bbc795, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20b0c683b5daa4e928a63e29e8bbc795, type: 3}
