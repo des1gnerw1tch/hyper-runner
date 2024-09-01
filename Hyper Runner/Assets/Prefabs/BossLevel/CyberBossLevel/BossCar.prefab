@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3227774785114621462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1729208317382982771}
+  m_Layer: 0
+  m_Name: RaycastOriginLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1729208317382982771
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3227774785114621462}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.642, y: 0.519, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4551853702861872416}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4124225510606997441
 GameObject:
   m_ObjectHideFlags: 0
@@ -27,11 +57,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4124225510606997441}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 109.8, z: 3.3}
+  m_LocalPosition: {x: 0, y: 71.4, z: 3.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4551853702861872416}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
 --- !u!20 &5349631368451020907
 Camera:
@@ -148,6 +178,8 @@ Transform:
   m_Children:
   - {fileID: 6954284462577843804}
   - {fileID: 1057745505046572716}
+  - {fileID: 4711890335912226937}
+  - {fileID: 1729208317382982771}
   - {fileID: 6258090652095160409}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -194,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshWidth: 1.11
-  acceleration: 0.3
+  acceleration: 0.1
   brakeAcceleration: 3
   turnSpeed: 30
   streetBounds: {fileID: 0}
@@ -203,11 +235,43 @@ MonoBehaviour:
   mesh: {fileID: 7740906509345451179}
   timeToSpinAfterCrashAnim: 1
   velocity: 0
-  raycastOrigin: {fileID: 1057745505046572716}
+  raycastOriginMiddle: {fileID: 1057745505046572716}
+  raycastOriginRight: {fileID: 4711890335912226937}
+  raycastOriginLeft: {fileID: 1729208317382982771}
   showDebugRaycasts: 1
-  minDistanceFromNearestVehicleToAccelerate: 4
-  maxDistanceFromNearestVehicleToBrake: 2
-  minHorizontalDistanceBetweenObjects: 1
+  minDistanceFromNearestVehicleToAccelerate: 30
+  maxDistanceFromNearestVehicleToBrake: 15
+  minHorizontalDistanceBetweenObjects: 1.3
+--- !u!1 &6925986718920878470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4711890335912226937}
+  m_Layer: 0
+  m_Name: RaycastOriginRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4711890335912226937
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6925986718920878470}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.694, y: 0.519, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4551853702861872416}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7346077752292477847
 GameObject:
   m_ObjectHideFlags: 0

@@ -914,7 +914,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4124225510606997441, guid: d62ea1cc285f449ba9ddc51fc77b5315, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4551853702861872416, guid: d62ea1cc285f449ba9ddc51fc77b5315, type: 3}
       propertyPath: m_RootOrder
@@ -964,22 +964,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossCar
       objectReference: {fileID: 0}
-    - target: {fileID: 4551853702861872428, guid: d62ea1cc285f449ba9ddc51fc77b5315, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4669600626436130682, guid: d62ea1cc285f449ba9ddc51fc77b5315, type: 3}
-      propertyPath: acceleration
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 4669600626436130682, guid: d62ea1cc285f449ba9ddc51fc77b5315, type: 3}
       propertyPath: streetBounds
       value: 
       objectReference: {fileID: 867538136}
-    - target: {fileID: 4669600626436130682, guid: d62ea1cc285f449ba9ddc51fc77b5315, type: 3}
-      propertyPath: minHorizontalDistanceBetweenObjects
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d62ea1cc285f449ba9ddc51fc77b5315, type: 3}
 --- !u!1001 &4551853702104943128
@@ -1047,7 +1035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4551853702917647643, guid: 20b0c683b5daa4e928a63e29e8bbc795, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20b0c683b5daa4e928a63e29e8bbc795, type: 3}

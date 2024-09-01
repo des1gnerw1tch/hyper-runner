@@ -4,20 +4,22 @@ namespace BossFight.Cyber
 {
     public class BossCarAI : ARacingCar
     {
-        [SerializeField] private Transform raycastOrigin;
+        [SerializeField] private Transform raycastOriginMiddle;
+        [SerializeField] private Transform raycastOriginRight;
+        [SerializeField] private Transform raycastOriginLeft;
         [SerializeField] private bool showDebugRaycasts;
         [SerializeField] private float minDistanceFromNearestVehicleToAccelerate;
         [SerializeField] private float maxDistanceFromNearestVehicleToBrake;
-        [SerializeReference] private float minHorizontalDistanceBetweenObjects;
-
-        private float distanceFrom0;
+        [SerializeField] private float minHorizontalDistanceBetweenObjects;
+        
+        private float distanceFrom0Middle;
         private float distanceFrom45;
         private float distanceFrom90;
         private float distanceFromNeg45;
         private float distanceFromNeg90;
-        
-        
-        
+        private float distanceFrom0LeftSide;
+        private float distanceFrom0RightSide;
+
         protected override void Update()
         {
             UpdateVisionData();
@@ -26,14 +28,16 @@ namespace BossFight.Cyber
         
         private void UpdateVisionData()
         {
-            distanceFrom0 = HitDistanceFromRaycastAtAngle(0);
-            distanceFrom45 = HitDistanceFromRaycastAtAngle(10);
-            distanceFrom90 = HitDistanceFromRaycastAtAngle(90);
-            distanceFromNeg45 = HitDistanceFromRaycastAtAngle(-10);
-            distanceFromNeg90 = HitDistanceFromRaycastAtAngle(-90);
+            distanceFrom0Middle = HitDistanceFromRaycastAtAngle(raycastOriginMiddle, 0);
+            distanceFrom0LeftSide = HitDistanceFromRaycastAtAngle(raycastOriginLeft, 0);
+            distanceFrom0RightSide = HitDistanceFromRaycastAtAngle(raycastOriginRight, 0);
+            distanceFrom45 = HitDistanceFromRaycastAtAngle(raycastOriginMiddle, 10);
+            distanceFrom90 = HitDistanceFromRaycastAtAngle(raycastOriginMiddle, 90);
+            distanceFromNeg45 = HitDistanceFromRaycastAtAngle(raycastOriginMiddle, -10);
+            distanceFromNeg90 = HitDistanceFromRaycastAtAngle(raycastOriginMiddle, -90);
         }
 
-        private float HitDistanceFromRaycastAtAngle(float angle)
+        private float HitDistanceFromRaycastAtAngle(Transform raycastOrigin, float angle)
         {
             RaycastHit hit;
             Vector3 direction = Quaternion.Euler(0, angle, 0) * Vector3.back;
@@ -56,26 +60,38 @@ namespace BossFight.Cyber
 
         }
         
+        
+        
         protected override GasPedalState GetPlayerGasInput()
         {
-            if (distanceFrom0 >= minDistanceFromNearestVehicleToAccelerate)
+            if (FrontOfCarAllClearToAccelerate())
             {
+                Debug.Log("Accelerating");
                 return GasPedalState.Gas;
             }
-            else if (distanceFrom0 <= maxDistanceFromNearestVehicleToBrake)
+            else if (IsSoonHeadOnCollision())
             {
+                Debug.Log("Braking");
                 return GasPedalState.Brake;
             }
             else
             {
+                Debug.Log("Neutral");
                 return GasPedalState.Neutral;
             }
+        }
+        
+        private bool FrontOfCarAllClearToAccelerate()
+        {
+            return distanceFrom0Middle >= minDistanceFromNearestVehicleToAccelerate ||
+                   distanceFrom0LeftSide >= minDistanceFromNearestVehicleToAccelerate ||
+                   distanceFrom0RightSide >= minDistanceFromNearestVehicleToAccelerate;
         }
         
         
         protected override TurningDirection GetTurningDirectionInput()
         {
-            return GetTurningDirectionTry2();
+            return GetTurningDirectionTry3();
         }
 
         /// <summary>
@@ -87,7 +103,7 @@ namespace BossFight.Cyber
         /// <returns></returns>
         private TurningDirection GetTurningDirectionTry1()
         {
-            float[] distances = {distanceFromNeg45, distanceFrom0, distanceFrom45};
+            float[] distances = {distanceFromNeg45, distanceFrom0Middle, distanceFrom45};
             int maxIndex = 0;
             for (int i = 0; i < distances.Length; i++)
             {
@@ -138,18 +154,91 @@ namespace BossFight.Cyber
                 }
                 
             }
+            
+            // Check for soon head on collision
+            if (IsSoonHeadOnCollision())
+            {
+                Debug.Log("Head on collision immininent");
+                if (distanceFrom90 > minHorizontalDistanceBetweenObjects)
+                {
+                    Debug.Log("Turning Right");
+                    return TurningDirection.Right;
+                }
+                else
+                {
+                    Debug.Log("Turning Left");
+                    return TurningDirection.Left;
+                }
+            }
+            
+            // If no head on collision soon, check directional rays
+            float buffer = 3;
+            if (Mathf.Abs(distanceFromNeg45 - distanceFrom45) < buffer && Mathf.Abs(distanceFromNeg90 - distanceFrom90) < buffer)
+            {
+                Debug.Log("No turn direction");
+                return TurningDirection.None;
+            }
 
             switch (minIndex)
             {
                 case 0:
+                    Debug.Log("Turning Right");
                     return TurningDirection.Right;
                 case 1:
+                    Debug.Log("Turning Right");
                     return TurningDirection.Right;
                 case 2:
+                    Debug.Log("Turning Left");
                     return TurningDirection.Left;
                 default:
+                    Debug.Log("Turning Left");
                     return TurningDirection.Left;
             }
+        }
+        
+        private TurningDirection GetTurningDirectionTry3()
+        {
+            // Check for soon head on collision
+            if (IsSoonHeadOnCollision())
+            {
+                Debug.Log("Head on collision immininent");
+                if (distanceFrom90 > minHorizontalDistanceBetweenObjects)
+                {
+                    Debug.Log("Turning Right");
+                    return TurningDirection.Right;
+                }
+                else
+                {
+                    Debug.Log("Turning Left");
+                    return TurningDirection.Left;
+                }
+            }
+            
+            // If no head on collision soon, check directional rays
+            float buffer = 20;
+            if (Mathf.Abs(distanceFromNeg45 - distanceFrom45) < buffer)
+            {
+                Debug.Log("No turn direction");
+                return TurningDirection.None;
+            }
+
+            if (distanceFromNeg45 > distanceFrom45)
+            {
+                Debug.Log("Turning Left");
+                return TurningDirection.Left;
+            }
+            else
+            {
+                Debug.Log("Turning Right");
+                return TurningDirection.Right;
+            }
+        }
+
+        private bool IsSoonHeadOnCollision()
+        {
+            return distanceFrom0Middle < maxDistanceFromNearestVehicleToBrake ||
+                   distanceFrom0LeftSide < maxDistanceFromNearestVehicleToBrake ||
+                   distanceFrom0RightSide < maxDistanceFromNearestVehicleToBrake;
         }
     }
 }
