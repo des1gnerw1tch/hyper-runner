@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 52387414}
   - component: {fileID: 52387413}
   m_Layer: 0
-  m_Name: Ground
+  m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52387412}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.4, z: -1.7656021}
-  m_LocalScale: {x: 9.06, y: 1, z: 11.992144}
+  m_LocalPosition: {x: 0, y: -3.4, z: -1.7656021}
+  m_LocalScale: {x: 10.49, y: 1, z: 11.992144}
   m_Children: []
   m_Father: {fileID: 5562012241862176088}
   m_RootOrder: 7
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 836feeb56f1274ab8b26a1f3c2a65f3c, type: 2}
+  - {fileID: 2100000, guid: 05434909373524694a73dc762d579d97, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -913,7 +913,7 @@ Transform:
   m_GameObject: {fileID: 5562012241862176089}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -67.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_Children:
   - {fileID: 5562012241350084117}
   - {fileID: 5562012242179190345}
@@ -950,7 +950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportPoint: {fileID: 3696232726393127973}
-  teleportDistance: -239.8
+  teleportDistance: -228.4
   player: {fileID: 0}
 --- !u!1 &5562012241967120287
 GameObject:
