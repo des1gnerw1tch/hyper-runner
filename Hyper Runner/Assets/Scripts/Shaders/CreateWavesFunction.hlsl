@@ -1,5 +1,5 @@
-#ifndef MYHLSLINCLUDE_INCLUDED
-#define MYHLSLINCLUDE_INCLUDED
+#ifndef CREATEWAVES_INCLUDED
+#define CREATEWAVES_INCLUDED
 
 void MakeWaves_float(float3 inPos, float simpleNoise, float2 uv, out float3 outPos)
 {
