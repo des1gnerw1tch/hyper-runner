@@ -19,6 +19,9 @@ void MakeWaves_float(float3 inPos, float simpleNoise, float noiseToRight,
     float3 dir1 = normalize(rightPos - outPos);
     float3 dir2 = normalize(upPos - outPos);
     normal = normalize(cross(dir1, dir2));*/
+    simpleNoise /= 10; // changing amplitude of noise for whatever reason? This makes the waves more green
+    noiseToRight /= 10; // something is definitely flipped here tihs logic is a little weird for sure... 
+    noiseUpwards /= 10;
     float3 upPoint = float3(0, noiseUpwards, 0.001); // This constant value is equal to the uvDistanceForNormalCalc
     float3 rightPoint = float3(0.001, noiseToRight, 0);
     float3 basePoint = float3(0, simpleNoise, 0);
