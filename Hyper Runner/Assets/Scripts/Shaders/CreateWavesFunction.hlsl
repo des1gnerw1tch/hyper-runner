@@ -5,13 +5,15 @@ void MakeWaves_float(float3 inPos, float simpleNoise, float noiseToRight,
     float noiseUpwards, float2 uv, out float3 outPos, out float3 normal)
 {
     float waveMaxHeight = 10.0f;
-    float startSmoothingNearYEdge = 0.15;
-    float beFlatWhenReachUVYCoord = 0.08;
+    float startSmoothingNearYEdge = 0.05;
+    float beFlatWhenReachUVYCoord = 0.01;
     float closenessToEdgeInUVCoords = uv.y > 0.5 ? abs(uv.y - 1) : uv.y;
     // If near the edge, make start smoothing wave height to 0. This will be smoothed with cos function, from 0 to pi.
     // This is so that when we repeat/tile ocean plane, the waves will match up.
+    // TODO: If enter either of these two cases, should change the normal calculation somehow... Because we are messing with
+    // the upwards height here, we should also reflect that in the normals
     if (closenessToEdgeInUVCoords < startSmoothingNearYEdge && closenessToEdgeInUVCoords > beFlatWhenReachUVYCoord)
-    {
+    { 
         const float smoothingFactor = (startSmoothingNearYEdge - closenessToEdgeInUVCoords) / (startSmoothingNearYEdge - beFlatWhenReachUVYCoord); // Value of 1 is full smooth, value of 0 is no smoothing.
         const float pi = 3.14159265359;
         const float cosFactor = (0.5 * cos(lerp(0, pi, smoothingFactor)) + 0.5f);

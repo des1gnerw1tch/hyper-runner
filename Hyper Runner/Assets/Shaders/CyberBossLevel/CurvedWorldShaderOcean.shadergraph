@@ -1047,7 +1047,7 @@
     "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
     "m_ObjectId": "1e7250b44d4a414fb071f98958e5a9e4",
     "m_Title": "This is because of plane scale",
-    "m_Content": "Because the plane is scaled 2 in the X direction and 1 in the Y directoin, I also need to scale the UV coordinates so that the noise is not disorted in the X direction.",
+    "m_Content": "Because the plane is has a ratio of x y scale 3:1, I also need to scale the UV coordinates so that the noise is not disorted in the X direction.",
     "m_TextSize": 0,
     "m_Theme": 0,
     "m_Position": {
@@ -2286,7 +2286,7 @@
     "m_ShaderOutputName": "B",
     "m_StageCapability": 3,
     "m_Value": {
-        "e00": 2.0,
+        "e00": 3.0,
         "e01": 2.0,
         "e02": 2.0,
         "e03": 2.0,
