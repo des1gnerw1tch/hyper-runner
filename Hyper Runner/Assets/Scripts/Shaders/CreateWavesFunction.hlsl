@@ -5,10 +5,20 @@ void MakeWaves_float(float3 inPos, float simpleNoise, float noiseToRight,
     float noiseUpwards, float2 uv, out float3 outPos, out float3 normal)
 {
     float waveMaxHeight = 10.0f;
-    // If near the edge, make wave height 0. This is so that when we repeat/tile ocean plane, the waves will match up.
-    if (uv.y > 0.93 || uv.y < 0.07)
+    float startSmoothingNearYEdge = 0.15;
+    float beFlatWhenReachUVYCoord = 0.08;
+    float closenessToEdgeInUVCoords = uv.y > 0.5 ? abs(uv.y - 1) : uv.y;
+    // If near the edge, make start smoothing wave height to 0. This will be smoothed with cos function, from 0 to pi.
+    // This is so that when we repeat/tile ocean plane, the waves will match up.
+    if (closenessToEdgeInUVCoords < startSmoothingNearYEdge && closenessToEdgeInUVCoords > beFlatWhenReachUVYCoord)
     {
-        waveMaxHeight = 0.0f;
+        const float smoothingFactor = (startSmoothingNearYEdge - closenessToEdgeInUVCoords) / (startSmoothingNearYEdge - beFlatWhenReachUVYCoord); // Value of 1 is full smooth, value of 0 is no smoothing.
+        const float pi = 3.14159265359;
+        const float cosFactor = (0.5 * cos(lerp(0, pi, smoothingFactor)) + 0.5f);
+        waveMaxHeight = cosFactor * waveMaxHeight; // (2 * cos() + 0.5f) to get the cos function between 0 and 1, no negative
+    } else if (closenessToEdgeInUVCoords <= beFlatWhenReachUVYCoord)
+    {
+        waveMaxHeight = 0;
     }
     
     outPos = float3(inPos.x, inPos.y + (simpleNoise * waveMaxHeight) - (waveMaxHeight/2), inPos.z);
