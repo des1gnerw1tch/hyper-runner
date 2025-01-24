@@ -9,13 +9,13 @@ void AnimateWaves_float(float2 uv, float uvDistanceForNormalCalc, out float2 ani
     float2 uvToRight_ = float2(animatedUV_.x + uvDistanceForNormalCalc, animatedUV_.y);
     float2 uvUpwards_ = float2(animatedUV_.x, animatedUV_.y + uvDistanceForNormalCalc);
     
-    animatedUV_.x -= floor(animatedUV_.x);
+    //animatedUV_.x -= floor(animatedUV_.x);
     animatedUV = animatedUV_;
     
-    uvToRight_.x -= floor(uvToRight_.x);
+   // uvToRight_.x -= floor(uvToRight_.x);
     uvToRight = uvToRight_;
     
-    uvUpwards_.y -= floor(uvUpwards_.y);
+   //  uvUpwards_.y -= floor(uvUpwards_.y);
     uvUpwards = uvUpwards_;
     
 }
