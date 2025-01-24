@@ -22,14 +22,14 @@ void MakeWaves_float(float3 inPos, float simpleNoise, float noiseToRight,
     simpleNoise /= 10; // changing amplitude of noise for whatever reason? This makes the waves more green
     noiseToRight /= 10; // something is definitely flipped here tihs logic is a little weird for sure... 
     noiseUpwards /= 10;
-    float3 upPoint = float3(0, noiseUpwards, 0.001); // This constant value is equal to the uvDistanceForNormalCalc
-    float3 rightPoint = float3(0.001, noiseToRight, 0);
-    float3 basePoint = float3(0, simpleNoise, 0);
+    float3 upPoint = float3(0, 0.001, noiseUpwards); // This constant value is equal to the uvDistanceForNormalCalc
+    float3 rightPoint = float3(0.001, 0, noiseToRight);
+    float3 basePoint = float3(0, 0, simpleNoise);
     float3 dir1 = normalize(rightPoint - basePoint);
     float3 dir2 = normalize(upPoint - basePoint);
     float3 _normal = normalize(cross(dir2, dir1)); // Why did I just need to flip from dir1, dir2 to dir2, dir1?? Now I am getting a green component
     float3 normalOnlyGComponent = float3(0, _normal[1], 0);
-    normal = _normal;
+    normal = -_normal;
 }
 
 #endif
