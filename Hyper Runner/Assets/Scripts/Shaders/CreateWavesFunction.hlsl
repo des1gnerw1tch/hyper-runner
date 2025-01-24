@@ -11,7 +11,8 @@ void MakeWaves_float(float3 inPos, float simpleNoise, float noiseToRight,
     // If near the edge, make start smoothing wave height to 0. This will be smoothed with cos function, from 0 to pi.
     // This is so that when we repeat/tile ocean plane, the waves will match up.
     // TODO: If enter either of these two cases, should change the normal calculation somehow... Because we are messing with
-    // the upwards height here, we should also reflect that in the normals
+    // the upwards height here, we should also reflect that in the normals. Though with the current amount of smoothing we are doing,
+    // I don't think this is necessary, it's hard to tell it is not the correct normal when playing the game. 
     if (closenessToEdgeInUVCoords < startSmoothingNearYEdge && closenessToEdgeInUVCoords > beFlatWhenReachUVYCoord)
     { 
         const float smoothingFactor = (startSmoothingNearYEdge - closenessToEdgeInUVCoords) / (startSmoothingNearYEdge - beFlatWhenReachUVYCoord); // Value of 1 is full smooth, value of 0 is no smoothing.

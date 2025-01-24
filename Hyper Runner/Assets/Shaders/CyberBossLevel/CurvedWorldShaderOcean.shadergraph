@@ -122,6 +122,9 @@
     "m_StickyNoteDatas": [
         {
             "m_Id": "1e7250b44d4a414fb071f98958e5a9e4"
+        },
+        {
+            "m_Id": "1066afc38197462d916777c928cbffd6"
         }
     ],
     "m_Edges": [
@@ -229,6 +232,20 @@
                     "m_Id": "320d5587ef234e37b223db781ccbaadc"
                 },
                 "m_SlotId": 6
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "1c507635e7994686ac132a5627acf683"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "33dbecd273a3414c8aad016916360205"
+                },
+                "m_SlotId": 2
             },
             "m_InputSlot": {
                 "m_Node": {
@@ -801,6 +818,26 @@
         "m_SerializableColors": []
     },
     "m_Space": 2
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "1066afc38197462d916777c928cbffd6",
+    "m_Title": "Question",
+    "m_Content": "Should I put my normal calculation in fragment or vertex block? In vertex bock looks like lighting is correct direction, meanwihle when I put it into the fragment node it also looks pretty good but the lighting comes from a different side that is reflected across the X axis in world space. ",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": 2391.0,
+        "y": -811.0,
+        "width": 200.0,
+        "height": 160.0
+    },
+    "m_Group": {
+        "m_Id": ""
+    }
 }
 
 {
