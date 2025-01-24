@@ -6,7 +6,7 @@ void MakeWaves_float(float3 inPos, float simpleNoise, float noiseToRight,
 {
     float waveMaxHeight = 10.0f;
     // If near the edge, make wave height 0. This is so that when we repeat/tile ocean plane, the waves will match up.
-    if (uv.y > 0.9 || uv.y < 0.1)
+    if (uv.y > 0.93 || uv.y < 0.07)
     {
         waveMaxHeight = 0.0f;
     }
