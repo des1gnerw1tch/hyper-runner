@@ -4,7 +4,7 @@
 void MakeWaves_float(float3 inPos, float simpleNoise, float noiseToRight,
     float noiseUpwards, float2 uv, out float3 outPos, out float3 normal)
 {
-    float waveMaxHeight = 10.0f;
+    float waveMaxHeight = 5.0f;
     float startSmoothingNearYEdge = 0.05;
     float beFlatWhenReachUVYCoord = 0.01;
     float closenessToEdgeInUVCoords = uv.y > 0.5 ? abs(uv.y - 1) : uv.y;
