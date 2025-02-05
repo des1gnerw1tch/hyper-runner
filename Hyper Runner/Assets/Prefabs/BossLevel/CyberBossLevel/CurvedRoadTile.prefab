@@ -1342,7 +1342,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4555068551314613336}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1867,6 +1867,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f3a8995cdf5ad47bbbf5d37b5c642c5e, type: 3}
       propertyPath: m_Name
       value: plane_with_1k_vert
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f3a8995cdf5ad47bbbf5d37b5c642c5e, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f3a8995cdf5ad47bbbf5d37b5c642c5e, type: 3}
       propertyPath: m_IsActive
