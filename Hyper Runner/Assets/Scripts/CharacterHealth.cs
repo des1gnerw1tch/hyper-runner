@@ -77,7 +77,7 @@ public class CharacterHealth : MonoBehaviour {
         motivationBar.UpdateSlider(charisma / MAX_CHARISMA, !Mathf.Approximately(oldCharisma, charisma));
         
         if (charisma == 0) {
-            Die();
+            //Die();
         }
     }
 
