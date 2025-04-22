@@ -5,7 +5,9 @@ namespace BossFight.Cyber
     public class PlayerCar : ARacingCar
     {
         [SerializeField] private Transform playerCam;
+        [SerializeField] private Transform playerCar;
         [SerializeField] private float camTiltAngleWhileTurn;
+        [SerializeField] private float carTiltAngleWhileTurn;
 
         protected override TurningDirection GetTurningDirectionInput()
         {
@@ -48,18 +50,24 @@ namespace BossFight.Cyber
         {
             Vector3 camEulerAngles = playerCam.eulerAngles;
             playerCam.rotation = Quaternion.Euler(camEulerAngles.x, camEulerAngles.y, 0);
+            Vector3 carEulerAngles = playerCar.eulerAngles;
+            playerCar.rotation = Quaternion.Euler(carEulerAngles.x, 0, carEulerAngles.z);
         }
 
         private void TiltCamLeft()
         {
             Vector3 camEulerAngles = playerCam.eulerAngles;
             playerCam.rotation = Quaternion.Euler(camEulerAngles.x, camEulerAngles.y, -camTiltAngleWhileTurn);
+            Vector3 carEulerAngles = playerCar.eulerAngles;
+            playerCar.rotation = Quaternion.Euler(carEulerAngles.x, -carTiltAngleWhileTurn, carEulerAngles.z);
         }
         
         private void TiltCamRight()
         {
             Vector3 camEulerAngles = playerCam.eulerAngles;
             playerCam.rotation = Quaternion.Euler(camEulerAngles.x, camEulerAngles.y, camTiltAngleWhileTurn);
+            Vector3 carEulerAngles = playerCar.eulerAngles;
+            playerCar.rotation = Quaternion.Euler(carEulerAngles.x, carTiltAngleWhileTurn, carEulerAngles.z);
         }
     }
 }
