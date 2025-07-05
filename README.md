@@ -1,5 +1,5 @@
 # hyperRunner2.5D
-A 2D/3D graphics mashup game with a perfect blend of rhythm and platformer mechanics. In development.
+A 2D/3D graphics mashup game with a perfect blend of rhythm and platformer mechanics. In development. Follow my progress on my [Instagram](https://www.instagram.com/zachwalkergames/) and my blog [zachwalkergames.com](https://zachwalkergames.com/)!
 
 <br><br>
 ![hyperTeaser1](https://user-images.githubusercontent.com/59025886/171332547-bd4d8d92-7fb7-4cab-b303-77738f572db6.png)
