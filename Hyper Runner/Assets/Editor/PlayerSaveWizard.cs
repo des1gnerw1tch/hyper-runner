@@ -11,6 +11,7 @@ namespace Editor
     {
         private PlayableCharacterEnum characterToUnlock;
         private LevelGrade gradeToSet;
+        private bool bossFightCompletedToSet;
         private int tokensToAdd;
         
         [MenuItem("Custom/Player Save Wizard")]
@@ -62,7 +63,8 @@ namespace Editor
             }
 
             gradeToSet = (LevelGrade) EditorGUILayout.EnumPopup("Grade to set levels to", gradeToSet);
-            if (GUILayout.Button("Set all levels to grade"))
+            bossFightCompletedToSet = EditorGUILayout.Toggle("Complete all boss fights", bossFightCompletedToSet);
+            if (GUILayout.Button("Set all levels/bossfights to selected"))
             {
                 playerData = FileSaveManager.LoadPlayer();
                 if (playerData == null)
@@ -74,7 +76,9 @@ namespace Editor
                     foreach (string lvl in levels.GetAllRhythmLevelScenes())
                     {
                         playerData.ForceSetLevelHighScore(lvl, gradeToSet);
+                        playerData.SetLevelsBossFightCompleted(lvl, bossFightCompletedToSet);
                         Debug.Log("Successfully set high score for " + lvl + " to " + gradeToSet);
+                        Debug.Log("Successfully set boss fight for " + lvl + " to " + (bossFightCompletedToSet? "completed" : "uncompleted"));
                     }
                     FileSaveManager.SavePlayer(playerData);
                 }
