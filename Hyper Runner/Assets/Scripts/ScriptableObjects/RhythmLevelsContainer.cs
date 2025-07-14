@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using CustomDataTypes;
 
 namespace ScriptableObjects
 {
@@ -9,8 +10,28 @@ namespace ScriptableObjects
     [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/RhythmLevelContainerScriptableObject", order = 1)]
     public class RhythmLevelsContainer : ScriptableObject
     {
-        [SerializeField] private List<string> rhythmLevels;
+        [SerializeField] private List<string> rhythmLevelsSceneNames;
+        
+        // Boss fights correspond directly with rhythm levels, in order. 
+        [SerializeField] private List<string> bossFightsSceneNames;
 
-        public List<string> GetAllRhythmLevelScenes() => new List<string>(rhythmLevels);
+        private BidirectionalDictionary<string, string> rhythmLevelToBossFight;
+
+        private void OnEnable()
+        {
+            rhythmLevelToBossFight = new BidirectionalDictionary<string, string>(this.rhythmLevelsSceneNames, this.bossFightsSceneNames);
+        }
+
+        public List<string> GetAllRhythmLevelScenes() => new List<string>(rhythmLevelsSceneNames);
+
+        public string GetRhythmLevelNameFromBossFightName(string rhythmLevelSceneName)
+        {
+            return rhythmLevelToBossFight.getKeyFromValue(rhythmLevelSceneName);
+        }
+
+        public string GetBossFightNameFromRhythmLevelName(string bossFightSceneName)
+        {
+            return rhythmLevelToBossFight.getValueFromKey(bossFightSceneName);
+        }
     }
 }

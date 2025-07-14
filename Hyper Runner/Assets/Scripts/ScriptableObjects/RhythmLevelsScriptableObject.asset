@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 003fa12f94be54d94817b122f032d36e, type: 3}
   m_Name: RhythmLevelsScriptableObject
   m_EditorClassIdentifier: 
-  rhythmLevels:
+  rhythmLevelsSceneNames:
   - Lvl_Nightlife
   - Lvl_Cyber
   - Lvl_Carnival
   - Lvl_Forest
+  bossFightsSceneNames:
+  - none1
+  - Boss_Cyber
+  - none2
+  - none3

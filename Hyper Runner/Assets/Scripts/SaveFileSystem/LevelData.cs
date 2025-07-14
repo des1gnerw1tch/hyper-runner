@@ -7,10 +7,12 @@ namespace SaveFileSystem
     public class LevelData
     {
         public LevelGrade highScore;
+        public bool isBossLevelBeaten;
 
         public LevelData()
         {
             highScore = LevelGrade.NeverCompleted;
+            isBossLevelBeaten = false;
         }
     }
 
