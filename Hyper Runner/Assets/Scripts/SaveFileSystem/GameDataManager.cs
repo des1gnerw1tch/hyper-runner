@@ -53,6 +53,7 @@ namespace SaveFileSystem
                 foreach (string level in currentSaveData.GetLevelDataTable().Keys)
                 {
                     Debug.Log(level + " "  + currentSaveData.GetLevelDataTable()[level].highScore);
+                    Debug.Log(level + " boss fight completed? "  + currentSaveData.GetLevelDataTable()[level].isBossLevelBeaten);
                 }
             }
         }
@@ -127,5 +128,12 @@ namespace SaveFileSystem
         // Will return null if level is not found in dictionary, which should not happen... 
         public LevelGrade? GetLevelHighScore(string levelSceneName) => currentSaveData.GetLevelHighScore(levelSceneName);
         
+        // This will set the save that a boss fight has been completed
+        public void SetBossFightCompleted(string bossFightName, bool isBossFightCompleted)
+        {
+            string levelName = rhythmLevelsContainer.GetRhythmLevelNameFromBossFightName(bossFightName);
+            currentSaveData.SetLevelsBossFightCompleted(levelName, isBossFightCompleted);
+            SaveGame();
+        }
     }
 }

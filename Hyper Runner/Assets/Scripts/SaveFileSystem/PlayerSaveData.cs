@@ -185,5 +185,15 @@ namespace SaveFileSystem
                 }
             }
         }
+
+        public void SetLevelsBossFightCompleted(string levelSceneName, bool isBossFightBeaten)
+        {
+            if (!levelDataTable.ContainsKey(levelSceneName))
+            {
+                throw new Exception("This scene was not found in dictionary. Probably needs to be added to the RhythmLevelsContainer scriptable object.");
+            }
+            
+            levelDataTable[levelSceneName].isBossLevelBeaten = isBossFightBeaten;
+        }
     }
 }
