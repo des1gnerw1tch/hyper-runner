@@ -104,9 +104,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbdaaecbfbe34586b480347cd67a7fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshWidth: 1.21
-  acceleration: 0.5
-  brakeAcceleration: 3
+  meshWidth: 1.8
+  acceleration: 0.1
+  brakeAcceleration: 1.5
   turnSpeed: 30
   streetBounds: {fileID: 0}
   crashStunTime: 2
@@ -117,7 +117,7 @@ MonoBehaviour:
   playerCam: {fileID: 4551853702917647646}
   playerCar: {fileID: 3467936132149862116}
   camTiltAngleWhileTurn: 4
-  carTiltAngleWhileTurn: 8
+  carTiltAngleWhileTurn: 14
 --- !u!54 &4551853702861872418
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -160,13 +160,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4551853702917647643}
-  m_LocalRotation: {x: -0, y: -0.99991596, z: 0.012970341, w: 0}
-  m_LocalPosition: {x: 0, y: 1.43, z: 2.64}
+  m_LocalRotation: {x: -0, y: -0.9890352, z: 0.14768015, w: 0}
+  m_LocalPosition: {x: 0, y: 1.37, z: 2.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4551853702861872416}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 1.486, y: -180, z: 0}
+  m_LocalEulerAnglesHint: {x: 16.985, y: -180, z: 0}
 --- !u!20 &4551853702917647645
 Camera:
   m_ObjectHideFlags: 0
@@ -192,7 +192,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 110
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -275,7 +275,7 @@ Transform:
   m_GameObject: {fileID: 7805794682054720986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.002, y: -0.066, z: 0.121}
-  m_LocalScale: {x: 2.7, y: 2.7, z: 2.7}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 3330478631693778587}
   - {fileID: 2304381793359562381}
