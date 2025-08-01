@@ -21,7 +21,7 @@ namespace BossFight.Cyber
             UpdateShader();
             
             
-            LerpDayToNightValue(1, 2.0f);
+            LerpDayToNightValue(1, 10.0f);
         }
         
         public void SetDayNightLerp(float dayNightLerpNormalized)
