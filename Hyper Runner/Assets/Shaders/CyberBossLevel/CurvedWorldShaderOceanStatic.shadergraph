@@ -970,7 +970,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "01a2e7f0cd8141ebb225aa3d4f39a095",
     "m_Id": 0,
-    "m_DisplayName": "CurveIntensity",
+    "m_DisplayName": "GlobalCurveIntensity",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -3429,10 +3429,10 @@
     "m_Guid": {
         "m_GuidSerialized": "0d317169-3524-48e3-9479-c8e223e962ec"
     },
-    "m_Name": "CurveIntensity",
+    "m_Name": "GlobalCurveIntensity",
     "m_DefaultReferenceName": "Vector1_6794759dbae64016a9e7131a4acf8afe",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
+    "m_OverrideReferenceName": "_GlobalCurveIntensity",
+    "m_GeneratePropertyBlock": false,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
