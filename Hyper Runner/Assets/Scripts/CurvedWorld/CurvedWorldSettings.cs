@@ -6,5 +6,5 @@ using UnityEngine;
 public class CurvedWorldSettings : MonoBehaviour
 {
     [SerializeField] private float curveIntensity;
-    void Start() => Shader.SetGlobalFloat("_GlobalCurveIntensity", curveIntensity );
+    void Start() => Shader.SetGlobalFloat("_GlobalCurveIntensity", curveIntensity);
 }
