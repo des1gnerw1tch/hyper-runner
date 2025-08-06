@@ -128,5 +128,7 @@ namespace BossFight.Cyber
             }
             mesh.transform.localRotation = Quaternion.AngleAxis(0, Vector3.up);
         }
+
+        protected float GetVelocity() => this.velocity;
     }
 }

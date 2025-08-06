@@ -4,6 +4,8 @@ namespace BossFight.Cyber
 {
     public class BossCarAI : ARacingCar
     {
+        [SerializeField] private float targetSpeed;
+        
         [SerializeField] private Transform raycastOriginMiddle;
         [SerializeField] private Transform raycastOriginRight;
         [SerializeField] private Transform raycastOriginLeft;
@@ -92,9 +94,9 @@ namespace BossFight.Cyber
         
         private bool FrontOfCarAllClearToAccelerate()
         {
-            return distanceFrom0Middle >= minDistanceFromNearestVehicleToAccelerate ||
+            return Mathf.Abs(GetVelocity()) < targetSpeed &&  (distanceFrom0Middle >= minDistanceFromNearestVehicleToAccelerate ||
                    distanceFrom0LeftSide >= minDistanceFromNearestVehicleToAccelerate ||
-                   distanceFrom0RightSide >= minDistanceFromNearestVehicleToAccelerate;
+                   distanceFrom0RightSide >= minDistanceFromNearestVehicleToAccelerate);
         }
         
         
