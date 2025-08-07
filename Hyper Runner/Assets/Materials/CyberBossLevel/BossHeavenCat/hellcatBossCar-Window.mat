@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: bossheavencat-Headlights
-  m_Shader: {fileID: -6465566751694194690, guid: 462f9f99e67d84b16b1835597c10f7f1, type: 3}
+  m_Name: hellcatBossCar-Window
+  m_Shader: {fileID: -6465566751694194690, guid: e770dccec4c33493d9f6342e38868796, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -77,6 +77,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_6794759dbae64016a9e7131a4acf8afe: -0.001
+    - Vector1_9ff2ead117a94c4fb5c9e67e648c846b: 0
     - Vector1_e902a2b658254a2d882bffd8bc130be9: 0
     - Vector1_eb65098228e543ebada51154ea718e0f: 0
     - _AlphaClip: 0
@@ -108,13 +109,13 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_e3156fc705df4f48b879a1c00e8e0193: {r: 1, g: 0.875397, b: 0, a: 0}
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - Color_e3156fc705df4f48b879a1c00e8e0193: {r: 0, g: 0.9000001, b: 1, a: 0}
+    - _BaseColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &2094832016203893704
+--- !u!114 &7755386760240164114
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
