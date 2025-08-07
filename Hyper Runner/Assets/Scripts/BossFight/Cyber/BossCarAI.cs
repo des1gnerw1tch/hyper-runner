@@ -25,6 +25,8 @@ namespace BossFight.Cyber
         private float distanceFrom0LeftSide;
         private float distanceFrom0RightSide;
 
+        private bool isInBeginningCutscene = true;
+        
         protected override void Update()
         {
             carCollider.enabled = !LosingRace();
@@ -75,7 +77,11 @@ namespace BossFight.Cyber
         
         protected override GasPedalState GetPlayerGasInput()
         {
-            if (FrontOfCarAllClearToAccelerate())
+            if (isInBeginningCutscene)
+            {
+                return GasPedalState.Neutral;
+            }
+            else if (FrontOfCarAllClearToAccelerate())
             {
                 Debug.Log("Accelerating");
                 return GasPedalState.Gas;
@@ -94,12 +100,15 @@ namespace BossFight.Cyber
         
         private bool FrontOfCarAllClearToAccelerate()
         {
-            return Mathf.Abs(GetVelocity()) < targetSpeed &&  (distanceFrom0Middle >= minDistanceFromNearestVehicleToAccelerate ||
-                   distanceFrom0LeftSide >= minDistanceFromNearestVehicleToAccelerate ||
-                   distanceFrom0RightSide >= minDistanceFromNearestVehicleToAccelerate);
+            return !HasReachedTargetSpeed() &&
+                   (distanceFrom0Middle >= minDistanceFromNearestVehicleToAccelerate ||
+                    distanceFrom0LeftSide >= minDistanceFromNearestVehicleToAccelerate ||
+                    distanceFrom0RightSide >= minDistanceFromNearestVehicleToAccelerate);
         }
-        
-        
+
+        private bool HasReachedTargetSpeed() => Mathf.Abs(GetVelocity()) > targetSpeed;
+
+
         protected override TurningDirection GetTurningDirectionInput()
         {
             return GetTurningDirectionTry3();
@@ -209,6 +218,10 @@ namespace BossFight.Cyber
         
         private TurningDirection GetTurningDirectionTry3()
         {
+            if (isInBeginningCutscene)
+            {
+                return TurningDirection.None;
+            }
             // Check for soon head on collision
             if (IsSoonHeadOnCollision())
             {
@@ -250,6 +263,11 @@ namespace BossFight.Cyber
             return distanceFrom0Middle < maxDistanceFromNearestVehicleToBrake ||
                    distanceFrom0LeftSide < maxDistanceFromNearestVehicleToBrake ||
                    distanceFrom0RightSide < maxDistanceFromNearestVehicleToBrake;
+        }
+
+        public void SetIsInBeginningCutscene(bool value)
+        {
+            isInBeginningCutscene = value;
         }
     }
 }
