@@ -792,6 +792,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 136.689, y: 121.792, z: 113.034}
+--- !u!4 &1003778493 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1013760953290906697, guid: 20b0c683b5daa4e928a63e29e8bbc795, type: 3}
+  m_PrefabInstance: {fileID: 4551853702104943128}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1200897566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1386,7 +1391,7 @@ ParentConstraint:
   m_Sources:
   - sourceTransform: {fileID: 2037623841}
     weight: 1
-  - sourceTransform: {fileID: 4551853702104943129}
+  - sourceTransform: {fileID: 1003778493}
     weight: 0
 --- !u!114 &1564131377
 MonoBehaviour:
@@ -1405,8 +1410,8 @@ MonoBehaviour:
   cameraTargetForBossFigure: {fileID: 2013164389}
   cameraTargetForPlayerCar: {fileID: 1486802766}
   bossCarAI: {fileID: 2037623838}
-  secondsUntilStartTransitionToPlayerCam: 6
-  durationTransitionFromBossCarToPlayerCar: 2
+  secondsUntilStartTransitionToPlayerCam: 8
+  durationTransitionFromBossCarToPlayerCar: 1
   animStepInSecondsForTransitionFromBossCarToPlayerCar: 0.005
   cinematicCamera: {fileID: 1325968390}
   playerCamera: {fileID: 1211875705}
@@ -1420,6 +1425,10 @@ PrefabInstance:
     - target: {fileID: 6289337912029160004, guid: f73db34446b5e4b86b4a4ef89f27d9e7, type: 3}
       propertyPath: m_Name
       value: RacingBossFigure (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289337912029160004, guid: f73db34446b5e4b86b4a4ef89f27d9e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6289337912029160007, guid: f73db34446b5e4b86b4a4ef89f27d9e7, type: 3}
       propertyPath: m_RootOrder
@@ -1743,11 +1752,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20b0c683b5daa4e928a63e29e8bbc795, type: 3}
---- !u!4 &4551853702104943129 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 80822296803815102, guid: 20b0c683b5daa4e928a63e29e8bbc795, type: 3}
-  m_PrefabInstance: {fileID: 4551853702104943128}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5562012241103686719
 PrefabInstance:
   m_ObjectHideFlags: 0
