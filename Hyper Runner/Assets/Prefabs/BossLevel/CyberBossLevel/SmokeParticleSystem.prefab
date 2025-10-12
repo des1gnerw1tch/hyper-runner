@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8646331790300568803}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.46126586, y: 0.64183855, z: 2.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 1.71
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -168,7 +168,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4
+      scalar: 6.89
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -746,7 +746,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.28
+      value: 0.1
       mode: 0
       spread: 0
       speed:
@@ -865,7 +865,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 65.89
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -981,19 +981,28 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 1
+          time: 0.0919968
+          value: 0.1612903
+          inSlope: 1.3600268
+          outSlope: 1.3600268
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.33333334
+          outWeight: 0.349612
+        - serializedVersion: 3
+          time: 0.38804033
+          value: 0.3151677
+          inSlope: 2.2145967
+          outSlope: 2.2145967
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.28198606
+          outWeight: 0.16341151
         - serializedVersion: 3
           time: 1
           value: 1
           inSlope: 1
-          outSlope: 0
+          outSlope: 1
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
@@ -1305,8 +1314,8 @@ ParticleSystem:
         serializedVersion: 2
         key0: {r: 0, g: 0, b: 0, a: 1}
         key1: {r: 0.01764706, g: 0.01764706, b: 0.01764706, a: 1}
-        key2: {r: 0.6698113, g: 0.6397033, b: 0.58450514, a: 1}
-        key3: {r: 1, g: 1, b: 1, a: 0}
+        key2: {r: 0.5943396, g: 0.5647755, b: 0.51303846, a: 1}
+        key3: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
