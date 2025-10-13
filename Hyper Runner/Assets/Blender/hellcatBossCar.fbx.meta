@@ -7,8 +7,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: BackHeadlights
+    second: {fileID: 2100000, guid: 5dc5edaf9e3d44e6b91534b908941d3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Car
     second: {fileID: 2100000, guid: b3079f5d8eea541b2b7abcfea9e5b0aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Exhaust
+    second: {fileID: 2100000, guid: 03c70076bd89b4fdf8b6b6e5e3d2c61f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ExhaustInside
+    second: {fileID: 2100000, guid: 361f65dae96644440bc70110f86caa56, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
