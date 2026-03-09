@@ -144,7 +144,7 @@ public class CharacterHealth : MonoBehaviour {
         float xDistanceForLerp = (checkpointPos.x - initialPos.x) / 4; // Distance to reach for Y pos to match checkpoint
         
         rb.isKinematic = true;
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         isInvincible = true;
         
         playerFade.StartCycleFade(FADE_CYCLE_TIME);

@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private void OnJump() {
         if (jumpsLeft > 0) {
-            rb.velocity = new Vector2(rb.velocity.x, 0); ;
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0); ;
             rb.AddForce(transform.up * jumpPower, ForceMode2D.Impulse);
             jumpsLeft -= 1;
 
@@ -167,7 +167,7 @@ public class PlayerMovement : MonoBehaviour {
     // activates negative gravity on the player, and flips sprite
     public void ActivateNegativeGravity(Color flashColor, float flashSpeed) {
         // this flips gravity, same magnitude negative direction
-        this.rb.velocity = Vector3.zero; // resets velocity of player
+        this.rb.linearVelocity = Vector3.zero; // resets velocity of player
         Physics2D.gravity = new Vector2(0, Mathf.Abs(Physics2D.gravity.y));
         this.transform.rotation = Quaternion.Euler(Vector3.right * 180);
         flashObject.StartFlash(flashColor, flashSpeed);
@@ -176,7 +176,7 @@ public class PlayerMovement : MonoBehaviour {
 
     // activates normal gravity on the player, and flips sprite back to upright if needed
     public void ActivateNormalGravity(Color flashColor, float flashSpeed) {
-        this.rb.velocity = Vector3.zero; // resets velocity of player 
+        this.rb.linearVelocity = Vector3.zero; // resets velocity of player 
         Physics2D.gravity = new Vector2(0, -Mathf.Abs(Physics2D.gravity.y));
         this.transform.rotation = Quaternion.Euler(Vector3.zero);
         flashObject.StartFlash(flashColor, flashSpeed);
