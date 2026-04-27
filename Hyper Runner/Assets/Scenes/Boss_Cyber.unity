@@ -1792,6 +1792,17 @@ RectTransform:
   m_AnchoredPosition: {x: -50, y: 0}
   m_SizeDelta: {x: 100, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1544194729 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4551853702861872417, guid: 20b0c683b5daa4e928a63e29e8bbc795, type: 3}
+  m_PrefabInstance: {fileID: 4551853702104943128}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcbdaaecbfbe34586b480347cd67a7fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1546463346
 GameObject:
   m_ObjectHideFlags: 0
@@ -2026,7 +2037,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -98.9}
+  m_AnchoredPosition: {x: -5, y: -98.9}
   m_SizeDelta: {x: 15, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1767773162
@@ -2081,6 +2092,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BossFight.Cyber.RaceProgressDot
   finishLine: {fileID: 1512052167}
   car: {fileID: 273786188}
+  racingCar: {fileID: 1544194729}
   startPointMarker: {fileID: 787159893}
   endPointMarker: {fileID: 422742623}
   carMarker: {fileID: 1767773161}
@@ -2475,7 +2487,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -84.2}
+  m_AnchoredPosition: {x: 5, y: -98.1}
   m_SizeDelta: {x: 15, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2129595066
@@ -2530,6 +2542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BossFight.Cyber.RaceProgressDot
   finishLine: {fileID: 1512052167}
   car: {fileID: 2037623841}
+  racingCar: {fileID: 2037623838}
   startPointMarker: {fileID: 787159893}
   endPointMarker: {fileID: 422742623}
   carMarker: {fileID: 2129595065}
