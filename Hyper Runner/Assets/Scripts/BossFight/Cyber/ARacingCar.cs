@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using System.Xml;
+using UnityEngine.Events;
 
 namespace BossFight.Cyber
 {
@@ -34,6 +36,8 @@ namespace BossFight.Cyber
             Right,
             None
         }
+
+        private UnityEvent carHitEvent = new UnityEvent();
         
         protected virtual void Update()
         {
@@ -108,6 +112,7 @@ namespace BossFight.Cyber
             velocity = velocityAfterCrash;
             StartCoroutine(EndPlayerStun());
             StartCoroutine(StartSpinAnim());
+            carHitEvent.Invoke();
         }
 
         private IEnumerator EndPlayerStun()
@@ -130,5 +135,8 @@ namespace BossFight.Cyber
         }
 
         protected float GetVelocity() => this.velocity;
+
+        public UnityEvent GetCarHitEvent() => carHitEvent;
+        public float GetTimeToSpinAfterCrash() => timeToSpinAfterCrashAnim;
     }
 }
