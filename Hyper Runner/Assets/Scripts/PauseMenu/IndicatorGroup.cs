@@ -67,42 +67,39 @@ public class IndicatorGroup : MonoBehaviour
         bool processDone = false;
         while (!processDone)
         {
-            if (!Mathf.Approximately(indicators[0].transform.position.y, indicatorYPos))
+            float increment;
+            float step = indicatorMoveSpeed * Time.unscaledDeltaTime;
+            if (indicatorYPos > indicators[0].transform.position.y)
             {
-                float increment;
-                float step = indicatorMoveSpeed * Time.unscaledDeltaTime;
-                if (indicatorYPos > indicators[0].transform.position.y)
+                if (indicators[0].transform.position.y + step > indicatorYPos)
                 {
-                    if (indicators[0].transform.position.y + step > indicatorYPos)
-                    {
-                        increment = indicatorYPos - indicators[0].transform.position.y;
-                        processDone = true;
-                    }
-                    else
-                    {
-                        increment =  step;
-                    }
+                    increment = indicatorYPos - indicators[0].transform.position.y;
+                    processDone = true;
                 }
                 else
                 {
-                    if (indicators[0].transform.position.y -  step < indicatorYPos)
-                    {
-                        increment = -(indicators[0].transform.position.y - indicatorYPos);
-                        processDone = true;
-                    }
-                    else
-                    {
-                        increment = -step;
-                    }
-                }
-            
-                foreach (RectTransform indicator in indicators)
-                {
-                    indicator.transform.position = new Vector3(indicator.transform.position.x, 
-                        indicator.transform.position.y + increment, indicator.transform.position.z);
+                    increment =  step;
                 }
             }
-            
+            else
+            {
+                if (indicators[0].transform.position.y -  step < indicatorYPos)
+                {
+                    increment = -(indicators[0].transform.position.y - indicatorYPos);
+                    processDone = true;
+                }
+                else
+                {
+                    increment = -step;
+                }
+            }
+        
+            foreach (RectTransform indicator in indicators)
+            {
+                indicator.transform.position = new Vector3(indicator.transform.position.x, 
+                    indicator.transform.position.y + increment, indicator.transform.position.z);
+            }
+
             yield return new WaitForEndOfFrame();
         }
     }
